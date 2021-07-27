@@ -19,6 +19,8 @@ Nuestro equipo de trabajo está conformado por:
 
 - **Fernando Juárez Baca**. Soy ingeniero en Control y Automatización y tengo 25 años. Me gusta mucho la programación y en especial el Desarrollo Web ya que me encantan los productos digitales y como a través de ellos podemos generar toda una experiencia o facilitar las tareas de los usuarios.
 
+- **José Gerardo Landaverde Domínguez**. Soy un alumno de la UAM a punto de titularme de administración epecializado en marketing. Estoy muy interesado en el diseño y me gusta aplicarlo en mis áreas de estudio por eso me decidí a aprender a programar para mejorar estas habildiades y enfocarlas en el diseño web y digital.
+
 ## Sitios de inspiración
 Describiremos algunos sitios que nos agradaron por su diseño y funcionalidad, inspirando al equipo buscando crear un producto con una calidad similar.
 
