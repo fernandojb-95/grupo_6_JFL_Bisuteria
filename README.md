@@ -38,7 +38,7 @@ En este apartado incluiremos los wireframes que componen nuestro sitio, donde po
 Para su diseño utilizamos Figma y para poder visualizarlos es necesario ingresar a los siguientes links que les darán el acceso a las vistas del sitio en Desktop y Phone.
 
 - [Wireframes desktop](https://www.figma.com/proto/oMO7eApDWyrl1qqh0NkrtA/JFL-Bisuteria?node-id=7%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=163%3A5459&show-proto-sidebar=1)
--[Wireframes phone](https://www.figma.com/proto/oMO7eApDWyrl1qqh0NkrtA/JFL-Bisuteria?node-id=165%3A1575&scaling=scale-down&page-id=6%3A2&starting-point-node-id=165%3A1575&show-proto-sidebar=1)
+-  [Wireframes phone](https://www.figma.com/proto/oMO7eApDWyrl1qqh0NkrtA/JFL-Bisuteria?node-id=165%3A1575&scaling=scale-down&page-id=6%3A2&starting-point-node-id=165%3A1575&show-proto-sidebar=1)
 Una vez ingresado, se podrá del lado superior derecho un botón de play el cual los llevará a la navegación de todos los Wireframes del proyecto.
 
 ![Figma preview](https://i.postimg.cc/rFsX8gX7/figma.jpg)
