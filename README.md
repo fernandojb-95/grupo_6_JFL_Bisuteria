@@ -31,3 +31,13 @@ Describiremos algunos sitios que nos agradaron por su diseño y funcionalidad, i
 - [Mister SFC](https://mrsfc.com/ "Mister SFC"). En este sitio podemos encontrar productos similares a los que buscamos ofrecer en nuestro proyecto. Algo que destaca en este sitio es su gama de prodcutos ya que la temática es bastante diversa de series o películas generando una variedad bastante atractiva. De igual manera, nos muestra que no se requiere una gama de colores muy extensa o muchos elementos para lograr captar la atención del usuario
 - [EDTeam](http://https://ed.team/ "EDTeam"). Esta es una plataforma de cursos de programación online, a pesar de que la temática es completamente diferente, una de las características atractivas de este sitio es una función para poder cambiar el modo de visualización (Light/Dark Mode) mediante un botón. También los íconos e imágenes miniatura resultan bastante amigables.
 - [Pitaya](https://www.pitayajoyeria.com/ "Pitaya"). Sitio web que presenta una diseño sencillo y basado en colores claros. Pone a la venta productos similares a los nuestros y los clasifica en distintas categorías en su página de inicio, permitiendo al cliente navegar y encontrar sus productos de una manera más sencilla. Además de presentar efectos que dan un aspecto de dinamismo dentro del sitio, mejorando la experiencia de navegación.
+
+## Wireframes
+En este apartado incluiremos los wireframes que componen nuestro sitio, donde podrán observar la visualización de secciones como el Home, detalle de producto, carrito, formulario de registro y formulario de login, entre otros.
+Para su diseño utilizamos Figma y para poder visualizarlos es necesario ingresar a los siguientes links que les darán el acceso a las vistas del sitio en Desktop y Phone.
+
+- [Wireframes desktop](https://www.figma.com/proto/oMO7eApDWyrl1qqh0NkrtA/JFL-Bisuteria?node-id=7%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=163%3A5459&show-proto-sidebar=1)
+-[Wireframes phone](https://www.figma.com/proto/oMO7eApDWyrl1qqh0NkrtA/JFL-Bisuteria?node-id=165%3A1575&scaling=scale-down&page-id=6%3A2&starting-point-node-id=165%3A1575&show-proto-sidebar=1)
+Una vez ingresado, se podrá del lado superior derecho un botón de play el cual los llevará a la navegación de todos los Wireframes del proyecto.
+
+![Figma preview](https://i.postimg.cc/rFsX8gX7/figma.jpg)
