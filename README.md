@@ -5,14 +5,15 @@
 Les damos la bienvenida a este nuevo concepto de venta de bisutería en línea.
 El objetivo de JFL es brindar accesorios de calidad que acompañen nuestro estilo y personalidad a la hora de vestir.
 
-Nuestros productos están pensados para todas las personas que desean reflejar una personalidad juvenil sin perder la elegancia y el porte.
+Nuestros productos están pensados para todas las personas que desean reflejar una personalidad juvenil sin perder la elegancia y el porte. Sabemos que la edad es solo un número y eso no te define completamente, por lo que nuestro concepto está enfocado a satisfacer los gustos de personas de cualquier edad.
+
 Nuestra marca ofrece los siguientes accesorios:
 
 - **Collares** 📿
 - **Anillos** 💍
-- **Pulseras** 💎
+- **Brazaletes** 💎
 
-Imprimiendo en cada uno de ellos el sello de JFL.
+Buscamos a través de nuestro sitio web que los clientes puedan verificar la calidad y originalidad de cada uno de los diseños y proporcionar una interfaz amigable y segura en la cual se podrán adquirir nuestros productos.
 
 ## Equipo de trabajo
 Nuestro equipo de trabajo está conformado por:
@@ -28,4 +29,4 @@ Describiremos algunos sitios que nos agradaron por su diseño y funcionalidad, i
 
 - [Vidano Clothing](https://vidano.mx/ "Vidano"). De este sitio se puede resaltar su diseño, que con sencillez es bastante agradable de conocer, los elementos que la conforman no saturan el espacio y no te resulta abrumador poder llegar a entender el objetivo de cada elemento de la página. La tipografía nos parece bastante atractiva y ofrece productos que coinciden con nuestro público objetivo.
 - [Mister SFC](https://mrsfc.com/ "Mister SFC"). En este sitio podemos encontrar productos similares a los que buscamos ofrecer en nuestro proyecto. Algo que destaca en este sitio es su gama de prodcutos ya que la temática es bastante diversa de series o películas generando una variedad bastante atractiva. De igual manera, nos muestra que no se requiere una gama de colores muy extensa o muchos elementos para lograr captar la atención del usuario
-
+- [EDTeam](http://https://ed.team/ "EDTeam"). Esta es una plataforma de cursos de programación online, a pesar de que la temática es completamente diferente, una de las características atractivas de este sitio es una función para poder cambiar el modo de visualización (Light/Dark Mode) mediante un botón. También los íconos e imágenes miniatura resultan bastante amigables.
