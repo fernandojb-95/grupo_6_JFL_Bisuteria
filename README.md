@@ -43,3 +43,8 @@ Para su diseño utilizamos Figma y para poder visualizarlos es necesario ingresa
 Una vez ingresado, se podrá del lado superior derecho un botón de play el cual los llevará a la navegación de todos los Wireframes del proyecto.
 
 ![Figma preview](https://i.postimg.cc/rFsX8gX7/figma.jpg)
+
+## Tablero Trello
+El siguiente link los dirigirá hacia el tablero Trello del proyecto donde se podrá observar el flujo de trabajo y avances en las actividades del proyecto.
+
+[Tablero Trello JFL](http://https://trello.com/b/pX7P5e56/equipo-6-dh "Tablero Trello JFL")
