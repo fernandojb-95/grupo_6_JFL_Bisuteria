@@ -11,7 +11,7 @@ ul, li{
 }
 ul.slider{
     position: relative;
-    height: 200px;
+    height: 170px;
 }
 ul.slider li{
     position: absolute;
@@ -32,7 +32,7 @@ ul.slider li:target{
     text-align: center;
     margin: 20px;
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
 }
 .menu-slider li{
     display: inline-block;
@@ -50,7 +50,16 @@ ul.slider li:target{
 /*Texto inicio*/
 .container-02{
     padding: auto;
+}
+h1.titulo{
     font-family: 'Montserrat';
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
+    font-size: 3rem;
+    padding: 2%;
+}
+.container-02 p{
+    font-family: 'Montserrat';
+    font-size: 1,5rem;
+    padding: 2%;
 }
