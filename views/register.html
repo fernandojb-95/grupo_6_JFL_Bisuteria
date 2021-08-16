@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Registro</title>
+</head>
+<body>
+    <header>
+        <picture class="main-logo">
+            <a href="/"></a>
+        </picture>
+        <nav class="options-bar">
+            <ul>
+                <a href="/"><li><i class="fas fa-bars"></i></li></a>
+                <a href="/"><li><i class="fas fa-search"></i></li></a>
+                <a href="/"><li><i class="far fa-user"></i></li></a>
+                <a href="/"><li><i class="far fa-shopping-bag"></i></li></a>
+                <a href="/"><li><i class="far fa-question-circle"></i></li></a>
+            </ul>
+        </nav>
+        <nav class="pages-bar">
+            <ul>
+                <a href=""><li>Anillos</li></a>
+                <a href=""><li>Collares</li></a>
+                <a href=""><li>Brazaletes</li></a>
+                <a href=""><li>Nosotros</li></a>
+                <a href=""><li>Contacto</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="register">
+            <section class="register-title">
+                <h1>Regístrate</h1>
+                <p>Llena los siguientes campos para completar tu registro</p>
+            </section>
+            <form class= "register-form" action="#">
+                <input type="text" placeholder="Nombre(s)" name="user" class="user-input">
+                <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input">
+                <input type="email" placeholder="Correo electrónico" name="email" class="email-input">
+                <input type="password" placeholder="Contraseña" name="password" class="pass-input">
+                <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input"> 
+                <div>
+                    <button type="submit" name="register" class="submit-input">Crear cuenta</button>
+                </div>
+                <p>Ya tienes una cuenta, <a href="/login">Inicia sesión</a></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <section class="footer-options">
+            <ul>
+                <a href=""><li>Contacto</li></a>
+                <a href=""><li>Nosotros</li></a>
+                <a href=""><li>Suscríbete</li></a>
+                <a href=""><li>Servicio al cliente</li></a>
+                <a href=""><li>Política de privacidad</li></a>
+            </ul>
+        </section>
+        <section class="footer-media">
+            <h2>Contáctanos en redes</h2>
+            <div>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </section>
+        <section class="footer-news">
+            <h2>Únete a nuestra comunidad</h2>
+            <p>Suscríbete a nuestro newsletter y recibe noticias y ofertas</p>
+            <form action="#" >
+                <input type="email" placeholder="usuario@correo.com">
+                <input type="submit">
+            </form>
+        </section>
+    </footer>
+</body>
+</html>
