@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <title>JFL Bisuteria</title>
+    <link rel="stylesheet" href="/css/detalle.css">
+    <title>JFL Bisutería</title>
 </head>
 <body>
     <header>
@@ -36,41 +36,48 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <!--Carrusel-->
-        <div class="container-01">
-            <ul class="slider">
-                <li id="slide-1">
-                    <img src="/img/Collares_carrusel.svg" alt="Modelo con collares">
-                </li>
-                <li id="slide-2">
-                    <img src="/img/Anillos_carrusel.svg" alt="Modelo con collares">
-                </li>
-                <li id="slide-3">
-                    <img src="/img/Brazaletes_carrusel.svg" alt="Modelo con collares">
-                </li>
-            </ul>
-            <ul class="menu-slider">
-                <li>
-                    <a href="#slide-1">●︁</i></a>
-                </li>
-                <li>
-                    <a href="#slide-2">●︁</i></a>
-                </li>
-                <li>
-                    <a href="#slide-3">●︁</a>
-                </li>
-            </ul>
-        <!--Texto intro-->
-        <div class="container-02">
-            <h1 class="titulo">Enfocados en tu estilo</h1>
-            <p>En JFL Bisutería nos esforzamos todos los días en crear los mejores 
-                diseños para que puedas lucir tú mejor estilo y sentirte seguro con quien eres.
-                Al final la clase la tienes tú y nosotros te ayudamos a mostrarlo
-            </p>
+        <!-- Vista de producto actual -->
+        <div>
 
         </div>
+
+        <!-- Slider de imágenes -->
+        <div>
+
+        </div>
+
+        <!-- Descripcion del producto -->
+        <div>
+            <h1>Nombre del producto</h1>
+            <p>Descripción breve del producto</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
+            <p>Precio: $$$</p>
+        </div>
+
+        <!-- Seleccion de tallas y cantidades -->
+        <div class="datos-compra">
+            <form action="/" method="GET">
+                <div>
+                    <label for="seleccionTalla">Talla</label>
+                    <label><input type="radio" name="seleccionTalla">S</label>
+                    <label><input type="radio" name="seleccionTalla">M</label>
+                    <label><input type="radio" name="seleccionTalla">L</label>
+                    <label><input type="radio" name="seleccionTalla">XL</label>
+                </div>
+
+                <div>
+                    <label for="cantidad">Cantidad</label> 
+                </div>
+
+                <div class="contenedor-btn">
+                    <button type="submit" class="btn">Añadir al carrito</button>
+                </div>
+            </form>
+        </div>
     </main>
+
     <footer>
         <section class="footer-options">
             <ul>
@@ -98,5 +105,6 @@
             </form>
         </section>
     </footer>
+    
 </body>
 </html>

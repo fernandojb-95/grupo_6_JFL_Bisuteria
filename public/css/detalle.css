@@ -1,0 +1,14 @@
+.btn{
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+}
+
+.datos-compra{
+    margin-bottom: 20px;
+}
+.contenedor-btn{
+    text-align: center;
+}

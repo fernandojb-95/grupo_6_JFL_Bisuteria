@@ -21,10 +21,10 @@ header{
     padding-top: 20px;
 }
 .main-logo a{
-    background-image: url('../img/JFL-Logo.jpg');
+    background-image: url('../img/JFL-Logo.svg');
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 215px;

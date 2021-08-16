@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static(path.resolve(__dirname , './public')))
 app.listen(3000, () => {
     console.log("Server running at port 3000")
-});
+})
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'))
@@ -18,4 +18,12 @@ app.get('/register', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/login.html'))
-} )
+})
+
+app.get('/detalle', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/detalle.html'))
+})
+
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/carrito.html'))
+})
