@@ -11,3 +11,11 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'))
 } )
+
+app.get('/detalle', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/detalle.html'))
+} )
+
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/carrito.html'))
+} )
