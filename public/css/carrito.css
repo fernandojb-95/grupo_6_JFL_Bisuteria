@@ -1,0 +1,70 @@
+/* Estilos del encabezado */
+.encabezado{
+    text-align: center;
+}
+
+/* Estilos de visualizacion de productos */
+
+.visualizacion-productos{
+    background-color: #C5AC28;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.imagen-producto{
+    width: 20%;
+}
+
+.imagen-producto img{
+    width: 100%;
+}
+
+.resumen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    font-weight: bold;
+}
+
+/* Estilos de la seccion de precios */
+
+.precios{
+    margin-top: 20px;
+    border-top: solid 1px black;
+    padding-top: 5px;
+    display:flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.desglose-indiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btn-pagar{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-pagar button{
+    background-color: #C5AC28;
+    color: white;
+    height: 30px;
+    width: 50%;
+    border: none;
+    border-radius: 20px;
+
+}
+
