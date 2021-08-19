@@ -2,7 +2,7 @@ body{
     height: 100vh;
 }
 main{
-    margin: 30px auto;
+    margin-top: 30px;
 }
 .register-title{
     padding: 30px 15px;
@@ -30,48 +30,9 @@ main{
     width: 50%;
 }
 .register-form .submit-input{
-    display: block;
     width: 60%;
-    height: 30px;
     margin: 0 auto 20px;
-    position: relative;
-    border: none;
-    background-color: #A58E17;
-    color: #000000;
-}
-.register-form input:focus{
-    border: 2px solid #817a7a;
-    box-shadow: 3px 3px 10px #817a7a ;
-}
-.register-form .submit-input::after, .register-form .submit-input::before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20%;
-    height: 20%;
-    border: 2px solid;
-    transition: all 0.6s linear;
-    border-radius: 2px;
-}
-.register-form .submit-input::after{
-    bottom: 0;
-    right: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: #000000;
-    border-right-color: #000000;
-}
-.register-form .submit-input::before{
-    top: 0;
-    left: 0;
-    border-top-color: #000000;
-    border-left-color: #000000;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-}
-.register-form .submit-input:hover:after, .register-form .submit-input:hover:before{
-    width: 100%;
-    height: 100%;
+
 }
 /*-------------------Media querie para tablet---------------------*/
 @media(min-width: 768px){
@@ -98,6 +59,6 @@ main{
 }
 
 /*-------------------Media querie para desktop---------------------*/
-@media(min-width: 1000px){
+@media(min-width: 1025px){
 
 }

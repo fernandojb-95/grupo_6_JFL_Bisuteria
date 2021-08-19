@@ -7,7 +7,65 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
-
+main{
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+input{
+    border-radius: 5px;
+}
+/*Estilos principales de botón*/
+button[type="submit"]{
+    height: 30px;
+    color: #000000;
+    background-color: #A58E17;
+    font-weight: bold;
+    border: none;
+    display: block;
+    position: relative;
+}
+button[type="submit"]:focus{
+    border: 2px solid #817a7a;
+    box-shadow: 3px 3px 10px #817a7a ;
+}
+button[type="submit"]::after, button[type="submit"]::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border: 3px solid;
+    transition: all 0.6s linear;
+    border-radius: 2px;
+}
+button[type="submit"]::after{
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+button[type="submit"]::before{
+    top: 0;
+    left: 0;
+    border-top-color: #000000;
+    border-left-color: #000000;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+button[type="submit"]:hover:after, button[type="submit"]:hover:before{
+    width: 100%;
+    height: 100%;
+}
+/*Estilos principales de etiquetas ancla*/
+a{
+    transition: all 0.3s ease
+}
+a:hover{
+    transform: scale(1.2);
+}
 /*---------Maquetado del header----------*/
 header{
     min-width: 320px;
@@ -44,9 +102,7 @@ header{
 .options-bar a{
     color: white;
 }
-.options-bar a:hover{
-    transform: scale(1.3);
-}
+
 /*Navegación de páginas*/
 .pages-bar{
     display: none;
@@ -56,6 +112,7 @@ header{
 footer{
     background-color: #000000;
     color: #ffffff;
+    padding-bottom: 20px;
 }
 
 /*Barra de opciones*/
@@ -114,16 +171,13 @@ footer form{
 }
 footer input{
     width: 80%;
-    border-radius: 20px;
     font-size: 16px;
     margin-bottom: 10px;
     text-align: center;
     max-width: 320px;
 }
-footer input:nth-of-type(2){
+footer button{
     width: 30%;
-    background-color: #A58E17;
-    color: #ffffff;
 }
 
 /*-------------------Media querie para tablet-------------------*/
@@ -173,7 +227,7 @@ footer input:nth-of-type(2){
 }
 
 /*-------------------Media querie para desktop-------------------*/
-@media(min-width: 1020px){
+@media(min-width: 1025px){
     /*--------Footer-------*/
     .footer-options{
         width: 25%;

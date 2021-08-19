@@ -11,23 +11,16 @@
 .visualizacion-productos{
     background-color: #C5AC28;
     display: flex;
-    justify-content: center;
-    height: 110px;
+    justify-content: space-between;
     margin-bottom: 30px;
 
 }
-
 .imagen-producto{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 25%;
 }
 
-.img{
+.imagen-producto .img{
     width: 100%;
-    height: 100%;
     padding: 5px;
 }
 
@@ -35,19 +28,29 @@
 .resumen{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 30%;
+    justify-content: space-evenly;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
+    width: 35%;
 }
+/* .resumen p{
+    margin: 10px;
+} */
 
 .total{
     display: flex;
-    justify-content:flex-end;
+    flex-direction: column;
+    justify-content:space-around;
     align-items: center;
-    width: 40%;
+    width: 30%;
     font-weight: bold;
-    padding-right: 10px;
+    padding-right: 20px;
+}
+
+.total button{
+    width: 80%;
+    max-width: 160px;
+    background-color: #ffffff;
 }
 
 /* Estilos de la seccion de precios */
@@ -78,28 +81,24 @@
 }
 
 .btn-pagar button{
-    background-color: #C5AC28;
-    color: white;
-    height: 35px;
     width: 60%;
-    border: none;
-    border-radius: 20px;
-
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 
 /* Estilos para media querie*/
-@media(min-width:768px) {
+@media(min-width:1025px) {
     .carrito-general{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     
     .cuadro-productos{
-        width: 60%;
-        margin-right: 20px;
-        margin-left: 40px;
+        width: 65%;
     }
 
     .cuadro-resumen{
@@ -112,27 +111,26 @@
         padding-top: 30px;
         border-top: none;
         justify-content: flex-start;
-        padding-left: 30px;
-        font-size: 20px;
+        padding-left: 15px;
+        font-size: 18px;
 
     }
 
     .visualizacion-productos{
-        height: 150px;
+        /* height: 150px; */
         width: 100%;
 
     }
 
     .resumen{
-        justify-content: center;
-        padding-left: 20px;
-        font-size: 20px;
+        /* justify-content: center;
+        padding-left: 20px; */
+        font-size: 18px;
     }
 
     .total{
         margin-right: 30px;
-        font-size: 24px;
-        font-weight: normal;
+        font-size: 18px;
     }
 
     .btn-pagar button{

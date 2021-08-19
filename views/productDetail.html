@@ -22,7 +22,7 @@
                 <a href="/"><li><i class="fas fa-bars"></i></li></a>
                 <a href="/"><li><i class="fas fa-search"></i></li></a>
                 <a href="/login"><li><i class="far fa-user"></i></li></a>
-                <a href="/"><li><i class="far fa-shopping-bag"></i></li></a>
+                <a href="/productCart"><li><i class="far fa-shopping-bag"></i></li></a>
                 <a href="/"><li><i class="far fa-question-circle"></i></li></a>
             </ul>
         </nav>
@@ -43,68 +43,70 @@
 
         <div class="imagenes">
             <!-- Vista de producto actual -->
-        <div>
-            <img class="imagen-principal" src="/img/Imagen1_detalle.png" alt="">
+            <div>
+                <img class="imagen-principal" src="/img/Imagen1_detalle.png" alt="">
+            </div>
+
+             <!-- Slider de imágenes -->
+            <div class="selector-imagenes">
+                <button><i class="fas fa-chevron-left"></i></button>
+                <div class="img-container">
+                    <img class="imagen1-detalle" src="/img/Imagen2_detalle.png" alt="imagen1producto">
+                </div>
+                <div class="img-container">
+                    <img class="imagen2-detalle" src="/img/Imagen2_detalle.png" alt="imagen2producto">
+                </div>
+                <div class="img-container">
+                    <img class="imagen3-detalle" src="img/Imagen3_detalle.png" alt="imagen3producto">
+                </div>
+                <button><i class="fas fa-chevron-right"></i></button>
+            </div>            
         </div>
-
-        <!-- Slider de imágenes -->
-        <div class="selector-imagenes">
-
-            <p> &lt; </p>
-
-            <div>
-                <img class="imagen1-detalle" src="/img/Imagen2_detalle.png" alt="imagen1producto">
-            </div>
-
-            <div>
-                <img class="imagen2-detalle" src="/img/Imagen2_detalle.png" alt="imagen2producto">
-            </div>
-
-            <div>
-                <img class="imagen3-detalle" src="img/Imagen3_detalle.png" alt="imagen3producto">
-            </div>
-
-            <p>&gt;</p>
-
-        </div>
-    </div>
-
-
-    <div class="descripciones">
+        <!-- </div> -->
+        <div class="descripciones">
             <!-- Descripcion del producto -->
-        <div class="datos-producto">
-            <h1 class="nombre-producto">Nombre del producto</h1>
-            <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
-        </div>
-
-        <!-- Seleccion de tallas y cantidades -->
-        <div class="datos-compra">
-            <p class="resalta-campo"> Precio: </p> 
-
-            <div>
-                <label class="resalta-campo" for="seleccionTalla">Talla: </label>
-                <label><input type="radio" name="seleccionTalla">S</label>
-                <label><input type="radio" name="seleccionTalla">M</label>
-                <label><input type="radio" name="seleccionTalla">L</label>
-                <label><input type="radio" name="seleccionTalla">XL</label>
+            <div class="datos-producto">
+                <h1 class="nombre-producto">Nombre del producto</h1>
+                <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
             </div>
 
-            <div>
-                <label class="resalta-campo" for="cantidad">Cantidad:</label> 
+            <!-- Seleccion de tallas y cantidades -->
+            <div class="datos-compra">
+                <form action="">
+                    <div class="resalta-campo">
+                        <label for="price"> Precio: </label> <span id="price">$300.00</span>
+                    </div>
+                    <div class="resalta-campo">
+                        <label for="seleccionTalla">Talla: </label>
+                        <select name="size" id="seleccionTalla">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <!-- <label><input type="radio" name="seleccionTalla">S</label>
+                        <label><input type="radio" name="seleccionTalla">M</label>
+                        <label><input type="radio" name="seleccionTalla">L</label>
+                        <label><input type="radio" name="seleccionTalla">XL</label> -->
+                    </div>
+                    <div class="resalta-campo">
+                        <label  for="cantidad">Cantidad:</label>
+                        <select name="quantity" id="cantidad" class="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> 
+                    </div>
+                    <div class="contenedor-btn">
+                        <button type="submit" class="btn">Añadir al carrito</button>
+                    </div>
+                </form>
             </div>
-
         </div>
-
-        <div class="contenedor-btn">
-            <button type="submit" class="btn">Añadir al carrito</button>
-        </div>
-    </div>
-
-
-
-    </section>    
-        
-    </main>
+    </section>     
+</main>
 
     <footer>
         <section class="footer-options">
@@ -119,9 +121,9 @@
         <section class="footer-media">
             <h2>Contáctanos en redes</h2>
             <div>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-whatsapp"></i>
-                <i class="fab fa-instagram"></i>
+                <a href="/"><i class="fab fa-facebook"></i></a>
+                <a href="/"><i class="fab fa-whatsapp"></i></a>
+                <a href="/"><i class="fab fa-instagram"></i></a>
             </div>
         </section>
         <section class="footer-news">
@@ -129,7 +131,7 @@
             <p>Suscríbete a nuestro newsletter y recibe noticias y ofertas</p>
             <form action="#" >
                 <input type="email" placeholder="usuario@correo.com">
-                <input type="submit">
+                <button type="submit">Enviar</button>
             </form>
         </section>
     </footer>
