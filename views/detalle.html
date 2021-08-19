@@ -40,42 +40,59 @@
     <main>
         <!-- Vista de producto actual -->
         <div>
-            <img src="/img/Anillos_carrusel.svg" alt="">
+            <img class="imagen-principal" src="/img/Imagen1_detalle.png" alt="">
         </div>
 
         <!-- Slider de imágenes -->
-        <div>
+        <div class="selector-imagenes">
+
+            <p> &lt; </p>
+
+            <div>
+                <img class="imagen1-detalle" src="/img/Imagen2_detalle.png" alt="imagen1producto">
+            </div>
+
+            <div>
+                <img class="imagen2-detalle" src="/img/Imagen2_detalle.png" alt="imagen2producto">
+            </div>
+
+            <div>
+                <img class="imagen3-detalle" src="img/Imagen3_detalle.png" alt="imagen3producto">
+            </div>
+
+            <p>&gt;</p>
 
         </div>
 
         <!-- Descripcion del producto -->
-        <div>
-            <h1>Nombre del producto</h1>
-            <p>Descripción breve del producto</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
-            <p>Precio: $$$</p>
+        <div class="datos-producto">
+            <h1 class="nombre-producto">Nombre del producto</h1>
+            <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
         </div>
 
         <!-- Seleccion de tallas y cantidades -->
         <div class="datos-compra">
-            <form action="/" method="GET">
-                <div>
-                    <label for="seleccionTalla">Talla</label>
-                    <label><input type="radio" name="seleccionTalla">S</label>
-                    <label><input type="radio" name="seleccionTalla">M</label>
-                    <label><input type="radio" name="seleccionTalla">L</label>
-                    <label><input type="radio" name="seleccionTalla">XL</label>
-                </div>
+            <p class="resalta-campo"> Precio </p> 
 
-                <div>
-                    <label for="cantidad">Cantidad</label> 
-                </div>
+            <div>
+                <label class="resalta-campo" for="seleccionTalla">Talla</label>
+                <label><input type="radio" name="seleccionTalla">S</label>
+                <label><input type="radio" name="seleccionTalla">M</label>
+                <label><input type="radio" name="seleccionTalla">L</label>
+                <label><input type="radio" name="seleccionTalla">XL</label>
+            </div>
 
-                <div class="contenedor-btn">
-                    <button type="submit" class="btn">Añadir al carrito</button>
-                </div>
-            </form>
+            <div>
+                <label class="resalta-campo" for="cantidad">Cantidad</label> 
+            </div>
+
         </div>
+
+        <div class="contenedor-btn">
+            <button type="submit" class="btn">Añadir al carrito</button>
+        </div>
+
+
     </main>
 
     <footer>
