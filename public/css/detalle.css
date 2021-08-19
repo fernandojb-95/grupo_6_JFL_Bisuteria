@@ -74,3 +74,58 @@
 .imagen3-detalle{
     width: 90%;
 }
+
+/* Estilos para antes del media querie */
+.descripcion-producto{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagenes{
+    width: 100%;
+}
+
+
+/*Estilos para media querie*/
+@media(min-width:768px) {
+
+    .descripcion-producto{
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagenes{
+        width: 30%;
+
+    }
+
+    .descripciones{
+        width: 40%;
+        margin-top: 50px;
+
+    }
+
+    .nombre-producto{
+        font-size: 36px;
+    }
+
+    .descripcion-producto{
+        font-size: 22px;
+    }
+
+    .resalta-campo{
+        font-size: 30px;
+        
+    }
+
+    .datos-compra{
+        height: 200px;
+    }
+    .btn{
+        margin-top: 50px;
+        height: 50px;
+        width: 80%;
+        font-size: 35px;
+    }
+}
+

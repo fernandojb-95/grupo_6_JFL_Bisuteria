@@ -38,7 +38,11 @@
     </header>
 
     <main>
-        <!-- Vista de producto actual -->
+
+    <section class="descripcion-producto">
+
+        <div class="imagenes">
+            <!-- Vista de producto actual -->
         <div>
             <img class="imagen-principal" src="/img/Imagen1_detalle.png" alt="">
         </div>
@@ -63,8 +67,11 @@
             <p>&gt;</p>
 
         </div>
+    </div>
 
-        <!-- Descripcion del producto -->
+
+    <div class="descripciones">
+            <!-- Descripcion del producto -->
         <div class="datos-producto">
             <h1 class="nombre-producto">Nombre del producto</h1>
             <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
@@ -72,10 +79,10 @@
 
         <!-- Seleccion de tallas y cantidades -->
         <div class="datos-compra">
-            <p class="resalta-campo"> Precio </p> 
+            <p class="resalta-campo"> Precio: </p> 
 
             <div>
-                <label class="resalta-campo" for="seleccionTalla">Talla</label>
+                <label class="resalta-campo" for="seleccionTalla">Talla: </label>
                 <label><input type="radio" name="seleccionTalla">S</label>
                 <label><input type="radio" name="seleccionTalla">M</label>
                 <label><input type="radio" name="seleccionTalla">L</label>
@@ -83,7 +90,7 @@
             </div>
 
             <div>
-                <label class="resalta-campo" for="cantidad">Cantidad</label> 
+                <label class="resalta-campo" for="cantidad">Cantidad:</label> 
             </div>
 
         </div>
@@ -91,8 +98,12 @@
         <div class="contenedor-btn">
             <button type="submit" class="btn">Añadir al carrito</button>
         </div>
+    </div>
 
 
+
+    </section>    
+        
     </main>
 
     <footer>
