@@ -1,6 +1,9 @@
 /* Estilos del encabezado */
 .encabezado{
     text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* Estilos de visualizacion de productos */
@@ -8,31 +11,42 @@
 .visualizacion-productos{
     background-color: #C5AC28;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    height: 110px;
+    margin-bottom: 30px;
 
 }
 
 .imagen-producto{
-    width: 20%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.imagen-producto img{
+.img{
     width: 100%;
+    height: 100%;
+    padding: 5px;
 }
+
 
 .resumen{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 20%;
+    justify-content: space-around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 30%;
 }
 
 .total{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 20%;
+    justify-content:flex-end;
+    align-items: center;
+    width: 40%;
     font-weight: bold;
+    padding-right: 10px;
 }
 
 /* Estilos de la seccion de precios */
@@ -40,16 +54,20 @@
 .precios{
     margin-top: 20px;
     border-top: solid 1px black;
-    padding-top: 5px;
+    padding-top: 10px;
     display:flex;
     justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 50px;
 }
 
 .desglose-indiv{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.desglose-indiv p{
+    padding-bottom: 12px;
 }
 
 .btn-pagar{
@@ -61,10 +79,57 @@
 .btn-pagar button{
     background-color: #C5AC28;
     color: white;
-    height: 30px;
-    width: 50%;
+    height: 35px;
+    width: 60%;
     border: none;
     border-radius: 20px;
 
 }
 
+
+/* Estilos para media querie */
+@media(min-width:768px) {
+    .carrito-general{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .cuadro-productos{
+        width: 60%;
+        margin-right: 20px;
+        margin-left: 40px;
+    }
+
+    .cuadro-resumen{
+        width: 30%;
+        border-left: solid 1px black;
+        margin-bottom: 30px;
+    }
+
+    .precios{
+        border-top: none;
+        justify-content: flex-start;
+        padding-left: 30px;
+        font-size: 32px;
+
+    }
+
+    .visualizacion-productos{
+        height: 180px;
+        width: 100%;
+
+    }
+
+    .resumen{
+        justify-content: center;
+        padding-left: 20px;
+        font-size: 26px;
+    }
+
+    .total{
+        margin-right: 30px;
+        font-size: 32px;
+        font-weight: normal;
+    }
+
+}
