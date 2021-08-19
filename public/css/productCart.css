@@ -1,0 +1,140 @@
+/* Estilos del encabezado */
+.encabezado{
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos de visualizacion de productos */
+
+.visualizacion-productos{
+    background-color: #C5AC28;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+}
+.imagen-producto{
+    width: 25%;
+}
+
+.imagen-producto .img{
+    width: 100%;
+    padding: 5px;
+}
+
+
+.resumen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
+    width: 35%;
+}
+/* .resumen p{
+    margin: 10px;
+} */
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    width: 30%;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.total button{
+    width: 80%;
+    max-width: 160px;
+    background-color: #ffffff;
+}
+
+/* Estilos de la seccion de precios */
+
+.precios{
+    margin-top: 20px;
+    border-top: solid 1px black;
+    padding-top: 10px;
+    display:flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+}
+
+.desglose-indiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.desglose-indiv p{
+    padding-bottom: 12px;
+}
+
+.btn-pagar{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-pagar button{
+    width: 60%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Estilos para media querie*/
+@media(min-width:1025px) {
+    .carrito-general{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .cuadro-productos{
+        width: 65%;
+    }
+
+    .cuadro-resumen{
+        width: 30%;
+        border-left: solid 1px black;
+        margin-bottom: 30px;
+    }
+
+    .precios{
+        padding-top: 30px;
+        border-top: none;
+        justify-content: flex-start;
+        padding-left: 15px;
+        font-size: 18px;
+
+    }
+
+    .visualizacion-productos{
+        /* height: 150px; */
+        width: 100%;
+
+    }
+
+    .resumen{
+        /* justify-content: center;
+        padding-left: 20px; */
+        font-size: 18px;
+    }
+
+    .total{
+        margin-right: 30px;
+        font-size: 18px;
+    }
+
+    .btn-pagar button{
+        width: 80%;
+    }
+
+}

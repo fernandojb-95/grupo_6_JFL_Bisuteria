@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <title>JFL Bisutería</title>
+</head>
+<body>
+    <header>
+        <picture class="main-logo">
+            <a href="/"></a>
+        </picture>
+        <nav class="options-bar">
+            <ul>
+                <a href="/"><li><i class="fas fa-bars"></i></li></a>
+                <a href="/"><li><i class="fas fa-search"></i></li></a>
+                <a href="/login"><li><i class="far fa-user"></i></li></a>
+                <a href="/productCart"><li><i class="far fa-shopping-bag"></i></li></a>
+                <a href="/"><li><i class="far fa-question-circle"></i></li></a>
+            </ul>
+        </nav>
+        <nav class="pages-bar">
+            <ul>
+                <a href=""><li>Anillos</li></a>
+                <a href=""><li>Collares</li></a>
+                <a href=""><li>Brazaletes</li></a>
+                <a href=""><li>Nosotros</li></a>
+                <a href=""><li>Contacto</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+    <section class="descripcion-producto">
+
+        <div class="imagenes">
+            <!-- Vista de producto actual -->
+            <div>
+                <img class="imagen-principal" src="/img/Imagen1_detalle.png" alt="">
+            </div>
+
+             <!-- Slider de imágenes -->
+            <div class="selector-imagenes">
+                <button><i class="fas fa-chevron-left"></i></button>
+                <div class="img-container">
+                    <img class="imagen1-detalle" src="/img/Imagen2_detalle.png" alt="imagen1producto">
+                </div>
+                <div class="img-container">
+                    <img class="imagen2-detalle" src="/img/Imagen2_detalle.png" alt="imagen2producto">
+                </div>
+                <div class="img-container">
+                    <img class="imagen3-detalle" src="img/Imagen3_detalle.png" alt="imagen3producto">
+                </div>
+                <button><i class="fas fa-chevron-right"></i></button>
+            </div>            
+        </div>
+        <!-- </div> -->
+        <div class="descripciones">
+            <!-- Descripcion del producto -->
+            <div class="datos-producto">
+                <h1 class="nombre-producto">Nombre del producto</h1>
+                <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
+            </div>
+
+            <!-- Seleccion de tallas y cantidades -->
+            <div class="datos-compra">
+                <form action="">
+                    <div class="resalta-campo">
+                        <label for="price"> Precio: </label> <span id="price">$300.00</span>
+                    </div>
+                    <div class="resalta-campo">
+                        <label for="seleccionTalla">Talla: </label>
+                        <select name="size" id="seleccionTalla">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <!-- <label><input type="radio" name="seleccionTalla">S</label>
+                        <label><input type="radio" name="seleccionTalla">M</label>
+                        <label><input type="radio" name="seleccionTalla">L</label>
+                        <label><input type="radio" name="seleccionTalla">XL</label> -->
+                    </div>
+                    <div class="resalta-campo">
+                        <label  for="cantidad">Cantidad:</label>
+                        <select name="quantity" id="cantidad" class="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> 
+                    </div>
+                    <div class="contenedor-btn">
+                        <button type="submit" class="btn">Añadir al carrito</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>     
+</main>
+
+    <footer>
+        <section class="footer-options">
+            <ul>
+                <a href=""><li>Contacto</li></a>
+                <a href=""><li>Nosotros</li></a>
+                <a href=""><li>Suscríbete</li></a>
+                <a href=""><li>Servicio al cliente</li></a>
+                <a href=""><li>Política de privacidad</li></a>
+            </ul>
+        </section>
+        <section class="footer-media">
+            <h2>Contáctanos en redes</h2>
+            <div>
+                <a href="/"><i class="fab fa-facebook"></i></a>
+                <a href="/"><i class="fab fa-whatsapp"></i></a>
+                <a href="/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+        <section class="footer-news">
+            <h2>Únete a nuestra comunidad</h2>
+            <p>Suscríbete a nuestro newsletter y recibe noticias y ofertas</p>
+            <form action="#" >
+                <input type="email" placeholder="usuario@correo.com">
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </footer>
+    
+</body>
+</html>
