@@ -43,11 +43,11 @@
                 <p>Llena los siguientes campos para completar tu registro</p>
             </section>
             <form class= "register-form" action="#">
-                <input type="text" placeholder="Nombre(s)" name="user" class="user-input">
-                <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input">
-                <input type="email" placeholder="Correo electrónico" name="email" class="email-input">
-                <input type="password" placeholder="Contraseña" name="password" class="pass-input">
-                <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input"> 
+                <input type="text" placeholder="Nombre(s)" name="user" class="user-input" required >
+                <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input" required>
+                <input type="email" placeholder="Correo electrónico" name="email" class="email-input" required>
+                <input type="password" placeholder="Contraseña" name="password" class="pass-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
+                <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required> 
                 <div>
                     <button type="submit" name="register" class="submit-input">Crear cuenta</button>
                 </div>

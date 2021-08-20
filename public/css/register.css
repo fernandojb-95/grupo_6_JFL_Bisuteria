@@ -32,7 +32,10 @@ main{
 .register-form .submit-input{
     width: 60%;
     margin: 0 auto 20px;
-
+}
+.register-form input:focus{
+    border: 2px solid #817a7a;
+    box-shadow: 3px 3px 10px #817a7a ;
 }
 /*-------------------Media querie para tablet---------------------*/
 @media(min-width: 768px){
