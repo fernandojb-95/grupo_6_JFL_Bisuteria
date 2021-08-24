@@ -1,4 +1,4 @@
-/*Carusel*/
+/* Carusel
 .container-01{
     width: 100%;
 }
@@ -26,6 +26,62 @@ ul.slider li:first-child{
 }
 ul.slider li:target{
     opacity: 1;
+} */
+.container-001{
+    width: 100%;
+    overflow-x: hidden;
+}
+.slider{
+    width: 400vw;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: banner 15s 3s linear infinite normal;
+}
+.slider > div{
+    width: 100vw;
+    height: 200px;
+    /* background-image: url('../img/Inicio/Anillos_carrusel.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 218px;
+}
+.slide-1{
+    background-image: url('../img/Inicio/Brazaletes_carrusel.svg');
+}
+.slide-2{
+    background-image: url('../img/Inicio/Anillos_carrusel.svg');
+}
+.slide-3{
+    background-image: url('../img/Inicio/Collares_carrusel.svg');
+}
+
+
+@keyframes banner {
+    16%{
+        /* left: -100vw; */
+        transform: translateX(-100vw);
+    }
+    32%{
+        transform: translateX(-100vw);
+        /* left: -100vw; */
+    }
+    50%{
+        /* left: -200vw; */
+        transform: translateX(-200vw);
+    }
+    66%{
+        /* left: -200vw; */
+        transform: translateX(-200vw);
+    }
+    83%{
+        /* left: -200vw; */
+        transform: translateX(-300vw);
+    }
+    100%{
+        /* left: -200vw; */
+        transform: translateX(-300vw);
+    }
 }
 /*Menu Carrusel*/
 .menu-slider{
@@ -94,12 +150,12 @@ h1.titulo{
     padding-bottom: 3px;
     color: #C5AC28;
     text-align: center;
-    font-size: 1.5em;    
+    font-size: 1.5em;
 }
 .container-03 .card .face.face2 .content p{
     position: relative;
     top: 10px;
-    padding: 10px; 
+    padding: 10px;
     color:#fff;
 }
 .container-03 .card .face.face2 .content a{
@@ -111,7 +167,7 @@ h1.titulo{
     color: #C5AC28;
     padding: 5px;
     background-color: #fff;
-    
+
 }
 .container-03 .card .face.face2 .content a:hover{
     background: #C5AC28;
@@ -159,5 +215,5 @@ h1.titulo{
         background-color:#fff;
         height: 600px;
     }
-    
+
 }
