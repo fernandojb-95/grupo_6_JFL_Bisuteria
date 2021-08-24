@@ -148,7 +148,10 @@ footer{
 .footer-media i{
     font-size: 70px;
 }
-.fa-facebook{
+footer i{
+    color: #ffffff;
+}
+/* .fa-facebook{
     color: #014C83;
 }
 .fa-instagram{
@@ -156,7 +159,7 @@ footer{
 }
 .fa-whatsapp{
     color: #22A948;
-}
+} */
 
 /*Suscripción al newsletter*/
 .footer-news{
