@@ -1,8 +1,11 @@
 body{
     height: 100vh;
 }
-main{
+.register{
     margin-top: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 20px;
 }
 .register-title{
     padding: 30px 15px;
@@ -11,54 +14,91 @@ main{
 .register-title h1{
     font-size: 26px;
 }
-.register-form{
+.tec-inputs{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;
 }
-.register-form input {
+.tec-inputs > input {
     width: 70%;
-    max-width: 350px;
+    max-width: 400px;
     margin-bottom: 25px;
     height: 30px;
     padding-left: 10px;
     border: 1px solid #817a7a;
     outline: none;
 }
-.register-form div{
+.tec-inputs > div{
     width: 50%;
 }
-.register-form .submit-input{
+.checkitems .submit-input{
     width: 60%;
-    margin: 0 auto 20px;
-
+    margin: 20px auto;
+}
+.tec-inputs input:focus{
+    border: 2px solid #817a7a;
+    box-shadow: 3px 3px 10px #817a7a ;
+}
+.tec-inputs .checkitems{
+    width: 70%;
+}
+.check{
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.check input{
+    /* width: 30px;
+    height: 30px; */
+    margin-right: 25px;
+}
+.register p{
+    text-align: center;
 }
 /*-------------------Media querie para tablet---------------------*/
 @media(min-width: 768px){
     .register{
         width: 80%;
-        margin: 20px auto 100px ;
+        margin: 20px auto;
         border: 1px solid #817a7a;
         max-width: 800px;
     }
-    .register-form {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-
+    .tec-inputs {
+        flex-direction: column;
     }
-    .register-form input, .register-form div{
-        width: 35%;
-        max-width: none;
+    .tec-inputs input, .tec-inputs div{
+        /* width: 35%; */
+        max-width: 400px;
     }
-    .register-form p{
+    .tec-inputs p{
         width: 100%;
         text-align: center;
     }
 }
-
 /*-------------------Media querie para desktop---------------------*/
 @media(min-width: 1025px){
-
+    main{
+        background-image: url('../img/login-image.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0.5px;
+    }
+    .register-form{
+        display: flex;
+        flex-direction: row;
+    }
+    .register-title{
+        width: 100%;
+    }
+    .tec-inputs{
+    width: 50%;
+}
+.checkitems{
+    width: 50%;
+    align-self: center;
+}
 }

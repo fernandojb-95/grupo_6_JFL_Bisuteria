@@ -6,11 +6,13 @@
 }
 body{
     font-family: 'Montserrat', sans-serif;
+    
 }
 main{
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    min-width: 390px;
 }
 input{
     border-radius: 5px;
@@ -18,8 +20,8 @@ input{
 /*Estilos principales de botón*/
 button[type="submit"]{
     height: 30px;
-    color: #000000;
-    background-color: #A58E17;
+    color: #A58E17;
+    background-color: transparent;
     font-weight: bold;
     border: none;
     display: block;
@@ -44,14 +46,14 @@ button[type="submit"]::after{
     right: 0;
     border-top-color: transparent;
     border-left-color: transparent;
-    border-bottom-color: #000000;
-    border-right-color: #000000;
+    border-bottom-color: #A58E17;
+    border-right-color: #A58E17;
 }
 button[type="submit"]::before{
     top: 0;
     left: 0;
-    border-top-color: #000000;
-    border-left-color: #000000;
+    border-top-color: #A58E17;
+    border-left-color: #A58E17;
     border-bottom-color: transparent;
     border-right-color: transparent;
 }
@@ -68,7 +70,7 @@ a:hover{
 }
 /*---------Maquetado del header----------*/
 header{
-    min-width: 320px;
+    min-width: 390px;
     background-color: black;
     padding-bottom: 20px;
 }
@@ -113,6 +115,7 @@ footer{
     background-color: #000000;
     color: #ffffff;
     padding-bottom: 20px;
+    min-width: 390px;
 }
 
 /*Barra de opciones*/
@@ -145,7 +148,10 @@ footer{
 .footer-media i{
     font-size: 70px;
 }
-.fa-facebook{
+footer i{
+    color: #ffffff;
+}
+/* .fa-facebook{
     color: #014C83;
 }
 .fa-instagram{
@@ -153,7 +159,7 @@ footer{
 }
 .fa-whatsapp{
     color: #22A948;
-}
+} */
 
 /*Suscripción al newsletter*/
 .footer-news{

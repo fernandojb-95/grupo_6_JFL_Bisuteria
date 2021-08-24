@@ -43,16 +43,29 @@
                 <p>Llena los siguientes campos para completar tu registro</p>
             </section>
             <form class= "register-form" action="#">
-                <input type="text" placeholder="Nombre(s)" name="user" class="user-input">
-                <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input">
-                <input type="email" placeholder="Correo electrónico" name="email" class="email-input">
-                <input type="password" placeholder="Contraseña" name="password" class="pass-input">
-                <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input"> 
-                <div>
-                    <button type="submit" name="register" class="submit-input">Crear cuenta</button>
+                <div class="tec-inputs">
+                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" required >
+                    <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input" required>
+                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" required>
+                    <input type="password" placeholder="Contraseña" name="password" class="pass-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
+                    <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
                 </div>
-                <p>Ya tienes una cuenta, <a href="/login">Inicia sesión</a></p>
+                <div class="checkitems">
+                    <div class="check">
+                        <input type="checkbox" id="politics" required>
+                        <label for="politics">No Autorizo la creación de mi cuenta JFL Bisutería con mi dirección de correo electrónico de condividad con lo descrito en la Política de Privacidad.
+                        </label>
+                    </div>
+                    <div class="check" action="#">
+                        <input type="checkbox" id="news">
+                        <label for="news">Quiero recibir promociones y noticias a mi correo electrónico.</label>
+                    </div>
+                    <div>
+                        <button type="submit" name="register" class="submit-input">Crear cuenta</button>
+                    </div>
+                </div> 
             </form>
+                <p>Ya tienes una cuenta, <a href="/login">Inicia sesión</a></p>
         </div>
     </main>
 </body>
