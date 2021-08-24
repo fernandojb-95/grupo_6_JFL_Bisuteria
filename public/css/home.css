@@ -65,18 +65,19 @@ h1.titulo{
 }
 /*Enlace productos*/
 .container-03{
-    width: 90%;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     left: 20px;
-    justify-content: space-between;
+    justify-content: center;
 }
 .container-03 .card{
     background-color: #000;
     height: 460px;
     margin: 20px 0px 40px 0px;
+    align-items: center;
 }
 .container-03 .card .face{
     width: 300px;
@@ -118,8 +119,14 @@ h1.titulo{
     color: #fff;
 }
 @media(min-width: 769px){
+    .container-03{
+    justify-content: space-between;
+    }
 }
 @media(min-width: 1200px){
+    .container-03{
+        justify-content: space-between;
+    }
     .container-03 .card .face.face1 .content{
         opacity: 0.2;
         transition: translateY(0);
