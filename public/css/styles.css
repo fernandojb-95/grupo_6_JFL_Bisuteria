@@ -6,13 +6,12 @@
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    
 }
 main{
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    min-width: 390px;
+    min-width: 320px;
 }
 input{
     border-radius: 5px;
@@ -70,11 +69,11 @@ a:hover{
 }
 /*---------Maquetado del header----------*/
 header{
-    min-width: 390px;
+    position: relative;
     background-color: black;
     padding-bottom: 20px;
+    min-width: 320px;
 }
-
 /*Logo*/
 .main-logo{
     display: flex;
@@ -107,15 +106,18 @@ header{
 
 /*Navegación de páginas*/
 .pages-bar{
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
 
 /*--------Maquetado del footer-------*/
 footer{
+    width: 100%;
     background-color: #000000;
     color: #ffffff;
     padding-bottom: 20px;
-    min-width: 390px;
+    min-width: 320px;
 }
 
 /*Barra de opciones*/
@@ -201,6 +203,7 @@ footer button{
         display: none;
     }
     .pages-bar{
+        position: static;
         display: block;
     }
     .pages-bar ul{
