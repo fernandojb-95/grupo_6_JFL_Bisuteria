@@ -24,7 +24,6 @@
     padding: 5px;
 }
 
-
 .resumen{
     display: flex;
     flex-direction: column;
@@ -33,11 +32,32 @@
     padding-bottom: 15px; */
     width: 35%;
 }
+
+.cantidad_car{
+    display: flex;
+}
+.masmenos{
+    padding-left: 10px;
+}
+.masmenos #cantidad{
+    width: 20px;
+    align-self: center;
+    background-color: transparent;
+    border: transparent;
+}
+.masmenos button{
+    background-color: transparent;
+    border: black solid 2px;
+    border-radius: 30px;
+    color: black;
+    width: 20px;
+    height: 20px;
+}
 /* .resumen p{
     margin: 10px;
 } */
 
-.total{
+.total p{
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -45,14 +65,29 @@
     width: 30%;
     font-weight: bold;
     padding-right: 20px;
+    padding-top: 50px;
 }
 
 .total button{
-    width: 80%;
-    max-width: 160px;
-    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 30px;
+    padding-right: 20px;
+    color: black;
+    background-color: transparent;
+    border: transparent;
 }
-
+.total button img{
+    width: 20px;
+    height: 20px;
+}
+.total button img:hover{
+    width: 25px;
+    height: 25px;
+    transition: .3s;
+}
 /* Estilos de la seccion de precios */
 
 .precios{
