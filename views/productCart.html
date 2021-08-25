@@ -76,7 +76,7 @@
 
                         <div class="total">
                             <p>Precio:$$$</p>
-                            <button><img src="/public/img/Trash.svg"></button>
+                            <button><img src="/img/Trash.svg"></button>
                         </div>
                     </div>
 
@@ -89,21 +89,27 @@
 
                         <div class="resumen">
                             <p>Producto</p>
-                            <p>Talla: S</p>
                             <form action="">
-                                <label for="prodcut-cart-quantity">Cantidad: </label>
+                                <label for="prodcut-cart-size">Talla: </label>
                                 <select name="quantity" id="prodcut-cart-quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
+                                    <option value="1">S</option>
+                                    <option value="2">M</option>
+                                    <option value="3">L</option>
                                 </select>
                             </form>
+                            <div class="cantidad_car">
+                                <p>Cantidad:</p>
+                                <div class="masmenos">
+                                    <button class="btn" id="menos"><i class="fa-solid fa-minus"></i></button>
+                                    <input id="cantidad" type="text" style="text-align: center;" value="1">
+                                    <button class="btn" id="mas"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="total">
                             <p>Precio:$$$</p>
-                            <button><i class="fa-solid fa-trash"></i></button>
+                            <button><img src="/img/Trash.svg"></button>
                         </div>
                     </div>
                 </div>

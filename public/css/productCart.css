@@ -50,7 +50,8 @@
     border: black solid 2px;
     border-radius: 30px;
     color: black;
-
+    width: 20px;
+    height: 20px;
 }
 /* .resumen p{
     margin: 10px;
@@ -78,7 +79,15 @@
     background-color: transparent;
     border: transparent;
 }
-
+.total button img{
+    width: 20px;
+    height: 20px;
+}
+.total button img:hover{
+    width: 25px;
+    height: 25px;
+    transition: .3s;
+}
 /* Estilos de la seccion de precios */
 
 .precios{
