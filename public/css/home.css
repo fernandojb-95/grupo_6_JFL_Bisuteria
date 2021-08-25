@@ -2,6 +2,8 @@
 .container-01{
     width: 100%;
     overflow-x: hidden;
+    position: relative;
+    z-index: -1;
 }
 .slider{
     width: 400vw;

@@ -71,7 +71,6 @@ a:hover{
 header{
     position: relative;
     background-color: black;
-    padding-bottom: 20px;
     min-width: 320px;
 }
 /*Logo*/
@@ -89,28 +88,72 @@ header{
     background-repeat: no-repeat;
     background-size: contain;
 }
-
 /*Barra de opciones*/
 .options-bar{
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0px;
 }
 .options-bar ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     list-style: none;
 }
-.options-bar a{
+.options-bar > ul > li{
+    transition: transform 0.2s linear;
+    width: auto;
+}
+/* .options-bar > ul > li:hover{
+    transform: scale(1.2);
+} */
+.options-bar a , .options-bar i{
     color: white;
 }
-
+.options-bar li{
+    text-align: center;
+    padding: 10px 0;
+}
+.options-bar > li:last-child{
+    padding-right: 0;
+    width: 100%;
+}
 /*Navegación de páginas*/
 .pages-bar{
     position: absolute;
-    top: 100%;
-    left: 0;
+    background-color: #000000;
+    top: 85%;
+    right: 0;
+    width: 30vw;
+    max-width: 500px;
+    z-index: -1;
+    opacity: 0;
 }
-
+.pages-bar{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+.pages-bar li{
+    padding: 10px 20px;
+    width: 100%;
+}
+.pages-bar li a:hover{
+    color: #A58E17;
+    transform: scale(1);
+}
+.pages-bar a{
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 0.2px solid #ffffff;
+}
+.bars-menu:hover .pages-bar{
+    z-index: 10;
+    opacity: 1;
+}
 /*--------Maquetado del footer-------*/
 footer{
     width: 100%;
@@ -137,6 +180,7 @@ footer{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
  /*Redes sociales*/
 .footer-media h2{
     text-align: center;
@@ -191,32 +235,36 @@ footer button{
 /*-------------------Media querie para tablet-------------------*/
 @media(min-width:768px){
 /*-----Header------*/
+    .options-bar{
+        padding-bottom: 0px;
+    }
     .options-bar ul{
         justify-content: flex-end;
         padding-right: 10px;
     }
-    .options-bar li{
+    .options-bar > ul > li{
         padding-right: 30px;
         font-size: 18px;
     }
-    .options-bar a:nth-of-type(1){
-        display: none;
+    .options-bar > ul > li:nth-of-type(5) i{
+        visibility: hidden;
+        width: auto;
     }
-    .pages-bar{
-        position: static;
-        display: block;
-    }
-    .pages-bar ul{
-        display: flex;
-        list-style: none;
-        justify-content: space-evenly;
+    .options-bar .pages-bar{
+        opacity: 1;
+        z-index: 999;
+        max-width: none;
+        width: 100%;
+        top: 100%;
+        padding-right: 0;
+        flex-direction: row;
     }
     .pages-bar a{
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
+        border-bottom: none;
     }
-
+    .pages-bar li{
+        width: 20%;
+    }
     /*Maquetación del footer*/
     footer{
         display: flex;
