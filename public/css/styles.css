@@ -281,6 +281,9 @@ footer button{
     .footer-news{
         width: 100%;
     }
+    main{
+        margin-top: 70px;
+    }
 }
 
 /*-------------------Media querie para desktop-------------------*/
