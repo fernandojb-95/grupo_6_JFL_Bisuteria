@@ -100,7 +100,7 @@ header{
 }
 .options-bar > ul > li{
     transition: transform 0.2s linear;
-    width: auto;
+    /* width: auto; */
 }
 /* .options-bar > ul > li:hover{
     transform: scale(1.2);
@@ -117,31 +117,32 @@ header{
     width: 100%;
 }
 /*Navegación de páginas*/
-.pages-bar{
+.pages-bar, .user-pages{
     position: absolute;
     background-color: #000000;
-    top: 85%;
-    right: 0;
-    width: 30vw;
-    max-width: 500px;
+    top: 90%;
+    left: 0;
+    width: 250px;
     z-index: -1;
     opacity: 0;
-}
-.pages-bar{
     display: flex;
     flex-direction: column;
     list-style: none;
     align-items: center;
+    transition: all 0.5s 0.3s ease;
 }
-.pages-bar li{
+.user-pages{
+    left: calc(50% - 125px);
+}
+.pages-bar li, .user-pages li{
     padding: 10px 20px;
     width: 100%;
 }
-.pages-bar li a:hover{
+.pages-bar li a:hover, .user-pages li a:hover{
     color: #A58E17;
     transform: scale(1);
 }
-.pages-bar a{
+.pages-bar a, .user-pages a{
     display: block;
     color: #ffffff;
     text-decoration: none;
@@ -151,6 +152,13 @@ header{
     border-bottom: 0.2px solid #ffffff;
 }
 .bars-menu:hover .pages-bar{
+    z-index: 10;
+    opacity: 1;
+}
+/* .bars-menu, .user-menu{
+    position: relative;
+} */
+.user-menu:hover .user-pages{
     z-index: 10;
     opacity: 1;
 }
@@ -240,19 +248,19 @@ footer button{
     }
     .options-bar ul{
         justify-content: flex-end;
-        padding-right: 10px;
+        /* padding-right: 10px; */
     }
     .options-bar > ul > li{
         padding-right: 30px;
         font-size: 18px;
     }
-    .options-bar > ul > li:nth-of-type(5) i{
+    .options-bar > ul > li:nth-of-type(1) i{
         visibility: hidden;
         width: auto;
     }
     .options-bar .pages-bar{
         opacity: 1;
-        z-index: 999;
+        z-index: 10;
         max-width: none;
         width: 100%;
         top: 100%;
@@ -264,6 +272,13 @@ footer button{
     }
     .pages-bar li{
         width: 20%;
+    }
+    .bars-menu, .user-menu{
+        position: static;
+    }
+    .user-pages{
+        left: calc(100% - 250px);
+        top: calc(100% + 52px);
     }
     /*Maquetación del footer*/
     footer{

@@ -123,7 +123,12 @@ h1.titulo{
     color: #fff;
 }
 @media(min-width: 769px){
-
+    main{
+        margin-top: 0;
+    }
+    .container-01{
+        margin-top: 52px;
+    }
 }
 @media(min-width: 1025px){
     .container-03{
