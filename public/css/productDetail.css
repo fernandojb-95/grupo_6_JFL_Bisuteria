@@ -7,16 +7,28 @@
 }
 
 .selector-imagenes button{
-    border: none;
+   border: none;
     background-color: transparent;
     width: 25px;
 }
+
+.selector-imagenes button:hover{
+    transform: scale(1.5);
+}
+
 .selector-imagenes .fas{
     font-size: 30px;
 }
+
 .selector-imagenes .img-container{
     width: 25%;
 }
+
+.selector-imagenes .img-container:hover{
+    transform: scale(1.2);
+    border: solid 3px #A58E17;
+}
+
 .img-container img{
     width: 100%;
 }
@@ -80,6 +92,7 @@
 }
 /*Estilos para media querie*/
 @media(min-width:768px) {
+
     .descripcion-producto{
         justify-content: space-evenly;
     }
