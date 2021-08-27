@@ -1,29 +1,30 @@
 const express = require('express')
 const path = require('path');
-
 const app = express();
 
+//Solicitando las rutas
+const mainRoutes = require('./src/routes/mainRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const productRoutes = require('./src/routes/productRoutes');
+
+//Configuracion del motor de vistas
+app.set('views', path.join(__dirname, '/src/views'));
+app.set('view engine', 'ejs');
+
+// Configuracion de archivos estáticos
 app.use(express.static(path.resolve(__dirname , './public')))
+
+//Levantando el servidor
 app.listen(3000, () => {
     console.log("Server running at port 3000")
 })
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'))
-} )
+//Rutas principales
+app.use('/', mainRoutes);
 
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html'))
-} )
+//Rutas de usuarios
+app.use('/user', userRoutes);
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'))
-})
+//Rutas de productos
+app.use('/product', productRoutes);
 
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
-})
-
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'))
-})
