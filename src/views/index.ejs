@@ -1,47 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/home.css">
     <title>JFL Bisuteria</title>
 </head>
 <body>
-    <header>
-        <picture class="main-logo">
-            <a href="/"></a>
-        </picture>
-        <nav class="options-bar">
-            <ul>
-                <li class="bars-menu">
-                    <i class="fas fa-bars"></i>
-                    <ul class="pages-bar">
-                        <li><a href="">Anillos</a></li>
-                        <li><a href="">Collares</a></li>
-                        <li><a href="">Brazaletes</a></li>
-                        <li><a href="">Nosotros</a></li>
-                        <li><a href="">Contacto</a></li>                            
-                    </ul> 
-                </li>
-                <li><a href="/"><i class="fas fa-search"></i></a></li>
-                <li class="user-menu">
-                    <i class="far fa-user"></i>
-                    <ul class="user-pages">
-                        <li><a href="/user/login">Iniciar sesión</a></li>
-                        <li><a href="/user/register">Registrarse</a></li>
-                    </ul>
-                </li>
-                <li> <a href="/product/productCart"><i class="far fa-shopping-bag"></i></a></li>
-                <li><a href="/"><i class="far fa-question-circle"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header') %>
     <div class="container-01">
         <!--Carrusel de imagenes en home-->
         <div class="slider">
@@ -106,32 +71,6 @@
             </div>
         </div>
     </main>
-    <footer>
-        <section class="footer-options">
-            <ul>
-                <a href=""><li>Contacto</li></a>
-                <a href=""><li>Nosotros</li></a>
-                <a href=""><li>Suscríbete</li></a>
-                <a href=""><li>Servicio al cliente</li></a>
-                <a href=""><li>Política de privacidad</li></a>
-            </ul>
-        </section>
-        <section class="footer-media">
-            <h2>Contáctanos en redes</h2>
-            <div>
-                <a href="/"><i class="fab fa-facebook"></i></a>
-                <a href="/"><i class="fab fa-whatsapp"></i></a>
-                <a href="/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </section>
-        <section class="footer-news">
-            <h2>Únete a nuestra comunidad</h2>
-            <p>Suscríbete a nuestro newsletter y recibe noticias y ofertas</p>
-            <form action="#" >
-                <input type="email" placeholder="usuario@correo.com">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </footer>
+    <%- include('./partials/footer') %>
 </body>
 </html>
