@@ -21,7 +21,6 @@ main{
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    min-width: 320px;
 }
 input{
     border-radius: 5px;
@@ -76,7 +75,9 @@ button[type="submit"]:hover:after, button[type="submit"]:hover:before{
 
 /*Estilos principales de etiquetas ancla*/
 a{
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--dark);
 }
 a:hover{
     transform: scale(1.2);

@@ -71,10 +71,10 @@ h1.titulo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    /* margin-bottom: 20px; */
 }
 .container-03 .card{
-    width: 80%;
+    width: 100%;
     background-color: var(--dark);
     margin: 20px 0px 40px 0px;
     max-width: 500px;
@@ -118,13 +118,84 @@ h1.titulo{
     background: var(--gold);
     color: var(--light);
 }
+.container-04{
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.container-04 h1{   
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -25px;
+}
+.products-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.products-container a:hover{
+    transform: scale(1);
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: 15px 0;
+    border: 1px solid var(--light-border);
+    border-radius: 15px;
+    max-width: 380px;
+    background-color: var(--light);
 
+}
+.product img{
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+.product-info{
+    text-align: center;
+    width: 100%;
+    /* font-weight: bold; */
+}
+.product-info p{
+    padding: 5px 0;
+}
+.product:hover{
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+}
+.product-info p:last-of-type{
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.product:hover p:last-child{
+    opacity: 1
+}
 @media(min-width: 768px){
     main{
         margin-top: 0;
     }
     .container-01{
         margin-top: 52px;
+    }
+    .container-04{
+        border-top: 0.5px solid var(--light-border);
+    }
+    .container-04 h1{
+        width: auto;
+        left: 0;
+        background-color: white;
+        padding: 0 10px;
+    }
+    .products-container{
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .product{
+        width: 40%;
     }
 }
 @media(min-width: 1025px){
@@ -169,5 +240,8 @@ h1.titulo{
     .face.face2 .content a{
         margin-left: auto;
         margin-right: auto;
+    }
+    .product{
+        width: 20%;
     }
 }
