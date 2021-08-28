@@ -1,77 +1,9 @@
-/*Estilos generales*/
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-family: 'Montserrat', sans-serif;
-}
-main{
-    width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 320px;
-}
-input{
-    border-radius: 5px;
-}
-/*Estilos principales de botón*/
-button[type="submit"]{
-    height: 30px;
-    color: #A58E17;
-    background-color: transparent;
-    font-weight: bold;
-    border: none;
-    display: block;
-    position: relative;
-}
-button[type="submit"]:focus{
-    border: 2px solid #817a7a;
-    box-shadow: 3px 3px 10px #817a7a ;
-}
-button[type="submit"]::after, button[type="submit"]::before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20%;
-    height: 20%;
-    border: 3px solid;
-    transition: all 0.6s linear;
-    border-radius: 2px;
-}
-button[type="submit"]::after{
-    bottom: 0;
-    right: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: #A58E17;
-    border-right-color: #A58E17;
-}
-button[type="submit"]::before{
-    top: 0;
-    left: 0;
-    border-top-color: #A58E17;
-    border-left-color: #A58E17;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-}
-button[type="submit"]:hover:after, button[type="submit"]:hover:before{
-    width: 100%;
-    height: 100%;
-}
+@import url("general.css");
 
-/*Estilos principales de etiquetas ancla*/
-a{
-    transition: all 0.3s ease
-}
-a:hover{
-    transform: scale(1.2);
-}
 /*---------Maquetado del header----------*/
 header{
     position: relative;
-    background-color: black;
+    background-color: var(--dark);
     min-width: 320px;
 }
 /*Logo*/
@@ -103,11 +35,8 @@ header{
     transition: transform 0.2s linear;
     /* width: auto; */
 }
-/* .options-bar > ul > li:hover{
-    transform: scale(1.2);
-} */
 .options-bar a , .options-bar i{
-    color: white;
+    color: var(--light);
 }
 .options-bar li{
     text-align: center;
@@ -120,7 +49,7 @@ header{
 /*Navegación de páginas*/
 .pages-bar, .user-pages{
     position: absolute;
-    background-color: #000000;
+    background-color: var(--dark);
     top: 90%;
     left: 0;
     width: 250px;
@@ -140,25 +69,23 @@ header{
     width: 100%;
 }
 .pages-bar li a:hover, .user-pages li a:hover{
-    color: #A58E17;
+    color: var(--gold);
     transform: scale(1);
 }
 .pages-bar a, .user-pages a{
     display: block;
-    color: #ffffff;
+    color: var(--light);
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     padding-bottom: 10px;
-    border-bottom: 0.2px solid #ffffff;
+    border-bottom: 0.2px solid var(--light);
 }
 .bars-menu:hover .pages-bar{
     z-index: 10;
     opacity: 1;
 }
-/* .bars-menu, .user-menu{
-    position: relative;
-} */
+
 .user-menu:hover .user-pages{
     z-index: 10;
     opacity: 1;
@@ -166,8 +93,8 @@ header{
 /*--------Maquetado del footer-------*/
 footer{
     width: 100%;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--dark);
+    color: var(--light);
     padding-bottom: 20px;
     min-width: 320px;
 }
@@ -183,7 +110,7 @@ footer{
     align-items: center;
 }
 .footer-options a{
-    color: #ffffff;
+    color: var(--light);
 }
 .footer-options li{
     padding-top: 10px;
@@ -204,17 +131,8 @@ footer{
     font-size: 70px;
 }
 footer i{
-    color: #ffffff;
+    color: var(--light);
 }
-/* .fa-facebook{
-    color: #014C83;
-}
-.fa-instagram{
-    color: #D21DAA;
-}
-.fa-whatsapp{
-    color: #22A948;
-} */
 
 /*Suscripción al newsletter*/
 .footer-news{
@@ -242,14 +160,13 @@ footer button{
 }
 
 /*-------------------Media querie para tablet-------------------*/
-@media(min-width:768px){
+@media(min-width: 768px){
 /*-----Header------*/
     .options-bar{
         padding-bottom: 0px;
     }
     .options-bar ul{
         justify-content: flex-end;
-        /* padding-right: 10px; */
     }
     .options-bar > ul > li{
         padding-right: 30px;

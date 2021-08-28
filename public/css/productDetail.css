@@ -92,7 +92,7 @@
     width: 100%;
 }
 /*Estilos para media querie*/
-@media(min-width:768px) {
+@media(min-width: 768px) {
 
     .descripcion-producto{
         justify-content: space-evenly;

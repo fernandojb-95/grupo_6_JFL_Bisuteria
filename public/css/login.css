@@ -1,6 +1,5 @@
-body{
-    height: 100vh;
-}
+@import url("general.css");
+
 .login{
     margin: 15px auto;
     max-width: 600px;
@@ -24,12 +23,12 @@ body{
     margin-bottom: 25px;
     height: 30px;
     padding-left: 10px;
-    border: 1px solid #817a7a;
+    border: 1px solid var(--light-border);
     outline: none;
 }
 .login-form input:focus{
-    border: 2px solid #817a7a;
-    box-shadow: 3px 3px 10px #817a7a ;
+    border: 2px solid var(--light-border);
+    box-shadow: 3px 3px 10px var(--light-border) ;
 }
 .login-form label{
     display: flex;
@@ -62,11 +61,11 @@ body{
     text-align: center;
     display: block;
     margin-bottom: 20px;
-    color: #000000;
+    color: var(--dark);
     font-weight: bold;
 }
 .login p a{
-    color: #000000;
+    color: var(--dark);
     font-weight: bold;
 }
 .alt-login{
@@ -84,23 +83,24 @@ body{
     margin: 20px 0;
     font-size: 25px;
     padding: 10px;
-    background-color: #ebebeb;
+    background-color: var(--soft);
     border-radius: 10px;
 }
 .fa-facebook-f{
-    color: #3f00eb;
+    color: var(--blue);
 }
 .fa-google{
-    color: tomato;
+    color: var(--red);
 }
+
 /*-------------------Media querie para tablet---------------------*/
-@media(min-width:768px) {
+@media(min-width: 768px) {
     .login{
-        border: 1px solid #817a7a;
+        border: 1px solid var(--light-border);
         border-radius: 20px;
     }
 }
-@media(min-width:1025px){
+@media(min-width: 1025px){
     main{
         background-image: url('../img/login-image.jpg');
         background-position: center;
@@ -112,6 +112,6 @@ body{
         width: 40%;
         /* margin: 50px 0 50px 10px; */
         margin-left: 10px;
-        background-color: #ffffff;
+        background-color: var(--light);
     }
 }

@@ -1,3 +1,5 @@
+@import url("general.css");
+
 /* Carrusel*/
 .container-01{
     width: 100%;
@@ -31,27 +33,21 @@
 
 @keyframes banner {
     16%{
-        /* left: -100vw; */
         transform: translateX(-100vw);
     }
     32%{
         transform: translateX(-100vw);
-        /* left: -100vw; */
     }
     50%{
-        /* left: -200vw; */
         transform: translateX(-200vw);
     }
     66%{
-        /* left: -200vw; */
         transform: translateX(-200vw);
     }
     83%{
-        /* left: -200vw; */
         transform: translateX(-300vw);
     }
     100%{
-        /* left: -200vw; */
         transform: translateX(-300vw);
     }
 }
@@ -79,7 +75,7 @@ h1.titulo{
 }
 .container-03 .card{
     width: 80%;
-    background-color: #000;
+    background-color: var(--dark);
     margin: 20px 0px 40px 0px;
     max-width: 500px;
     border-radius: 10px;
@@ -96,7 +92,7 @@ h1.titulo{
 .face1 .content h3{
     margin: 1px 0 0;
     padding-bottom: 3px;
-    color: #C5AC28;
+    color: var(--gold);
     text-align: center;
     font-size: 1.5em;
 }
@@ -104,7 +100,7 @@ h1.titulo{
     padding: 10px 20px;
     max-height: 80px;
     overflow-y: hidden;
-    color:#fff;
+    color:var(--light);
 }
 .face.face2 .content a{
     display: block;
@@ -113,16 +109,17 @@ h1.titulo{
     margin: 10px 20px;
     text-decoration: none;
     font-weight: 900;
-    color: #C5AC28;
+    color: var(--gold);
     padding: 5px;
-    background-color: #fff;
+    background-color: var(--light);
     border-radius: 5px;
 } 
 .container-03 .card .face.face2 .content a:hover{
-    background: #C5AC28;
-    color: #fff;
+    background: var(--gold);
+    color: var(--light);
 }
-@media(min-width: 769px){
+
+@media(min-width: 768px){
     main{
         margin-top: 0;
     }
@@ -141,9 +138,7 @@ h1.titulo{
     }
     .container-03 .card .face.face1 .content{
         width: 100%;
-        /* transition: translateY(0); */
     }
-
     .container-03 .card .face.face1{
         position: relative;
         display: flex;
@@ -161,7 +156,7 @@ h1.titulo{
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(0, 0, 0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
         border-radius: 20px;
         transition: opacity 0.5s linear;
     }

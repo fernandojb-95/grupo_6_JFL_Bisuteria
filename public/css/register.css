@@ -1,10 +1,9 @@
-body{
-    height: 100vh;
-}
+@import url("general.css");
+
 .register{
     margin-top: 30px;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: var(--light);
     border-radius: 20px;
 }
 .register-title{
@@ -26,7 +25,7 @@ body{
     margin-bottom: 25px;
     height: 30px;
     padding-left: 10px;
-    border: 1px solid #817a7a;
+    border: 1px solid var(--light-border);
     outline: none;
 }
 .tec-inputs > div{
@@ -37,8 +36,8 @@ body{
     margin: 20px auto;
 }
 .tec-inputs input:focus{
-    border: 2px solid #817a7a;
-    box-shadow: 3px 3px 10px #817a7a ;
+    border: 2px solid var(--light-border);
+    box-shadow: 3px 3px 10px var(--light-border) ;
 }
 .tec-inputs .checkitems{
     width: 70%;
@@ -60,7 +59,7 @@ body{
 }
 main p a{
     text-decoration: none;
-    color: #000000;
+    color: var(--dark);
     font-weight: bold;
 }
 /*-------------------Media querie para tablet---------------------*/
@@ -68,7 +67,7 @@ main p a{
     .register{
         width: 80%;
         margin: 20px auto;
-        border: 1px solid #817a7a;
+        border: 1px solid var(--light-border);
         max-width: 800px;
     }
     .tec-inputs {
