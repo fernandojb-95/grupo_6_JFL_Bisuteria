@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editProduct.css">
+    <title>Login</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <form class="edit-form" action="#">
+            <input type="text" placeholder="Ingresa el nombre del producto">
+            <button> Buscar </button>
+        </form>
+
+        <section class="edit-products">
+            <div class="edit-img">
+                <img src="/img/starwarsmandalorianearringdarksaberblack_3000x.jpg" alt="">
+            </div>
+
+            <div class="edit-texto">
+                <p>Nombre del producto</p>
+                <p>ID producto</p>
+                <p>Categoría</p>
+            </div>
+
+            <div class="edit-icono">
+                <i class="fas fa-edit"></i>
+            </div>
+        </section>
+
+        <section class="edit-products">
+            <div class="edit-img">
+                <img src="/img/pinenameldccomicsbatman_3000x.jpg" alt="">
+            </div>
+
+            <div class="edit-texto">
+                <p>Nombre del producto</p>
+                <p>ID producto</p>
+                <p>Categoría</p>
+            </div>
+
+            <div class="edit-icono">
+                <i class="fas fa-edit"></i>
+            </div>
+        </section>
+
+        <section class="edit-products">
+            <div class="edit-img">
+                <img src="/img/pinenameldccomicsflash_3000x.jpg" alt="">
+            </div>
+
+            <div class="edit-texto">
+                <p>Nombre del producto</p>
+                <p>ID producto</p>
+                <p>Categoría</p>
+            </div>
+
+            <div class="edit-icono">
+                <i class="fas fa-edit"></i>
+            </div>
+        </section>
+
+        <section class="editproducts-form">
+            <h1>Edición de producto</h1>
+
+            <h5>Nombre del producto</h5>
+            <div class="primer-campo">
+                -
+            </div>
+
+            <h5>Descripción</h5>
+            <div class="primer-campo">
+                -
+            </div>
+
+            <h5>Categoría</h5>
+            <div>
+                <form action="#">
+                    <select name="select">
+                        <option value="value1" selected>Anillos</option>
+                        <option value="value2">Collares</option>
+                        <option value="value3">Brazaletes</option>
+                      </select>
+                </form>
+            </div>
+
+            <h5>Precio</h5>
+            <div class="primer-campo">
+                -
+            </div>
+
+            <h5>Talla</h5>
+            <div>
+                <form action="#">
+                    <select name="select">
+                        <option value="value1" selected>S</option>
+                        <option value="value2">M</option>
+                        <option value="value3">L</option>
+                        <option value="value3">XL</option>
+                      </select>
+                </form>
+            </div>
+
+            <h5>Imágenes</h5>
+            <div class="imagenes">
+                <img src="/img/starwarsmandalorianearringdarksaberblack_3000x.jpg" alt="">
+                <p>Imagen 1</p>
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-minus-circle"></i>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>
