@@ -6,6 +6,7 @@ const app = express();
 const mainRoutes = require('./src/routes/mainRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const productRoutes = require('./src/routes/productRoutes');
+const adminRoutes = require('./src/routes/adminRoutes')
 
 //Configuracion del motor de vistas
 app.set('views', path.join(__dirname, '/src/views'));
@@ -28,3 +29,5 @@ app.use('/user', userRoutes);
 //Rutas de productos
 app.use('/product', productRoutes);
 
+//Rutas de administrador
+app.use('/admin', adminRoutes);
