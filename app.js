@@ -31,3 +31,9 @@ app.use('/product', productRoutes);
 
 //Rutas de administrador
 app.use('/admin', adminRoutes);
+
+//Ruta 404
+
+app.use((req,res,next) =>{
+    res.status(404).render('not-found');
+})
