@@ -5,4 +5,43 @@
     
     <title>Agrear productos</title>
 </head>
-<h1>Hola</h1>
+<body>
+    <%- include('../partials/header') %>
+<main>
+    <section class="add-product">
+        <h1>Agrega un producto</h1>
+        <p>Llena los siguientes campos para aregar un producto</p>
+    </section>
+    <form class= "product-form" action="#">
+        <div class="add-inputs">
+            <input type="text" placeholder="Nombre del Producto" name="product" class="prduct-input" required >
+            <input type="text" placeholder="Descripción del producto" name="description" class="description-input" required>
+            <input type="text" placeholder="Precio" name="price" class="price-input" required>
+            <div>
+                <ul class="material">
+                    <li>
+                     <input type="checkbox" name="material" value="oro">Oro
+                    </li>
+                    <li>
+                     <input type="checkbox" name="material" value="plata">Plata
+                    </li>
+                    <li>
+                     <input type="checkbox" name="material" value="acero">Acero
+                    </li>
+                    <li>
+                     <input type="checkbox" name="material" value="laton">Latón
+                    </li>
+                </ul>
+            </div>
+            <div class="pic_product">
+                <p>Fotos del producto</p>
+                    <br>
+                    <input type="file" name="fotos">
+            </div>
+            <div class="botones">
+                <button type="submit">Agregar</button>
+                <button type="reset">Borrar</button>
+               </div>
+        </div>
+</main>
+</body>
