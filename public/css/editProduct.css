@@ -75,3 +75,15 @@
     margin-top: 10px;
     height: 80px;
 }
+
+.opciones-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vistas-producto div{
+    margin: 10px 10px 10px;
+    background-color: gray;
+    height: 30px;
+}
