@@ -5,9 +5,6 @@ const productController = {
     productCart : (req, res) => {
         res.render('./products/productCart');
     },
-    editProduct : (req, res) => {
-        res.render('./products/editProduct');
-    },
     anillos : (req, res) => {
         res.render('./products/anillos');
     },
