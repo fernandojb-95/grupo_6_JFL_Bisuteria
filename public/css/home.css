@@ -166,13 +166,7 @@ h1.titulo{
 .product:hover{
     box-shadow: 0 0 10px rgb(100, 100, 100);
 }
-.product-info p:last-of-type{
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-.product:hover p:last-child{
-    opacity: 1
-}
+
 @media(min-width: 768px){
     main{
         margin-top: 0;
@@ -243,5 +237,12 @@ h1.titulo{
     }
     .product{
         width: 20%;
+    }
+    .product-info p:last-of-type{
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .product:hover p:last-child{
+        opacity: 1
     }
 }

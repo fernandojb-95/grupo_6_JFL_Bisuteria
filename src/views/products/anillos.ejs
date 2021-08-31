@@ -2,12 +2,40 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/products/anillos.css">
     <title>Anillos</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Anillos</h1>
+        <section class="product-banner">
+            <img src="/img/Anillos.png" alt="Anillos">
+            <h1>Anillos</h1>
+        </section>
+        <section class="main-products">
+            <article class="product-card">
+                <i class="fas fa-chevron-left"></i>
+                <a href="/product/productDetail" class="go-product">
+                    <div class="product-images">
+                        <img src="/img/gold-ring.jpg" alt="Article">
+                    </div>
+                    <p>Nombre del artículo</p>
+                    <p>Precio</p>
+                </a>
+                <i class="fas fa-chevron-right"></i>
+            </article>
+            <article class="product-card">
+                <i class="fas fa-chevron-left"></i>
+                <a href="/product/productDetail" class="go-product">
+                    <div class="product-images">
+                        <img src="/img/gold-ring.jpg" alt="Article">
+                    </div>
+                    <p>Nombre del artículo</p>
+                    <p>Precio</p>
+                </a>
+                <i class="fas fa-chevron-right"></i>
+            </article>
+        </section>
     </main>
     <%- include('../partials/footer') %>
 </body>
