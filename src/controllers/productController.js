@@ -7,6 +7,15 @@ const productController = {
     },
     editProduct : (req, res) => {
         res.render('./products/editProduct');
+    },
+    anillos : (req, res) => {
+        res.render('./products/anillos');
+    },
+    brazaletes : (req, res) => {
+        res.render('./products/brazaletes');
+    },
+    collares : (req, res) => {
+        res.render('./products/collares');
     }
 }
 

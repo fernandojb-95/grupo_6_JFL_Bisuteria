@@ -27,6 +27,7 @@ input{
 }
 h1,h2,h3,h4{
     margin: 10px 0;
+    text-align: center;
 }
 /*Estilos principales de botón*/
 button[type="submit"]{
