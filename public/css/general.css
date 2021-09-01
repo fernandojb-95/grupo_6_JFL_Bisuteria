@@ -83,3 +83,50 @@ a{
 a:hover{
     transform: scale(1.2);
 }
+
+/*Estilos de cards de productos*/
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 15px;
+    max-width: 380px;
+    background-color: var(--light);
+}
+.product-image{
+    position: relative;
+    padding: 5px;
+}
+.product-image .pic{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.product-image .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.product-info{
+    text-align: center;
+    width: 100%;
+}
+.product-info p{
+    padding: 5px 0;
+}
+.product:hover{
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+    transform: scale(1);
+}
+.product:hover .back{
+    opacity: 1;
+}
