@@ -2,46 +2,86 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs') %>
-    
+    <link rel="stylesheet" href="/css/addProduct.css">
     <title>Agrear productos</title>
 </head>
 <body>
     <%- include('../partials/header') %>
-<main>
-    <section class="add-product">
-        <h1>Agrega un producto</h1>
-        <p>Llena los siguientes campos para aregar un producto</p>
-    </section>
-    <form class= "product-form" action="#">
-        <div class="add-inputs">
-            <input type="text" placeholder="Nombre del Producto" name="product" class="prduct-input" required >
-            <input type="text" placeholder="Descripción del producto" name="description" class="description-input" required>
-            <input type="text" placeholder="Precio" name="price" class="price-input" required>
-            <div>
-                <ul class="material">
-                    <li>
-                     <input type="checkbox" name="material" value="oro">Oro
-                    </li>
-                    <li>
-                     <input type="checkbox" name="material" value="plata">Plata
-                    </li>
-                    <li>
-                     <input type="checkbox" name="material" value="acero">Acero
-                    </li>
-                    <li>
-                     <input type="checkbox" name="material" value="laton">Latón
-                    </li>
-                </ul>
-            </div>
-            <div class="pic_product">
-                <p>Fotos del producto</p>
+    <main>
+        <div class="form-add-product">
+            <section class="add-product">
+                <h1>Agrega un producto</h1>
+            </section>
+            <form class= "product-form" action="#">
+                <div class="add-inputs">
+                    <div class="part_1">
+                        <p><strong>Nombre del producto:</strong></p>
+                        <input type="text" placeholder="Nombre" name="product" class="prduct-input" required >
+                        <br>
+                        <p><strong>Descripción del producto:</strong></p>
+                        <textarea name="description" rows="5" cols="25" placeholder="Descripción"></textarea>
+                    </div>
                     <br>
-                    <input type="file" name="fotos">
-            </div>
-            <div class="botones">
-                <button type="submit">Agregar</button>
-                <button type="reset">Borrar</button>
-               </div>
+                    <div class="part_2">
+                        <p><strong>Precio</strong></p>
+                        <p>$</p><input type="text" placeholder="Precio" name="price" class="price-input" required>
+                        <p><strong>Categoría</strong></p>
+                        <ul class="list-categorias">
+                            <li>
+                                <input type="radio" name="categoria" value="ring">Anillos
+                            </li>
+                            <li>
+                                <input type="radio" name="categoria" value="necklace"> Collares
+                            </li>
+                            <li>
+                                <input type="radio" name="categoria" id="bracelet">Brazaletes
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="part_3">
+                        <p><strong>Tallas</strong></p>
+                        <ul class="tallas">
+                            <li>
+                                <input type="checkbox" name="tallas" value="small">S
+                            </li>
+                            <li>
+                                <input type="checkbox" name="tallas" value="medium">M
+                            </li>
+                            <li>
+                                <input type="checkbox" name="tallas" value="large">G
+                            </li>
+                        </ul>
+                        <div class="cantidades"></div>
+                            <p><strong>Cantidad</strong></p>
+                            <ul class="cantidad">
+                                <li>
+                                    <input type="text" name="cantidad" required>
+                                </li>
+                                <li>
+                                    <input type="text" name="cantidad" required>
+                                </li>
+                                <li>
+                                    <input type="text" name="cantidad" required>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="part_4">
+                        <div class="pic_1">
+                            <img class="pic-add" src="/img/ring-2.jpg" alt="Foto de anillo">
+                            <p>Imagen 1</p>
+                            <p>Editar imagen <i class="far fa-edit"></i> </p>
+                        <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="cancel">Cancelar</button>
+                        <button type="reset">Borrar</button>
+                        <button type="">Guardar</button>
+                        
+                    </div>
+                </div>
+            </form>
         </div>
-</main>
+    </main>
 </body>
