@@ -27,7 +27,7 @@
                         <img class="imagen2-detalle" src="/img/Imagen2_detalle.png" alt="imagen2producto">
                     </div>
                     <div class="img-container">
-                        <img class="imagen3-detalle" src="img/Imagen3_detalle.png" alt="imagen3producto">
+                        <img class="imagen3-detalle" src="/img/Imagen3_detalle.png" alt="imagen3producto">
                     </div>
                     <button><i class="fas fa-chevron-right"></i></button> 
                 </div>            
@@ -70,11 +70,30 @@
                             </select> 
                         </div>
                         <div class="contenedor-btn">
-                            <button type="submit" class="btn">Añadir al carrito</button>
+                            <button type="submit" class="submit btn">Añadir al carrito</button>
                         </div>
                     </form>
                 </div>
             </div>
+        </section>
+        <section class="comment-section">
+            <section class="add-comment">
+                <form action="#">
+                    <label for="add-comment">Haz un comentario</label>
+                    <input type="text" class="comment-title" placeholder="Título del comentario">
+                    <textarea name="comment" id="add-comment" cols="20" rows="10" placeholder="Escribe aquí tu comentario"></textarea>
+                    <div class="comment-buttons">
+                        <button type="reset">Borrar</button>
+                        <button type="submit">Guardar</button>
+                    </div>
+                </form>
+            </section>
+            <section class="see-comments">
+                <h3>Comentarios</h3>
+                    <%- include('../partials/comment.ejs') %>
+                    <%- include('../partials/comment.ejs') %>
+                    <%- include('../partials/comment.ejs') %>
+            </section>
         </section>     
     </main>
     <%- include('../partials/footer') %>
