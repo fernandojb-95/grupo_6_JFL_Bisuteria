@@ -3,94 +3,111 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/editProduct.css">
-    <title>Login</title>
+    <title>Editando producto</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-
         <h1>Editar producto</h1>
-
-
-        <section class="informacion-actual">
-            <div class="informacion-actual-imgs">
-                <img src="/img/ring-2.jpg" alt="">
-                <img src="/img/ring-2.jpg" alt="">
-                <img src="/img/ring-2.jpg" alt="">
-                <img src="/img/ring-2.jpg" alt="">
-            </div>
-
-            <div class="datos-actual">
-                <p>Nombre del producto</p>
-                <p>Descripción</p>
-                <p>Precio</p>
-            </div>
-        </section>
-
-
-            <form action="#" method="">
-
-                <section class="nombre">
-                    <label for="nombre">Nombre del producto: </label>
-                    <input type="text" name ="nombre" id="nombre" placeholder="Nombre">
-                </section>
-
-                <section class="descripcion">  
-                    <label for="descripcion">Descripción:</label>
-                    <textarea name ="descripcion" id="descripcion" rows="5">Escribe una breve descripción</textarea>
-                </section>
-
-                <section class="precio">
-                    <label for="precio">Precio: </label>
-                    <input type="text" name ="precio" id="precio">
-                </section>
-
-                <section class="categoria">
-                    <label for="categoria">Categoría: </label>
-                    
-                    <label> <input type="radio" name="categoria" id = "categoria" value="anillos" checked>Anillos</label>
-                    <label> <input type="radio" name="categoria" id = "categoria" value="collares">Collares</label>
-                    <label> <input type="radio" name="categoria" id = "categoria" value="pulseras">Pulseras</label>
-                </section>
-
-
-                <label for="tallas">Tallas: </label>
-                <section class="tallas">
-                        <div class="tallas-check">
-                            <label> <input type="checkbox" name="tallas" id = "tallas" value="s">S</label>
-                            <label> <input type="checkbox" name="tallas" id = "tallas" value="m">M</label>
-                            <label> <input type="checkbox" name="tallas" id = "tallas" value="l">L</label>
-                        </div>
+        <div class="register-product">
+            <section class="informacion-actual">
+                <h1>Informacion actual</h1>
+                <div class="informacion-actual-imgs">
+                    <img src="/img/ring-2.jpg" alt="">
+                    <img src="/img/ring-2.jpg" alt="">
+                    <img src="/img/ring-2.jpg" alt="">
+                    <img src="/img/ring-2.jpg" alt="">
+                </div>
     
-                        <div class="tallas-text">
-                            <label for="cant1">Cantidad:</label>
-                            <input type="text" name ="cant1" id="cant1">
-                            <label for="cant2">Cantidad:</label>
-                            <input type="text" name ="cant2" id="cant2">
-                            <label for="cant3">Cantidad:</label>
-                            <input type="text" name ="cant3" id="cant3">
+                <div class="datos-actual">
+                    <p class="titulo">Nombre del producto:</p>
+                    <p>Anillos</p>
+                    <p class="titulo">Descripción:</p>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quaerat, iste neque temporibus quas ut optio blanditiis itaque quasi nisi mollitia eos, pariatur voluptatibus dolor deleniti illo numquam odio fuga.</p>
+                    <p class="titulo">Precio: </p>
+                    <p>$2500</p>
+                </div>
+            </section>
+    
+    
+                <form action="#" method="">
+    
+                    <section class="nombre">
+                        <label for="nombre">Nombre del producto: </label>
+                        <input type="text" name ="nombre" id="nombre" placeholder="Nombre">
+                    </section>
+    
+                    <section class="descripcion">  
+                        <label for="descripcion">Descripción:</label>
+                        <textarea name ="descripcion" id="descripcion" rows="5" placeholder="Escribe una breve descripción"></textarea>
+                    </section>
+    
+                    <section class="precio">
+                        <label for="precio">Precio: $</label>
+                        <input type="text" name ="precio" id="precio">
+                    </section>
+    
+                    <section class="categoria">
+                        <label for="categoria">Categoría: </label>
+                        
+                        <label> <input type="radio" name="categoria" id = "categoria" value="anillos" checked>Anillos</label>
+                        <label> <input type="radio" name="categoria" id = "categoria" value="collares">Collares</label>
+                        <label> <input type="radio" name="categoria" id = "categoria" value="pulseras">Pulseras</label>
+                    </section>
+    
+                    <section class="tallas">
+                        <p><strong>Tallas:</strong></p>
+                            <div class="tallas-check">
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-S" value="s">
+                                    <label for="talla-S">S</label>
+                                </div>
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-M" value="m">
+                                    <label for="talla-M">M</label>
+                                </div>
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-L" value="l">
+                                    <label for="talla-L"> L</label>
+                                </div>
+                            </div>
+                            <div class="tallas-text">
+                                <div class="quant">
+                                    <label for="cant-S">Cantidad:</label>
+                                    <input type="number" name ="cant-S" id="cant-S">
+                                </div>
+                                <div class="quant">
+                                    <label for="cant-M">Cantidad:</label>
+                                    <input type="number" name ="cant-M" id="cant-M">
+                                </div>
+                                <div class="quant">
+                                    <label for="cant-L">Cantidad:</label>
+                                    <input type="number" name ="cant-L" id="cant-L">
+                                </div>
+                            </div>
+                    </section>
+    
+                    <section class="opciones-imagen">
+                        <div class="imagen">
+                            <img src="/img/ring-2.jpg" alt="">
                         </div>
-                </section>
-
-                <section class="opciones-imagen">
-                    <div class="imagen">
-                        <img src="/img/ring-2.jpg" alt="">
-                    </div>
-
-                    <div class="iconos-img">
-                        <p>Editar imagen <i class="far fa-edit"></i> </p>
-                        <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
-                    </div>
-                </section>
-                
-
-                <section class="botones">
-                    <button>Cancelar</button>
-                    <button  type="reset">Borrar todo</button>
-                    <button type="">Guardar cambios</button>
-                </section>
-
-            </form>
+                        <div class="iconos-img">
+                            <p>Editar imagen <i class="far fa-edit"></i> </p>
+                            <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
+                        </div>
+                        <p>Imagen 1</p>
+                    </section>
+                    
+    
+                    <section class="botones">
+                        <button>Cancelar</button>
+                        <button  type="reset">Borrar todo</button>
+                        <button type="">Guardar cambios</button>
+                    </section>
+    
+                </form>
+        </div>
+        
     </main>
 </body>
 </html>
