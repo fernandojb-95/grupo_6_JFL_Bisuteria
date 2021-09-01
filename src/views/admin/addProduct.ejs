@@ -16,62 +16,75 @@
                 <div class="add-inputs">
                     <div class="part_1">
                         <p><strong>Nombre del producto:</strong></p>
-                        <input type="text" placeholder="Nombre" name="product" class="prduct-input" required >
+                        <input type="text" placeholder="Nombre" name="product" class="product-name" required >
                         <br>
                         <p><strong>Descripción del producto:</strong></p>
-                        <textarea name="description" rows="5" cols="25" placeholder="Descripción"></textarea>
+                        <textarea name="description" rows="5" cols="25" placeholder="Descripción" class="prodcut-description"></textarea>
                     </div>
                     <br>
                     <div class="part_2">
-                        <p><strong>Precio</strong></p>
-                        <p>$</p><input type="text" placeholder="Precio" name="price" class="price-input" required>
-                        <p><strong>Categoría</strong></p>
-                        <ul class="list-categorias">
-                            <li>
-                                <input type="radio" name="categoria" value="ring">Anillos
-                            </li>
-                            <li>
-                                <input type="radio" name="categoria" value="necklace"> Collares
-                            </li>
-                            <li>
-                                <input type="radio" name="categoria" id="bracelet">Brazaletes
-                            </li>
-                        </ul>
+                        <div class="price">
+                            <p><strong>Precio:</strong></p>
+                            <div class="price-box">
+                                <p>$</p>
+                                <input type="text" placeholder="Precio" name="price" class="price-text" required>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <p><strong>Categoría:</strong></p>
+                            <ul class="list-categorias">
+                                <li>
+                                    <input type="radio" name="categoria" value="ring"> Anillos
+                                </li>
+                                <li>
+                                    <input type="radio" name="categoria" value="necklace"> Collares
+                                </li>
+                                <li>
+                                    <input type="radio" name="categoria" id="bracelet"> Brazaletes
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="part_3">
-                        <p><strong>Tallas</strong></p>
-                        <ul class="tallas">
-                            <li>
-                                <input type="checkbox" name="tallas" value="small">S
-                            </li>
-                            <li>
-                                <input type="checkbox" name="tallas" value="medium">M
-                            </li>
-                            <li>
-                                <input type="checkbox" name="tallas" value="large">G
-                            </li>
-                        </ul>
-                        <div class="cantidades"></div>
-                            <p><strong>Cantidad</strong></p>
+                        <div class="size">
+                            <p><strong>Tallas:</strong></p>
+                            <ul class="tallas">
+                                <li>
+                                    <input type="checkbox" name="tallas" value="small"> S
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="tallas" value="medium"> M
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="tallas" value="large"> G
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quantity">
+                            <p><strong>Cantidad:</strong></p>
                             <ul class="cantidad">
                                 <li>
-                                    <input type="text" name="cantidad" required>
+                                    <input type="text" name="cantidad" class="q-text" required>
                                 </li>
                                 <li>
-                                    <input type="text" name="cantidad" required>
+                                    <input type="text" name="cantidad" class="q-text" required>
                                 </li>
                                 <li>
-                                    <input type="text" name="cantidad" required>
+                                    <input type="text" name="cantidad" class="q-text" required>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="part_4">
-                        <div class="pic_1">
-                            <img class="pic-add" src="/img/ring-2.jpg" alt="Foto de anillo">
-                            <p>Imagen 1</p>
-                            <p>Editar imagen <i class="far fa-edit"></i> </p>
-                        <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
+                        <div class="pic">
+                            <div class="picture">
+                                <img src="/img/ring-2.jpg" alt="Foto de anillo">
+                                <p>Imagen 1</p>
+                            </div>
+                            <div class="pic-edit">
+                                <p>Editar imagen <i class="far fa-edit"></i> </p>
+                                <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
+                            </div>
                         </div>
                     </div>
                     <div class="botones">

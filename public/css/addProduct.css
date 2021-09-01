@@ -1,19 +1,65 @@
-html{
-    background-image: url('../img/BG_add-product.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+/*Nombre y Descripción*/
+.part_1{
+    padding: 10px;
 }
-.add-product{
-    text-align: center;
+.part_1 .product-name{
+    margin-bottom: 10px;
 }
-.product-form .add-inputs{
-    text-align: center;
+
+/*Precios y Categorías*/
+.part_2 .price-box{
+    margin-top: 10px;
+    display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
-.product-form .material{
-    list-style-type: none;
+.part_2{
+    padding: 10px;
 }
-.form-add-product{
-    background-color: #fff;
+.part_2 .price-box .price-text{
+    padding: 10px;
+    width: 120px;
+    margin-left: 5px;
+}
+.part_2 .list-categorias{
+    list-style: none;
+    margin-top: 5px;
+}
+.part_2 .list-categorias li{
+    padding: 5px;
+}
+
+/*Tallas y Cantidades*/
+.part_3{
+    padding: 10px;
+    display: flex;
+}
+.part_3 li{
+    padding: 5px;
+}
+.part_3 .tallas{
+    list-style: none;
+}
+.part_3 .size{
+    margin-right: 30%;
+}
+.part_3 .cantidad{
+    list-style: none;
+}
+.part_3 .cantidad .q-text{
+    width: 90px;
+}
+
+/*Imagen*/
+.part_4{
+    padding: 10px;
+    background-color: var(--light-border)
+}
+.part_4 img{
+    width: 50%;
+    
+}
+.part_4 .pic{
+    display: flex;
+    border: 1px solid red;
 }
