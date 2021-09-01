@@ -22,15 +22,25 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-input{
+input, textarea{
     border-radius: 5px;
+    border: 1px solid var(--light-border);
 }
 h1,h2,h3,h4{
     margin: 10px 0;
     text-align: center;
 }
+h1{
+    font-size: 26px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 22px;
+}
 /*Estilos principales de botón*/
-button[type="submit"]{
+button.submit{
     height: 30px;
     color: var(--gold);
     background-color: transparent;
@@ -39,11 +49,11 @@ button[type="submit"]{
     display: block;
     position: relative;
 }
-button[type="submit"]:focus{
+button.submit:focus{
     border: 2px solid var(--light-border);
     box-shadow: 3px 3px 10px var(--light-border) ;
 }
-button[type="submit"]::after, button[type="submit"]::before{
+button.submit::after, button.submit::before{
     content: "";
     display: block;
     position: absolute;
@@ -53,7 +63,7 @@ button[type="submit"]::after, button[type="submit"]::before{
     transition: all 0.6s linear;
     border-radius: 2px;
 }
-button[type="submit"]::after{
+button.submit::after{
     bottom: 0;
     right: 0;
     border-top-color: transparent;
@@ -61,7 +71,7 @@ button[type="submit"]::after{
     border-bottom-color: var(--gold);
     border-right-color: var(--gold);
 }
-button[type="submit"]::before{
+button.submit::before{
     top: 0;
     left: 0;
     border-top-color: var(--gold);
@@ -69,7 +79,7 @@ button[type="submit"]::before{
     border-bottom-color: transparent;
     border-right-color: transparent;
 }
-button[type="submit"]:hover:after, button[type="submit"]:hover:before{
+button.submit:hover:after, button.submit:hover:before{
     width: 100%;
     height: 100%;
 }

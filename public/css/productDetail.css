@@ -1,3 +1,5 @@
+@import url("general.css");
+
 /* Estilos de visualizacion del producto */
 
 .selector-imagenes{
@@ -91,6 +93,70 @@
 .imagenes{
     width: 100%;
 }
+/*Área de comentarios*/
+.comment-section{
+    margin: 20px 0;
+}
+.add-comment{
+    margin-bottom: 20px;
+}
+.add-comment label{
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+}
+.add-comment .comment-title{
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px auto;
+}
+.add-comment textarea{
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: 150px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px auto;
+}
+.comment-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.comment-buttons button{
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 15px;
+    width: 30%;
+}
+.comment-box{
+    display: grid;
+    gap: 5px;
+    margin: 15px auto;
+    padding: 10px;
+    border-top: 1px solid var(--light-border) ;
+}
+.comment-box .user-img{
+    justify-self: center;
+    font-size: 36px;
+}
+.com-title, .com-date{
+    text-align: center;
+    font-weight: bold;
+}
+.com-title{
+    font-size: 20px;
+}
+.com-content{
+    text-align: justify;
+    font-size: 14px;
+    padding: 10px;
+}
 /*Estilos para media querie*/
 @media(min-width: 768px) {
 
@@ -132,6 +198,35 @@
         margin-top: 20px;
         width: 80%;
         font-size: 18px;
+    }
+    .comment-buttons{
+        justify-content: space-around;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    .comment-buttons button{
+        margin-left: 0;
+    }
+    .comment-box{
+        grid-template-columns: 15% 85%;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: "foto  title title"
+                             "foto  date date "
+                             "content content content";
+    }
+    .user-img{
+        grid-area: foto;
+    }
+    .com-title{
+        grid-area: title;
+        text-align: left;
+    }
+    .com-date{
+        grid-area: date;
+        text-align: left;
+    }
+    .com-content{
+        grid-area: content;
     }
 }
 
