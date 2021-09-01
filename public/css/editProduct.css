@@ -1,89 +1,96 @@
+/* Estilos de la seccion informacion actual */
+.informacion-actual{
+    background-color: gray;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+}
 
-/* Estilos de la lista de productos */
-.edit-products{
+.informacion-actual-imgs{
     display: flex;
     justify-content: space-around;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
+}
+
+.informacion-actual-imgs img{
+    width: 20%;
+    transition: all 500ms;
+}
+
+.informacion-actual-imgs :hover{
+    transform: scale(1.3);
+}
+
+.datos-actual{
     margin-top: 20px;
 }
 
-.edit-form{
+/* Estilos de la seccion de nombre */
+.nombre{
+    margin-bottom: 20px;
+}
+
+.nombre input[type="text"]{
+    width: 100%;
+    height: 35px;
+}
+
+/* Estilos de la seccion de descripcion */
+.descripcion{
+    margin-bottom: 20px;
+}
+
+.descripcion textarea{
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+/* Estilos de la seccion de precio */
+
+
+/* Estilos de la seccion de categoria */
+.categoria{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+.categoria input[type="radio"]{
+    margin-left: 30px;
 }
 
-.edit-form input[type='text']{
-    width: 70%;
-    margin-right: 5px;
+/* Estilos de la seccion de tallas */
+.tallas{
+    display: flex;
+    justify-content: center;
+
 }
 
-.edit-img{
+
+
+/* Estilos de la seccion opciones-imagen */
+.opciones-imagen{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.imagen{
     width: 50%;
 }
 
-.edit-img img{
+.imagen img{
     width: 100%;
+    padding: 5%;
 }
 
-.edit-texto{
+.iconos-img{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.edit-icono{
-    display: flex;
-    align-items: flex-end;
-    padding-right: 5px;
-    padding-bottom: 5px;
-}
-
-/* Estilos del formulario */
-.botones{
-    display: flex;
-    justify-content: space-around;
-}
-
-.datos-particulares{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.datos{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 60%;
-}
-
-.imagenes img{
-    width: 100%;
-}
-
-.editproducts-form input[type="text"]{
-    width: 100%;
-    height: 30px;
-    margin-top: 10px;
-
-}
-
-.editproducts-form textarea{
-    width: 100%;
-    margin-top: 10px;
-    height: 80px;
-}
-
-.opciones-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.vistas-producto div{
-    margin: 10px 10px 10px;
-    background-color: gray;
-    height: 30px;
-}
