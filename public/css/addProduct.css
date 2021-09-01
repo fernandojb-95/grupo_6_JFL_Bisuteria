@@ -1,0 +1,19 @@
+html{
+    background-image: url('../img/BG_add-product.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.add-product{
+    text-align: center;
+}
+.product-form .add-inputs{
+    text-align: center;
+    align-items: center;
+}
+.product-form .material{
+    list-style-type: none;
+}
+.form-add-product{
+    background-color: #fff;
+}
