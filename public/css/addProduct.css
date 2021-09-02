@@ -1,63 +1,139 @@
-/*Nombre y Descripción*/
-.part_1{
-    padding: 10px;
-}
-.part_1 .product-name{
-    margin-bottom: 10px;
+@import url('general.css');
+/* Estilos de la seccion de nombre */
+.nombre{
+    margin-bottom: 20px;
 }
 
-/*Precios y Categorías*/
-.part_2 .price-box{
-    margin-top: 10px;
+.nombre input[type="text"]{
+    width: 100%;
+    height: 35px;
+}
+
+/* Estilos de la seccion de descripcion */
+.descripcion{
+    margin-bottom: 20px;
+}
+
+.descripcion textarea{
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+/* Estilos de la seccion de precio */
+
+
+/* Estilos de la seccion de categoria */
+.categoria{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.categoria input[type="radio"]{
+    margin-left: 30px;
+}
+.cat-opcion{
+    margin: 10px 0;
+}
+
+/* Estilos de la seccion de tallas */
+.tallas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 150px;
+}
+.tallas p{
+    width: 100%;
+}
+.tallas-check{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+.tallas label{
+    margin-left: 10px;
+}
+.tallas-text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.tallas-text input{
+    width: 80px;
+}
+.quant{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
 }
-.part_2{
-    padding: 10px;
-}
-.part_2 .price-box .price-text{
-    padding: 10px;
-    width: 120px;
-    margin-left: 5px;
-}
-.part_2 .list-categorias{
-    list-style: none;
-    margin-top: 5px;
-}
-.part_2 .list-categorias li{
-    padding: 5px;
+.quant input{
+    margin-left: 10px;
 }
 
-/*Tallas y Cantidades*/
-.part_3{
-    padding: 10px;
+/* Estilos de la seccion opciones-imagen */
+.opciones-imagen{
     display: flex;
-}
-.part_3 li{
-    padding: 5px;
-}
-.part_3 .tallas{
-    list-style: none;
-}
-.part_3 .size{
-    margin-right: 30%;
-}
-.part_3 .cantidad{
-    list-style: none;
-}
-.part_3 .cantidad .q-text{
-    width: 90px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--light-border);
+    color: var(--dark);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 390px;
 }
 
-/*Imagen*/
-.part_4{
-    padding: 10px;
-    background-color: var(--light-border)
-}
-.part_4 img{
+.imagen{
     width: 50%;
+    align-self: center;
 }
-.part_4 .pic{
+.imagen img{
+    width: 100%;
+    padding: 5%;
+}
+.iconos-img{
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opciones-imagen p{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+.botones button{
+    width: 25%;
+    max-width: 250px;
+    padding: 5px;
+}
+main{
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(min-width: 768px){
+    .agregar-img{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .opciones-imagen{
+        width: 40%;
+    }
 }

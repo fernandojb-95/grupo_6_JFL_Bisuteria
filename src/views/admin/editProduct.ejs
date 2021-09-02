@@ -49,10 +49,18 @@
     
                     <section class="categoria">
                         <label for="categoria">Categoría: </label>
-                        
-                        <label> <input type="radio" name="categoria" id = "categoria" value="anillos" checked>Anillos</label>
-                        <label> <input type="radio" name="categoria" id = "categoria" value="collares">Collares</label>
-                        <label> <input type="radio" name="categoria" id = "categoria" value="pulseras">Pulseras</label>
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="anillos" checked>
+                            <label for="anillos">Anillos</label>
+                        </div>
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="collares"> 
+                            <label for="categoria">Collares</label>
+                        </div>
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="pulseras">
+                            <label for="categoria"> Pulseras</label>
+                        </div>
                     </section>
     
                     <section class="tallas">
@@ -86,18 +94,38 @@
                                 </div>
                             </div>
                     </section>
-    
-                    <section class="opciones-imagen">
-                        <div class="imagen">
-                            <img src="/img/ring-2.jpg" alt="">
+                    <section class="agregar-img">
+                        <div class="opciones-imagen">
+                            <div class="imagen">
+                                <img src="/img/ring-2.jpg" alt="">
+                            </div>
+                            <div class="iconos-img">
+                                <div class="icon edit">
+                                    <p>Editar </p><i class="far fa-edit"></i>
+                                </div>
+                                <div class="icon del">
+                                    <p>Eliminar</p><i class="fas fa-trash"></i>
+                                </div>
+                                
+                            </div>
+                            <p>Imagen 1</p>
                         </div>
-                        <div class="iconos-img">
-                            <p>Editar imagen <i class="far fa-edit"></i> </p>
-                            <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
+                        <div class="opciones-imagen">
+                            <div class="imagen">
+                                <img src="/img/ring-2.jpg" alt="">
+                            </div>
+                            <div class="iconos-img">
+                                <div class="icon edit">
+                                    <p>Editar </p><i class="far fa-edit"></i>
+                                </div>
+                                <div class="icon del">
+                                    <p>Eliminar</p><i class="fas fa-trash"></i>
+                                </div>
+                                
+                            </div>
+                            <p>Imagen 1</p>
                         </div>
-                        <p>Imagen 1</p>
-                    </section>
-                    
+                    </section>                   
     
                     <section class="botones">
                         <button>Cancelar</button>
