@@ -6,9 +6,15 @@
 .product-banner img{
     width: 100%;
     max-height: 200px;
-    object-position: 0 30%;
+    
     object-fit: cover;
     opacity: 0.75;
+}
+.ring{
+    object-position: 0 30%;
+}
+.neck, .brace{
+    object-position: 0 60%;
 }
 .product-banner h1{
     position: absolute;
