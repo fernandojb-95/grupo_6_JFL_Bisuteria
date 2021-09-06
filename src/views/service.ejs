@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/service.css">
     <title>Servicio al cliente</title>
 </head>
 <body>
     <%- include('./partials/header') %>
     <main>
-        <h1>Servicio al cliente</h1>
+        <div class="title">
+            <h1 id="titulo_h">Servicio al cliente</h1>
+            <p id="titulo_p">¿En qué te podemos ayudar?</p>
+        </div>
+        <div class="cajas">
+            <div class="box">
+                <p>Mandanos un mensaje y te ayudremos lo más pronto posible</p>
+                <a href="/service"><i class="fab fa-whatsapp"></i></a>
+                <p>55 3322 1144</p>
+            </div>
+            <div class="box">
+                <p>Escríbenos un mail y te responderemos apenas podamos</p>
+                <a href="/service"><i class="fas fa-envelope"></i></a>
+                <p>ayuda@jfl.com</p>
+            </div>
+            <div class="box">
+                <p>Echanos una llamada y un asesor se pondrá en contacto contigo</p>
+                <a href="/service"><i class="fas fa-headset"></i></a>
+                <p>55 3214 2143</p>
+            </div>
+        </div>
     </main>
     <%- include('./partials/footer') %>
 </body>
