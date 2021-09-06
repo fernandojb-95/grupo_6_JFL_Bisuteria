@@ -8,80 +8,112 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="form-add-product">
-            <section class="add-product">
-                <h1>Agrega un producto</h1>
-            </section>
-            <form class= "product-form" action="#">
-                <div class="add-inputs">
-                    <div class="part_1">
-                        <p><strong>Nombre del producto:</strong></p>
-                        <input type="text" placeholder="Nombre" name="product" class="prduct-input" required >
-                        <br>
-                        <p><strong>Descripción del producto:</strong></p>
-                        <textarea name="description" rows="5" cols="25" placeholder="Descripción"></textarea>
-                    </div>
-                    <br>
-                    <div class="part_2">
-                        <p><strong>Precio</strong></p>
-                        <p>$</p><input type="text" placeholder="Precio" name="price" class="price-input" required>
-                        <p><strong>Categoría</strong></p>
-                        <ul class="list-categorias">
-                            <li>
-                                <input type="radio" name="categoria" value="ring">Anillos
-                            </li>
-                            <li>
-                                <input type="radio" name="categoria" value="necklace"> Collares
-                            </li>
-                            <li>
-                                <input type="radio" name="categoria" id="bracelet">Brazaletes
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="part_3">
-                        <p><strong>Tallas</strong></p>
-                        <ul class="tallas">
-                            <li>
-                                <input type="checkbox" name="tallas" value="small">S
-                            </li>
-                            <li>
-                                <input type="checkbox" name="tallas" value="medium">M
-                            </li>
-                            <li>
-                                <input type="checkbox" name="tallas" value="large">G
-                            </li>
-                        </ul>
-                        <div class="cantidades"></div>
-                            <p><strong>Cantidad</strong></p>
-                            <ul class="cantidad">
-                                <li>
-                                    <input type="text" name="cantidad" required>
-                                </li>
-                                <li>
-                                    <input type="text" name="cantidad" required>
-                                </li>
-                                <li>
-                                    <input type="text" name="cantidad" required>
-                                </li>
-                            </ul>
+        <h1>Editar producto</h1>
+        <div class="agregar-product">
+                <form action="#" method="">
+    
+                    <section class="nombre">
+                        <label for="nombre">Nombre del producto: </label>
+                        <input type="text" name ="nombre" id="nombre" placeholder="Nombre">
+                    </section>
+    
+                    <section class="descripcion">  
+                        <label for="descripcion">Descripción:</label>
+                        <textarea name ="descripcion" id="descripcion" rows="5" placeholder="Escribe una breve descripción"></textarea>
+                    </section>
+    
+                    <section class="precio">
+                        <label for="precio">Precio: $</label>
+                        <input type="text" name ="precio" id="precio">
+                    </section>
+    
+                    <section class="categoria">
+                        <label for="categoria">Categoría: </label>
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="anillos" checked>
+                            <label for="anillos">Anillos</label>
                         </div>
-                    </div>
-                    <div class="part_4">
-                        <div class="pic_1">
-                            <img class="pic-add" src="/img/ring-2.jpg" alt="Foto de anillo">
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="collares"> 
+                            <label for="categoria">Collares</label>
+                        </div>
+                        <div class="cat-opcion">
+                            <input type="radio" name="categoria" id = "categoria" value="pulseras">
+                            <label for="categoria"> Pulseras</label>
+                        </div>
+                    </section>
+    
+                    <section class="tallas">
+                        <p><strong>Tallas:</strong></p>
+                            <div class="tallas-check">
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-S" value="s">
+                                    <label for="talla-S">S</label>
+                                </div>
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-M" value="m">
+                                    <label for="talla-M">M</label>
+                                </div>
+                                <div class="check">
+                                    <input type="checkbox" name="tallas" id ="talla-L" value="l">
+                                    <label for="talla-L"> L</label>
+                                </div>
+                            </div>
+                            <div class="tallas-text">
+                                <div class="quant">
+                                    <label for="cant-S">Cantidad:</label>
+                                    <input type="number" name ="cant-S" id="cant-S">
+                                </div>
+                                <div class="quant">
+                                    <label for="cant-M">Cantidad:</label>
+                                    <input type="number" name ="cant-M" id="cant-M">
+                                </div>
+                                <div class="quant">
+                                    <label for="cant-L">Cantidad:</label>
+                                    <input type="number" name ="cant-L" id="cant-L">
+                                </div>
+                            </div>
+                    </section>
+                    <section class="agregar-img">
+                        <div class="opciones-imagen">
+                            <div class="imagen">
+                                <img src="/img/ring-2.jpg" alt="">
+                            </div>
+                            <div class="iconos-img">
+                                <div class="icon edit">
+                                    <p>Editar </p><i class="far fa-edit"></i>
+                                </div>
+                                <div class="icon del">
+                                    <p>Eliminar</p><i class="fas fa-trash"></i>
+                                </div>
+                                
+                            </div>
                             <p>Imagen 1</p>
-                            <p>Editar imagen <i class="far fa-edit"></i> </p>
-                            <p>Eliminar imagen <i class="fas fa-trash"></i> </p>
                         </div>
-                    </div>
-                    <div class="botones">
-                        <button type="cancel">Cancelar</button>
-                        <button type="reset">Borrar</button>
-                        <button type="">Guardar</button>
-                        
-                    </div>
-                </div>
-            </form>
+                        <div class="opciones-imagen">
+                            <div class="imagen">
+                                <img src="/img/ring-2.jpg" alt="">
+                            </div>
+                            <div class="iconos-img">
+                                <div class="icon edit">
+                                    <p>Editar </p><i class="far fa-edit"></i>
+                                </div>
+                                <div class="icon del">
+                                    <p>Eliminar</p><i class="fas fa-trash"></i>
+                                </div>
+                                
+                            </div>
+                            <p>Imagen 2</p>
+                        </div>
+                    </section>                   
+    
+                    <section class="botones">
+                        <button>Cancelar</button>
+                        <button  type="reset">Borrar todo</button>
+                        <button type="submit">Guardar cambios</button>
+                    </section>
+    
+                </form>
         </div>
     </main>
 </body>
