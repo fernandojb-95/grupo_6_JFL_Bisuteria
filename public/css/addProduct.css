@@ -60,4 +60,11 @@
 }
 .part_4 .pic{
     display: flex;
+    justify-content: center;
+}
+.part_4 .pic .pic-edit{
+    border: solid 1px red;
+}
+.part_4 .pic .picture{
+    border: solid 1px blue;
 }
