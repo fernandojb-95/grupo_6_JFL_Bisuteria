@@ -1,0 +1,37 @@
+@import url('general.css');
+
+.about-us img{
+    display: block;
+    width: 95%;
+    margin: 20px auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+}
+.about-us .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-us p{
+    text-align: justify;
+    margin: 10px 0;
+}
+
+
+
+@media(min-width: 1025px){
+    .about-us{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    .about-us img{
+        width: 40%;
+        order: 1;
+    }
+    .about-us .text{
+        width: 50%;
+    }
+
+}

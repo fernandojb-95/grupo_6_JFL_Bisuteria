@@ -3,11 +3,22 @@
 <head>
     <%- include('../partials/head') %>
     <title>Brazaletes</title>
+    <link rel="stylesheet" href="/css/products-pages.css">
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Brazaletes</h1>
+        <section class="product-banner">
+            <img src="/img/brazaletes-banner.png" alt="Anillos" class="brace">
+            <h1>Brazaletes</h1>
+        </section>
+        <section class="products-container">
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+        </section>
     </main>
     <%- include('../partials/footer') %>
 </body>

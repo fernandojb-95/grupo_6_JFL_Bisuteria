@@ -3,11 +3,22 @@
 <head>
     <%- include('../partials/head') %>
     <title>Collares</title>
+    <link rel="stylesheet" href="/css/products-pages.css">
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Collares</h1>
+        <section class="product-banner">
+            <img src="/img/Collares-banner.png" alt="Anillos">
+            <h1>Collares</h1>
+        </section>
+        <section class="products-container">
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+            <%- include('../partials/product-card.ejs') %>
+        </section>
     </main>
     <%- include('../partials/footer') %>
 </body>
