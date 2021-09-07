@@ -8,6 +8,34 @@
     <%- include('./partials/header') %>
     <main>
         <h1>Contacto</h1>
+        <p>Queremos saber de ti, ¡escríbenos!</p>
+
+        <form class= "contacto-form" action="#">
+            <section class="nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" name ="nombre" id="nombre"required>
+            </section>
+
+            <section class="email">
+                <label for="email">Correo electrónico</label>
+                <input type="email" name ="email" id="email" required>
+            </section>
+
+            <section class="celular">
+                <label for="celular">Celular</label>
+                <input type="text" name ="celular" id="celular" required>
+            </section>
+
+            <section class="mensaje">  
+                <label for="mensaje">Mensaje:</label>
+                <textarea name ="mensaje" id="mensaje" rows="5" required></textarea>
+            </section>
+
+            <section class="boton-contacto">
+                <button type="submit">Enviar</button>
+            </section>
+
+        </form>
     </main>
     <%- include('./partials/footer') %>
 </body>
