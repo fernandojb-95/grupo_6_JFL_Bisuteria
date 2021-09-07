@@ -13,6 +13,9 @@ const productController = {
     },
     collares : (req, res) => {
         res.render('./products/collares');
+    },
+    finalizaCompra : (req, res) => {
+        res.render('./products/finalizaCompra');
     }
 }
 
