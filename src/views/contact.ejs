@@ -9,12 +9,12 @@
     <%- include('./partials/header') %>
     <main>
         <h1>Contacto</h1>
-        <p>Queremos saber de ti, ¡escríbenos!</p>
+        <h2>Queremos saber de ti, ¡escríbenos!</h2>
 
         <form class= "contacto-form" action="#" method="">
             <section class="nombre">
                 <div>
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre:</label>
                 </div>
                 <div>
                     <input type="text" name ="nombre" id="nombre" required>
@@ -23,7 +23,7 @@
 
             <section class="email">
                 <div>
-                    <label for="email">Correo electrónico</label>
+                    <label for="email">Correo electrónico:</label>
                 </div>
 
                 <div>
@@ -33,7 +33,7 @@
 
             <section class="celular">
                 <div>
-                    <label for="celular">Celular</label>
+                    <label for="celular">Celular:</label>
                 </div>
                 <div>
                     <input type="text" name ="celular" id="celular" maxlength="10" required>
@@ -48,12 +48,13 @@
                     <textarea name ="mensaje" id="mensaje" rows="5" required></textarea>
                 </div>
             </section>
-
-            <section class="boton-contacto">
-                <button class="submit" type="submit">Enviar</button>
-            </section>
-
         </form>
+
+        <section class="boton-contacto">
+            <div>
+                <button class="submit" type="submit">Enviar</button>
+            </div>
+        </section>
     </main>
     <%- include('./partials/footer') %>
 </body>
