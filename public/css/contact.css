@@ -1,0 +1,24 @@
+@import url("general.css");
+
+#nombre, #email, #celular{
+    width: 100%;
+    border-radius: 40px;
+}
+
+#mensaje{
+    width: 100%;
+    border-radius: 10px;
+}
+
+section, p{
+    margin-bottom: 20px;
+}
+
+.boton-contacto{
+    display: flex;
+    justify-content: center;
+}
+
+.boton-contacto button{
+    width: 50%;
+}

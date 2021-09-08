@@ -3,6 +3,7 @@
 <head>
     <%- include('./partials/head') %>
     <title>Contacto</title>
+    <link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
     <%- include('./partials/header') %>
@@ -10,29 +11,46 @@
         <h1>Contacto</h1>
         <p>Queremos saber de ti, ¡escríbenos!</p>
 
-        <form class= "contacto-form" action="#">
+        <form class= "contacto-form" action="#" method="">
             <section class="nombre">
-                <label for="nombre">Nombre</label>
-                <input type="text" name ="nombre" id="nombre"required>
+                <div>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div>
+                    <input type="text" name ="nombre" id="nombre" required>
+                </div>
             </section>
 
             <section class="email">
-                <label for="email">Correo electrónico</label>
-                <input type="email" name ="email" id="email" required>
+                <div>
+                    <label for="email">Correo electrónico</label>
+                </div>
+
+                <div>
+                    <input type="email" name ="email" id="email" required>
+                </div>
             </section>
 
             <section class="celular">
-                <label for="celular">Celular</label>
-                <input type="text" name ="celular" id="celular" required>
+                <div>
+                    <label for="celular">Celular</label>
+                </div>
+                <div>
+                    <input type="text" name ="celular" id="celular" maxlength="10" required>
+                </div>
             </section>
 
             <section class="mensaje">  
-                <label for="mensaje">Mensaje:</label>
-                <textarea name ="mensaje" id="mensaje" rows="5" required></textarea>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                </div>
+                <div>
+                    <textarea name ="mensaje" id="mensaje" rows="5" required></textarea>
+                </div>
             </section>
 
             <section class="boton-contacto">
-                <button type="submit">Enviar</button>
+                <button class="submit" type="submit">Enviar</button>
             </section>
 
         </form>
