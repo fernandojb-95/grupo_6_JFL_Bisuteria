@@ -37,7 +37,7 @@
                 <div class="face face2">
                     <div class="content">
                         <p>Descubre nuestra gran colección de anillos</p>
-                            <a href="/product/anillos">Comprar</a>
+                            <a href="/products/anillos">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 <div class="face face2">
                     <div class="content">
                         <p>Descubre nuestra gran colección de collares </p>
-                            <a href="/product/collares">Comprar</a>
+                            <a href="/products/collares">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div class="face face2">
                     <div class="content">
                         <p>Descubre nuestra gran colección de brazaletes</p>
-                            <a href="/product/brazaletes">Comprar</a>
+                            <a href="/products/brazaletes">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -82,46 +82,10 @@
         <section class="container-04">
             <h1>Novedades</h1>
             <div class="products-container">
-                <a href="/" class="product">
-                    <div class="product-image">
-                        <img class="pic main" src="/img/gold-ring.jpg" alt="Product">
-                        <img class="pic back" src="/img/ring-2.jpg" alt="Vista 2">
-                    </div>
-                    <div class="product-info">
-                        <p>Nombre del producto</p>
-                        <p>Precio</p>
-                    </div>
-                </a>
-                <a href="/" class="product">
-                    <div class="product-image">
-                        <img class="pic main" src="/img/gold-ring.jpg" alt="Product">
-                        <img class="pic back" src="/img/ring-2.jpg" alt="Vista 2">
-                    </div>
-                    <div class="product-info">
-                        <p>Nombre del producto</p>
-                        <p>Precio</p>
-                    </div>
-                </a>
-                <a href="/" class="product">
-                    <div class="product-image">
-                        <img class="pic main" src="/img/gold-ring.jpg" alt="Product">
-                        <img class="pic back" src="/img/ring-2.jpg" alt="Vista 2">
-                    </div>
-                    <div class="product-info">
-                        <p>Nombre del producto</p>
-                        <p>Precio</p>
-                    </div>
-                </a>
-                <a href="/" class="product">
-                    <div class="product-image">
-                        <img class="pic main" src="/img/gold-ring.jpg" alt="Product">
-                        <img class="pic back" src="/img/ring-2.jpg" alt="Vista 2">
-                    </div>
-                    <div class="product-info">
-                        <p>Nombre del producto</p>
-                        <p>Precio</p>
-                    </div>
-                </a>
+                <%- include('./partials/product-card.ejs') %>
+                <%- include('./partials/product-card.ejs') %>
+                <%- include('./partials/product-card.ejs') %>
+                <%- include('./partials/product-card.ejs') %>
         </section>
     </main>
     <%- include('./partials/footer') %>

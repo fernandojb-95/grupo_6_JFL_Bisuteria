@@ -8,5 +8,6 @@ router.get('/anillos',productController.anillos);
 router.get('/brazaletes',productController.brazaletes);
 router.get('/collares',productController.collares);
 router.get('/finalizaCompra',productController.finalizaCompra);
+router.get('/', productController.productos);
 
 module.exports = router;

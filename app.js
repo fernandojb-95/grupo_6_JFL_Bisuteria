@@ -27,7 +27,7 @@ app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 
 //Rutas de productos
-app.use('/product', productRoutes);
+app.use('/products', productRoutes);
 
 //Rutas de administrador
 app.use('/admin', adminRoutes);

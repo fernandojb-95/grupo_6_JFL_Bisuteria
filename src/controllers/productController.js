@@ -16,6 +16,9 @@ const productController = {
     },
     finalizaCompra : (req, res) => {
         res.render('./products/finalizaCompra');
+    },
+    productos: (req,res) => {
+        res.render('./products/products');
     }
 }
 
