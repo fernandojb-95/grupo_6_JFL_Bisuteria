@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fernandojb-95/grupo_6_JFL_Joyas#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "method-override": "^3.0.0"
   }
 }
