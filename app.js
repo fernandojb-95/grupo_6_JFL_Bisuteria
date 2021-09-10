@@ -18,6 +18,10 @@ app.use(express.static(path.resolve(__dirname , './public')))
 //Configuracion de métodos para formulario
 app.use(methodOverride('_method'));
 
+//Recibir datos en formato JSON
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //Levantando el servidor
 app.listen(3000, () => {
     console.log("Server running at port 3000")

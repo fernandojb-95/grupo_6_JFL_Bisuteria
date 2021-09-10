@@ -14,7 +14,7 @@
             <div class="imagenes">
                 <!-- Vista de producto actual -->
                 <div>
-                    <img class="imagen-principal" src="/img/Imagen3_detalle.png" alt="">
+                    <img class="imagen-principal" src="/img/<%=product.category%>/<%=product.image%>" alt="">
                 </div>
 
                 <!-- Slider de imágenes -->
@@ -36,15 +36,15 @@
             <div class="descripciones">
                 <!-- Descripcion del producto -->
                 <div class="datos-producto">
-                    <h1 class="nombre-producto">Nombre del producto</h1>
-                    <p class="descripcion-producto">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum error, dicta temporibus maxime delectus eum perspiciatis voluptatibus corrupti obcaecati, non deserunt. Non, cum nisi! Perspiciatis libero at cumque tempora.</p>
+                    <h1 class="nombre-producto"><%=product.name%></h1>
+                    <p class="descripcion-producto"><%=product.description%></p>
                 </div>
 
                 <!-- Seleccion de tallas y cantidades -->
                 <div class="datos-compra">
                     <form action="">
                         <div class="resalta-campo">
-                            <label for="price"> Precio: </label> <span id="price">$300.00</span>
+                            <label for="price"> Precio: </label><span id="price">$<%=product.price%>.00</span>
                         </div>
                         <div class="resalta-campo">
                             <label for="seleccionTalla">Talla: </label>
@@ -73,9 +73,9 @@
                             <button type="submit" class="submit btn">Añadir al carrito</button>
                         </div>
                     </form>
-                    <!-- <form action="products/:id?_method=DELETE" method="POST">
+                    <form action="/products/:id?_method=DELETE" method="POST">
                         <button type="submit">Borrar</button>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </section>

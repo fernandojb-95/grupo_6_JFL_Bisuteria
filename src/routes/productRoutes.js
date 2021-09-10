@@ -27,7 +27,7 @@ router.patch('/:id', productController.update);
 router.get('/:id', productController.productDetail);
 
 /*----Rutas para borrar producto----*/
-router.delete('/products/:id', productController.delete);
+router.delete('/:id', productController.delete);
 
 /*----Rutas para vista de carrito de compras----*/
 router.get('/productCart', productController.productCart);
