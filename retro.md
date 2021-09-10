@@ -36,3 +36,23 @@ En este sprint pudimos realizar la estructura HTML y los estilos CSS de las vist
 
 ## ¿Qué deberíamos dejar de hacer?
 * El no organizar de forma adecuada nuestro flujo de trabajo y suponer que ésto no puede afectar durante el desarrollo del proyecto, ya que de nueva cuenta se cargó un poco el trabajo en los días y horas finales. Sin embargo, consideramos que con las reuniones podemos ir solucionando esta problemática.
+
+# Retro Sprint 3
+Cambiamos el formato de nuestros htmls a EJS, además creamos las vistas parciales y también hicimos los formularios para la creación de productos y su edición. Además implementamos MVC, que es un modelo para implementar un controlador para nuestras vistas.
+
+## ¿Qué se hizo bien?
+- Aumentamos la frecuencia de las reuniones para mejorar comunicación y delegación de tareas.
+- Continuamos utilizando el trello para una mejor organización de las tareas a realizar.
+- Cumplimos con los objetivos establecidos por el sprint en tiempo y forma
+
+## ¿Qué se hizo mal?
+- Profundizar en los detalles de nuestra página y no quedarnos solo con lo que se nos asigna.
+- No hubo buena organización al usar recursos estáticos
+
+## ¿Qué deberíamos empezar a hacer o seguir haciendo?
+- Aplicar lo que vemos en las clases lo más pronto posible e intentar hacerlo al día siguiente.
+- Seguir reuniéndonos constantemente para informar avances y asignar nuevas tareas.
+- Seguir permitiendo que cada integrante se involucre en todas las tareas.
+
+## ¿Qué deberíamos dejar de hacer?
+- Dejar de comparar nuestros avances con otros equipos
