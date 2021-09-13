@@ -26,7 +26,6 @@ const productController = {
     },
     store: (req,res) =>{
         res.send('Creando articulo con post');
-
         //Lógica para almacenar informacion y crear producto
 
     },

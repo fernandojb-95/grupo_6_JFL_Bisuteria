@@ -5,13 +5,13 @@
     "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
     "price": 1245,
     "discount": 22,
-    "category": "collar",
+    "category": "collares",
     "size": {
         "S": 15,
         "M": 10,
         "L": 20
     },
-    "image": "Necklace_1_1_p.png",
+    "images": ["Necklace_1_1_p.png","default-image.svg"],
     "material": "plata"
   }, 
   {
@@ -20,13 +20,13 @@
     "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     "price": 1161,
     "discount": 14,
-    "category": "brazalete",
+    "category": "collares",
     "size": {
         "S": 15,
         "M": 10,
         "L": 20
     },
-    "image": "https://robohash.org/accusantiumestqui.png?size=50x50&set=set1",
+    "images": ["Necklace_2_1_p.png","default-image.svg"],
     "material": "oro"
   }, 
   {
@@ -35,13 +35,13 @@
     "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
     "price": 713,
     "discount": 29,
-    "category": "anillo",
+    "category": "collares",
     "size": {
         "S": 15,
         "M": 10,
         "L": 20
     },
-    "image": "https://robohash.org/estsitet.png?size=50x50&set=set1",
+    "images": ["Necklace_2_1_p.png", "default-image.svg"],
     "material": "oro"
   }, 
   {
@@ -50,13 +50,13 @@
     "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
     "price": 977,
     "discount": 63,
-    "category": "collar",
+    "category": "collares",
     "size": {
         "S": 15,
         "M": 10,
         "L": 20
     },
-    "image": "https://robohash.org/sintvelitducimus.png?size=50x50&set=set1",
+    "images": ["Necklace_3_1_p.png", "default-image.svg"],
     "material": "plata"
   }, 
   {
@@ -65,13 +65,13 @@
     "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
     "price": 779,
     "discount": 36,
-    "category": "anillo",
+    "category": "collares",
     "size": {
         "S": 15,
         "M": 10,
         "L": 20
     },
-    "image": "https://robohash.org/quilaudantiumcupiditate.png?size=50x50&set=set1",
+    "images": ["Necklace_4_1_p.png", "default-image.svg"],
     "material": "acero"
   }
 ]

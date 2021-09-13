@@ -1,7 +1,29 @@
-const { Router } = require('express');
+//Requerimos path, express y router para configurar las rutas
 const express = require('express');
 const router = express.Router();
-const productController = require('../controllers/productController')
+const path = require('path');
+
+//Requerimos multer para traer archivos
+const multer = require('multer');
+
+//Configuramos destino y nombre de archivos
+const multerDiskStorage = multer.diskStorage({
+    destination: (req, file, callback) =>{
+        let productCategory = req.body.categoria;
+        const filePath = path.join(__dirname, `../../public/img/${productCategory}`)
+        callback(null, filePath);
+    },
+    filename: (req, file, callback) => {
+        let productName = req.body.nombre
+        const imgName = `img-${productName.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}${path.extname(file.originalname)}`;
+        callback(null, imgName);
+    }
+})
+
+const fileUpload = multer({storage: multerDiskStorage})
+
+//Requerimos el controlador para llamar a las funciones
+const productController = require('../controllers/productController');
 
 /*----Rutas para vista de productos----*/
 router.get('/', productController.productos);
@@ -17,7 +39,7 @@ router.get('/collares',productController.collares);
 
 /*----Rutas para creación de producto----*/
 router.get('/create', productController.create);
-router.post('/', productController.store);
+router.post('/', fileUpload.any(), productController.store);
 
 /*----Rutas para edición de producto----*/
 router.get('/:id/edit', productController.edit);

@@ -73,19 +73,18 @@
         <section class="container-04">
             <h1>Los más vendidos</h1>
             <div class="products-container">
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
+                <% products.forEach(product => { %>
+                    <%- include('./partials/product-card.ejs', {product: product}) %>
+                <% }) %>               
             </div>
         </section>
         <section class="container-04">
             <h1>Novedades</h1>
             <div class="products-container">
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
-                <%- include('./partials/product-card.ejs') %>
+                <% products.forEach(product => { %>
+                    <%- include('./partials/product-card.ejs', {product: product}) %>
+                <% }) %>
+            </div>
         </section>
     </main>
     <%- include('./partials/footer') %>

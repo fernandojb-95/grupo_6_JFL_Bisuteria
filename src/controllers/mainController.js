@@ -1,6 +1,15 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsPath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 const mainController = {
     index: (req, res) => {
-        res.render('index');
+        let catProducts =[];
+        for(let i = 0; i<=3; i++){
+            catProducts[i]= products[i]
+        }
+        res.render('index', {products: catProducts});
    },
     aboutUs: (req, res) => {
         res.render('about-us');

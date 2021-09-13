@@ -10,7 +10,7 @@
     <main>
         <h1>Editar producto</h1>
         <div class="agregar-product">
-                <form action="/products" method="POST">
+                <form action="/products" method="POST" enctype="multipart/form-data">
     
                     <section class="nombre">
                         <label for="nombre">Nombre del producto: </label>
@@ -43,11 +43,10 @@
                             <label for="categoria">Collares</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="pulseras">
+                            <input type="radio" name="categoria" id = "categoria" value="brazaletes">
                             <label for="categoria"> Pulseras</label>
                         </div>
                     </section>
-
                     <section class="materials">
                         <label for="materials">Material: </label>
                         <div class="mat-opcion">
@@ -107,7 +106,7 @@
                                 <div class="icon del">
                                     <p>Eliminar</p><i class="fas fa-trash"></i>
                                 </div>
-                                
+                            <input type="file" name="image1" id="image">
                             </div>
                             <p>Imagen 1</p>
                         </div>
@@ -122,18 +121,16 @@
                                 <div class="icon del">
                                     <p>Eliminar</p><i class="fas fa-trash"></i>
                                 </div>
-                                
+                                <input type="file" name="image2" id="image">
                             </div>
                             <p>Imagen 2</p>
                         </div>
                     </section>                   
-    
                     <section class="botones">
                         <button>Cancelar</button>
                         <button  type="reset">Borrar todo</button>
                         <button type="submit">Guardar cambios</button>
                     </section>
-    
                 </form>
         </div>
     </main>
