@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Editar producto</h1>
+        <h1>Agregar producto</h1>
         <div class="agregar-product">
                 <form action="/products" method="POST" enctype="multipart/form-data">
     
@@ -29,7 +29,7 @@
                    
                     <section class="descuento">
                         <label for="descuento">Descuento:</label>
-                        <input type="number" name="descuento" id="descuento">
+                        <input type="number" name="descuento" id="descuento"><label>%</label>
                     </section>
 
                     <section class="categoria">
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="check">
                                     <input type="checkbox" name="tallas" id ="talla-L" value="l">
-                                    <label for="talla-L"> L</label>
+                                    <label for="talla-L">L</label>
                                 </div>
                             </div>
                             <div class="tallas-text">
@@ -95,35 +95,16 @@
                             </div>
                     </section>
                     <section class="agregar-img">
-                        <div class="opciones-imagen">
-                            <div class="imagen">
-                                <img src="/img/ring-2.jpg" alt="">
-                            </div>
-                            <div class="iconos-img">
-                                <div class="icon edit">
-                                    <p>Editar </p><i class="far fa-edit"></i>
-                                </div>
-                                <div class="icon del">
-                                    <p>Eliminar</p><i class="fas fa-trash"></i>
-                                </div>
-                            <input type="file" name="image1" id="image">
-                            </div>
-                            <p>Imagen 1</p>
-                        </div>
-                        <div class="opciones-imagen">
-                            <div class="imagen">
-                                <img src="/img/ring-2.jpg" alt="">
-                            </div>
-                            <div class="iconos-img">
-                                <div class="icon edit">
-                                    <p>Editar </p><i class="far fa-edit"></i>
-                                </div>
-                                <div class="icon del">
-                                    <p>Eliminar</p><i class="fas fa-trash"></i>
-                                </div>
-                                <input type="file" name="image2" id="image">
-                            </div>
-                            <p>Imagen 2</p>
+                        <p><strong>Imágenes:</strong></p>
+                        <div class="imagenes">
+                            <ul>
+                                <li>
+                                    <input type="file" name="image1" id="image"><label>Imagen 1</label>
+                                </li>
+                                <li>
+                                    <input type="file" name="image2" id="image"><label>Imagen 2</label>
+                                </li>
+                            </ul> 
                         </div>
                     </section>                   
                     <section class="botones">

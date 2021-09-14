@@ -21,6 +21,12 @@
 }
 
 /* Estilos de la seccion de precio */
+.descuento{
+    margin-top: 20px;
+}
+#descuento{
+    margin-right: 3px;
+}
 
 
 /* Estilos de la seccion de categoria */
@@ -35,6 +41,21 @@
     margin-left: 30px;
 }
 .cat-opcion{
+    margin: 10px 0;
+}
+
+/*Estilos de la sección de material*/
+.materials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.materials input[type="radio"]{
+    margin-left: 30px;
+}
+.mat-opcion{
     margin: 10px 0;
 }
 
@@ -78,49 +99,18 @@
 }
 
 /* Estilos de la seccion opciones-imagen */
-.opciones-imagen{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: var(--light-border);
-    color: var(--dark);
-    margin: 20px auto;
-    width: 80%;
-    max-width: 390px;
+.agregar-img{
+    margin-left: -230px;
 }
-
-.imagen{
-    width: 50%;
-    align-self: center;
+.imagenes{
+    margin:30px;
 }
-.imagen img{
-    width: 100%;
-    padding: 5%;
+.imagenes ul{
+    list-style: none;
 }
-.iconos-img{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.icon{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.opciones-imagen p{
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-}
-
-.botones{
-    display: flex;
-    justify-content: space-evenly;
-}
-.botones button{
-    width: 25%;
-    max-width: 250px;
-    padding: 5px;
+.imagenes ul li{
+   margin-top: 20px;
+   margin-left: -100px;
 }
 main{
     max-width: 900px;
