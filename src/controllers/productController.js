@@ -47,7 +47,8 @@ const productController = {
         res.render('./products/finalizaCompra');
     },
     productos: (req,res) => {
-        res.render('./products/products');
+        const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        res.render('./products/products', {products: allProducts} );
     }
 }
 

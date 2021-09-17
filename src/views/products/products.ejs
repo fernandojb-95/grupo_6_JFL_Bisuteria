@@ -3,17 +3,17 @@
 <head>
     <%- include('../partials/head') %>
     <title>Productos</title>
+    <link rel="stylesheet" href="/css/products.css">
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
+        <div class="view-products"></div>
         <h1>Todos los productos</h1>
         <section class="products-container">
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
+            <% products.forEach(product => { %>
+                <%- include('../partials/product-card.ejs', {product: product}) %>
+            <% }) %>
         </section>
     </main>
     <%- include('../partials/footer') %>
