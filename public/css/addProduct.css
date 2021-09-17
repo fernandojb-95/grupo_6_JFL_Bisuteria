@@ -100,10 +100,16 @@
 
 /* Estilos de la seccion opciones-imagen */
 .agregar-img{
-    margin-left: -230px;
+    padding-left: 40px;
+}
+.agregar-img p{
+    position: relative;
+    left: -180px;
 }
 .imagenes{
     margin:30px;
+    position:relative;
+    left:-180;
 }
 .imagenes ul{
     list-style: none;
@@ -111,6 +117,16 @@
 .imagenes ul li{
    margin-top: 20px;
    margin-left: -100px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+.botones button{
+    width: 25%;
+    max-width: 250px;
+    padding: 5px;
 }
 main{
     max-width: 900px;

@@ -110,39 +110,24 @@
 }
 
 /* Estilos de la seccion opciones-imagen */
-.opciones-imagen{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: var(--light-border);
-    color: var(--dark);
-    margin: 20px auto;
-    width: 80%;
-    max-width: 390px;
+.agregar-img{
+    padding-left: 40px;
 }
-
-.imagen{
-    width: 50%;
-    align-self: center;
+.agregar-img p{
+    position: relative;
+    left: -180px;
 }
-.imagen img{
-    width: 100%;
-    padding: 5%;
+.imagenes{
+    margin:30px;
+    position:relative;
+    left:-180;
 }
-.iconos-img{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.imagenes ul{
+    list-style: none;
 }
-.icon{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.opciones-imagen p{
-    width: 100%;
-    text-align: center;
-    padding: 10px;
+.imagenes ul li{
+   margin-top: 20px;
+   margin-left: -100px;
 }
 
 .botones{
