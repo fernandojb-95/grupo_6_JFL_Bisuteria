@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const productsPath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+
 const productController = {
     productDetail: (req,res) => {
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         const IdProduct = req.params.id;
         const product = products.find(article => article.id == IdProduct)
         res.render('./products/productDetail', {product: product});
@@ -13,13 +14,19 @@ const productController = {
         res.render('./products/productCart');
     },
     anillos : (req, res) => {
-        res.render('./products/anillos');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        const rings = products.filter(product => product.category == 'anillos')
+        res.render('./products/anillos', {products: rings});
     },
     brazaletes : (req, res) => {
-        res.render('./products/brazaletes');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        const braceletes = products.filter(product => product.category == 'brazaletes')
+        res.render('./products/brazaletes', {products: braceletes});
     },
     collares : (req, res) => {
-        res.render('./products/collares');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        const necklaces = products.filter(product => product.category == 'collares')
+        res.render('./products/collares', {products: necklaces});
     },
     create: (req,res) => {
         res.render('./admin/addProduct');

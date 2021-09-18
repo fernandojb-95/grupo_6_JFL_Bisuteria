@@ -13,11 +13,9 @@
             <h1>Collares</h1>
         </section>
         <section class="products-container">
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
-            <%- include('../partials/product-card.ejs') %>
+            <% products.forEach( product => { %>
+                <%- include('../partials/product-card.ejs', {product: product}) %>
+            <% }) %>
         </section>
     </main>
     <%- include('../partials/footer') %>
