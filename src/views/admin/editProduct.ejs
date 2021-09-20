@@ -13,73 +13,73 @@
             <section class="informacion-actual">
                 <h1>Informacion actual</h1>
                 <div class="informacion-actual-imgs">
-                    <img src="/img/ring-2.jpg" alt="">
-                    <img src="/img/ring-2.jpg" alt="">
-                    <img src="/img/ring-2.jpg" alt="">
-                    <img src="/img/ring-2.jpg" alt="">
+                    <img src="/img/<%=product.category%>/<%=product.images[0]%>" alt="<%=product.name%>">
+                    <img src="/img/<%=product.category%>/<%=product.images[1]%>" alt="<%=product.name%>">
+                    <!-- <img src="/img/ring-2.jpg" alt="">
+                    <img src="/img/ring-2.jpg" alt=""> -->
                 </div>
     
                 <div class="datos-actual">
                     <p class="titulo">Nombre del producto:</p>
-                    <p>Anillos</p>
+                    <p><%=product.name%></p>
                     <p class="titulo">Descripción:</p>
-                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quaerat, iste neque temporibus quas ut optio blanditiis itaque quasi nisi mollitia eos, pariatur voluptatibus dolor deleniti illo numquam odio fuga.</p>
+                    <p><%=product.description%></p>
                     <p class="titulo">Precio: </p>
-                    <p>$2500</p>
+                    <p>$<%=product.price%></p>
                 </div>
             </section>
     
     
-                <form action="/products/:id?_method=PATCH" method="POST">
+                <form action="/products/:id?_method=PATCH" method="POST" enctype="multipart/form-data">
                     <section class="nombre">
                         <label for="nombre">Nombre del producto: </label>
-                        <input type="text" name ="nombre" id="nombre" placeholder="Nombre">
+                        <input type="text" name ="nombre" id="nombre" value="<%=product.name%>">
                     </section>
     
                     <section class="descripcion">  
                         <label for="descripcion">Descripción:</label>
-                        <textarea name ="descripcion" id="descripcion" rows="5" placeholder="Escribe una breve descripción"></textarea>
+                        <textarea name ="descripcion" id="descripcion" rows="5"><%=product.description%></textarea>
                     </section>
     
                     <section class="precio">
                         <label for="precio">Precio: $</label>
-                        <input type="text" name ="precio" id="precio">
+                        <input type="text" name ="precio" id="precio" value="<%=product.price%>">
                     </section>
 
                     <section class="descuento">
                         <label for="descuento">Descuento:</label>
-                        <input type="number" name="descuento" id="descuento">
+                        <input type="number" name="descuento" id="descuento" value="<%=product.discount%>">
                     </section>
     
                     <section class="categoria">
                         <label for="categoria">Categoría: </label>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="anillos" checked>
-                            <label for="categoria">Anillos</label>
+                            <input type="radio" name="categoria" id = "anillos" value="anillos" checked>
+                            <label for="anillos">Anillos</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="collares"> 
-                            <label for="categoria">Collares</label>
+                            <input type="radio" name="categoria" id = "collares" value="collares"> 
+                            <label for="collares">Collares</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="pulseras">
-                            <label for="categoria"> Pulseras</label>
+                            <input type="radio" name="categoria" id = "pulseras" value="pulseras">
+                            <label for="pulseras"> Pulseras</label>
                         </div>
                     </section>
 
                     <section class="materials">
                         <label for="materials">Material: </label>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="Oro" checked>
-                            <label for="materials">Oro</label>
+                            <input type="radio" name="materials" id = "oro" value="Oro" checked>
+                            <label for="oro">Oro</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="plata"> 
-                            <label for="materials">Plata</label>
+                            <input type="radio" name="materials" id = "plata" value="plata"> 
+                            <label for="plata">Plata</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="acero">
-                            <label for="materials"> Acero</label>
+                            <input type="radio" name="materials" id = "acero" value="acero">
+                            <label for="acero"> Acero</label>
                         </div>
                     </section>
     
@@ -102,15 +102,15 @@
                             <div class="tallas-text">
                                 <div class="quant">
                                     <label for="cant-S">Cantidad:</label>
-                                    <input type="number" name ="cant-S" id="cant-S">
+                                    <input type="number" name ="cantS" id="cant-S" value="<%=product.size.S%>">
                                 </div>
                                 <div class="quant">
                                     <label for="cant-M">Cantidad:</label>
-                                    <input type="number" name ="cant-M" id="cant-M">
+                                    <input type="number" name ="cantM" id="cant-M" value="<%=product.size.M%>">
                                 </div>
                                 <div class="quant">
                                     <label for="cant-L">Cantidad:</label>
-                                    <input type="number" name ="cant-L" id="cant-L">
+                                    <input type="number" name ="cantL" id="cant-L" value="<%=product.size.L%>">
                                 </div>
                             </div>
                     </section>

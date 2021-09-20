@@ -54,10 +54,6 @@
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
                             </select>
-                            <!-- <label><input type="radio" name="seleccionTalla">S</label>
-                            <label><input type="radio" name="seleccionTalla">M</label>
-                            <label><input type="radio" name="seleccionTalla">L</label>
-                            <label><input type="radio" name="seleccionTalla">XL</label> -->
                         </div>
                         <div class="resalta-campo">
                             <label  for="cantidad">Cantidad:</label>
@@ -73,9 +69,13 @@
                             <button type="submit" class="submit btn">Añadir al carrito</button>
                         </div>
                     </form>
-                    <form action="/products/:id?_method=DELETE" method="POST">
-                        <button type="submit">Borrar</button>
-                    </form>
+                    <section class="user-options">
+                        <a href="/products/<%=product.id%>/edit"><button>Editar</button></a>
+                        <form action="/products/:id?_method=DELETE" method="POST">
+                            <button type="submit">Borrar</button>
+                        </form>
+                    </section>
+
                 </div>
             </div>
         </section>

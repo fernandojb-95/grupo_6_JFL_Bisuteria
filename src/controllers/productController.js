@@ -37,10 +37,13 @@ const productController = {
 
     },
     edit: (req,res) => {
-        res.render('./admin/editProduct');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        const productID = req.params.id;
+        const productToEdit = products.find( product => product.id == productID)
+        res.render('./admin/editProduct', {product: productToEdit});
     },
     update: (req,res) => {
-        res.send('Actualizando articulo con patch');
+         res.send('Actualizando articulo con patch');
 
         //Lógica para almacenar informacion y editar producto
     },

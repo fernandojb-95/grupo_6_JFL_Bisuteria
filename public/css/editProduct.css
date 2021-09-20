@@ -54,19 +54,22 @@
 
 /* Estilos de la seccion de precio */
 
+.descuento{
+    margin-top: 20px;
+}
 
 /* Estilos de la seccion de categoria */
-.categoria{
+.categoria, .materials{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.categoria input[type="radio"]{
+.categoria input[type="radio"], .materials input[type="radio"] {
     margin-left: 30px;
 }
-.cat-opcion{
+.cat-opcion, .mat-opcion{
     margin: 10px 0;
 }
 

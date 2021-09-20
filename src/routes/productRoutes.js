@@ -43,7 +43,7 @@ router.post('/', fileUpload.any(), productController.store);
 
 /*----Rutas para edición de producto----*/
 router.get('/:id/edit', productController.edit);
-router.patch('/:id', productController.update);
+router.patch('/:id', fileUpload.any(), productController.update);
 
 /*----Rutas para vista de detalle de producto----*/
 router.get('/:id', productController.productDetail);
