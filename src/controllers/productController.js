@@ -43,6 +43,7 @@ const productController = {
         res.render('./admin/editProduct', {product: productToEdit});
     },
     update: (req,res) => {
+        console.log(req.body)
          res.send('Actualizando articulo con patch');
 
         //Lógica para almacenar informacion y editar producto

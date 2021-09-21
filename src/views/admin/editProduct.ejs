@@ -32,37 +32,37 @@
     
                 <form action="/products/:id?_method=PATCH" method="POST" enctype="multipart/form-data">
                     <section class="nombre">
-                        <label for="nombre">Nombre del producto: </label>
-                        <input type="text" name ="nombre" id="nombre" value="<%=product.name%>">
+                        <label for="name">Nombre del producto: </label>
+                        <input type="text" name ="name" id="name" value="<%=product.name%>">
                     </section>
     
                     <section class="descripcion">  
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name ="descripcion" id="descripcion" rows="5"><%=product.description%></textarea>
+                        <label for="description">Descripción:</label>
+                        <textarea name ="description" id="description" rows="5"><%=product.description%></textarea>
                     </section>
     
                     <section class="precio">
-                        <label for="precio">Precio: $</label>
-                        <input type="text" name ="precio" id="precio" value="<%=product.price%>">
+                        <label for="price">Precio: $</label>
+                        <input type="text" name ="price" id="price" value="<%=product.price%>">
                     </section>
 
                     <section class="descuento">
-                        <label for="descuento">Descuento:</label>
-                        <input type="number" name="descuento" id="descuento" value="<%=product.discount%>">
+                        <label for="discount">Descuento:</label>
+                        <input type="number" name="discount" id="discount" value="<%=product.discount%>">
                     </section>
     
                     <section class="categoria">
-                        <label for="categoria">Categoría: </label>
+                        <label for="category">Categoría: </label>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "anillos" value="anillos" checked>
+                            <input type="radio" name="category" id = "anillos" value="anillos" checked>
                             <label for="anillos">Anillos</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "collares" value="collares"> 
+                            <input type="radio" name="category" id = "collares" value="collares"> 
                             <label for="collares">Collares</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "pulseras" value="pulseras">
+                            <input type="radio" name="category" id = "pulseras" value="pulseras">
                             <label for="pulseras"> Pulseras</label>
                         </div>
                     </section>
@@ -101,16 +101,16 @@
                             </div>
                             <div class="tallas-text">
                                 <div class="quant">
-                                    <label for="cant-S">Cantidad:</label>
-                                    <input type="number" name ="cantS" id="cant-S" value="<%=product.size.S%>">
+                                    <label for="quantityS">Cantidad:</label>
+                                    <input type="number" name ="quantityS" id="quantityS" value="<%=product.size.S%>">
                                 </div>
                                 <div class="quant">
-                                    <label for="cant-M">Cantidad:</label>
-                                    <input type="number" name ="cantM" id="cant-M" value="<%=product.size.M%>">
+                                    <label for="quantityM">Cantidad:</label>
+                                    <input type="number" name ="quantityM" id="quantityM" value="<%=product.size.M%>">
                                 </div>
                                 <div class="quant">
-                                    <label for="cant-L">Cantidad:</label>
-                                    <input type="number" name ="cantL" id="cant-L" value="<%=product.size.L%>">
+                                    <label for="quantityL">Cantidad:</label>
+                                    <input type="number" name ="quantityL" id="quantityL" value="<%=product.size.L%>">
                                 </div>
                             </div>
                     </section>
@@ -131,7 +131,7 @@
                     <section class="botones">
                         <button>Cancelar</button>
                         <button  type="reset">Borrar todo</button>
-                        <button type="">Guardar cambios</button>
+                        <button type="submit">Guardar cambios</button>
                     </section>
     
                 </form>
