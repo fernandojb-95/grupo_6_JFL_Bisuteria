@@ -30,7 +30,7 @@
             </section>
     
     
-                <form action="/products/:id?_method=PATCH" method="POST" enctype="multipart/form-data">
+                <form action="/products/<%=product.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
                     <section class="nombre">
                         <label for="name">Nombre del producto: </label>
                         <input type="text" name ="name" id="name" value="<%=product.name%>">
@@ -70,7 +70,7 @@
                     <section class="materials">
                         <label for="materials">Material: </label>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "oro" value="Oro" checked>
+                            <input type="radio" name="materials" id = "oro" value="oro" checked>
                             <label for="oro">Oro</label>
                         </div>
                         <div class="mat-opcion">
@@ -102,15 +102,15 @@
                             <div class="tallas-text">
                                 <div class="quant">
                                     <label for="quantityS">Cantidad:</label>
-                                    <input type="number" name ="quantityS" id="quantityS" value="<%=product.size.S%>">
+                                    <input type="number" name ="quantityS" id="quantityS" value=0>
                                 </div>
                                 <div class="quant">
                                     <label for="quantityM">Cantidad:</label>
-                                    <input type="number" name ="quantityM" id="quantityM" value="<%=product.size.M%>">
+                                    <input type="number" name ="quantityM" id="quantityM" value=0>
                                 </div>
                                 <div class="quant">
                                     <label for="quantityL">Cantidad:</label>
-                                    <input type="number" name ="quantityL" id="quantityL" value="<%=product.size.L%>">
+                                    <input type="number" name ="quantityL" id="quantityL" value=0>
                                 </div>
                             </div>
                     </section>

@@ -9,12 +9,12 @@ const multer = require('multer');
 //Configuramos destino y nombre de archivos
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, callback) =>{
-        let productCategory = req.body.categoria;
+        let productCategory = req.body.category;
         const filePath = path.join(__dirname, `../../public/img/${productCategory}`)
         callback(null, filePath);
     },
     filename: (req, file, callback) => {
-        let productName = req.body.nombre
+        let productName = req.body.name
         const imgName = `img-${productName.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}${path.extname(file.originalname)}`;
         callback(null, imgName);
     }

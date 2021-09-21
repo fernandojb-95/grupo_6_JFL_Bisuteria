@@ -43,10 +43,64 @@ const productController = {
         res.render('./admin/editProduct', {product: productToEdit});
     },
     update: (req,res) => {
-        console.log(req.body)
-         res.send('Actualizando articulo con patch');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        const productID = req.params.id;
+        let productToEdit = products.find( product => product.id == productID)
+        let productImages;
+        // Ordenamos la info recibida en el formulario
+        const productName = req.body.name,
+                productDescription = req.body.description,
+                productPrice = parseFloat(req.body.price),
+                productDiscount = parseFloat(req.body.discount),
+                productCategory = req.body.category,
+                productMaterial = req.body.materials,
+                productQuantS = parseInt(req.body.quantityS) || 0,
+                productQuantM = parseInt(req.body.quantityM) || 0,
+                productQuantL = parseInt(req.body.quantityL) || 0;
+
+        
+        switch(req.files.length){
+            case 0:
+                productImages = productToEdit.images;
+                break;
+            case 1:
+                if(req.files[0].fieldname == "image1"){
+                    productImages = [req.files[0].filename, productToEdit.images[1]];
+                } else {
+                    productImages = [productToEdit.images[0], req.files[0].filename];
+                }
+                break;
+            case 2:
+                productImages = [req.files[0].filename, req.files[1].filename];
+        }
 
         //Lógica para almacenar informacion y editar producto
+        productToEdit ={
+            id: productToEdit.id,
+            name: productName,
+            description: productDescription,
+            price: productPrice,
+            discount: productDiscount,
+            category: productCategory,
+            size: {
+                S: productToEdit.size.S + productQuantS,
+                M: productToEdit.size.M + productQuantM,
+                L: productToEdit.size.L + productQuantL
+            },
+            images: productImages,
+            material: productMaterial
+        }
+        const newProducts = products.map( product => {
+            if(product.id === productToEdit.id) {
+                return product = {...productToEdit}
+            } else {
+                return product
+            }
+        })
+
+        //Reescribiendo productos
+        fs.writeFileSync(productsPath, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/');
     },
     delete: (req,res) => {
         res.send('Borrando artículos con delete')
