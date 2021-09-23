@@ -149,9 +149,13 @@ const productController = {
 		res.redirect('/products');
     },
     delete: (req,res) => {
-        res.send('Borrando artículos con delete')
+        res.send('Borrando artículos con delete');
 
         //Lógica para borrar producto
+        // let id = req.params.id;
+        // let finalProducts = products.filter(product => product.id != id);
+        // fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ''));
+        // res.redirect('/');
 
     },
     finalizaCompra : (req, res) => {
