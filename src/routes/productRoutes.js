@@ -46,17 +46,18 @@ router.post('/', fileUpload.any(), productController.store);
 router.get('/:id/edit', productController.edit);
 router.patch('/:id', fileUpload.any(), productController.update);
 
+/*----Rutas para vista de carrito de compras----*/
+router.get('/productCart', productController.productCart);
+
+/*----Rutas para vista de finalizar compra----*/
+router.get('/finalizaCompra',productController.finalizaCompra);
+
 /*----Rutas para vista de detalle de producto----*/
 router.get('/:id', productController.productDetail);
 
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);
 
-/*----Rutas para vista de carrito de compras----*/
-router.get('/productCart', productController.productCart);
-
-/*----Rutas para vista de finalizar compra----*/
-router.get('/finalizaCompra',productController.finalizaCompra);
 
 
 module.exports = router;
