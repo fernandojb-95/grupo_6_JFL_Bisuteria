@@ -11,7 +11,9 @@
         <h1>Editar producto</h1>
         <div class="register-product">
             <section class="informacion-actual">
-                <h1>Informacion actual</h1>
+
+                <h1>Información actual</h1>
+
                 <div class="informacion-actual-imgs">
                     <img src="/img/<%=product.category%>/<%=product.images[0]%>" alt="<%=product.name%>">
                     <img src="/img/<%=product.category%>/<%=product.images[1]%>" alt="<%=product.name%>">
@@ -85,32 +87,19 @@
     
                     <section class="tallas">
                         <p><strong>Tallas:</strong></p>
-                            <div class="tallas-check">
-                                <div class="check">
-                                    <input type="checkbox" name="tallas" id ="talla-S" value="s">
-                                    <label for="talla-S">S</label>
-                                </div>
-                                <div class="check">
-                                    <input type="checkbox" name="tallas" id ="talla-M" value="m">
-                                    <label for="talla-M">M</label>
-                                </div>
-                                <div class="check">
-                                    <input type="checkbox" name="tallas" id ="talla-L" value="l">
-                                    <label for="talla-L"> L</label>
-                                </div>
-                            </div>
+                            
                             <div class="tallas-text">
                                 <div class="quant">
-                                    <label for="quantityS">Cantidad:</label>
-                                    <input type="number" name ="quantityS" id="quantityS" value=0>
+                                    <label for="quantityS">S:</label>
+                                    <input type="number" name ="quantityS" id="quantityS" value=0 min="0">
                                 </div>
                                 <div class="quant">
-                                    <label for="quantityM">Cantidad:</label>
-                                    <input type="number" name ="quantityM" id="quantityM" value=0>
+                                    <label for="quantityM">M:</label>
+                                    <input type="number" name ="quantityM" id="quantityM" value=0 min="0">
                                 </div>
                                 <div class="quant">
-                                    <label for="quantityL">Cantidad:</label>
-                                    <input type="number" name ="quantityL" id="quantityL" value=0>
+                                    <label for="quantityL">L:</label>
+                                    <input type="number" name ="quantityL" id="quantityL" value=0 min="0">
                                 </div>
                             </div>
                     </section>
