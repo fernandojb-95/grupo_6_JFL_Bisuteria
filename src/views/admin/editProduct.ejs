@@ -54,31 +54,31 @@
                     <section class="categoria">
                         <label for="category">Categoría: </label>
                         <div class="cat-opcion">
-                            <input type="radio" name="category" id = "anillos" value="anillos" checked>
+                            <input type="radio" name="category" id = "anillos" value="anillos" <%= product.category == "anillos" ? "checked" : ""%>>
                             <label for="anillos">Anillos</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="category" id = "collares" value="collares"> 
+                            <input type="radio" name="category" id = "collares" value="collares" <%= product.category == "collares" ? "checked" : ""%>> 
                             <label for="collares">Collares</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="category" id = "pulseras" value="pulseras">
-                            <label for="pulseras"> Pulseras</label>
+                            <input type="radio" name="category" id = "pulseras" value="brazaletes" <%= product.category == "brazaletes" ? "checked" : ""%>>
+                            <label for="pulseras"> Brazaletes</label>
                         </div>
                     </section>
 
                     <section class="materials">
                         <label for="materials">Material: </label>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "oro" value="oro" checked>
+                            <input type="radio" name="materials" id = "oro" value="oro" <%= product.material == "oro" ? "checked" : ""%>>
                             <label for="oro">Oro</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "plata" value="plata"> 
+                            <input type="radio" name="materials" id = "plata" value="plata" <%= product.material == "plata" ? "checked" : ""%>> 
                             <label for="plata">Plata</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "acero" value="acero">
+                            <input type="radio" name="materials" id = "acero" value="acero" <%= product.material == "acero" ? "checked" : ""%>>
                             <label for="acero"> Acero</label>
                         </div>
                     </section>
@@ -133,7 +133,6 @@
                         <button  type="reset">Borrar todo</button>
                         <button type="submit">Guardar cambios</button>
                     </section>
-    
                 </form>
         </div>
         

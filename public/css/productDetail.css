@@ -63,7 +63,14 @@
 }
 .resalta-campo{
     font-weight: bold;
+    text-transform: capitalize;
     padding: 10px;
+}
+.resalta-campo p{
+    margin-top: 20px;
+}
+.resalta-campo span{
+    padding-left: 20px;
 }
 .resalta-campo label{
     display: inline-block;

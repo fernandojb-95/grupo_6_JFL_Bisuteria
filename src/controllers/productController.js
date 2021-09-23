@@ -32,9 +32,54 @@ const productController = {
         res.render('./admin/addProduct');
     },
     store: (req,res) =>{
-        res.send('Creando articulo con post');
         //Lógica para almacenar informacion y crear producto
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        let productImages;
+        const productName = req.body.name,
+        productDescription = req.body.description,
+        productPrice = parseFloat(req.body.price),
+        productDiscount = parseFloat(req.body.discount),
+        productCategory = req.body.category,
+        productMaterial = req.body.materials,
+        productQuantS = parseInt(req.body.quantityS) || 0,
+        productQuantM = parseInt(req.body.quantityM) || 0,
+        productQuantL = parseInt(req.body.quantityL) || 0;
 
+        switch(req.files.length){
+            case 0:
+                productImages = ["default-image.svg","default-image.svg"];
+                break;
+            case 1:
+                if(req.files[0].fieldname == "image1"){
+                    productImages = [req.files[0].filename, "default-image.svg"];
+                } else {
+                    productImages = ["default-image.svg", req.files[0].filename];
+                }
+                break;
+            case 2:
+                productImages = [req.files[0].filename, req.files[1].filename];
+                break;
+        }
+
+        const newProduct ={
+            id: products[products.length -1].id + 1,
+            name: productName,
+            description: productDescription,
+            price: productPrice,
+            discount: productDiscount,
+            category: productCategory,
+            size: {
+                S: productQuantS,
+                M: productQuantM,
+                L: productQuantL
+            },
+            images: productImages,
+            material: productMaterial
+        }
+        products.push(newProduct)
+                //Reescribiendo productos
+                fs.writeFileSync(productsPath, JSON.stringify(products, null, ' '));
+                res.redirect('/products');
     },
     edit: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -47,6 +92,7 @@ const productController = {
         const productID = req.params.id;
         let productToEdit = products.find( product => product.id == productID)
         let productImages;
+
         // Ordenamos la info recibida en el formulario
         const productName = req.body.name,
                 productDescription = req.body.description,
@@ -57,7 +103,6 @@ const productController = {
                 productQuantS = parseInt(req.body.quantityS) || 0,
                 productQuantM = parseInt(req.body.quantityM) || 0,
                 productQuantL = parseInt(req.body.quantityL) || 0;
-
         
         switch(req.files.length){
             case 0:
@@ -72,6 +117,7 @@ const productController = {
                 break;
             case 2:
                 productImages = [req.files[0].filename, req.files[1].filename];
+                break;
         }
 
         //Lógica para almacenar informacion y editar producto
@@ -100,7 +146,7 @@ const productController = {
 
         //Reescribiendo productos
         fs.writeFileSync(productsPath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		res.redirect('/products');
     },
     delete: (req,res) => {
         res.send('Borrando artículos con delete')

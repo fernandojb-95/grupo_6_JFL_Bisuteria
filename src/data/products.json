@@ -5,15 +5,15 @@
   "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
   "price": 1050,
   "discount": 20,
-  "category": "collares",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Necklace_8_1_a.png",
-   "Necklace_8_2_a.png"
+   "img-anillos-84087-acero.png",
+   "img-anillos-84094-acero.png"
   ],
   "material": "acero"
  },
@@ -23,22 +23,22 @@
   "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\r\n\r\nSed ante. Vivamus tortor. Duis mattis egestas metus.\r\n\r\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
   "price": 1500,
   "discount": 20,
-  "category": "collares",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 30,
    "L": 20
   },
   "images": [
-   "Necklace_9_1_a.png",
-   "Necklace_9_2_a.png"
+   "img-anillos-02023-acero.png",
+   "img-anillos-02028-acero.png"
   ],
   "material": "acero"
  },
  {
   "id": 3,
   "name": "Cynthie",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
   "price": 847,
   "discount": 21,
   "category": "anillos",
@@ -48,33 +48,33 @@
    "L": 20
   },
   "images": [
-   "Ring_4_1_p.png",
-   "Ring_4_2_p.png"
+   "img-anillos-23356-acero.png",
+   "img-anillos-23377-acero.png"
   ],
-  "material": "plata"
+  "material": "acero"
  },
  {
   "id": 4,
   "name": "Julee",
-  "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+  "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\r\n\r\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
   "price": 984,
   "discount": 19,
-  "category": "collares",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Necklace_10_1_a.png",
-   "Necklace_10_2_a.png"
+   "img-anillos-77314-plata.png",
+   "img-anillos-77345-plata.png"
   ],
-  "material": "acero"
+  "material": "plata"
  },
  {
   "id": 5,
   "name": "Robbert",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
   "price": 969,
   "discount": 46,
   "category": "anillos",
@@ -84,15 +84,15 @@
    "L": 20
   },
   "images": [
-   "Ring_5_1_p.png",
-   "Ring_5_2_p.png"
+   "img-anillos-20149-plata.png",
+   "img-anillos-20152-plata.png"
   ],
   "material": "plata"
  },
  {
   "id": 6,
   "name": "Cathrin",
-  "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+  "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\r\n\r\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\r\n\r\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
   "price": 906,
   "discount": 26,
   "category": "anillos",
@@ -102,15 +102,15 @@
    "L": 20
   },
   "images": [
-   "Ring_7_1_o.png",
-   "Ring_7_2_o.png"
+   "img-anillos-50333-plata.png",
+   "img-anillos-50359-plata.png"
   ],
-  "material": "oro"
+  "material": "plata"
  },
  {
   "id": 7,
   "name": "Hewie",
-  "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+  "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\r\n\r\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
   "price": 682,
   "discount": 43,
   "category": "anillos",
@@ -120,69 +120,69 @@
    "L": 20
   },
   "images": [
-   "Ring_1_1_a.png",
-   "Ring_1_2_a.png"
+   "img-anillos-92639-oro.png",
+   "img-anillos-92667-oro.png"
   ],
-  "material": "acero"
+  "material": "oro"
  },
  {
   "id": 8,
   "name": "Denys",
-  "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+  "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\r\n\r\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
   "price": 487,
   "discount": 45,
-  "category": "collares",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Necklace_5_1_o.png",
-   "Necklace_5_2_o.png"
+   "img-anillos-35132-oro.png",
+   "img-anillos-35152-oro.png"
   ],
   "material": "oro"
  },
  {
   "id": 9,
   "name": "Anitra",
-  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\r\n\r\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
   "price": 659,
   "discount": 17,
-  "category": "brazaletes",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Bracelet_1_1_o.png",
-   "Bracelet_1_2_o.png"
+   "img-anillos-68114-oro.png",
+   "img-anillos-68149-oro.png"
   ],
   "material": "oro"
  },
  {
   "id": 10,
   "name": "Lombard",
-  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\r\n\r\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\r\n\r\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
   "price": 769,
   "discount": 54,
-  "category": "brazaletes",
+  "category": "anillos",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Bracelet_2_1_o.png",
-   "Bracelet_2_2_o.png"
+   "img-anillos-00843-oro.png",
+   "img-anillos-00880-oro.png"
   ],
   "material": "oro"
  },
  {
   "id": 11,
   "name": "Randi",
-  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\r\n\r\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
   "price": 905,
   "discount": 48,
   "category": "brazaletes",
@@ -192,71 +192,179 @@
    "L": 20
   },
   "images": [
-   "Bracelet_8_1_a.png",
-   "Bracelet_8_2_a.png"
+   "img-brazaletes-90779-oro.png",
+   "img-brazaletes-90796-oro.png"
   ],
-  "material": "acero"
+  "material": "oro"
  },
  {
   "id": 12,
   "name": "Redford",
-  "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+  "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\r\n\r\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
   "price": 288,
   "discount": 56,
-  "category": "anillos",
+  "category": "brazaletes",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Ring_2_1_a.png",
-   "Ring_2_2_a.png"
+   "img-brazaletes-20435-oro.png",
+   "img-brazaletes-20459-oro.png"
   ],
-  "material": "acero"
+  "material": "oro"
  },
  {
   "id": 13,
   "name": "Fallon",
-  "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+  "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\r\n\r\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\r\n\r\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   "price": 567,
   "discount": 17,
-  "category": "anillos",
+  "category": "brazaletes",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Ring_8_1_o.png",
-   "Ring_8_2_o.png"
+   "img-brazaletes-45883-oro.png",
+   "img-brazaletes-45904-oro.png"
   ],
   "material": "oro"
  },
  {
   "id": 14,
   "name": "Nanette",
-  "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
   "price": 270,
   "discount": 58,
-  "category": "anillos",
+  "category": "brazaletes",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Ring_9_1_o.png",
-   "Ring_9_2_o.png"
+   "img-brazaletes-76007-plata.png",
+   "img-brazaletes-76055-plata.png"
   ],
-  "material": "oro"
+  "material": "plata"
  },
  {
   "id": 15,
   "name": "Leontyne",
-  "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+  "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\r\n\r\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   "price": 386,
   "discount": 9,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-06398-plata.png",
+   "img-brazaletes-06428-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 16,
+  "name": "Hamnet",
+  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\r\n\r\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+  "price": 1055,
+  "discount": 24,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-36316-plata.png",
+   "img-brazaletes-36368-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 17,
+  "name": "Bernhard",
+  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "price": 834,
+  "discount": 48,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-69350-plata.png",
+   "img-brazaletes-69360-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 18,
+  "name": "Addie",
+  "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\r\n\r\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+  "price": 868,
+  "discount": 11,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-99398-acero.png",
+   "img-brazaletes-99420-acero.png"
+  ],
+  "material": "acero"
+ },
+ {
+  "id": 19,
+  "name": "Marya",
+  "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\r\n\r\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\r\n\r\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+  "price": 1061,
+  "discount": 47,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-32496-acero.png",
+   "img-brazaletes-32505-acero.png"
+  ],
+  "material": "acero"
+ },
+ {
+  "id": 20,
+  "name": "Urbano",
+  "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "price": 528,
+  "discount": 31,
+  "category": "brazaletes",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-brazaletes-59323-acero.png",
+   "img-brazaletes-59393-acero.png"
+  ],
+  "material": "acero"
+ },
+ {
+  "id": 21,
+  "name": "Diana",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 1200,
+  "discount": 10,
   "category": "collares",
   "size": {
    "S": 20,
@@ -264,16 +372,70 @@
    "L": 20
   },
   "images": [
-   "Necklace_6_1_o.png",
-   "Necklace_8_2_o.png"
+   "img-collares-71369-plata.png",
+   "img-collares-71378-plata.png"
   ],
-  "material": "oro"
+  "material": "plata"
  },
  {
-  "id": 16,
-  "name": "Hamnet",
-  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
-  "price": 1055,
+  "id": 22,
+  "name": "Angel",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 2210,
+  "discount": 5,
+  "category": "collares",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-collares-44685-plata.png",
+   "img-collares-44695-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 23,
+  "name": "Roberths",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 1220,
+  "discount": 0,
+  "category": "collares",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-collares-20477-plata.png",
+   "img-collares-20498-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 24,
+  "name": "Anitta",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 1500,
+  "discount": 10,
+  "category": "collares",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-collares-91024-plata.png",
+   "img-collares-91050-plata.png"
+  ],
+  "material": "plata"
+ },
+ {
+  "id": 25,
+  "name": "Kalinda",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 800,
   "discount": 24,
   "category": "collares",
   "size": {
@@ -282,35 +444,71 @@
    "L": 20
   },
   "images": [
-   "Necklace_7_1_o.png",
-   "Necklace_7_2_o.png"
+   "img-collares-34558-oro.png",
+   "img-collares-34591-oro.png"
   ],
   "material": "oro"
  },
  {
-  "id": 17,
-  "name": "Bernhard",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-  "price": 834,
-  "discount": 48,
-  "category": "anillos",
+  "id": 26,
+  "name": "Jakoby",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 1740,
+  "discount": 18,
+  "category": "collares",
   "size": {
    "S": 20,
    "M": 20,
    "L": 20
   },
   "images": [
-   "Ring_3_1_a.png",
-   "Ring_3_2_a.png"
+   "img-collares-94749-oro.png",
+   "img-collares-94769-oro.png"
+  ],
+  "material": "oro"
+ },
+ {
+  "id": 27,
+  "name": "Olivian",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 2320,
+  "discount": 25,
+  "category": "collares",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-collares-47862-oro.png",
+   "img-collares-47889-oro.png"
+  ],
+  "material": "oro"
+ },
+ {
+  "id": 28,
+  "name": "Dojan",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 3500,
+  "discount": 45,
+  "category": "collares",
+  "size": {
+   "S": 20,
+   "M": 20,
+   "L": 20
+  },
+  "images": [
+   "img-collares-00234-acero.png",
+   "img-collares-00236-acero.png"
   ],
   "material": "acero"
  },
  {
-  "id": 18,
-  "name": "Addie",
-  "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-  "price": 868,
-  "discount": 11,
+  "id": 29,
+  "name": "Jessie",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 1450,
+  "discount": 5,
   "category": "collares",
   "size": {
    "S": 20,
@@ -318,35 +516,17 @@
    "L": 20
   },
   "images": [
-   "Necklace_1_1_p.png",
-   "Necklace_1_2_p.png"
+   "img-collares-98170-acero.png",
+   "img-collares-98202-acero.png"
   ],
-  "material": "plata"
+  "material": "acero"
  },
  {
-  "id": 19,
-  "name": "Marya",
-  "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-  "price": 1061,
-  "discount": 47,
-  "category": "anillos",
-  "size": {
-   "S": 20,
-   "M": 20,
-   "L": 20
-  },
-  "images": [
-   "Ring_6_1_p.png",
-   "Ring_6_2_p.png"
-  ],
-  "material": "plata"
- },
- {
-  "id": 20,
-  "name": "Urbano",
-  "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-  "price": 528,
-  "discount": 31,
+  "id": 30,
+  "name": "Finland",
+  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
+  "price": 2480,
+  "discount": 23,
   "category": "collares",
   "size": {
    "S": 20,
@@ -354,9 +534,9 @@
    "L": 20
   },
   "images": [
-   "Necklace_2_1_p.png",
-   "Necklace_2_2_p.png"
+   "img-collares-34710-acero.png",
+   "img-collares-34735-acero.png"
   ],
-  "material": "plata"
+  "material": "acero"
  }
 ]

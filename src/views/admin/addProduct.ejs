@@ -14,52 +14,52 @@
     
                     <section class="nombre">
                         <label for="nombre">Nombre del producto: </label>
-                        <input type="text" name ="nombre" id="nombre" placeholder="Nombre">
+                        <input type="text" name ="name" id="nombre" placeholder="Nombre">
                     </section>
     
                     <section class="descripcion">  
                         <label for="descripcion">Descripción:</label>
-                        <textarea name ="descripcion" id="descripcion" rows="5" placeholder="Escribe una breve descripción"></textarea>
+                        <textarea name ="description" id="descripcion" rows="5" placeholder="Escribe una breve descripción"></textarea>
                     </section>
     
                     <section class="precio">
                         <label for="precio">Precio: $</label>
-                        <input type="text" name ="precio" id="precio">
+                        <input type="text" name ="price" id="precio">
                     </section>
                    
                     <section class="descuento">
                         <label for="descuento">Descuento:</label>
-                        <input type="number" name="descuento" id="descuento"><label>%</label>
+                        <input type="number" name="discount" id="descuento"><label>%</label>
                     </section>
 
                     <section class="categoria">
                         <label for="categoria">Categoría: </label>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="anillos" checked>
+                            <input type="radio" name="category" id = "anillos" value="anillos" checked>
                             <label for="anillos">Anillos</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="collares"> 
-                            <label for="categoria">Collares</label>
+                            <input type="radio" name="category" id = "collares" value="collares"> 
+                            <label for="collares">Collares</label>
                         </div>
                         <div class="cat-opcion">
-                            <input type="radio" name="categoria" id = "categoria" value="brazaletes">
-                            <label for="categoria"> Pulseras</label>
+                            <input type="radio" name="category" id = "brazaletes" value="brazaletes">
+                            <label for="brazaletes"> Brazaletes</label>
                         </div>
                     </section>
                     <section class="materials">
                         <label for="materials">Material: </label>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="Oro" checked>
-                            <label for="materials">Oro</label>
+                            <input type="radio" name="materials" id = "oro" value="oro" checked>
+                            <label for="oro">Oro</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="plata"> 
-                            <label for="materials">Plata</label>
+                            <input type="radio" name="materials" id = "plata" value="plata"> 
+                            <label for="plata">Plata</label>
                         </div>
                         <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "materials" value="acero">
-                            <label for="materials"> Acero</label>
+                            <input type="radio" name="materials" id = "acero" value="acero">
+                            <label for="acero"> Acero</label>
                         </div>
                     </section>
     
@@ -82,15 +82,15 @@
                             <div class="tallas-text">
                                 <div class="quant">
                                     <label for="cant-S">Cantidad:</label>
-                                    <input type="number" name ="cant-S" id="cant-S">
+                                    <input type="number" name ="quantityS" id="cant-S">
                                 </div>
                                 <div class="quant">
                                     <label for="cant-M">Cantidad:</label>
-                                    <input type="number" name ="cant-M" id="cant-M">
+                                    <input type="number" name ="quantityM" id="cant-M">
                                 </div>
                                 <div class="quant">
                                     <label for="cant-L">Cantidad:</label>
-                                    <input type="number" name ="cant-L" id="cant-L">
+                                    <input type="number" name ="quantityL" id="cant-L">
                                 </div>
                             </div>
                     </section>
@@ -99,7 +99,7 @@
                         <div class="imagenes">
                             <ul>
                                 <li>
-                                    <input type="file" name="image1" id="image"><label>Imagen 1</label>
+                                    <input type="file" name="image1" id="image" placeholder="Subir"><label>Imagen 1</label>
                                 </li>
                                 <li>
                                     <input type="file" name="image2" id="image"><label>Imagen 2</label>

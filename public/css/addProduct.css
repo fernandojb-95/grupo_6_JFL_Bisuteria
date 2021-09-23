@@ -1,4 +1,4 @@
-@import url('general.css');
+@import url('./general.css');
 /* Estilos de la seccion de nombre */
 .nombre{
     margin-bottom: 20px;
@@ -99,29 +99,24 @@
 }
 
 /* Estilos de la seccion opciones-imagen */
-.agregar-img{
-    padding-left: 40px;
-}
-.agregar-img p{
-    position: relative;
-    left: -180px;
-}
-.imagenes{
-    margin:30px;
-    position:relative;
-    left:-180;
-}
 .imagenes ul{
     list-style: none;
 }
 .imagenes ul li{
-   margin-top: 20px;
-   margin-left: -100px;
+   margin: 20px 0;
+   text-align: center;
+}
+.imagenes input[type=file]{
+    width: 60%;
+}
+.imagenes label{
+    margin-left: 10px;
 }
 
 .botones{
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 25px;
 }
 .botones button{
     width: 25%;
@@ -130,15 +125,9 @@
 }
 main{
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 @media(min-width: 768px){
-    .agregar-img{
-        display: flex;
-        justify-content: space-evenly;
-    }
     .opciones-imagen{
         width: 40%;
     }

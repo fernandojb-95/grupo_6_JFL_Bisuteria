@@ -14,8 +14,9 @@ const multerDiskStorage = multer.diskStorage({
         callback(null, filePath);
     },
     filename: (req, file, callback) => {
-        let productName = req.body.name
-        const imgName = `img-${productName.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}${path.extname(file.originalname)}`;
+        let productCategory = req.body.category,
+            productMaterial = req.body.materials
+        const imgName = `img-${productCategory.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}-${productMaterial}${path.extname(file.originalname)}`;
         callback(null, imgName);
     }
 })
