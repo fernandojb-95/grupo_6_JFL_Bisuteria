@@ -149,13 +149,14 @@ const productController = {
 		res.redirect('/products');
     },
     delete: (req,res) => {
-        res.send('Borrando artículos con delete');
+        //res.send('Borrando artículos con delete');
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
         //Lógica para borrar producto
-        // let id = req.params.id;
-        // let finalProducts = products.filter(product => product.id != id);
-        // fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ''));
-        // res.redirect('/');
+         let id = req.params.id;
+        let finalProducts = products.filter(product => product.id != id);
+        fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ' '));
+        res.redirect('/');
 
     },
     finalizaCompra : (req, res) => {

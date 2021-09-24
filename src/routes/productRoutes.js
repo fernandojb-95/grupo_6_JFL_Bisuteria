@@ -39,7 +39,7 @@ router.get('/brazaletes',productController.brazaletes);
 router.get('/collares',productController.collares);
 
 /*----Rutas para creación de producto----*/
-router.get('/create', productController.create);
+router.get('/product/create', productController.create);
 router.post('/', fileUpload.any(), productController.store);
 
 /*----Rutas para edición de producto----*/

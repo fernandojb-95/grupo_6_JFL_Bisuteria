@@ -1,9 +1,9 @@
 [
  {
   "id": 1,
-  "name": "Alexandr",
-  "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-  "price": 1050,
+  "name": "Ariane",
+  "description": "\r\nEste anillo posee un diseño sencillo pero elegante. Ariane tiene la ventaja de que se lleva bien con cualquier otra joya. Su fineza permite que se combine con lo que sea que te pongas y te permite verte muy estilizado.",
+  "price": 349,
   "discount": 20,
   "category": "anillos",
   "size": {
@@ -19,9 +19,9 @@
  },
  {
   "id": 2,
-  "name": "Shaw",
-  "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\r\n\r\nSed ante. Vivamus tortor. Duis mattis egestas metus.\r\n\r\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-  "price": 1500,
+  "name": "Katia",
+  "description": "Anillo de acero con un estilo que aparenta desgaste, para todos aquellos que buscan un estilo fresco y más callejero. Va perfecto para usar con jeans desgastados.\t\t\t\t",
+  "price": 349,
   "discount": 20,
   "category": "anillos",
   "size": {

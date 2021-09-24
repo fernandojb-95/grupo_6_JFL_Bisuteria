@@ -181,17 +181,19 @@
     height: 30px;
 }
 
-.editar-btn{
-    background-color: white;
-    border: solid 2px rgb(98, 189, 24);
-    color: rgb(98, 189, 24);
+.editar-btn, .borrar-btn{
+    background-color:var(--dark);
+    color:var(--gold);
+    border: none;
 }
 
+.editar-btn:hover, .borrar-btn:hover{
+    background-color:var(--gold);
+    color:var(--dark); 
+}
 
-.borrar-btn{
-    background-color: white;
-    border: solid 2px rgb(230, 47, 23);
-    color:rgb(230, 47, 23);
+.editar:hover{
+transform:scale(1);
 }
 
 /*Estilos para media querie*/

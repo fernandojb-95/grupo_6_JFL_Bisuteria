@@ -57,8 +57,8 @@
                         </div>
                     </form>
                     <section class="user-options">
-                        <a href="/products/<%=product.id%>/edit"><button class="editar-btn">Editar</button></a>
-                        <form action="/products/:id?_method=DELETE" method="POST">
+                        <a href="/products/<%=product.id%>/edit" class="editar"><button class="editar-btn">Editar</button></a>
+                        <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
                             <button type="submit" class="borrar-btn">Borrar</button>
                         </form>
                     </section>
