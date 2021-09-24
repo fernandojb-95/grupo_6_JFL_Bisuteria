@@ -37,9 +37,9 @@
  },
  {
   "id": 3,
-  "name": "Cynthie",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-  "price": 847,
+  "name": "Soraya",
+  "description": "Soraya es un anillo de acero con tinte negro, al centro tiene unos increíbles detalles a los que llamamos escamas de acero que le dan una esencia única. Es un anillo muy moderno y discreto pero por su estilo particular no logra pasar desapercibido.",
+  "price": 349,
   "discount": 21,
   "category": "anillos",
   "size": {
@@ -55,9 +55,9 @@
  },
  {
   "id": 4,
-  "name": "Julee",
-  "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\r\n\r\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-  "price": 984,
+  "name": "Amelia",
+  "description": "Amelia es un anillo que nos recuerda las épocas de los dragones, por su acabado simula la cola enroscada de un dragón. Este anillo es muy combinable y va perfecto con cualquier estilo \t\t\t\t",
+  "price": 499,
   "discount": 19,
   "category": "anillos",
   "size": {
@@ -73,9 +73,9 @@
  },
  {
   "id": 5,
-  "name": "Robbert",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-  "price": 969,
+  "name": "María",
+  "description": "Un anillo muy particular ya que contiene un pequeño acabado de oro al centro aplastado por dos piezas de plata, lo cual lo hace muy llamativo y estilizado. Le aporta mucha formalidad a quien lo usa.\t\t\t\t",
+  "price": 499,
   "discount": 46,
   "category": "anillos",
   "size": {
@@ -91,9 +91,9 @@
  },
  {
   "id": 6,
-  "name": "Cathrin",
-  "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\r\n\r\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\r\n\r\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-  "price": 906,
+  "name": "Ainara",
+  "description": "Ainara es más que un anillo, es la combinación de 3 anillos enlazados para darnos este diseño tan especial, su material y color permite que se combine con otros anillos dando un estilo muy moderno.",
+  "price": 499,
   "discount": 26,
   "category": "anillos",
   "size": {
@@ -109,9 +109,9 @@
  },
  {
   "id": 7,
-  "name": "Hewie",
-  "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\r\n\r\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
-  "price": 682,
+  "name": "Sara",
+  "description": "Anillo de oro con pequeños acabados alrededor de todo el metal. Sara es un anillo muy cómodo y sutil perfecto para aquellos que les gusta tener un adorno llamativo y discreto, una dualidad perfecta.\t\t\t\t",
+  "price": 559,
   "discount": 43,
   "category": "anillos",
   "size": {
@@ -127,9 +127,9 @@
  },
  {
   "id": 8,
-  "name": "Denys",
-  "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\r\n\r\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
-  "price": 487,
+  "name": "Montse",
+  "description": "Montse  es un anillo sencillo pero combinable, te puede acompañar con el estilo que sea, ya sea formal o casual. Su diseño liso te permite combinarlo con cualquier outfit y con otros accesorios.\t\t\t\t",
+  "price": 559,
   "discount": 45,
   "category": "anillos",
   "size": {
@@ -145,9 +145,9 @@
  },
  {
   "id": 9,
-  "name": "Anitra",
-  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\r\n\r\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "price": 659,
+  "name": "Juliana",
+  "description": "El diseño de Juliana al tener acabados cuadrados, nos da un estilo de fortaleza y poder, dando la impresión de ser de la realeza. Con este anillo tus outfits transmitirán tintes de empoderamiento.\t\t\t\t",
+  "price": 559,
   "discount": 17,
   "category": "anillos",
   "size": {
@@ -163,9 +163,9 @@
  },
  {
   "id": 10,
-  "name": "Lombard",
-  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\r\n\r\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\r\n\r\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-  "price": 769,
+  "name": "Hanane",
+  "description": "Este anillo oculta sus detalles de oro detrás de unos acabados de piedra volcánica, dando un estilo misterioso al anillo. Con este anillo se puede usar de forma más común ya que al ocultar el oro no es muy llamativo.\t\t\t\t",
+  "price": 559,
   "discount": 54,
   "category": "anillos",
   "size": {
@@ -361,9 +361,9 @@
  },
  {
   "id": 21,
-  "name": "Diana",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 1200,
+  "name": "Teodora",
+  "description": "Esta cadena de plata tiene un estilo único, al cambiar de patrones evita verse como todas las demás. Se ve muy bien por si sola pero también es perfecta para llevar un dije que le dé un toque más personal.\t\t\t\t",
+  "price": 699,
   "discount": 10,
   "category": "collares",
   "size": {
@@ -379,9 +379,9 @@
  },
  {
   "id": 22,
-  "name": "Angel",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 2210,
+  "name": "Candela",
+  "description": "Candela es la clásica cadena de plata, para llevarla con todos los outfits, es la que nunca pasa de moda y siempre es bueno tenerla. Es tu fiel acompañante para darle algo de estilo a tu look.\t\t\t\t",
+  "price": 699,
   "discount": 5,
   "category": "collares",
   "size": {
@@ -397,9 +397,9 @@
  },
  {
   "id": 23,
-  "name": "Roberths",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 1220,
+  "name": "Ainhoa",
+  "description": "La cadena Ainhoa es un collar que se hace notar, de tonos muy brillantes y de un ancho amplio. Esta luce perfecto con los estilos modernos y por si sola te hará ver increíble, sin necesidad de dijes u otras cadenas.\t\t\t\t",
+  "price": 699,
   "discount": 0,
   "category": "collares",
   "size": {
@@ -415,9 +415,9 @@
  },
  {
   "id": 24,
-  "name": "Anitta",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 1500,
+  "name": "Aerola",
+  "description": "Aerola es la cadena para todos aquellos que desean portar un look más rudo, es un collar clásico, muy utilizado por motociclistas y todos aquellos que buscan mostrar su personalidad intrépida.\t\t\t\t",
+  "price": 699,
   "discount": 10,
   "category": "collares",
   "size": {
@@ -433,9 +433,9 @@
  },
  {
   "id": 25,
-  "name": "Kalinda",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 800,
+  "name": "Rocío",
+  "description": "Rocío es un collar de oro, con acabados muy bonitos que dan la sensación de ser listones los que unen los eslabones. Es una cadena de diseño único para todos aquellos que buscan un estilo formal. \t\t\t\t",
+  "price": 729,
   "discount": 24,
   "category": "collares",
   "size": {
@@ -451,9 +451,9 @@
  },
  {
   "id": 26,
-  "name": "Jakoby",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 1740,
+  "name": "Uxia",
+  "description": "Este collar que lleva un anillo como colgante, es uno de nuestros favoritos ya que da mucho porte y le da un estilo muy elegante a quien lo usa. Al ser un collar muy brillante nunca te va a permitir pasar desapercibido, serás el centro de atención.\t\t\t\t",
+  "price": 729,
   "discount": 18,
   "category": "collares",
   "size": {
@@ -469,9 +469,9 @@
  },
  {
   "id": 27,
-  "name": "Olivian",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 2320,
+  "name": "Helena",
+  "description": "Es una cadena que puede parecer sencilla pero sus acabados que evocan las escamas de una serpiente te da un estilo que resalta y permite darte un look más extravagante. Es un collar que solo algunos se atreven a usar.\t\t\t\t",
+  "price": 729,
   "discount": 25,
   "category": "collares",
   "size": {
@@ -487,9 +487,9 @@
  },
  {
   "id": 28,
-  "name": "Dojan",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 3500,
+  "name": "Micaela",
+  "description": "Micaela es un collar muy parecido a Uxia, pero es para personas que buscan algo más discreto y  más variedad para combinar. Su color negro permite que se combine con más atuendos  y sin importar si es formal o casual\t\t\t\t",
+  "price": 559,
   "discount": 45,
   "category": "collares",
   "size": {
@@ -505,9 +505,9 @@
  },
  {
   "id": 29,
-  "name": "Jessie",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 1450,
+  "name": "Tania",
+  "description": "Una cadena de acero negro que se puede combinar con cualquier otro collar de nuestro inventario. Da un estilo misterioso con enfoque en outfits casuales.\t\t\t\t",
+  "price": 559,
   "discount": 5,
   "category": "collares",
   "size": {
@@ -523,9 +523,9 @@
  },
  {
   "id": 30,
-  "name": "Finland",
-  "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum inventore nostrum voluptatem necessitatibus, non hic id quas temporibus! Sed provident suscipit corrupti, molestias eos maxime optio ea voluptatem reiciendis cupiditate!\r\n\r\nQuibusdam vitae magnam dolore doloribus adipisci illo molestias voluptate aspernatur at provident placeat omnis sit dolor suscipit in, aliquid earum pariatur praesentium ipsum quod. Ipsa porro vero dolor mollitia commodi!",
-  "price": 2480,
+  "name": "Nerea",
+  "description": "Nerea es una cadena que mantiene el color plateado del acero, con muy bonitos acabados y con el detalle de llevar una cruz. El detalle de la cruz esta pensado para todas las personas que buscan llevar con gran estilo su religión.\t\t\t\t",
+  "price": 559,
   "discount": 23,
   "category": "collares",
   "size": {
