@@ -181,9 +181,9 @@
  },
  {
   "id": 11,
-  "name": "Randi",
-  "description": "Representa a la perfección lo que es la elegancia, con pequeños detalles se convierte en un brazalete de gran clase que le da el toque necesario para tu etilo formal.",
-  "price": 905,
+  "name": "Sandra",
+  "description": "Para todos aquellos que les gusta que los voltean a ver, Sandra es todo menos sutil, es un brazalete muy llamativo con acabos que le dan gran clase. Perfecto para llevar con outfits formales y robar las miradas.",
+  "price": 449,
   "discount": 48,
   "category": "brazaletes",
   "size": {
@@ -199,9 +199,9 @@
  },
  {
   "id": 12,
-  "name": "Redford",
-  "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\r\n\r\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-  "price": 288,
+  "name": "Andrea",
+  "description": "Una cadena que representa la frase menos es más, con su diseño sencillo es fácil de combinar y se puede llevar a toda ocasión formal o casual. Perfecto para utilizar con otro brazalete y darle una gran mejora a tu estilo.",
+  "price": 449,
   "discount": 56,
   "category": "brazaletes",
   "size": {
@@ -217,9 +217,9 @@
  },
  {
   "id": 13,
-  "name": "Fallon",
-  "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\r\n\r\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\r\n\r\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-  "price": 567,
+  "name": "Cecilia",
+  "description": "Cecilia es uno de nuestros brazaletes favoritos, con un diseño que combina oro y acero negro, da la impresión de ser un brazalete salido de un volcán. Es una pulsera que puedes llevar a todos lados y que te permitirá robar halagos.",
+  "price": 449,
   "discount": 17,
   "category": "brazaletes",
   "size": {
@@ -235,9 +235,9 @@
  },
  {
   "id": 14,
-  "name": "Nanette",
-  "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-  "price": 270,
+  "name": "Maitane",
+  "description": "Maitane es una pulsera de diseño sencillo pero muy llamativo, las lienas que se enroscan por toda la pulsera le da unos tonos extravagantes que permiten usarse para toda ocasión. ",
+  "price": 399,
   "discount": 58,
   "category": "brazaletes",
   "size": {
@@ -253,9 +253,9 @@
  },
  {
   "id": 15,
-  "name": "Leontyne",
-  "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\r\n\r\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-  "price": 386,
+  "name": "Emma",
+  "description": "La clásica cadena de muñeca, para todos los amantes de los estilos clásicos, este brazalete es el accesorio perfecto para las personas que aman el estilo informal. Tiene como plus que da una sensación de \"chico malo\".",
+  "price": 399,
   "discount": 9,
   "category": "brazaletes",
   "size": {
@@ -271,9 +271,9 @@
  },
  {
   "id": 16,
-  "name": "Hamnet",
-  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\r\n\r\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
-  "price": 1055,
+  "name": "Vanesa",
+  "description": "Vanesa es un brazalete sumamente elegante, con su diseño único permite darle mucho porte y clase a quien lo usa. Con este brazalete vas a resaltar en cualquier evento formal. Perfecto para combinar con brazaletes de oro.",
+  "price": 399,
   "discount": 24,
   "category": "brazaletes",
   "size": {
@@ -289,9 +289,9 @@
  },
  {
   "id": 17,
-  "name": "Bernhard",
-  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-  "price": 834,
+  "name": "Ariana",
+  "description": "Un brazalete sencillo pero elegante, con detalles de eslabones gruesos que le dan un toque rudo a tu outfit. Fácil de combinar, debido a que su color va bien con lo que te pongas.",
+  "price": 379,
   "discount": 48,
   "category": "brazaletes",
   "size": {
@@ -303,13 +303,13 @@
    "img-brazaletes-69350-plata.png",
    "img-brazaletes-69360-plata.png"
   ],
-  "material": "plata"
+  "material": "acero"
  },
  {
   "id": 18,
-  "name": "Addie",
-  "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\r\n\r\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\r\n\r\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-  "price": 868,
+  "name": "Victoria",
+  "description": "Victoria es un brazalete con eslabones gruesos pero con acabados cuadrados, con una bonita placa dorada. Este diseño otorga una gran clase ya que la combinación de materiales lo hace destacar sobre cualquier mirada.",
+  "price": 379,
   "discount": 11,
   "category": "brazaletes",
   "size": {
@@ -325,9 +325,9 @@
  },
  {
   "id": 19,
-  "name": "Marya",
-  "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\r\n\r\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\r\n\r\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-  "price": 1061,
+  "name": "Minerva",
+  "description": "Minerva es un brazalete que combina dos materiales, tela y acero. La tela color negro le da un estilo elegante y los detalles de acero permiten darle a Minerva un grane estilo y que lo hace resaltar. Pensado en todos los que buscan portar su religión con estilo.",
+  "price": 379,
   "discount": 47,
   "category": "brazaletes",
   "size": {
@@ -343,9 +343,9 @@
  },
  {
   "id": 20,
-  "name": "Urbano",
-  "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-  "price": 528,
+  "name": "Isabella",
+  "description": "Isabella representa a la perfección lo que es la elegancia, con pequeños detalles se convierte en un brazalete de gran clase que le da el toque necesario para tu etilo formal.",
+  "price": 379,
   "discount": 31,
   "category": "brazaletes",
   "size": {
