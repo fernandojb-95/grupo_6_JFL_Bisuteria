@@ -180,6 +180,20 @@
     display: block;
     height: 30px;
 }
+
+.editar-btn{
+    background-color: white;
+    border: solid 2px rgb(98, 189, 24);
+    color: rgb(98, 189, 24);
+}
+
+
+.borrar-btn{
+    background-color: white;
+    border: solid 2px rgb(230, 47, 23);
+    color:rgb(230, 47, 23);
+}
+
 /*Estilos para media querie*/
 @media(min-width: 768px) {
 
