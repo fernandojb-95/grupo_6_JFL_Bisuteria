@@ -13,13 +13,15 @@
                 <h1>Regístrate</h1>
                 <p>Llena los siguientes campos para completar tu registro</p>
             </section>
-            <form class= "register-form" action="#">
+            <form class= "register-form" action="#" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
                     <input type="text" placeholder="Nombre(s)" name="user" class="user-input" required >
-                    <input type="text" placeholder="Apellido(s)" name="last-name" class="last-name-input" required>
+                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" required>
                     <input type="email" placeholder="Correo electrónico" name="email" class="email-input" required>
                     <input type="password" placeholder="Contraseña" name="password" class="pass-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
                     <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
+                    <label for="imagenUsuario">Imagen de perfil: </label>
+                    <input type="file" name="imagenUsuario">
                 </div>
                 <div class="checkitems">
                     <div class="check">
