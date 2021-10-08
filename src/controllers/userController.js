@@ -11,10 +11,29 @@ const userController = {
     },
     procesarRegistro: (req,res)=> {
         //Lógica para almacenar usuarios nuevos
-        const products = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+        const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
         const userName = req.body.user,
         lastNameUser = req.body.lastname,
-        correo = req.body.email;
+        email = req.body.email,
+        pass = req.body.password;
+
+        //Creamos el JSON con los datos del nuevo usuario
+        const newUser ={
+            id: users[users.length -1].id + 1,
+            first_name: userName,
+            last_name: lastNameUser,
+            email: email,
+            password: pass,
+            category: "user",
+            images: "imagenusuario",
+        }
+
+        users.push(newUser);
+
+        //Reescribiendo usuarios
+        fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
+
+        res.redirect('/');
 
     }
 }

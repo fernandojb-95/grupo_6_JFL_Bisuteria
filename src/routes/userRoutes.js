@@ -9,11 +9,12 @@ const multer = require('multer');
 //Configuramos destino y nombre de archivos
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, callback) =>{
-        // let folder = path.join(__dirname, `../../public/img/profileImages`);
-        // callback(null,folder);
+        let folder = path.join(__dirname, `../../public/img/users`);
+        callback(null,folder);
     },
     filename: (req, file, callback) => {
-        const imageName = '';
+        let userName = req.body.user;
+        const imageName = `img-${userName.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}${path.extname(file.originalname)}`;
         callback(null,imageName);
     }
 })
