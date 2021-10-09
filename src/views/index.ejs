@@ -6,7 +6,11 @@
     <title>JFL Bisuteria</title>
 </head>
 <body>
+    <% if(locals.user) { %>
+        <%- include('./partials/header', {user: user}) %> 
+    <% } else { %>
     <%- include('./partials/header') %>
+    <% } %>
     <section class="container-01">
         <!--Carrusel de imagenes en home-->
         <div class="slider">

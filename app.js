@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 //Solicitando las rutas
 const mainRoutes = require('./src/routes/mainRoutes');
@@ -21,6 +22,13 @@ app.use(methodOverride('_method'));
 //Recibir datos en formato JSON
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+//Configuración de session
+app.use(session({
+    secret: 'cookie_secret',
+    resave: true,
+    saveUninitialized: true
+}));
 
 //Levantando el servidor
 app.listen(3000, () => {

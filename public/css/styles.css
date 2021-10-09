@@ -67,6 +67,7 @@ header{
 .pages-bar li, .user-pages li{
     padding: 10px 20px;
     width: 100%;
+    color: var(--gold);
 }
 .pages-bar li a:hover, .user-pages li a:hover{
     color: var(--gold);

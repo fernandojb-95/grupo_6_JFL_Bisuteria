@@ -18,8 +18,14 @@
             <li class="user-menu">
                 <i class="far fa-user"></i>
                 <ul class="user-pages">
+                    <% if(locals.user) { %>
+                    <li>Hola <%=user%></li>
+                    <li><a href="/user/<%=id%>/profile">Ir a perfil</a></li>
+                    <li><a href="/">Cerrar sesión</a></li>
+                    <% } else { %>
                     <li><a href="/user/login">Iniciar sesión</a></li>
                     <li><a href="/user/register">Registrarse</a></li>
+                    <% } %>
                 </ul>
             </li>
             <li><a href="/products/productCart"><i class="far fa-shopping-bag"></i></a></li>

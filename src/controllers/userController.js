@@ -35,7 +35,22 @@ const userController = {
 
         res.redirect('/');
 
+    },
+    logUser: (req, res) => {
+        let email = req.body.email;
+        let password = req.body.password;
+        const users = JSON.parse(fs.readFileSync(usersPath,'utf-8')); 
+        const user = users.find(user => user.email == email);
+        if(user === undefined || user.password != password){
+            res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
+        }
+        else {
+            req.session.user = user;
+            res.redirect('/');
+        }
+    },
+    profile: (req,res) => {
+        res.render('./users/profile');
     }
 }
-
 module.exports = userController;

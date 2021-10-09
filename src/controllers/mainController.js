@@ -10,7 +10,14 @@ const mainController = {
         for(let i = 0; i<=3; i++){
             catProducts[i]= products[i]
         }
-        res.render('index', {products: catProducts});
+        if(req.session.user){
+            let user = req.session.user;
+            res.render('index', {products: catProducts, user: user.first_name, id: user.id});
+            
+        } else {
+            res.render('index', {products: catProducts});
+        }
+        
    },
     aboutUs: (req, res) => {
         res.render('about-us');
