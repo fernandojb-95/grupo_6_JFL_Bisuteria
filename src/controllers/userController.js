@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const usersPath = path.join(__dirname, '../data/users.json');
+const bcrypt = require('bcrypt');
 
 const userController = {
     login: (req, res) => {
@@ -15,7 +16,7 @@ const userController = {
         const userName = req.body.user,
         lastNameUser = req.body.lastname,
         email = req.body.email,
-        pass = req.body.password;
+        pass = bcrypt.hashSync(req.body.password,10);
 
         //Creamos el JSON con los datos del nuevo usuario
         const newUser ={

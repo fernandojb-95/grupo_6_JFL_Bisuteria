@@ -22,7 +22,7 @@ const fileUpload = multer({storage: multerDiskStorage});
 
 /*----Rutas para vista de formulario de login----*/
 router.get('/login', userController.login);
-router.post('/', userController.logUser);
+//router.post('/', userController.logUser);
 
 /*----Rutas para vista de formulario de registro----*/
 router.get('/register', userController.register);
