@@ -12,6 +12,7 @@ const userController = {
         res.render('./users/register');
     },
     procesarRegistro: (req,res)=> {
+
         //Logica para validar los campos recibidos
         let errors = validationResult(req);
 
@@ -21,7 +22,11 @@ const userController = {
             const userName = req.body.user,
             lastNameUser = req.body.lastname,
             email = req.body.email,
+            userImage = req.files[0].filename;
             password = bcrypt.hashSync(req.body.password,10);
+
+            //Condicion para diferenciar usuarios o administradores
+            email.search('@jflbisuteria.com.mx') != -1 ? category = "admin" : category = "user";
 
                 //Creamos el JSON con los datos del nuevo usuario
                 const newUser ={
@@ -30,8 +35,8 @@ const userController = {
                     last_name: lastNameUser,
                     email: email,
                     password: password,
-                    category: "user",
-                    images: "imagenusuario"
+                    category: category,
+                    image: userImage
                 }
 
                 users.push(newUser);
