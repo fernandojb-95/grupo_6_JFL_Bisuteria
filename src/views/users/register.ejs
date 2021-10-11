@@ -13,24 +13,31 @@
                 <h1>Regístrate</h1>
                 <p>Llena los siguientes campos para completar tu registro</p>
             </section>
+            <%if (locals.errors) { %>
+            <% errors.forEach(error => {%>
+
+                <p style="color: red;"> <%=error.msg %></p>
+
+            <% })%>
+            <% }%>
             <form class= "register-form" action="/user" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
-                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" required >
-                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" required>
-                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" required>
-                    <input type="password" placeholder="Contraseña" name="password" class="pass-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
-                    <input type="password" placeholder="Confirmar contraseña" name="password-confirm" class="pass-confirm-input" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})" required>
-                    <label for="imagenUsuario">Imagen de perfil: </label>
+                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
+                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">
+                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
+                    <input type="password" placeholder="Contraseña" name="password" class="pass-input">
+                    <input type="password" placeholder="Confirmar contraseña" name="passwordConfirm" class="pass-confirm-input">
+                    <label for="imagenUsuario" required>Imagen de perfil: </label>
                     <input type="file" name="imagenUsuario">
                 </div>
                 <div class="checkitems">
                     <div class="check">
-                        <input type="checkbox" id="politics" required>
+                        <input type="checkbox" id="politics" required checked>
                         <label for="politics">Autorizo la creación de mi cuenta JFL Bisutería con mi dirección de correo electrónico de conformidad con lo descrito en la Política de Privacidad.
                         </label>
                     </div>
                     <div class="check" >
-                        <input type="checkbox" id="news">
+                        <input type="checkbox" id="news" checked>
                         <label for="news">Quiero suscribirme al newsletter y recibir promociones y noticias a mi correo electrónico.</label>
                     </div>
                     <div>

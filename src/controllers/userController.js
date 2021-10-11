@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const usersPath = path.join(__dirname, '../data/users.json');
 const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 
 const userController = {
     login: (req, res) => {
@@ -11,30 +12,38 @@ const userController = {
         res.render('./users/register');
     },
     procesarRegistro: (req,res)=> {
-        //Lógica para almacenar usuarios nuevos
-        const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
-        const userName = req.body.user,
-        lastNameUser = req.body.lastname,
-        email = req.body.email,
-        pass = bcrypt.hashSync(req.body.password,10);
+        //Logica para validar los campos recibidos
+        let errors = validationResult(req);
 
-        //Creamos el JSON con los datos del nuevo usuario
-        const newUser ={
-            id: users[users.length -1].id + 1,
-            first_name: userName,
-            last_name: lastNameUser,
-            email: email,
-            password: pass,
-            category: "user",
-            images: "imagenusuario",
+        if(errors.isEmpty()){
+            //Lógica para almacenar usuarios nuevos
+            const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+            const userName = req.body.user,
+            lastNameUser = req.body.lastname,
+            email = req.body.email,
+            password = bcrypt.hashSync(req.body.password,10);
+
+                //Creamos el JSON con los datos del nuevo usuario
+                const newUser ={
+                    id: users[users.length -1].id + 1,
+                    first_name: userName,
+                    last_name: lastNameUser,
+                    email: email,
+                    password: password,
+                    category: "user",
+                    images: "imagenusuario"
+                }
+
+                users.push(newUser);
+
+                //Reescribiendo usuarios
+                fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
+
+                res.redirect('/');
         }
-
-        users.push(newUser);
-
-        //Reescribiendo usuarios
-        fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
-
-        res.redirect('/');
+        else{
+            res.render('./users/register',{errors: errors.array(),old:req.body});
+        }
 
     },
     logUser: (req, res) => {

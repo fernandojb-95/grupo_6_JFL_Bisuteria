@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const path = require('path');
+const {check, body} = require('express-validator');
 
 //Requerimos multer para traer archivos
 const multer = require('multer');
@@ -20,13 +21,34 @@ const multerDiskStorage = multer.diskStorage({
 })
 const fileUpload = multer({storage: multerDiskStorage});
 
+//Campos a validar en el formulario de registro
+const validateRegister = [
+    body('user')
+        .notEmpty().withMessage('Debes colocar un nombre válido'),
+    body('lastname')
+        .notEmpty().withMessage('Debes colocar un apellido válido'), 
+    body('email')
+        .isEmail().withMessage('Debes colocar email válido'),    
+    body('password')
+        .notEmpty().withMessage('Escribe tu contraseña').isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido')    
+];
+//Validar que la contraseña y la confirmacion de la contraseña coincidan
+ const validatePassword = [ 
+     body('passwordConfirm').custom(( value, { req }) => {
+        if (value !== req.body.password) {
+            throw new Error('Las contraseñas introducidas no coinciden');
+    }
+    return true;
+  })];
+
+
 /*----Rutas para vista de formulario de login----*/
 router.get('/login', userController.login);
-//router.post('/', userController.logUser);
+router.post('/', userController.logUser);
 
 /*----Rutas para vista de formulario de registro----*/
 router.get('/register', userController.register);
-router.post('/', fileUpload.single('imagenUsuario'), userController.procesarRegistro);
+//router.post('/', fileUpload.single('imagenUsuario'), validateRegister, validatePassword, userController.procesarRegistro);
 
 /*----Ruta para info de perfil de usuario-----*/
 router.get('/:id/profile',userController.profile)
