@@ -24,13 +24,13 @@ const fileUpload = multer({storage: multerDiskStorage});
 //Campos a validar en el formulario de registro
 const validateRegister = [
     body('user')
-        .notEmpty().withMessage('Debes colocar un nombre válido'),
+        .isLength({min: 4}).withMessage('Debes colocar un nombre válido'),
     body('lastname')
-        .notEmpty().withMessage('Debes colocar un apellido válido'), 
+        .isLength({min: 4}).withMessage('Debes colocar un apellido válido'), 
     body('email')
         .isEmail().withMessage('Debes colocar email válido'),    
     body('password')
-        .notEmpty().withMessage('Escribe tu contraseña').isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido')    
+        .isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido')    
 ];
 //Validar que la contraseña y la confirmacion de la contraseña coincidan
  const validatePassword = [ 

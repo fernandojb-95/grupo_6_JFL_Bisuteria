@@ -22,11 +22,11 @@
             <% }%>
             <form class= "register-form" action="/user" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
-                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
-                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">
-                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
-                    <input type="password" placeholder="Contraseña" name="password" class="pass-input">
-                    <input type="password" placeholder="Confirmar contraseña" name="passwordConfirm" class="pass-confirm-input">
+                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" required value="<%=locals.old && old.user ? old.user : '' %>">
+                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" required value="<%=locals.old && old.lastname ? old.lastname : '' %>">
+                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" required value="<%=locals.old && old.email ? old.email : '' %>">
+                    <input type="password" placeholder="Contraseña" name="password" class="pass-input" required >
+                    <input type="password" placeholder="Confirmar contraseña" name="passwordConfirm" class="pass-confirm-input" required >
                     <label for="imagenUsuario" required>Imagen de perfil: </label>
                     <input type="file" name="imagenUsuario">
                 </div>
