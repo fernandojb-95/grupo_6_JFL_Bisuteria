@@ -10,32 +10,25 @@ const mainController = {
         for(let i = 0; i<=3; i++){
             catProducts[i]= products[i]
         }
-        if(req.session.user){
-            let user = req.session.user;
-            res.render('index', {products: catProducts, user: user.first_name, id: user.id});
-            
-        } else {
-            res.render('index', {products: catProducts});
-        }
-        
-   },
+        res.render('index', {products: catProducts, user: req.session.user ? req.session.user : undefined});        
+    },
     aboutUs: (req, res) => {
-        res.render('about-us');
+        res.render('about-us', {user: req.session.user ? req.session.user : undefined});
     },
     contact: (req, res) => {
-        res.render('contact');
+        res.render('contact', {user: req.session.user ? req.session.user : undefined});
     },
     suscribe: (req, res) => {
-        res.render('suscribe');
+        res.render('suscribe', {user: req.session.user ? req.session.user : undefined});
    },
     service: (req, res) => {
-        res.render('service');
+        res.render('service', {user: req.session.user ? req.session.user : undefined});
     },
     privacy: (req, res) => {
-        res.render('privacy');
+        res.render('privacy', {user: req.session.user ? req.session.user : undefined});
     },
     help: (req, res) => {
-        res.render('help');
+        res.render('help', {user: req.session.user ? req.session.user : undefined});
     }
 }
 

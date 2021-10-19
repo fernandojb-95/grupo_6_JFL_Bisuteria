@@ -38,6 +38,9 @@ header{
 .options-bar a , .options-bar i{
     color: var(--light);
 }
+.options-bar i.logged {
+    color: var(--gold);
+}
 .options-bar li{
     text-align: center;
     padding: 10px 0;
@@ -72,6 +75,21 @@ header{
 .pages-bar li a:hover, .user-pages li a:hover{
     color: var(--gold);
     transform: scale(1);
+}
+.user-pages button{
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: var(--light);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.user-pages button:hover{
+    color: var(--gold);
+    cursor: pointer;
 }
 .pages-bar a, .user-pages a{
     display: block;

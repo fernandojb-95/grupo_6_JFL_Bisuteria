@@ -16,12 +16,23 @@
             </li>
             <li><a href="/"><i class="fas fa-search"></i></a></li>
             <li class="user-menu">
-                <i class="far fa-user"></i>
+                <% if(locals.user) { %>
+                <i class="far fa-user logged"></i>
+                <% } else { %>
+                    <i class="far fa-user"></i>
+                <% } %>  
                 <ul class="user-pages">
                     <% if(locals.user) { %>
-                    <li>Hola <%=user%></li>
-                    <li><a href="/user/<%=id%>/profile">Ir a perfil</a></li>
-                    <li><a href="/">Cerrar sesión</a></li>
+                    <li>Hola <%=user.first_name%></li>
+                    <li><a href="/user/<%=user.id%>/profile">Ir a perfil</a></li>
+                        <% if(user.category == "admin") { %>
+                    <li><a href="/products/product/create">Crear producto</a></li>
+                        <% } %>
+                    <li>
+                        <form action="/user/logoff?_method=PUT" method="post">
+                            <a href="#"><button type="submit">Cerrar sesión</button></a>
+                        </form>
+                    </li>
                     <% } else { %>
                     <li><a href="/user/login">Iniciar sesión</a></li>
                     <li><a href="/user/register">Registrarse</a></li>

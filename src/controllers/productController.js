@@ -7,29 +7,29 @@ const productController = {
     productDetail: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         const IdProduct = req.params.id;
-        const product = products.find(article => article.id == IdProduct)
-        res.render('./products/productDetail', {product: product});
+        const product = products.find(article => article.id == IdProduct);
+        res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
     },
     productCart : (req, res) => {
-        res.render('./products/productCart');
+        res.render('./products/productCart', {user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         const rings = products.filter(product => product.category == 'anillos')
-        res.render('./products/anillos', {products: rings});
+        res.render('./products/anillos', {products: rings, user: req.session.user ? req.session.user : undefined});
     },
     brazaletes : (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const braceletes = products.filter(product => product.category == 'brazaletes')
-        res.render('./products/brazaletes', {products: braceletes});
+        const braceletes = products.filter(product => product.category == 'brazaletes');
+        res.render('./products/brazaletes', {products: braceletes, user: req.session.user ? req.session.user : undefined });
     },
     collares : (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const necklaces = products.filter(product => product.category == 'collares')
-        res.render('./products/collares', {products: necklaces});
+        const necklaces = products.filter(product => product.category == 'collares');
+        res.render('./products/collares', {products: necklaces, user: req.session.user ? req.session.user : undefined });
     },
     create: (req,res) => {
-        res.render('./admin/addProduct');
+        res.render('./admin/addProduct', {user: req.session.user ? req.session.user : undefined });
     },
     store: (req,res) =>{
         //Lógica para almacenar informacion y crear producto
@@ -85,7 +85,7 @@ const productController = {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         const productID = req.params.id;
         const productToEdit = products.find( product => product.id == productID)
-        res.render('./admin/editProduct', {product: productToEdit});
+        res.render('./admin/editProduct', {product: productToEdit, user: req.session.user ? req.session.user : undefined });
     },
     update: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -149,7 +149,6 @@ const productController = {
 		res.redirect('/products');
     },
     delete: (req,res) => {
-        //res.send('Borrando artículos con delete');
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
         //Lógica para borrar producto
@@ -160,11 +159,11 @@ const productController = {
 
     },
     finalizaCompra : (req, res) => {
-        res.render('./products/finalizaCompra');
+        res.render('./products/finalizaCompra', {user: req.session.user ? req.session.user : undefined});
     },
     productos: (req,res) => {
         const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        res.render('./products/products', {products: allProducts} );
+        res.render('./products/products', { products: allProducts, user: req.session.user ? req.session.user : undefined });
     }
 }
 

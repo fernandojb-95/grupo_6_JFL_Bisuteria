@@ -51,6 +51,9 @@ router.get('/register', userController.register);
 router.post('/register', fileUpload.single('imagenUsuario'), validateRegister, validatePassword, userController.procesarRegistro);
 
 /*----Ruta para info de perfil de usuario-----*/
-router.get('/:id/profile',userController.profile)
+router.get('/:id/profile',userController.profile);
+
+/*----Ruta para cerrar sesion-----*/
+router.put('/logoff', userController.logoff);
 
 module.exports = router;

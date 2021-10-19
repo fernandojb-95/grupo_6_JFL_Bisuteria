@@ -6,10 +6,10 @@ const { validationResult } = require('express-validator');
 
 const userController = {
     login: (req, res) => {
-        res.render('./users/login');
+        req.session.user ? res.redirect('/') : res.render('./users/login'); 
     },
     register: (req, res) => {
-        res.render('./users/register');
+        req.session.user ? res.redirect('/') : res.render('./users/register'); 
     },
     procesarRegistro: (req,res)=> {
 
@@ -68,7 +68,16 @@ const userController = {
         }
     },
     profile: (req,res) => {
-        res.render('./users/profile');
+        if(req.session.user) {
+            res.render('./users/profile', {user: req.session.user.first_name, id: req.session.user.id});
+        } else {
+            res.render('./users/profile');
+        }
+       
+    },
+    logoff: (req, res) => {
+        req.session.user = undefined;
+        res.redirect('/')
     }
 }
 module.exports = userController;

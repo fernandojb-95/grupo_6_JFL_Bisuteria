@@ -115,5 +115,14 @@
   "password": "$2b$10$GeKT4nsQhCcRjky5jRQ0iehoY.8CfYsGhEQVelVV79k6Q425hpV.2",
   "category": "admin",
   "image": "default-user"
+ },
+ {
+  "id": 14,
+  "first_name": "Daniela",
+  "last_name": "Alvarez",
+  "email": "daniela@gmail.com",
+  "password": "$2b$10$CpohL21SSbfu5vSMZeUYGe9kfq49syipZO7h.ZJiGpCezOAr4HB9W",
+  "category": "user",
+  "image": "default-user"
  }
 ]
