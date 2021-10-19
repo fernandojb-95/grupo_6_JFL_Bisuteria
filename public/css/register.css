@@ -13,6 +13,20 @@
 .register-title h1{
     font-size: 26px;
 }
+.register-errors {
+    width: 70%;
+    margin: 0 auto 20px auto;
+    background-color: #ffaaaa;
+    color: red;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 20px;
+}
+.register-errors p{
+    padding: 5px;
+    
+}
+
 .tec-inputs{
     display: flex;
     flex-direction: column;
@@ -27,6 +41,13 @@
     padding-left: 10px;
     border: 1px solid var(--light-border);
     outline: none;
+}
+.tec-inputs p.label{
+    width: 70%;
+    max-width: 400px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    text-align: justify;
 }
 .tec-inputs > div{
     width: 50%;
@@ -76,10 +97,6 @@ main p a{
     .tec-inputs input, .tec-inputs div{
         /* width: 35%; */
         max-width: 400px;
-    }
-    .tec-inputs p{
-        width: 100%;
-        text-align: center;
     }
 }
 /*-------------------Media querie para desktop---------------------*/

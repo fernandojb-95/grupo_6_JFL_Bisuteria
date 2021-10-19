@@ -106,5 +106,14 @@
   "password": "$2b$10$.X5aJlNQEWiPeU4xwzE6a.x6qKmH/wrqwxqJW1gE3qOZyhHcscvVK",
   "category": "user",
   "image": "default-user"
+ },
+ {
+  "id": 13,
+  "first_name": "Fernando",
+  "last_name": "Juarez",
+  "email": "fernandojb@jflbisuteria.com.mx",
+  "password": "$2b$10$GeKT4nsQhCcRjky5jRQ0iehoY.8CfYsGhEQVelVV79k6Q425hpV.2",
+  "category": "admin",
+  "image": "default-user"
  }
 ]
