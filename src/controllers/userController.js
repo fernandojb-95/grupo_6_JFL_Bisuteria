@@ -19,11 +19,14 @@ const userController = {
         if(errors.isEmpty()){
             //Lógica para almacenar usuarios nuevos
             const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
-            const userName = req.body.user,
+            let userName = req.body.user,
             lastNameUser = req.body.lastname,
             email = req.body.email,
-            userImage = req.files[0].filename;
+            userImage = "",
             password = bcrypt.hashSync(req.body.password,10);
+
+            //Asignamos el nombre del archivo o la imagen por default
+            req.files[0] ? userImage =  req.files[0].filename : userImage = "default-user";
 
             //Condicion para diferenciar usuarios o administradores
             email.search('@jflbisuteria.com.mx') != -1 ? category = "admin" : category = "user";
