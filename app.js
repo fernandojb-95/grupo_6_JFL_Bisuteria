@@ -3,11 +3,15 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 //Solicitando las rutas
 const mainRoutes = require('./src/routes/mainRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const productRoutes = require('./src/routes/productRoutes');
+
+//Trayendo middlewares
+const rememberUser = require('./src/middlewares/rememberMiddleware');
 
 //Configuracion del motor de vistas
 app.set('views', path.join(__dirname, '/src/views'));
@@ -29,6 +33,12 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+//Configuración de cookies
+app.use(cookieParser());
+
+//Verificando si hay cookie con usuario
+app.use(rememberUser);
 
 //Levantando el servidor
 app.listen(3000, () => {

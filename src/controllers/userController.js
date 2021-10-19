@@ -57,6 +57,7 @@ const userController = {
     logUser: (req, res) => {
         let email = req.body.email;
         let password = req.body.password;
+
         const users = JSON.parse(fs.readFileSync(usersPath,'utf-8')); 
         const user = users.find(user => user.email == email);
         if(user === undefined || !bcrypt.compareSync(password,user.password)){
@@ -64,6 +65,9 @@ const userController = {
         }
         else {
             req.session.user = user;
+            if(req.body.remember != undefined){
+                res.cookie('remember', user.email, {maxAge: 60000})
+            }
             res.redirect('/');
         }
     },
@@ -77,7 +81,9 @@ const userController = {
     },
     logoff: (req, res) => {
         req.session.user = undefined;
+        res.cookie('remember', undefined);
         res.redirect('/')
+        
     }
 }
 module.exports = userController;
