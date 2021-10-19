@@ -44,11 +44,11 @@ const validateRegister = [
 
 /*----Rutas para vista de formulario de login----*/
 router.get('/login', userController.login);
-//router.post('/', userController.logUser);
+router.post('/', userController.logUser);
 
 /*----Rutas para vista de formulario de registro----*/
 router.get('/register', userController.register);
-router.post('/', fileUpload.any(''), validateRegister, validatePassword, userController.procesarRegistro);
+//router.post('/', fileUpload.any(''), validateRegister, validatePassword, userController.procesarRegistro);
 
 /*----Ruta para info de perfil de usuario-----*/
 router.get('/:id/profile',userController.profile)

@@ -59,7 +59,7 @@ const userController = {
         let password = req.body.password;
         const users = JSON.parse(fs.readFileSync(usersPath,'utf-8')); 
         const user = users.find(user => user.email == email);
-        if(user === undefined || user.password != password){
+        if(user === undefined || !bcrypt.compareSync(password,user.password)){
             res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
         }
         else {

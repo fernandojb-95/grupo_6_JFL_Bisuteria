@@ -88,5 +88,23 @@
   "password": "b7iyJP7",
   "category": "user",
   "image": "https://robohash.org/mollitiaoptiosint.png?size=50x50&set=set1"
+ },
+ {
+  "id": 11,
+  "first_name": "Luis",
+  "last_name": "Morales",
+  "email": "luis@gmail.com",
+  "password": "$2b$10$OYGHkhxeDgLLQy/.geReLeWAVIHWlb6.Ur06FWhMkLtMtDV1ZSK1u",
+  "category": "user",
+  "image": "default-user"
+ },
+ {
+  "id": 12,
+  "first_name": "Jose",
+  "last_name": "Jose",
+  "email": "jose@gmail.com",
+  "password": "$2b$10$.X5aJlNQEWiPeU4xwzE6a.x6qKmH/wrqwxqJW1gE3qOZyhHcscvVK",
+  "category": "user",
+  "image": "default-user"
  }
 ]
