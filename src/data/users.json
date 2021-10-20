@@ -124,5 +124,14 @@
   "password": "$2b$10$CpohL21SSbfu5vSMZeUYGe9kfq49syipZO7h.ZJiGpCezOAr4HB9W",
   "category": "user",
   "image": "default-user"
+ },
+ {
+  "id": 15,
+  "first_name": "Gerardo",
+  "last_name": "Landaverde",
+  "email": "jerrylanda@jflbisuteria.com.mx",
+  "password": "$2b$10$PpnyU0dXViXDDVB4vrQLfOvU4tEAGjQtrRfaqQWluOKTEQwZkefra",
+  "category": "admin",
+  "image": "img-gerardo-38435.png"
  }
 ]

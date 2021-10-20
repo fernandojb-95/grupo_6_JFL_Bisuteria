@@ -73,7 +73,7 @@ const userController = {
     },
     profile: (req,res) => {
         if(req.session.user) {
-            res.render('./users/profile', {user: req.session.user.first_name, id: req.session.user.id});
+            res.render('./users/profile', {user: req.session.user ? req.session.user : undefined});
         } else {
             res.render('./users/profile');
         }
