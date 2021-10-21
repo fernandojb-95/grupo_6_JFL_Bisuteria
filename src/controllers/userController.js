@@ -6,10 +6,10 @@ const { validationResult } = require('express-validator');
 
 const userController = {
     login: (req, res) => {
-        req.session.user ? res.redirect('/') : res.render('./users/login'); 
+        res.render('./users/login'); 
     },
     register: (req, res) => {
-        req.session.user ? res.redirect('/') : res.render('./users/register'); 
+        res.render('./users/register'); 
     },
     procesarRegistro: (req,res)=> {
 

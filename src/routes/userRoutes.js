@@ -3,6 +3,8 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const path = require('path');
 const {check, body} = require('express-validator');
+const guestMiddleware = require ('../middlewares/guestMiddleware');
+const logMiddleware = require ('../middlewares/logMiddleware');
 
 //Requerimos multer para traer archivos
 const multer = require('multer');
@@ -43,15 +45,15 @@ const validateRegister = [
 
 
 /*----Rutas para vista de formulario de login----*/
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 router.post('/', userController.logUser);
 
 /*----Rutas para vista de formulario de registro----*/
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 router.post('/register', fileUpload.single('imagenUsuario'), validateRegister, validatePassword, userController.procesarRegistro);
 
 /*----Ruta para info de perfil de usuario-----*/
-router.get('/:id/profile',userController.profile);
+router.get('/:id/profile', logMiddleware, userController.profile);
 
 /*----Ruta para cerrar sesion-----*/
 router.put('/logoff', userController.logoff);
