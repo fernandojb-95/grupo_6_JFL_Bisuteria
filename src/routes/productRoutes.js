@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+const logMiddleware = require('../middlewares/logMiddleware');
 
 //Requerimos multer para traer archivos
 const multer = require('multer');
@@ -39,11 +41,11 @@ router.get('/brazaletes',productController.brazaletes);
 router.get('/collares',productController.collares);
 
 /*----Rutas para creación de producto----*/
-router.get('/product/create', productController.create);
+router.get('/product/create',logMiddleware, adminMiddleware, productController.create);
 router.post('/', fileUpload.any(), productController.store);
 
 /*----Rutas para edición de producto----*/
-router.get('/:id/edit', productController.edit);
+router.get('/:id/edit', logMiddleware, adminMiddleware, productController.edit);
 router.patch('/:id', fileUpload.any(), productController.update);
 
 /*----Rutas para vista de carrito de compras----*/
