@@ -18,17 +18,11 @@ const mainController = {
     contact: (req, res) => {
         res.render('contact', {user: req.session.user ? req.session.user : undefined});
     },
-    suscribe: (req, res) => {
-        res.render('suscribe', {user: req.session.user ? req.session.user : undefined});
-   },
     service: (req, res) => {
         res.render('service', {user: req.session.user ? req.session.user : undefined});
     },
     privacy: (req, res) => {
         res.render('privacy', {user: req.session.user ? req.session.user : undefined});
-    },
-    help: (req, res) => {
-        res.render('help', {user: req.session.user ? req.session.user : undefined});
     }
 }
 
