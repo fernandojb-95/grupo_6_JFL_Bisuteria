@@ -56,3 +56,19 @@ Cambiamos el formato de nuestros htmls a EJS, además creamos las vistas parcial
 
 ## ¿Qué deberíamos dejar de hacer?
 - Dejar de comparar nuestros avances con otros equipos
+
+# Retro Sprint 4
+En este sprint nos encargamos de hacer el CRUD de productos y generar los archivos JSON con la información de los productos, tomando como base los formularios que teníamos creados, tomamos la información y realizamos el proceso necesario para poder crear, actualizar y eliminar productos.
+
+## ¿Qué se hizo bien?
+- Se continuó con una buena cantidad de reuniones para la delegación de actividades y resolver dudas.
+- Se cumplieron los objetivos planteados para la entrega del sprint.
+
+## ¿Qué se hizo mal?
+- No tomar espacios para poder explicar de manera extensa a los compañeros la forma en la que se realizaron las actividades de cada participante.
+
+## ¿Qué deberíamos empezar a hacer o seguir haciendo?
+- Dar espacio en las reuniones para resolver dudas específicas o realizar conjuntamente una actividad para que todos los integrantes vean el proceso de cada uno para la resolución de problemas.
+
+## ¿Qué deberíamos dejar de hacer?
+- Aún es posible mejorar en pequeños detalles que den más valor al proyecto, complementando lo visto en las clases y lo solicitado en el sprint.
