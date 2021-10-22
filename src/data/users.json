@@ -133,5 +133,23 @@
   "password": "$2b$10$PpnyU0dXViXDDVB4vrQLfOvU4tEAGjQtrRfaqQWluOKTEQwZkefra",
   "category": "admin",
   "image": "img-gerardo-38435.png"
+ },
+ {
+  "id": 16,
+  "first_name": "Sujeto",
+  "last_name": "Prueba",
+  "email": "sujeto@gmail.com",
+  "password": "$2b$10$nAbPy2NzZCPaNuehD33LieNNz15cSFKH5Y1pk3Q3pIjj7vyIWky0y",
+  "category": "user",
+  "image": "img-sujeto-17426.png"
+ },
+ {
+  "id": 17,
+  "first_name": "Bruce",
+  "last_name": "Wayne",
+  "email": "brucewayne@batman.com",
+  "password": "$2b$10$SDt8lqxZDVb2yvhJjokCse/MI4df1wk7.NtF24vTJGyjH.bp9bnzW",
+  "category": "user",
+  "image": "img-bruce-01742.jpg"
  }
 ]

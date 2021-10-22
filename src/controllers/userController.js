@@ -14,9 +14,9 @@ const userController = {
     procesarRegistro: (req,res)=> {
 
         //Logica para validar los campos recibidos
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()){
+        let errorsList = validationResult(req);
+        let errors = errorsList.array()
+        if(errorsList.isEmpty() && !req.fileValidationError){
             //Lógica para almacenar usuarios nuevos
             const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
             let userName = req.body.user,
@@ -50,7 +50,14 @@ const userController = {
                 res.redirect('/');
         }
         else{
-            res.render('./users/register',{errors: errors.array(),old:req.body});
+            if(req.file){
+                const imgPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`)
+                fs.unlink(imgPath, error => {
+                    if (error) console.log(error);
+                })
+            }
+            if(req.fileValidationError) errors.push((req.fileValidationError))
+            res.render('./users/register',{errors: errors, old:req.body});
         }
 
     },
