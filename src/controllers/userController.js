@@ -87,8 +87,8 @@ const userController = {
        
     },
     logoff: (req, res) => {
-        req.session.user = undefined;
-        res.cookie('remember', undefined);
+        req.session.destroy();
+        res.clearCookie('remember');
         res.redirect('/')
         
     }
