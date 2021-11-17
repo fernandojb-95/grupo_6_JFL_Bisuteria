@@ -14,7 +14,7 @@
             <div class="imagenes">
                 <!-- Vista de producto actual -->
                 <div>
-                    <img class="imagen-principal" src="/img/<%=product.category%>/<%=product.images[0]%>" alt="">
+                    <img class="imagen-principal" src="/img/<%=product.category.name%>/<%=product.image_1%>" alt="">
                 </div>
           
             </div>
@@ -31,7 +31,7 @@
                     <form action="">
                         <div class="resalta-campo">
                             <p><strong>Precio: </strong> <span>$<%=product.price%></span></p>
-                            <p><strong>Material: </strong> <span><%= product.material%></span></p>
+                            <p><strong>Material: </strong> <span><%= product.material.name%></span></p>
                         </div>
                         <div class="resalta-campo">
                             <label for="seleccionTalla">Talla: </label>

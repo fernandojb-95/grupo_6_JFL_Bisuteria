@@ -1,7 +1,7 @@
 <a href="/products/<%=product.id%>" class="product">
     <div class="product-image">
-        <img class="pic main" src="/img/<%=product.category%>/<%=product.images[0]%>" alt="Product">
-        <img class="pic back" src="/img/<%=product.category%>/<%=product.images[1]%>" alt="Vista 2">
+        <img class="pic main" src="/img/<%=product.category.name%>/<%=product.image_1%>" alt="Product">
+        <img class="pic back" src="/img/<%=product.category.name%>/<%=product.image_2%>" alt="Vista 2">
     </div>
     <div class="product-info">
         <p><%=product.name%></p>

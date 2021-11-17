@@ -1,14 +1,24 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models')
 
 const productsPath = path.join(__dirname, '../data/products.json');
 
 const productController = {
     productDetail: (req,res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+      //  const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         const IdProduct = req.params.id;
-        const product = products.find(article => article.id == IdProduct);
-        res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
+      //  const product = products.find(article => article.id == IdProduct);
+
+        db.Product.findByPk(IdProduct,
+            {
+                include: ['category', 'material']
+        })
+            .then(product => {
+                 res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
+            })
+        
+      //  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
     },
     productCart : (req, res) => {
         res.render('./products/productCart', {user: req.session.user ? req.session.user : undefined});

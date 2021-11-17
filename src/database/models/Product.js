@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue: "default-image.svg",
         },
         category_id : {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         material_id : {
@@ -65,5 +65,16 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Product = sequelize.define(alias, cols, config)
 
+    Product.associate = function (models) {
+        Product.belongsTo(models.Category, { 
+            as: "category",
+            foreignKey: "category_id"
+        });
+        Product.belongsTo(models.Material, { 
+            as: "material",
+            foreignKey: "material_id"
+        })
+    }
+
     return Product;
-}
+}   
