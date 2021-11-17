@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 const productsPath = path.join(__dirname, '../data/products.json');
 
@@ -10,6 +11,8 @@ const mainController = {
         for(let i = 0; i<=3; i++){
             catProducts[i]= products[i]
         }
+        db.Product.findAll()
+            .then(users => console.log(users))
         res.render('index', {products: catProducts, user: req.session.user ? req.session.user : undefined});        
     },
     aboutUs: (req, res) => {
