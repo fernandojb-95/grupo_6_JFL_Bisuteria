@@ -7,9 +7,9 @@ const productsPath = path.join(__dirname, '../data/products.json');
 const productController = {
     productDetail: (req,res) => {
       //  const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const IdProduct = req.params.id;
       //  const product = products.find(article => article.id == IdProduct);
-
+      //  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
+        const IdProduct = req.params.id;
         db.Product.findByPk(IdProduct,
             {
                 include: ['category', 'material']
@@ -17,26 +17,57 @@ const productController = {
             .then(product => {
                  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
             })
-        
-      //  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
     },
     productCart : (req, res) => {
         res.render('./products/productCart', {user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const rings = products.filter(product => product.category == 'anillos')
-        res.render('./products/anillos', {products: rings, user: req.session.user ? req.session.user : undefined});
+        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const rings = products.filter(product => product.category == 'anillos')
+        // res.render('./products/anillos', {products: rings, user: req.session.user ? req.session.user : undefined});
+        db.Product.findAll(
+            {
+                include: ['category'],
+                where: {
+                    '$category.name$': 'anillos'
+                }
+            }
+        )
+        .then(products =>{
+            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+        })
     },
     brazaletes : (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const braceletes = products.filter(product => product.category == 'brazaletes');
-        res.render('./products/brazaletes', {products: braceletes, user: req.session.user ? req.session.user : undefined });
+        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const braceletes = products.filter(product => product.category == 'brazaletes');
+        // res.render('./products/brazaletes', {products: braceletes, user: req.session.user ? req.session.user : undefined });
+        db.Product.findAll(
+            {
+                include: ['category'],
+                where: {
+                    '$category.name$': 'brazaletes'
+                }
+            }
+        )
+        .then(products =>{
+            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+        })
     },
     collares : (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const necklaces = products.filter(product => product.category == 'collares');
-        res.render('./products/collares', {products: necklaces, user: req.session.user ? req.session.user : undefined });
+        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const necklaces = products.filter(product => product.category == 'collares');
+        // res.render('./products/collares', {products: necklaces, user: req.session.user ? req.session.user : undefined });
+        db.Product.findAll(
+            {
+                include: ['category'],
+                where: {
+                    '$category.name$': 'collares'
+                }
+            }
+        )
+        .then(products =>{
+            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+        })
     },
     create: (req,res) => {
         res.render('./admin/addProduct', {user: req.session.user ? req.session.user : undefined });
