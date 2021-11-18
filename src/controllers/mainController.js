@@ -11,17 +11,30 @@ const mainController = {
         // for(let i = 0; i<=3; i++){
         //     catProducts[i]= products[i]
         // }
-        db.Product.findAll(
+        // res.render('index', {products: catProducts, user: req.session.user ? req.session.user : undefined});        
+        let popular = db.Product.findAll(
             {
             include: ['category'],
             limit: 4,
             order: [['sold', 'DESC']]
             }
-        )
-            .then(products => {
-                res.render('index', {products: products, user: req.session.user ? req.session.user : undefined});
+         );
+         let sale = db.Product.findAll(
+            {
+            include: ['category'],
+            limit: 4,
+            order: [['price', 'ASC']]
+            }
+         );
+        Promise
+            .all([popular,sale])
+            .then(([popular, sale]) => {
+                if(popular != null && sale!= null) {
+                    res.render('index', {products: popular, sale: sale, user: req.session.user ? req.session.user : undefined});        
+                }
             })
-        // res.render('index', {products: catProducts, user: req.session.user ? req.session.user : undefined});        
+            .catch(error => console.log(error))
+        
     },
     aboutUs: (req, res) => {
         res.render('about-us', {user: req.session.user ? req.session.user : undefined});

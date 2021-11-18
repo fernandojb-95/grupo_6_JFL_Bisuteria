@@ -16,6 +16,8 @@
 }
 body{
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    position: relative;
 }
 main{
     width: 90vw;

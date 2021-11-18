@@ -54,11 +54,15 @@ router.get('/productCart', logMiddleware, productController.productCart);
 /*----Rutas para vista de finalizar compra----*/
 router.get('/finalizaCompra',logMiddleware, productController.finalizaCompra);
 
+/*----Rutas para buscar producto----*/
+router.get('/search', productController.search);
+
 /*----Rutas para vista de detalle de producto----*/
 router.get('/:id', productController.productDetail);
 
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);
+
 
 
 

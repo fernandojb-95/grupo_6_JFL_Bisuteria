@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 const productsPath = path.join(__dirname, '../data/products.json');
 
@@ -211,6 +212,21 @@ const productController = {
             .then(products => {
                 res.render('./products/products', { products: products, user: req.session.user ? req.session.user : undefined });
             })
+    },
+    search: (req,res) => {
+        const search = req.query.search;
+        db.Product.findAll({
+            include : ['category'],
+            where: {
+                name: {
+                    [Op.substring]: search
+                }
+            }
+        })
+        .then(products => {
+            console.log(products)
+            res.render('./products/search', {search: search, products: products, user: req.session.user ? req.session.user : undefined})
+        })
     }
 }
 

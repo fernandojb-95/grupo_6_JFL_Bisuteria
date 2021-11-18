@@ -24,9 +24,9 @@
         </section>
         <section class="search-menu navbar-element">
             <i class="fas fa-search"></i>
-            <form action="#">
+            <form action="/products/search" method="get">
                 <div class="search-bar">
-                    <input type="text" placeholder="Escribe tu busqueda">
+                    <input type="text" placeholder="Escribe tu busqueda" name="search">
                     <button type="submit" ><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -59,49 +59,5 @@
                     <% } %>
                     </div>
         </section>
-        <!-- <ul>
-            <li class="bars-menu">
-                <i class="fas fa-bars"></i>
-                <ul class="pages-bar">
-                    <li><a href="/products/anillos">Anillos</a></li>
-                    <li><a href="/products/collares">Collares</a></li>
-                    <li><a href="/products/brazaletes">Brazaletes</a></li>
-                    <li><a href="/about-us">Nosotros</a></li>
-                    <li><a href="/contact">Contacto</a></li>                            
-                </ul> 
-            </li>
-            <li><a href="/"><i class="fas fa-search"></i></a></li>
-            <li>
-                <picture class="main-logo">
-                    <a href="/"></a>
-                </picture>
-            </li>
-            <li><a href="/products/productCart"><i class="far fa-shopping-bag"></i></a></li>
-            <li class="user-menu">
-                <% if(locals.user) { %>
-                <i class="far fa-user logged"></i>
-                <% } else { %>
-                    <i class="far fa-user"></i>
-                <% } %>  
-                <ul class="user-pages">
-                    <% if(locals.user) { %>
-                    <li>Hola <%=user.first_name%></li>
-                    <li><a href="/user/<%=user.id%>/profile">Ir a perfil</a></li>
-                        <% if(user.category == "admin") { %>
-                    <li><a href="/products/product/create">Crear producto</a></li>
-                        <% } %>
-                    <li>
-                        <form action="/user/logoff?_method=PUT" method="post">
-                            <a href="#"><button type="submit">Cerrar sesión</button></a>
-                        </form>
-                    </li>
-                    <% } else { %>
-                    <li><a href="/user/login">Iniciar sesión</a></li>
-                    <li><a href="/user/register">Registrarse</a></li>
-                    <% } %>
-                </ul>
-            </li>
-            <li><a href="/service"><i class="far fa-question-circle"></i></a></li>
-        </ul> -->
     </nav>
 </header>

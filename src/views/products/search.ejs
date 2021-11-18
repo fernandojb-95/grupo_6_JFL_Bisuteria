@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Resultados de la búsqueda: <%=search%></title>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="view-products"></div>
+        <h1>Resultados de la búsqueda: <%=search%></h1>
+        <section class="products-container">
+            <% products.forEach(product => { %>
+                <%- include('../partials/product-card.ejs', {product: product}) %>
+            <% }) %>
+        </section>
+        <% if(products.length == 0) { %>
+            <p>No hay resultados para la búsqueda <%=search%></p>
+            <% } %>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -111,11 +111,16 @@ header{
     width: 90%;
     outline: none;
     border: none;
+    background-color: var(--soft);
 }
 .search-bar button {
     width: 10%;
-    background-color: var(--light-border);
+    background-color: var(--soft);
     border-radius: 5px;
+    border: 1px solid var(--light-border);
+}
+.search-bar button i{
+    color: var(--light-border);
 }
 .user-pages{
     position: absolute;
@@ -162,6 +167,8 @@ footer{
     color: var(--light);
     padding-bottom: 20px;
     min-width: 320px;
+    position: absolute;
+    top: 100%;
 }
 
 /*Barra de opciones*/
@@ -272,6 +279,7 @@ footer i{
         justify-content: space-evenly;
         align-items: center;
         padding: 5px 0;
+
     }
     .footer-options{
         width: 35%;
@@ -281,7 +289,7 @@ footer i{
         width: 40%;
     }
     main{
-        margin-top: 70px;
+        /* margin-top: 70px; */
     }
 }
 
