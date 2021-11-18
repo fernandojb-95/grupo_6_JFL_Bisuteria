@@ -10,10 +10,10 @@ header{
 .main-logo{
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 .main-logo a{
-    background-image: url('../img/JFL-Logo.svg');
+    background-image: url('../img/JFL-logo-sin-texto.svg');
     display: block;
     width: 80px;
     height: 80px;
@@ -21,95 +21,140 @@ header{
     background-repeat: no-repeat;
     background-size: contain;
 }
-/*Barra de opciones*/
-.options-bar{
-    padding: 15px 0px;
-}
-.options-bar ul{
+/*Barra de navegación*/
+.navbar{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    list-style: none;
+    align-items: center;
+    position: relative;
+    min-height: 200px;
 }
-.options-bar > ul > li{
-    transition: transform 0.2s linear;
-    /* width: auto; */
-}
-.options-bar a , .options-bar i{
+.navbar i {
     color: var(--light);
+    display: block;
 }
-.options-bar i.logged {
-    color: var(--gold);
+.main-menu i:hover ~ .main-list, .main-list:hover {
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(150px);
+    transition: transform 1s, z-index 0s 0.4s, opacity 0.8s;
 }
-.options-bar li{
+.main-list{
+    position: absolute;
+    z-index: -10;
+    opacity: 0;
+    transition: all 1s 0.5s;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    width: 35%;
     text-align: center;
+}
+.main-list_element{
     padding: 10px 0;
 }
-.options-bar > li:last-child{
-    padding-right: 0;
-    width: 100%;
+.main-list .main-list_element a, .main-list p{
+    color: white;
 }
-/*Navegación de páginas*/
-.pages-bar, .user-pages{
-    position: absolute;
-    background-color: var(--dark);
-    top: 90%;
-    left: 0;
-    width: 250px;
-    z-index: -1;
+.products-menu p:hover ~ .products-list, .products-list:hover {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(100%);
+    transition: transform 1.5s, z-index 0s 1.3s, opacity 1s;
+}
+.products-list{
+    z-index: -10;
     opacity: 0;
     display: flex;
     flex-direction: column;
-    list-style: none;
-    align-items: center;
-    transition: all 0.5s 0.3s ease;
-}
-.user-pages{
-    left: calc(50% - 125px);
-}
-.pages-bar li, .user-pages li{
-    padding: 10px 20px;
+    position: absolute;
+    transition: transform 1.5s, z-index 0s 0.3s, opacity 1s;
+    top: 0;
+    background-color: var(--dark);
     width: 100%;
-    color: var(--gold);
 }
-.pages-bar li a:hover, .user-pages li a:hover{
-    color: var(--gold);
-    transform: scale(1);
+.products-list a{
+    padding: 10px 0;
 }
-.user-pages button{
-    display: block;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: var(--light);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+.products-menu{
+    position: relative;
 }
-.user-pages button:hover{
-    color: var(--gold);
+.products-menu p:hover {
     cursor: pointer;
 }
-.pages-bar a, .user-pages a{
-    display: block;
-    color: var(--light);
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 0.2px solid var(--light);
+.search-menu form{
+    position: absolute;
+    z-index: -10;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    background-color: var(--dark);
+    width: 100%;
+    transition: all 0.5s linear 0.8s;
 }
-.bars-menu:hover .pages-bar{
+.search-menu i:hover ~ form, .search-menu form:hover{
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(150px);
+    transition: transform 1s, z-index 0s 0.4s, opacity 0.8s;
+}
+.search-menu .search-bar {
+    width: 85%;
+    margin: 10px auto;
+    background-color: var(--light);
+    border-radius: 10px;
+    display: flex;
+    padding: 3px;
+    max-width: 500px;
+}
+.search-bar input {
+    width: 90%;
+    outline: none;
+    border: none;
+}
+.search-bar button {
+    width: 10%;
+    background-color: var(--light-border);
+    border-radius: 5px;
+}
+.user-pages{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -10;
+    background-color: var(--dark);
+    width: 60%;
+    max-width: 250px;
+    text-align: center;
+    transition: all 1s 0.5s;
+}
+.user-pages p, .user-pages a{
+    color: var(--light);
+}
+.user-menu i:hover ~ .user-pages, .user-pages:hover{
     z-index: 10;
     opacity: 1;
+    transform: translateY(120px);
+    transition: transform 0.9s, z-index 0s 0.4s, opacity 0.8s;
+}
+.user-pages_element{
+    padding: 10px 0;
+}
+.user-menu i.logged, .user-pages p{
+    color: var(--gold);
+}
+.user-pages_element button {
+    background-color: transparent;
+    border: none;
+    color: var(--light);
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+.user-pages_element button:hover{
+    cursor: pointer;
 }
 
-.user-menu:hover .user-pages{
-    z-index: 10;
-    opacity: 1;
-}
 /*--------Maquetado del footer-------*/
 footer{
     width: 100%;
@@ -160,41 +205,65 @@ footer i{
 /*-------------------Media querie para tablet-------------------*/
 @media(min-width: 768px){
 /*-----Header------*/
-    .options-bar{
-        padding-bottom: 0px;
+    .navbar{
+        flex-wrap: wrap;
+        align-items: center;
     }
-    .options-bar ul{
-        justify-content: flex-end;
+    .main-logo{
+        order: -1;
+        width: 15%;
     }
-    .options-bar > ul > li{
-        padding-right: 30px;
-        font-size: 18px;
-    }
-    .options-bar > ul > li:nth-of-type(1) i{
-        visibility: hidden;
-        width: auto;
-    }
-    .options-bar .pages-bar{
-        opacity: 1;
-        z-index: 10;
-        max-width: none;
+    .main-menu{
         width: 100%;
-        top: 100%;
-        padding-right: 0;
+        order: 1;
+    }
+    .main-menu i{
+        display: none;
+    }
+    .main-menu .main-list {
+        position: relative;
+        z-index: 10;
+        opacity: 1;
+        display: flex;
         flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
     }
-    .pages-bar a{
-        border-bottom: none;
+    .main-list:hover {
+        transform: none;
     }
-    .pages-bar li{
-        width: 20%;
+    .main-list_element{
+        width: 33%;
     }
-    .bars-menu, .user-menu{
-        position: static;
+    .search-menu {
+        width: 60%;
+        position: relative;
+        height: 70px;
+        display: flex;
     }
-    .user-pages{
-        left: calc(100% - 250px);
-        top: calc(100% + 52px);
+    .search-menu > i{
+        display: none;
+    }
+    .search-menu form{
+        z-index: 1;
+        opacity: 1;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    .search-menu form:hover{
+        transform: none;
+    }
+    .search-menu .search-bar {
+        max-width: none;
+    }
+    .products-menu p:hover ~ .products-list, .products-list:hover {
+        transform: translateY(90px);
+        transition: transform 0.8s, z-index 0s 0.3s, opacity 0.6s 0.4s;
+    }
+    .products-list{
+        top: -50px;
+        transition: all 1s 0.4s;
     }
     /*Maquetación del footer*/
     footer{

@@ -1,9 +1,65 @@
 <header>
-    <picture class="main-logo">
-        <a href="/"></a>
-    </picture>
-    <nav class="options-bar">
-        <ul>
+    <nav class="navbar">
+        <section class="main-menu navbar-element">
+            <i class="fas fa-bars"></i>
+            <div class="main-list">
+                <div class="main-list_element">
+                    <div class="products-menu">
+                        <p>Productos</p>
+                        <div class="products-list">
+                            <a href="/products/anillos" class="products_list_element">Anillos</a>
+                            <a href="/products/brazaletes" class="products_list_element">Brazaletes</a>
+                            <a href="/products/collares" class="products_list_element">Collares</a>
+                            <a href="/products" class="products_list_element">Ver todo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-list_element">
+                    <a href="/about-us">Nosotros</a>
+                </div>
+                <div class="main-list_element">
+                    <a href="/contact">Contacto</a>
+                </div>
+            </div>
+        </section>
+        <section class="search-menu navbar-element">
+            <i class="fas fa-search"></i>
+            <form action="#">
+                <div class="search-bar">
+                    <input type="text" placeholder="Escribe tu busqueda">
+                    <button type="submit" ><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </section>
+        <picture class="main-logo navbar-element">
+            <a href="/"></a>
+        </picture>
+        <section class=" shopping-cart navbar-element">
+            <a href="/products/productCart"><i class="far fa-shopping-bag"></i></a>
+        </section>
+        <section class="user-menu navbar-element">
+            <% if(locals.user) { %>
+                <i class="far fa-user logged"></i>
+                <% } else { %>
+                <i class="far fa-user"></i>
+                <% } %>
+                <div class="user-pages">
+                    <% if(locals.user) { %>
+                    <p class="user-pages_element">Hola <%=user.first_name%></p>
+                    <div class="user-pages_element"><a href="/user/<%=user.id%>/profile">Ir a perfil</a></div>
+                        <% if(user.category == "admin") { %>
+                    <div class="user-pages_element"><a href="/products/product/create">Crear producto</a></div>
+                        <% } %>
+                    <form action="/user/logoff?_method=PUT" method="post" class="user-pages_element">
+                            <button type="submit">Cerrar sesión</button>
+                        </form>
+                    <% } else { %>
+                    <div class="user-pages_element"><a href="/user/login">Iniciar sesión</a></div>
+                    <div class="user-pages_element"><a href="/user/register">Registrarse</a></div>
+                    <% } %>
+                    </div>
+        </section>
+        <!-- <ul>
             <li class="bars-menu">
                 <i class="fas fa-bars"></i>
                 <ul class="pages-bar">
@@ -15,6 +71,12 @@
                 </ul> 
             </li>
             <li><a href="/"><i class="fas fa-search"></i></a></li>
+            <li>
+                <picture class="main-logo">
+                    <a href="/"></a>
+                </picture>
+            </li>
+            <li><a href="/products/productCart"><i class="far fa-shopping-bag"></i></a></li>
             <li class="user-menu">
                 <% if(locals.user) { %>
                 <i class="far fa-user logged"></i>
@@ -39,8 +101,7 @@
                     <% } %>
                 </ul>
             </li>
-            <li><a href="/products/productCart"><i class="far fa-shopping-bag"></i></a></li>
             <li><a href="/service"><i class="far fa-question-circle"></i></a></li>
-        </ul>
+        </ul> -->
     </nav>
 </header>

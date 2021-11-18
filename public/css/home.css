@@ -144,9 +144,9 @@ h1.titulo{
     main{
         margin-top: 0;
     }
-    .container-01{
+    /* .container-01{
         margin-top: 52px;
-    }
+    } */
     .container-04{
         border-top: 0.5px solid var(--light-border);
     }

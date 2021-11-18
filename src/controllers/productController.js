@@ -50,7 +50,7 @@ const productController = {
             }
         )
         .then(products =>{
-            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+            res.render('./products/brazaletes', {products: products, user: req.session.user ? req.session.user : undefined});
         })
     },
     collares : (req, res) => {
@@ -66,7 +66,7 @@ const productController = {
             }
         )
         .then(products =>{
-            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+            res.render('./products/collares', {products: products, user: req.session.user ? req.session.user : undefined});
         })
     },
     create: (req,res) => {
@@ -203,8 +203,14 @@ const productController = {
         res.render('./products/finalizaCompra', {user: req.session.user ? req.session.user : undefined});
     },
     productos: (req,res) => {
-        const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        res.render('./products/products', { products: allProducts, user: req.session.user ? req.session.user : undefined });
+        // const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // res.render('./products/products', { products: allProducts, user: req.session.user ? req.session.user : undefined });
+        db.Product.findAll({
+            include: ['category']
+        })
+            .then(products => {
+                res.render('./products/products', { products: products, user: req.session.user ? req.session.user : undefined });
+            })
     }
 }
 
