@@ -3,17 +3,25 @@
 <head>
     <%- include('../partials/head') %>
     <title>Productos</title>
-    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/products-pages.css">
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="view-products"></div>
-        <h1>Todos los productos</h1>
+        <% if(locals.category) { %>
+            <%- include('../partials/product-banner', {category: category}) %>
+        <% } else {%>
+            <h1>Todos los productos</h1>
+            <% } %>
         <section class="products-container">
             <% products.forEach(product => { %>
                 <%- include('../partials/product-card.ejs', {product: product}) %>
             <% }) %>
+        </section>
+        <section class="pages-number">
+            <% for (let i = 1; i <= (parseInt(count/limit) + 1); i++) { %>
+            <a href="/products/<%=locals.category ? category : 'all'%>/<%=i%>"><%=i%></a>
+            <% } %>
         </section>
     </main>
     <%- include('../partials/footer') %>

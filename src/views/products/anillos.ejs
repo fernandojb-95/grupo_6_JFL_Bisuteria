@@ -8,10 +8,7 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <section class="product-banner">
-            <img src="/img/Anillos.png" alt="Anillos" class="ring">
-            <h1>Anillos</h1>
-        </section>
+        <%- include('../partials/product-banner', {category: category}) %>
         <section class="products-container">
             <% products.forEach( product => { %>
                 <%- include('../partials/product-card.ejs', {product: product}) %>

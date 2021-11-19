@@ -26,48 +26,85 @@ const productController = {
         // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         // const rings = products.filter(product => product.category == 'anillos')
         // res.render('./products/anillos', {products: rings, user: req.session.user ? req.session.user : undefined});
-        db.Product.findAll(
+        const count = db.Product.findAll({
+            include: ['category'],
+            where: {
+                '$category.name$': 'anillos'
+            }
+        })
+        const page = parseInt(req.params.page) || 1;
+        const limit = 8;
+        const products = db.Product.findAll(
             {
                 include: ['category'],
+                limit: limit,
+                offset: (page-1) * limit,
                 where: {
                     '$category.name$': 'anillos'
-                }
+                },
+
             }
         )
-        .then(products =>{
-            res.render('./products/anillos', {products: products, user: req.session.user ? req.session.user : undefined});
+        Promise
+            .all([count,products])
+            .then(([count, products]) =>{
+            res.render('./products/products', {products: products, count: count.length, limit: limit, category: 'anillos', user: req.session.user ? req.session.user : undefined});
         })
     },
     brazaletes : (req, res) => {
         // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         // const braceletes = products.filter(product => product.category == 'brazaletes');
         // res.render('./products/brazaletes', {products: braceletes, user: req.session.user ? req.session.user : undefined });
-        db.Product.findAll(
+        const count = db.Product.findAll({
+            include: ['category'],
+            where: {
+                '$category.name$': 'brazaletes'
+            }
+        })
+        const page = parseInt(req.params.page) || 1;
+        const limit = 8;
+        const products = db.Product.findAll(
             {
                 include: ['category'],
+                limit: limit,
+                offset: (page-1) * limit,
                 where: {
                     '$category.name$': 'brazaletes'
                 }
             }
         )
-        .then(products =>{
-            res.render('./products/brazaletes', {products: products, user: req.session.user ? req.session.user : undefined});
+        Promise
+            .all([count,products])
+            .then(([count, products]) =>{
+            res.render('./products/products', {products: products, count: count.length, limit: limit, category: 'brazaletes' ,user: req.session.user ? req.session.user : undefined});
         })
     },
     collares : (req, res) => {
         // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         // const necklaces = products.filter(product => product.category == 'collares');
         // res.render('./products/collares', {products: necklaces, user: req.session.user ? req.session.user : undefined });
-        db.Product.findAll(
+        const count = db.Product.findAll({
+            include: ['category'],
+            where: {
+                '$category.name$': 'anillos'
+            }
+        })
+        const page = parseInt(req.params.page) || 1;
+        const limit = 8;
+        const products = db.Product.findAll(
             {
                 include: ['category'],
+                limit: limit,
+                offset: (page-1) * limit,
                 where: {
                     '$category.name$': 'collares'
                 }
             }
         )
-        .then(products =>{
-            res.render('./products/collares', {products: products, user: req.session.user ? req.session.user : undefined});
+        Promise
+            .all([count, products])
+        .then(([count, products]) =>{
+            res.render('./products/products', {products: products, count: count.length, limit: limit, category: 'collares', user: req.session.user ? req.session.user : undefined});
         })
     },
     create: (req,res) => {
@@ -206,14 +243,23 @@ const productController = {
     productos: (req,res) => {
         // const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
         // res.render('./products/products', { products: allProducts, user: req.session.user ? req.session.user : undefined });
-        db.Product.findAll({
-            include: ['category']
+        const page = parseInt(req.params.page) || 1;
+        const limit = 8;
+        const count = db.Product.findAll()
+        const products = db.Product.findAll({
+            include: ['category'],
+            limit: limit,
+            offset: (page-1) * limit,
+            order:[['name', 'ASC']]
         })
-            .then(products => {
-                res.render('./products/products', { products: products, user: req.session.user ? req.session.user : undefined });
+        Promise
+            .all([count,products])
+            .then(([count,products]) => {
+                res.render('./products/products', { products: products, count: count.length, limit: limit, user: req.session.user ? req.session.user : undefined });
             })
     },
     search: (req,res) => {
+        
         const search = req.query.search;
         db.Product.findAll({
             include : ['category'],

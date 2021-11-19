@@ -29,16 +29,16 @@ const fileUpload = multer({storage: multerDiskStorage})
 const productController = require('../controllers/productController');
 
 /*----Rutas para vista de productos----*/
-router.get('/', productController.productos);
+router.get('/all/:page?', productController.productos);
 
 /*----Rutas para vista de anillos----*/
-router.get('/anillos',productController.anillos);
+router.get('/anillos/:page?',productController.anillos);
 
 /*----Rutas para vista de brazaletes----*/
-router.get('/brazaletes',productController.brazaletes);
+router.get('/brazaletes/:page?',productController.brazaletes);
 
 /*----Rutas para vista de collares----*/
-router.get('/collares',productController.collares);
+router.get('/collares/:page?',productController.collares);
 
 /*----Rutas para creación de producto----*/
 router.get('/product/create',logMiddleware, adminMiddleware, productController.create);
@@ -58,7 +58,7 @@ router.get('/finalizaCompra',logMiddleware, productController.finalizaCompra);
 router.get('/search', productController.search);
 
 /*----Rutas para vista de detalle de producto----*/
-router.get('/:id', productController.productDetail);
+router.get('/detail/:id', productController.productDetail);
 
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);
