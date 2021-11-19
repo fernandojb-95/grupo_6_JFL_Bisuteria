@@ -3,6 +3,7 @@ const path = require('path');
 const usersPath = path.join(__dirname, '../data/users.json');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
 
 const userController = {
     login: (req, res) => {
@@ -65,18 +66,37 @@ const userController = {
         let email = req.body.email;
         let password = req.body.password;
 
-        const users = JSON.parse(fs.readFileSync(usersPath,'utf-8')); 
-        const user = users.find(user => user.email == email);
-        if(user === undefined || !bcrypt.compareSync(password,user.password)){
-            res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
-        }
-        else {
-            req.session.user = user;
-            if(req.body.remember != undefined){
-                res.cookie('remember', user.email, {maxAge: 60000})
+        //const users = JSON.parse(fs.readFileSync(usersPath,'utf-8'));
+        db.User.findOne({
+            where: {
+                email: email
             }
-            res.redirect('/');
-        }
+        })
+        .then(user => {
+            const comparison = bcrypt.compareSync(password,user.password);
+            if(user === undefined || !comparison){
+                res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
+            }
+            else {
+                req.session.user = user;
+                if(req.body.remember != undefined){
+                    res.cookie('remember', user.email, {maxAge: 60000})
+                }
+                res.redirect('/');
+            }
+        })
+        .catch(error => console.log(error))
+        //const user = users.find(user => user.email == email);
+        // if(user === undefined || !bcrypt.compareSync(password,user.password)){
+        //     res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
+        // }
+        // else {
+        //     req.session.user = user;
+        //     if(req.body.remember != undefined){
+        //         res.cookie('remember', user.email, {maxAge: 60000})
+        //     }
+        //     res.redirect('/');
+        // }
     },
     profile: (req,res) => {
         if(req.session.user) {

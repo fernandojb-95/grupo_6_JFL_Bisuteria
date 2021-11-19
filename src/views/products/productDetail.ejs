@@ -70,10 +70,10 @@
         <section class="comment-section">
             <%if (locals.user) { %>
             <section class="add-comment">
-                <form action="#">
+                <form action="/products/comment/<%=product.id%>" method="POST">
                     <label for="add-comment">Haz un comentario</label>
-                    <input type="text" class="comment-title" placeholder="Título del comentario">
-                    <textarea name="comment" id="add-comment" cols="20" rows="10" placeholder="Escribe aquí tu comentario"></textarea>
+                    <input type="text" class="comment-title" placeholder="Título del comentario" name="title" required>
+                    <textarea name="comment" id="add-comment" cols="20" rows="10" placeholder="Escribe aquí tu comentario" required></textarea>
                     <div class="comment-buttons">
                         <button type="reset">Borrar</button>
                         <button type="submit">Guardar</button>
@@ -84,6 +84,9 @@
             <section class="see-comments">
                 <h3>Comentarios</h3>
                     <%- include('../partials/comment.ejs') %>
+                    <% if(comments.length == 0){ %>
+                        <p>Aun no hay comentarios para este producto</p>
+                    <% } %>
             </section>
         </section>     
     </main>

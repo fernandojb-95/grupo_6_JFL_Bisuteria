@@ -3,11 +3,9 @@ module.exports = (sequelize, dataTypes) => {
     const cols = {
         id: {
             type: dataTypes.INTEGER,
-            allowNull: false,
-            autoincrement: true,
             primaryKey: true,
-            unique: true
-            
+            allowNull: false,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING(100),
@@ -42,12 +40,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         image_1: {
             type: dataTypes.STRING(100),
-            allowNull: true,
+            allowNull: false,
             defaultValue: "default-image.svg",
         },
         image_2: {
             type: dataTypes.STRING(100),
-            allowNull: true,
+            allowNull: false,
             defaultValue: "default-image.svg",
         },
         category_id : {

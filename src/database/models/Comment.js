@@ -3,10 +3,9 @@ module.exports = (sequelize, dataTypes) => {
     const cols = {
         id: {
             type: dataTypes.INTEGER,
-            allowNull: false,
-            autoincrement: true,
             primaryKey: true,
-            unique: true
+            allowNull: false,
+            autoIncrement: true
         },
         title: {
             type: dataTypes.STRING(100),
@@ -21,11 +20,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         user_id: {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         product_id: {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     }

@@ -3,11 +3,9 @@ module.exports = (sequelize, dataTypes) => {
     const cols = {
         id: {
             type: dataTypes.INTEGER,
-            allowNull: false,
-            autoincrement: true,
             primaryKey: true,
-            unique: true
-            
+            allowNull: false,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING(50),

@@ -4,22 +4,33 @@ const router = express.Router();
 const path = require('path');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const logMiddleware = require('../middlewares/logMiddleware');
-
+const db = require('../database/models')
 //Requerimos multer para traer archivos
 const multer = require('multer');
 
 //Configuramos destino y nombre de archivos
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, callback) =>{
-        let productCategory = req.body.category;
-        const filePath = path.join(__dirname, `../../public/img/${productCategory}`)
-        callback(null, filePath);
+        let productCategory = parseInt(req.body.category);
+         db.Category.findByPk(productCategory)
+        .then(category => {
+            const filePath = path.join(__dirname, `../../public/img/${category.name}`)
+            callback(null, filePath);
+        })
+
     },
     filename: (req, file, callback) => {
         let productCategory = req.body.category,
-            productMaterial = req.body.materials
-        const imgName = `img-${productCategory.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}-${productMaterial}${path.extname(file.originalname)}`;
-        callback(null, imgName);
+            productMaterial = req.body.materials;
+        const category = db.Category.findByPk(productCategory);
+        const material = db.Material.findByPk(productMaterial);
+        Promise
+            .all([category, material])
+            .then(([category,material]) => {
+                const imgName = `img-${category.name.toLowerCase().replace(/ /g, '-')}-${Date.now().toString().slice(8)}-${material.name}${path.extname(file.originalname)}`;
+                callback(null, imgName);
+            })
+            .catch(error => console.log(error))
     }
 })
 
@@ -63,6 +74,8 @@ router.get('/detail/:id', productController.productDetail);
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);
 
+/*----Rutas para postear comentario----*/
+router.post('/comment/:id', productController.postComment);
 
 
 

@@ -1,6 +1,7 @@
 <% comments.forEach(comment => { %>
 <div class="comment-box">
     <div class="user-img"><i class="fas fa-user-circle"></i></div>
+    <p class="com-name"><%= comment.users.first_name%> <%= comment.users.last_name%></p>
     <p class="com-title"><%=comment.title%></p>
     <p class="com-date"><%=comment.created_at%></p>
     <p class="com-content"><%=comment.content%></p>

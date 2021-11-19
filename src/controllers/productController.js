@@ -2,20 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models')
 const { Op } = require("sequelize");
+const { sequelize } = require('../database/models');
 
 const productsPath = path.join(__dirname, '../data/products.json');
 
 const productController = {
     productDetail: (req,res) => {
-      //  const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-      //  const product = products.find(article => article.id == IdProduct);
-      //  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
         const IdProduct = req.params.id;
         const product = db.Product.findByPk(IdProduct,
             {
                 include: ['category', 'material']
         })
-        const comments = db.Comment.findAll({
+        const comments = db.Comment.findAll({ 
+            attributes: ['title', 'content', [sequelize.fn('date_format', sequelize.col('created_at'), '%d-%m-%Y'), 'created_at'], 'user_id', 'product_id'],
             include: ['products', 'users'],
             where: {
                 '$products.id$': IdProduct
@@ -24,7 +23,6 @@ const productController = {
         Promise 
             .all([product, comments])
             .then(([product, comments]) => {
-                console.log(comments)
                  res.render('./products/productDetail', {product: product, comments: comments,user: req.session.user ? req.session.user : undefined });     
             })
     },
@@ -132,41 +130,57 @@ const productController = {
         productQuantM = parseInt(req.body.quantityM) || 0,
         productQuantL = parseInt(req.body.quantityL) || 0;
 
-        switch(req.files.length){
-            case 0:
-                productImages = ["default-image.svg","default-image.svg"];
-                break;
-            case 1:
-                if(req.files[0].fieldname == "image1"){
-                    productImages = [req.files[0].filename, "default-image.svg"];
-                } else {
-                    productImages = ["default-image.svg", req.files[0].filename];
-                }
-                break;
-            case 2:
-                productImages = [req.files[0].filename, req.files[1].filename];
-                break;
-        }
+        // switch(req.files.length){
+        //     case 0:
+        //         productImages = ["default-image.svg","default-image.svg"];
+        //         break;
+        //     case 1:
+        //         if(req.files[0].fieldname == "image1"){
+        //             productImages = [req.files[0].filename, "default-image.svg"];
+        //         } else {
+        //             productImages = ["default-image.svg", req.files[0].filename];
+        //         }
+        //         break;
+        //     case 2:
+        //         productImages = [req.files[0].filename, req.files[1].filename];
+        //         break;
+        // }
 
-        const newProduct ={
-            id: products[products.length -1].id + 1,
-            name: productName,
-            description: productDescription,
-            price: productPrice,
-            discount: productDiscount,
-            category: productCategory,
-            size: {
-                S: productQuantS,
-                M: productQuantM,
-                L: productQuantL
-            },
-            images: productImages,
-            material: productMaterial
-        }
-        products.push(newProduct)
-                //Reescribiendo productos
-                fs.writeFileSync(productsPath, JSON.stringify(products, null, ' '));
-                res.redirect('/products');
+        db.Product.create({
+            name: req.body.name,
+            description: req.body.description,
+            price: parseFloat(req.body.price),
+            discount: parseFloat(req.body.discount),
+            quantity_S: parseInt(req.body.quantityS),
+            quantity_M: parseInt(req.body.quantityM),
+            quantity_L: parseInt(req.body.quantityL),
+            image_1: req.files.length > 0 ? req.files[0].filename : undefined,
+            image_2: req.files.length > 1 ? req.files[1].filename : undefined,
+            category_id: parseInt(req.body.category),
+            material_id: parseInt(req.body.materials)
+        })
+        .then(product =>{
+            console.log(product);
+            res.redirect('/');
+        }).catch(error => console.log(error))
+        // const newProduct ={
+        //     id: products[products.length -1].id + 1,
+        //     name: productName,
+        //     description: productDescription,
+        //     price: productPrice,
+        //     discount: productDiscount,
+        //     category: productCategory,
+        //     size: {
+        //         S: productQuantS,
+        //         M: productQuantM,
+        //         L: productQuantL
+        //     },
+        //     images: productImages,
+        //     material: productMaterial
+        // }
+        // products.push(newProduct)
+        //         //Reescribiendo productos
+        //         fs.writeFileSync(productsPath, JSON.stringify(products, null, ' '));
     },
     edit: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -280,6 +294,18 @@ const productController = {
         .then(products => {
             console.log(products)
             res.render('./products/search', {search: search, products: products, user: req.session.user ? req.session.user : undefined})
+        })
+    },
+    postComment: (req, res) => {
+        const productId = req.params.id;
+        db.Comment.create({
+            title: req.body.title,
+            content: req.body.comment,
+            user_id: parseInt(req.session.user.id),
+            product_id: parseInt(productId)
+        })
+        .then(comment => {
+            res.redirect('/products/detail/'+ productId)
         })
     }
 }

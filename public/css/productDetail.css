@@ -152,17 +152,17 @@
     justify-self: center;
     font-size: 36px;
 }
-.com-title, .com-date{
+.com-title, .com-date, .com-name{
     text-align: center;
     font-weight: bold;
+    font-size: 14px;
 }
 .com-title{
-    font-size: 20px;
+    font-size: 18px;
 }
 .com-content{
     text-align: justify;
     font-size: 14px;
-    padding: 10px;
 }
 
 .user-options{
@@ -194,6 +194,10 @@
 
 .editar:hover{
 transform:scale(1);
+}
+
+.see-comments{
+    padding-bottom: 15px;
 }
 
 /*Estilos para media querie*/
@@ -247,22 +251,30 @@ transform:scale(1);
         margin-left: 0;
     }
     .comment-box{
-        grid-template-columns: 15% 85%;
-        grid-template-rows: repeat(3,auto);
-        grid-template-areas: "foto  title title"
-                             "foto  date date "
-                             "content content content";
+        grid-template-columns: 20% 80%;
+        grid-template-rows: repeat(4,auto);
+        grid-template-areas: "foto name"
+                             "foto date"
+                             "title title"
+                             "content content";
     }
     .user-img{
         grid-area: foto;
+        align-self: center;
+    }
+    .com-name{
+        grid-area: name;
+        text-align: left;
     }
     .com-title{
         grid-area: title;
         text-align: left;
+        align-self: center;
     }
     .com-date{
         grid-area: date;
         text-align: left;
+        align-self: center;
     }
     .com-content{
         grid-area: content;
