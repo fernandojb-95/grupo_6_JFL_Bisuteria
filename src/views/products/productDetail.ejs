@@ -68,6 +68,7 @@
             </div>
         </section>
         <section class="comment-section">
+            <%if (locals.user) { %>
             <section class="add-comment">
                 <form action="#">
                     <label for="add-comment">Haz un comentario</label>
@@ -79,6 +80,7 @@
                     </div>
                 </form>
             </section>
+            <% } %>
             <section class="see-comments">
                 <h3>Comentarios</h3>
                     <%- include('../partials/comment.ejs') %>
