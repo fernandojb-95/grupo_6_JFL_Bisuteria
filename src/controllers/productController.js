@@ -11,12 +11,21 @@ const productController = {
       //  const product = products.find(article => article.id == IdProduct);
       //  res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
         const IdProduct = req.params.id;
-        db.Product.findByPk(IdProduct,
+        const product = db.Product.findByPk(IdProduct,
             {
                 include: ['category', 'material']
         })
-            .then(product => {
-                 res.render('./products/productDetail', {product: product, user: req.session.user ? req.session.user : undefined });     
+        const comments = db.Comment.findAll({
+            include: ['products', 'users'],
+            where: {
+                '$products.id$': IdProduct
+            }
+        });
+        Promise 
+            .all([product, comments])
+            .then(([product, comments]) => {
+                console.log(comments)
+                 res.render('./products/productDetail', {product: product, comments: comments,user: req.session.user ? req.session.user : undefined });     
             })
     },
     productCart : (req, res) => {

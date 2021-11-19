@@ -73,7 +73,11 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsTo(models.Material, { 
             as: "material",
             foreignKey: "material_id"
-        })
+        });
+        Product.hasMany(models.Comment, { 
+            as: "comments",
+            foreignKey: "product_id"
+        });
     }
 
     return Product;

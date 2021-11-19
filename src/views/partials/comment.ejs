@@ -1,6 +1,8 @@
+<% comments.forEach(comment => { %>
 <div class="comment-box">
     <div class="user-img"><i class="fas fa-user-circle"></i></div>
-    <p class="com-title">Titulo del comentario</p>
-    <p class="com-date">Fecha del comentario</p>
-    <p class="com-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, adipisci, sit similique dolorem cumque cum, necessitatibus recusandae fuga corporis ea eligendi soluta maiores voluptas neque laboriosam architecto. Fugiat, earum a!</p>
+    <p class="com-title"><%=comment.title%></p>
+    <p class="com-date"><%=comment.created_at%></p>
+    <p class="com-content"><%=comment.content%></p>
 </div>
+<% }) %>
