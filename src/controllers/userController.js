@@ -21,34 +21,43 @@ const userController = {
             //Lógica para almacenar usuarios nuevos
             const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
             let userName = req.body.user,
-            lastNameUser = req.body.lastname,
-            email = req.body.email,
-            userImage = "",
-            password = bcrypt.hashSync(req.body.password,10);
+                lastNameUser = req.body.lastname,
+                email = req.body.email,
+                userImage = "",
+                password = bcrypt.hashSync(req.body.password,10);
 
             //Asignamos el nombre del archivo o la imagen por default
             req.file ? userImage =  req.file.filename : userImage = "default-user";
 
             //Condicion para diferenciar usuarios o administradores
-            email.search('@jflbisuteria.com.mx') != -1 ? category = "admin" : category = "user";
+            let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
 
-                //Creamos el JSON con los datos del nuevo usuario
-                const newUser ={
-                    id: users[users.length -1].id + 1,
-                    first_name: userName,
-                    last_name: lastNameUser,
-                    email: email,
-                    password: password,
-                    category: category,
-                    image: userImage
-                }
-
-                users.push(newUser);
-
-                //Reescribiendo usuarios
-                fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
-
+            db.User.create({
+                first_name: userName,
+                last_name: lastNameUser,
+                email: email,
+                password: password,
+                isAdmin: isAdmin,
+                image: userImage
+            })
+            .then(user => {
                 res.redirect('/');
+            }).catch(error => console.log(error))
+                //Creamos el JSON con los datos del nuevo usuario
+                // const newUser ={
+                //     id: users[users.length -1].id + 1,
+                //     first_name: userName,
+                //     last_name: lastNameUser,
+                //     email: email,
+                //     password: password,
+                //     category: category,
+                //     image: userImage
+                // }
+
+                // users.push(newUser);
+
+                // //Reescribiendo usuarios
+                // fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
         }
         else{
             if(req.file){
@@ -60,13 +69,10 @@ const userController = {
             if(req.fileValidationError) errors.push((req.fileValidationError))
             res.render('./users/register',{errors: errors, old:req.body});
         }
-
     },
     logUser: (req, res) => {
         let email = req.body.email;
         let password = req.body.password;
-
-        //const users = JSON.parse(fs.readFileSync(usersPath,'utf-8'));
         db.User.findOne({
             where: {
                 email: email
@@ -86,17 +92,6 @@ const userController = {
             }
         })
         .catch(error => console.log(error))
-        //const user = users.find(user => user.email == email);
-        // if(user === undefined || !bcrypt.compareSync(password,user.password)){
-        //     res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
-        // }
-        // else {
-        //     req.session.user = user;
-        //     if(req.body.remember != undefined){
-        //         res.cookie('remember', user.email, {maxAge: 60000})
-        //     }
-        //     res.redirect('/');
-        // }
     },
     profile: (req,res) => {
         if(req.session.user) {

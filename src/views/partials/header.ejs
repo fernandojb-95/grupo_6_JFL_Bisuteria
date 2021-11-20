@@ -47,7 +47,7 @@
                     <% if(locals.user) { %>
                     <p class="user-pages_element">Hola <%=user.first_name%></p>
                     <div class="user-pages_element"><a href="/user/<%=user.id%>/profile">Ir a perfil</a></div>
-                        <% if(user.category == "admin") { %>
+                        <% if(user.isAdmin == 1) { %>
                     <div class="user-pages_element"><a href="/products/product/create">Crear producto</a></div>
                         <% } %>
                     <form action="/user/logoff?_method=PUT" method="post" class="user-pages_element">

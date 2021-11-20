@@ -1,13 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 const usersPath = path.join(__dirname, '../data/users.json');
+const db = require('../database/models')
 
 const remember = (req, res, next) => {
     if(req.cookies.remember != undefined && req.session.user == undefined) {
-        const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
         const email = req.cookies.remember;
-        const loggedUser = users.find(user => user.email == email);
-        req.session.user = loggedUser;
+        db.User.findOne({
+            where: {
+                email: email
+            }
+        })
+        .then(user => {
+            req.session.user = user;
+        })
+        .catch(error => console.log(error))
     }
     next();
 }
