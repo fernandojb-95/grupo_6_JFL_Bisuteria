@@ -4,7 +4,7 @@ USE jfl_database;
 
 drop table if exists `users`;
 create table users(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `first_name` varchar(100) not null,
 `last_name` varchar(100) not null,
 `email` varchar(100) not null,
@@ -15,19 +15,19 @@ primary key (`id`));
 
 drop table if exists `categories`;
 create table categories(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `name` varchar(50) not null,
 primary key (`id`));
 
 drop table if exists `materials`;
 create table materials(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `name` varchar(50) not null,
 primary key (`id`));
 
 drop table if exists `products`;
 create table products(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `name` varchar(100) not null,
 `description` varchar(300) not null,
 `price` decimal(7,2) not null,
@@ -47,7 +47,7 @@ foreign key(`material_id`) references `materials`(`id`));
 
 drop table if exists `shop_cart`;
 create table shop_cart(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `user_id` int(10) unsigned not null,
 `total_items` int(10) null default 0,
 `total_price` decimal(7,2) not null,
@@ -56,9 +56,21 @@ foreign key(`user_id`) references `users`(`id`));
 
 drop table if exists `shop_cart_products`;
 create table shop_cart_products(
-`id` int(10) unsigned unique auto_increment not null,
+`id` int(10) unsigned not null auto_increment,
 `product_id` int(10) unsigned not null,
 `shop_cart_id` int(10) unsigned not null,
 primary key (`id`),
 foreign key(`product_id`) references `products`(`id`),
 foreign key(`shop_cart_id`) references `shop_cart`(`id`));
+
+drop table if exists `comments`;
+create table comments(
+`id` int(10) unsigned not null auto_increment,
+`title` varchar(100) not null,
+`content` varchar(500) not null,
+`created_at` DATETIME not null default now(),
+`user_id` int(10) unsigned not null,
+`product_id` int(10) unsigned not null,
+primary key (`id`),
+foreign key(`user_id`) references `users`(`id`),
+foreign key(`product_id`) references `products`(`id`));

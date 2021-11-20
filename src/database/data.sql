@@ -26,7 +26,7 @@ insert into `products` values (6,'Ainara',
 499.00, 25, 20, 20, 20, 'img-anillos-50333-plata.png', 'img-anillos-50359-plata.png', 1, 1, 3);
 
 insert into `products` values (7,'Sara',
-'Anillo de oro con peque?os acabados alrededor de todo el metal. Sara es un anillo muy c?modo y sutil perfecto para aquellos que les gusta tener un adorno llamativo y discreto, una dualidad perfecta.', 
+'Anillo de oro con peque?os acabados alrededor de todo el metal. Sara es un anillo muy c?modo y sutil, perfecto para aquellos que les gusta tener un adorno llamativo y discreto, una dualidad perfecta.', 
 559.00, 0, 20, 20, 20, 'img-anillos-92639-oro.png', 'img-anillos-92667-oro.png', 5, 1, 2);
 
 insert into `products` values (8,'Montse',
@@ -38,15 +38,15 @@ insert into `products` values (9,'Juliana',
 559.00, 5, 20, 20, 20, 'img-anillos-68114-oro.png', 'img-anillos-68149-oro.png', 8, 1, 2);
 
 insert into `products` values (10,'Hanane',
-'Este anillo oculta sus detalles de oro detr?s de unos acabados de piedra volc?nica, dando un estilo misterioso al anillo. Con este anillo se puede usar de forma m?s com?n ya que al ocultar el oro no es muy llamativo.', 
+'Este anillo oculta sus detalles de oro detr?s de unos acabados de piedra volc?nica, dando un estilo misterioso al anillo. Este anillo se puede usar de forma m?s com?n ya que al ocultar el oro no es muy llamativo.', 
 559.00, 10, 20, 20, 20, 'img-anillos-00843-oro.png', 'img-anillos-00880-oro.png', 8, 1, 2);
 
 insert into `products` values (11,'Sandra',
-'Para todos aquellos que les gusta que los voltean a ver, Sandra es todo menos sutil, es un brazalete muy llamativo con acabos que le dan gran clase. Perfecto para llevar con outfits formales y robar las miradas.', 
+'Para todos aquellos que les gusta que los voltean a ver, Sandra es todo menos sutil, es un brazalete muy llamativo con acabados que le dan gran clase. Perfecto para llevar con outfits formales y robar las miradas.', 
 449.00, 0, 20, 20, 20, 'img-brazaletes-90779-oro.png', 'img-brazaletes-90796-oro.png', 15, 2, 2);
 
 insert into `products` values (12,'Andrea',
-'Una cadena que representa la frase menos es m?s, con su dise?o sencillo es f?cil de combinar y se puede llevar a toda ocasi?n formal o casual. Perfecto para utilizar con otro brazalete y darle una gran mejora a tu estilo.', 
+'Una cadena que representa la frase "menos es m?s", con su dise?o sencillo es f?cil de combinar y se puede llevar a toda ocasi?n formal o casual. Perfecto para utilizar con otro brazalete y darle una gran mejora a tu estilo.', 
 449.00, 0, 20, 20, 20, 'img-brazaletes-20435-oro.png', 'img-brazaletes-20459-oro.png', 3, 2, 2);
 
 insert into `products` values (13,'Cecilia',
@@ -74,15 +74,15 @@ insert into `products` values (18,'Victoria',
 379.00, 10, 20, 20, 20, 'img-brazaletes-99398-acero.png', 'img-brazaletes-99420-acero.png', 10, 2, 1);
 
 insert into `products` values (19,'Minerva',
-'Minerva es un brazalete que combina dos materiales, tela y acero. La tela color negro le da un estilo elegante y los detalles de acero permiten darle a Minerva un grane estilo y que lo hace resaltar. Pensado en todos los que buscan portar su religi?n con estilo.',
+'Minerva es un brazalete que combina dos materiales, tela y acero. La tela color negro le da un estilo elegante y los detalles de acero permiten darle a Minerva un gran estilo y que lo hace resaltar. Pensado en todos los que buscan portar su religi?n con estilo.',
 379.00, 5, 20, 20, 20, 'img-brazaletes-32496-acero.png', 'img-brazaletes-32505-acero.png', 18, 2, 1);
 
 insert into `products` values (20,'Isabella',
-'Isabella representa a la perfecci?n lo que es la elegancia, con peque?os detalles se convierte en un brazalete de gran clase que le da el toque necesario para tu etilo formal.',
+'Isabella representa a la perfecci?n lo que es la elegancia, con peque?os detalles se convierte en un brazalete de gran clase que le da el toque necesario para tu estilo formal.',
 379.00, 0, 20, 20, 20, 'img-brazaletes-59323-acero.png', 'img-brazaletes-59393-acero.png', 8, 2, 1);
 
 insert into `products` values (21,'Teodora',
-'Esta cadena de plata tiene un estilo ?nico, al cambiar de patrones evita verse como todas las dem?s. Se ve muy bien por si sola pero tambi?n es perfecta para llevar un dije que le d? un toque m?s personal.',
+'Esta cadena de plata tiene un estilo ?nico, al cambiar de patrones evita verse como todas las dem?s. Se ve muy bien por s? sola pero tambi?n es perfecta para llevar un dije que le d? un toque m?s personal.',
 699.00, 10, 20, 20, 20, 'img-collares-71369-plata.png', 'img-collares-71378-plata.png', 10, 3, 3);
 
 insert into `products` values (22,'Candela',
@@ -90,14 +90,14 @@ insert into `products` values (22,'Candela',
 699.00, 5, 20, 20, 20, 'img-collares-44685-plata.png', 'img-collares-44695-plata.png', 5, 3, 3);
 
 insert into `products` values (23,'Ainhoa',
-'La cadena Ainhoa es un collar que se hace notar, de tonos muy brillantes y de un ancho amplio. Esta luce perfecto con los estilos modernos y por si sola te har? ver incre?ble, sin necesidad de dijes u otras cadenas.',
+'La cadena Ainhoa es un collar que se hace notar, de tonos muy brillantes y de un ancho amplio. Esta luce perfecto con los estilos modernos y por s? sola te har? ver incre?ble, sin necesidad de dijes u otras cadenas.',
 699.00, 0, 20, 20, 20, 'img-collares-20477-plata.png', 'img-collares-20498-plata.png', 2, 3, 3);
 
 insert into `products` values (24,'Aerola',
 'Aerola es la cadena para todos aquellos que desean portar un look m?s rudo, es un collar cl?sico, muy utilizado por motociclistas y todos aquellos que buscan mostrar su personalidad intr?pida.',
 699.00, 10, 20, 20, 20, 'img-collares-91024-plata.png', 'img-collares-91050-plata.png', 20, 3, 3);
 
-insert into `products` values (25,'Roc?o',
+insert into `products` values (25,'Rocio',
 'Roc?o es un collar de oro, con acabados muy bonitos que dan la sensaci?n de ser listones los que unen los eslabones. Es una cadena de dise?o ?nico para todos aquellos que buscan un estilo formal.',
 729.00, 0, 20, 20, 20, 'img-collares-34558-oro.png', 'img-collares-34591-oro.png', 10, 3, 2);
 
@@ -110,7 +110,7 @@ insert into `products` values (27,'Helena',
 729.00, 0, 20, 20, 20, 'img-collares-47862-oro.png', 'img-collares-47889-oro.png', 5, 3, 2);
 
 insert into `products` values (28,'Micaela',
-'Micaela es un collar muy parecido a Uxia, pero es para personas que buscan algo m?s discreto y  m?s variedad para combinar. Su color negro permite que se combine con m?s atuendos  y sin importar si es formal o casual',
+'Micaela es un collar muy parecido a Uxia, pero es para personas que buscan algo m?s discreto y  m?s variedad para combinar. Su color negro permite que se combine con m?s atuendos y sin importar si es formal o casual',
 559.00, 10, 20, 20, 20, 'img-collares-00234-acero.png', 'img-collares-00236-acero.png', 15, 3, 1);
 
 insert into `products` values (29,'Tania',
@@ -118,7 +118,7 @@ insert into `products` values (29,'Tania',
 559.00, 5, 20, 20, 20, 'img-collares-98170-acero.png', 'img-collares-98202-acero.png', 3, 3, 1);
 
 insert into `products` values (30,'Nerea',
-'Nerea es una cadena que mantiene el color plateado del acero, con muy bonitos acabados y con el detalle de llevar una cruz. El detalle de la cruz esta pensado para todas las personas que buscan llevar con gran estilo su religi?n.',
+'Nerea es una cadena que mantiene el color plateado del acero, con muy bonitos acabados y con el detalle de llevar una cruz. El detalle de la cruz est? pensado para todas las personas que buscan llevar con gran estilo su religi?n.',
 559.00, 0, 20, 20, 20, 'img-collares-34710-acero.png', 'img-collares-34735-acero.png', 13, 3, 1);
 
 insert into `users` (id, first_name, last_name, email, password, isAdmin) values (1, 'Fernando', 'Juarez', 
@@ -134,14 +134,17 @@ insert into `users` (first_name, last_name, email, password, isAdmin, image) val
 insert into `users` (first_name, last_name, email, password, isAdmin, image) values ('Bruce', 'Wayne', 
 'brucewayne@batman.com', '$2b$10$SDt8lqxZDVb2yvhJjokCse/MI4df1wk7.NtF24vTJGyjH.bp9bnzW', 0, 'img-bruce-01742.jpg');
 
-
+insert into `comments` (id, title, content, user_id, product_id) values (1, 'Excelente producto', 'Me encant? el producto, la calidad es muy buena y el producto lleg? en excelentes condiciones', 
+1, 1);
 
 select products.name, products.description, materials.name as material, categories.name as category from products
 inner join materials on materials.id = products.material_id
 inner join categories on categories.id = products.category_id
 order by products.id;
 
-select * from users;
+select * from categories;
+
+select * from products;
 
 
 
