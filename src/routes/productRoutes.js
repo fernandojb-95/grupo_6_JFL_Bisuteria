@@ -5,6 +5,7 @@ const path = require('path');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const logMiddleware = require('../middlewares/logMiddleware');
 const db = require('../database/models')
+const { body, check, validationResult } = require('express-validator');
 //Requerimos multer para traer archivos
 const multer = require('multer');
 
@@ -34,7 +35,67 @@ const multerDiskStorage = multer.diskStorage({
     }
 })
 
-const fileUpload = multer({storage: multerDiskStorage})
+const validateRegister =[
+    check('name')
+        .notEmpty().withMessage('El nombre del producto no puede quedar vacío').bail().isLength({min: 2}).withMessage('Debes colocar un nombre válido'),
+    check('description')
+        .notEmpty().withMessage('La descripción del producto no puede quedar vacía').bail().isLength({min: 2}).withMessage('Debes colocar una descripción válida'),
+    check('price')
+        .notEmpty().withMessage('Debes colocar un precio').isNumeric().withMessage('Debes colocar un formato de precio correcto'),
+    check('discount')
+        .custom(( value, { req }) => {
+        if (typeof parseFloat(value) == 'number' || value == '') {
+           return true; 
+        } else {
+            throw new Error('El formato del descuento no es válido');
+        }
+        }),
+    check('category')
+        .notEmpty().withMessage('Debes elegir una categoría').bail().isNumeric().withMessage('El formato no es correcto'),
+    check('materials')
+        .notEmpty().withMessage('Debes elegir un material').bail().isNumeric().withMessage('El formato no es correcto')
+    // body('quantityS')
+    //     .custom(( value, { req }) => {
+    //     if (typeof parseInt(value) == 'number' || value == '') {
+    //        return true; 
+    //     } else {
+    //         throw new Error('El formato de la cantidad no es válido');
+    //     }
+    //     }),
+    // check('quantityM')
+    //     .custom(( value, { req }) => {
+    //     if (typeof parseInt(value) == 'number' || value == '') {
+    //        return true; 
+    //     } else {
+    //         throw new Error('El formato de la cantidad no es válido');
+    //     }
+    //     }),
+    // check('quantityL')
+    //     .custom(( value, { req }) => {
+    //     if (typeof parseInt(value) == 'number' || value == '') {
+    //        return true; 
+    //     } else {
+    //         throw new Error('El formato de la cantidad no es válido');
+    //     }
+    //     })      
+]
+//Validación de que el archivo recibido es una imagen
+const fileUpload = multer({
+    storage: multerDiskStorage,
+    fileFilter: function (req, file, callback) {
+        const errors = validationResult(req).array()
+        const ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+            req.fileValidationError = {
+                msg: 'Debes subir un formato de archivos permitido (.png, .jpg, .jpeg)',
+                param: 'file'
+            }
+            return callback(null, false, new Error('goes wrong on the mimetype'));
+        } else {
+            callback(null, true)
+        }
+    }
+})
 
 //Requerimos el controlador para llamar a las funciones
 const productController = require('../controllers/productController');
@@ -53,7 +114,7 @@ router.get('/collares/:page?',productController.collares);
 
 /*----Rutas para creación de producto----*/
 router.get('/product/create',logMiddleware, adminMiddleware, productController.create);
-router.post('/', fileUpload.any(), productController.store);
+router.post('/', fileUpload.any(), validateRegister, productController.store);
 
 /*----Rutas para edición de producto----*/
 router.get('/:id/edit', logMiddleware, adminMiddleware, productController.edit);

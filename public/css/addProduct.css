@@ -31,11 +31,12 @@
 
 /* Estilos de la seccion de categoria */
 .categoria{
+    margin: 20px 0;
+}
+.category-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 .categoria input[type="radio"]{
     margin-left: 30px;
@@ -46,11 +47,11 @@
 
 /*Estilos de la sección de material*/
 .materials{
+    margin: 20px 0;
+}
+.materials-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 .materials input[type="radio"]{
     margin-left: 30px;
@@ -63,11 +64,8 @@
 .tallas{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    height: 150px;
-}
-.tallas p{
-    width: 100%;
+    justify-content: flex-start;
+    margin: 20px 0;
 }
 .tallas-check{
     width: 20%;
@@ -76,15 +74,15 @@
     justify-content: space-evenly;
     align-items:center;
 }
-
 .tallas label{
-    margin-left: 10px;
+    width: 100%;
 }
 .tallas-text{
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 .tallas-text input{
     width: 80px;
@@ -93,17 +91,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 .quant input{
     margin-left: 10px;
 }
 
 /* Estilos de la seccion opciones-imagen */
+.imagenes{
+    margin-bottom: 20px;
+}
 .imagenes ul{
     list-style: none;
 }
 .imagenes ul li{
-   margin: 20px 0;
+   margin: 10px 0;
    text-align: center;
 }
 .imagenes input[type=file]{
@@ -126,9 +128,43 @@
 main{
     max-width: 900px;
 }
-
+.error-msg{
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
 @media(min-width: 768px){
+    .descuento{
+        margin-top: 0;
+    }
+    .price-discount{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 20px auto;
+        justify-content: space-around;
+    }
+    .materials{
+        flex-direction: row;
+    }
+    .materials label{
+        width: 100%;
+    }
+    .materials-container, .category-container {
+        width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
     .opciones-imagen{
         width: 40%;
+    }
+    .tallas-text{
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
     }
 }

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../database/models')
+const {validationResult} = require('express-validator');
+const db = require('../database/models');
 const { Op } = require("sequelize");
 const { sequelize } = require('../database/models');
 
@@ -117,70 +118,46 @@ const productController = {
         res.render('./admin/addProduct', {user: req.session.user ? req.session.user : undefined });
     },
     store: (req,res) =>{
-        //Lógica para almacenar informacion y crear producto
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        let productImages;
-        const productName = req.body.name,
-        productDescription = req.body.description,
-        productPrice = parseFloat(req.body.price),
-        productDiscount = parseFloat(req.body.discount),
-        productCategory = req.body.category,
-        productMaterial = req.body.materials,
-        productQuantS = parseInt(req.body.quantityS) || 0,
-        productQuantM = parseInt(req.body.quantityM) || 0,
-        productQuantL = parseInt(req.body.quantityL) || 0;
-
-        // switch(req.files.length){
-        //     case 0:
-        //         productImages = ["default-image.svg","default-image.svg"];
-        //         break;
-        //     case 1:
-        //         if(req.files[0].fieldname == "image1"){
-        //             productImages = [req.files[0].filename, "default-image.svg"];
-        //         } else {
-        //             productImages = ["default-image.svg", req.files[0].filename];
-        //         }
-        //         break;
-        //     case 2:
-        //         productImages = [req.files[0].filename, req.files[1].filename];
-        //         break;
-        // }
-
-        db.Product.create({
-            name: req.body.name,
-            description: req.body.description,
-            price: parseFloat(req.body.price),
-            discount: parseFloat(req.body.discount),
-            quantity_S: parseInt(req.body.quantityS),
-            quantity_M: parseInt(req.body.quantityM),
-            quantity_L: parseInt(req.body.quantityL),
-            image_1: req.files.length > 0 ? req.files[0].filename : undefined,
-            image_2: req.files.length > 1 ? req.files[1].filename : undefined,
-            category_id: parseInt(req.body.category),
-            material_id: parseInt(req.body.materials)
-        })
-        .then(product =>{
-            console.log(product);
-            res.redirect('/');
-        }).catch(error => console.log(error))
-        // const newProduct ={
-        //     id: products[products.length -1].id + 1,
-        //     name: productName,
-        //     description: productDescription,
-        //     price: productPrice,
-        //     discount: productDiscount,
-        //     category: productCategory,
-        //     size: {
-        //         S: productQuantS,
-        //         M: productQuantM,
-        //         L: productQuantL
-        //     },
-        //     images: productImages,
-        //     material: productMaterial
-        // }
-        // products.push(newProduct)
-        //         //Reescribiendo productos
-        //         fs.writeFileSync(productsPath, JSON.stringify(products, null, ' '));
+        const errorsList = validationResult(req),
+            errors = errorsList.array();
+            if(req.fileValidationError){
+                errors.push(req.fileValidationError)
+            }
+        if(errors.length == 0) {
+            db.Product.create({
+                name: req.body.name,
+                description: req.body.description,
+                price: parseFloat(req.body.price),
+                discount: parseFloat(req.body.discount) || 0,
+                quantity_S: parseInt(req.body.quantityS) || 0,
+                quantity_M: parseInt(req.body.quantityM) || 0,
+                quantity_L: parseInt(req.body.quantityL) || 0,
+                image_1: req.files.length > 0 ? req.files[0].filename : undefined,
+                image_2: req.files.length > 1 ? req.files[1].filename : undefined,
+                category_id: parseInt(req.body.category),
+                material_id: parseInt(req.body.materials)
+            })
+            .then(product =>{
+                console.log(product);
+                res.redirect('/');
+            }).catch(error => console.log(error))
+        } else{
+            if(req.files){
+                const category = req.body.category;
+                db.Category.findByPk(category)
+                    .then(category => {
+                        req.files.forEach(file => {
+                            const imgPath = path.join(__dirname, `../../public/img/${category.name}/${file.filename}`)
+                            fs.unlink(imgPath, error => {
+                                if (error) console.log(error);
+                            })
+                        })
+                    }
+                    )
+                    .catch(error => console.log(error))
+            }               
+            res.render('./admin/addProduct', {errors: errors, user: req.session.user ? req.session.user : undefined, old: req.body})
+        }
     },
     edit: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
