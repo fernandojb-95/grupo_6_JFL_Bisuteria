@@ -56,7 +56,7 @@
                             <button type="submit" class="submit btn">Añadir al carrito</button>
                         </div>
                     </form>
-                    <% if(locals.user && user.category == "admin") { %>
+                    <% if(locals.user && user.isAdmin == 1) { %>
                     <section class="user-options">
                         <a href="/products/<%=product.id%>/edit" class="editar"><button class="editar-btn">Editar</button></a>
                         <form action="/products/<%=product.id%>?_method=DELETE" method="POST">

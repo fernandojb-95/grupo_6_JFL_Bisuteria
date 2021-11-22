@@ -135,7 +135,7 @@ const productController = {
                 image_1: req.files.length > 0 ? req.files[0].filename : undefined,
                 image_2: req.files.length > 1 ? req.files[1].filename : undefined,
                 category_id: parseInt(req.body.category),
-                material_id: parseInt(req.body.materials)
+                material_id: parseInt(req.body.material)
             })
             .then(product =>{
                 console.log(product);
@@ -160,71 +160,106 @@ const productController = {
         }
     },
     edit: (req,res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const productToEdit = products.find( product => product.id == productID)
         const productID = req.params.id;
-        const productToEdit = products.find( product => product.id == productID)
-        res.render('./admin/editProduct', {product: productToEdit, user: req.session.user ? req.session.user : undefined });
+        db.Product.findByPk(productID, {
+            include: ['category', 'material']
+        })
+        .then(old => {
+            console.log(old.category.name)
+            res.render('./admin/addProduct', {old: old, edit: true, user: req.session.user ? req.session.user : undefined });
+        })
+        .catch(error => console.log(error))
     },
     update: (req,res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        const productID = req.params.id;
-        let productToEdit = products.find( product => product.id == productID)
-        let productImages;
-
-        // Ordenamos la info recibida en el formulario
+        // // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const productID = req.params.id;
+        // let productToEdit = products.find( product => product.id == productID)
+        // let productImages;
+        const productId = req.params.id
+        // // Ordenamos la info recibida en el formulario
         const productName = req.body.name,
                 productDescription = req.body.description,
                 productPrice = parseFloat(req.body.price),
-                productDiscount = parseFloat(req.body.discount),
-                productCategory = req.body.category,
-                productMaterial = req.body.materials,
+                productDiscount = parseFloat(req.body.discount) ||0,
+                productCategory = parseInt(req.body.category),
+                productMaterial = parseInt(req.body.material),
                 productQuantS = parseInt(req.body.quantityS) || 0,
                 productQuantM = parseInt(req.body.quantityM) || 0,
                 productQuantL = parseInt(req.body.quantityL) || 0;
         
-        switch(req.files.length){
-            case 0:
-                productImages = productToEdit.images;
-                break;
-            case 1:
-                if(req.files[0].fieldname == "image1"){
-                    productImages = [req.files[0].filename, productToEdit.images[1]];
-                } else {
-                    productImages = [productToEdit.images[0], req.files[0].filename];
-                }
-                break;
-            case 2:
-                productImages = [req.files[0].filename, req.files[1].filename];
-                break;
-        }
+        // switch(req.files.length){
+        //     case 0:
+        //         productImages = productToEdit.images;
+        //         break;
+        //     case 1:
+        //         if(req.files[0].fieldname == "image1"){
+        //             productImages = [req.files[0].filename, productToEdit.images[1]];
+        //         } else {
+        //             productImages = [productToEdit.images[0], req.files[0].filename];
+        //         }
+        //         break;
+        //     case 2:
+        //         productImages = [req.files[0].filename, req.files[1].filename];
+        //         break;
+        // }
 
-        //Lógica para almacenar informacion y editar producto
-        productToEdit ={
-            id: productToEdit.id,
-            name: productName,
-            description: productDescription,
-            price: productPrice,
-            discount: productDiscount,
-            category: productCategory,
-            size: {
-                S: productToEdit.size.S + productQuantS,
-                M: productToEdit.size.M + productQuantM,
-                L: productToEdit.size.L + productQuantL
-            },
-            images: productImages,
-            material: productMaterial
-        }
-        const newProducts = products.map( product => {
-            if(product.id === productToEdit.id) {
-                return product = {...productToEdit}
-            } else {
-                return product
+        // //Lógica para almacenar informacion y editar producto
+        // productToEdit ={
+        //     id: productToEdit.id,
+        //     name: productName,
+        //     description: productDescription,
+        //     price: productPrice,
+        //     discount: productDiscount,
+        //     category: productCategory,
+        //     size: {
+        //         S: productToEdit.size.S + productQuantS,
+        //         M: productToEdit.size.M + productQuantM,
+        //         L: productToEdit.size.L + productQuantL
+        //     },
+        //     images: productImages,
+        //     material: productMaterial
+        // }
+        // const newProducts = products.map( product => {
+        //     if(product.id === productToEdit.id) {
+        //         return product = {...productToEdit}
+        //     } else {
+        //         return product
+        //     }
+        // })
+
+        // //Reescribiendo productos
+        // fs.writeFileSync(productsPath, JSON.stringify(newProducts, null, ' '));
+        const updating = db.Product.update({
+            name: req.body.name,
+                description: productDescription,
+                price: productPrice,
+                discount: productDiscount,
+                image_1: req.files.length > 0 ? req.files[0].filename : undefined,
+                image_2: req.files.length > 1 ? req.files[1].filename : undefined,
+                category_id: productCategory,
+                material_id: productMaterial 
+        },{
+            where: {
+                id: productId
             }
         })
-
-        //Reescribiendo productos
-        fs.writeFileSync(productsPath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/products');
+        const quantities = db.Product.increment({
+            quantity_S : + productQuantS,
+            quantity_M : + productQuantM,
+            quantity_L : + productQuantL,
+        }, {
+            where: {
+                id: productId
+            }
+        });
+        Promise
+            .all([updating, quantities])
+            .then( ([product]) => {
+                res.redirect('/products/detail/' + productId);
+            }).catch(error => console.log(error))
+		
     },
     delete: (req,res) => {
         const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));

@@ -52,7 +52,7 @@ const validateRegister =[
         }),
     check('category')
         .notEmpty().withMessage('Debes elegir una categoría').bail().isNumeric().withMessage('El formato no es correcto'),
-    check('materials')
+    check('material')
         .notEmpty().withMessage('Debes elegir un material').bail().isNumeric().withMessage('El formato no es correcto')
     // body('quantityS')
     //     .custom(( value, { req }) => {

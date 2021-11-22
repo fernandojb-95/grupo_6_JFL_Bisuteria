@@ -8,151 +8,192 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Agregar producto</h1>
-        <div class="agregar-product">
-            <form action="/products" method="POST" enctype="multipart/form-data">
-                <section class="nombre">
-                    <label for="nombre">Nombre del producto: </label>
-                    <input type="text" name ="name" id="nombre" placeholder="Nombre" value="<%= locals.old ? old.name : ''%>">
-                    <% if(locals.errors) { %>
-                        <%errors.forEach(error => { %>
-                            <%if(error.param == 'name') { %>
-                                <p class="error-msg"><%=error.msg%></p>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                </section>
-
-                <section class="descripcion">  
-                    <label for="descripcion">Descripción:</label>
-                    <textarea name ="description" id="descripcion" rows="5" placeholder="Escribe una breve descripción" ><%= locals.old ? old.description : ''%></textarea>
-                    <% if(locals.errors) { %>
-                        <%errors.forEach(error => { %>
-                            <%if(error.param == 'description') { %>
-                                <p class="error-msg"><%=error.msg%></p>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                </section>
-                <section class="price-discount">
-                    <section class="precio">
-                        <label for="precio">Precio: $</label>
-                        <input type="number" name ="price" id="precio" step="any" value="<%= locals.old ? old.price : ''%>">
-                    </section>
-                    <section class="descuento">
-                        <label for="descuento">Descuento:</label>
-                        <input type="number" name="discount" id="descuento" step="any" value="<%= locals.old ? old.discount : ''%>"><label>%</label>
-                    </section>
-                    <% if(locals.errors) { %>
-                        <%errors.forEach(error => { %>
-                            <%if(error.param == 'price' || error.param == 'discount') { %>
-                                <p class="error-msg"><%=error.msg%></p>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                </section>
-
-
-                <section class="categoria">
-                    <label for="categoria">Categoría: </label>
-                    <div class="category-container">
-                        <div class="cat-opcion">
-                            <input type="radio" name="category" id = "anillos" value="1" checked>
-                            <label for="anillos">Anillos</label>
+        <h1>Formulario de producto</h1>
+        <div class="main-section">
+            <% if(locals.edit) { %>
+                <section class="informacion-actual">
+                    <h2>Información actual</h2>
+                    <div class="informacion-actual-imgs">
+                        <div>
+                            <img src="/img/<%=old.category.name%>/<%=old.image_1%>" alt="<%=old.name%>">
+                            <p>Imagen 1</p>
                         </div>
-                        <div class="cat-opcion">
-                            <input type="radio" name="category" id = "collares" value="3"> 
-                            <label for="collares">Collares</label>
+        
+                        <div>
+                            <img src="/img/<%=old.category.name%>/<%=old.image_2%>" alt="<%=old.name%>">
+                            <p>Imagen 2</p>
                         </div>
-                        <div class="cat-opcion">
-                            <input type="radio" name="category" id = "brazaletes" value="2">
-                            <label for="brazaletes"> Brazaletes</label>
-                        </div>
+                        
+                        <!-- <img src="/img/ring-2.jpg" alt="">
+                        <img src="/img/ring-2.jpg" alt=""> -->
                     </div>
-                    <% if(locals.errors) { %>
-                        <%errors.forEach(error => { %>
-                            <%if(error.param == 'category') { %>
-                                <p class="error-msg"><%=error.msg%></p>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                </section>
-                <section class="materials">
-                    <label for="materials">Material: </label>
-                    <div class="materials-container">
-                        <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "oro" value="2" checked>
-                            <label for="oro">Oro</label>
-                        </div>
-                        <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "plata" value="3"> 
-                            <label for="plata">Plata</label>
-                        </div>
-                        <div class="mat-opcion">
-                            <input type="radio" name="materials" id = "acero" value="1">
-                            <label for="acero"> Acero</label>
-                        </div>
+        
+                    <div class="datos-actual">
+                        <p class="titulo">Nombre del producto:</p>
+                        <p><%=old.name%></p>
+                        <p class="titulo">Descripción:</p>
+                        <p><%=old.description%></p>
+                        <p class="titulo">Precio: </p>
+                        <p>$<%=old.price%></p>
+                        <p class="titulo">Material: </p>
+                        <p><%=old.material.name.charAt(0).toUpperCase() + old.material.name.slice(1)%></p>
+                        <p class="titulo">Inventario actual:</p>
+                        <p><strong>S: </strong><%=old.quantity_S%></p>
+                        <p><strong>M: </strong><%=old.quantity_M%></p> 
+                        <p><strong>L: </strong><%=old.quantity_L%></p>                         
                     </div>
-                    <% if(locals.errors) { %>
-                        <%errors.forEach(error => { %>
-                            <%if(error.param == 'materials') { %>
-                                <p class="error-msg"><%=error.msg%></p>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
                 </section>
-
-                <section class="tallas">
-                    <label for="">Cantidad:</label>
-                        <div class="tallas-text">
-                            <div class="quant">
-                                <label for="cant-S"> S: </label>
-                                <input type="number" name ="quantityS" id="cant-S" value="<%= locals.old ? old.quantityS : ''%>">
+                <% } %>
+                <div class="agregar-product">
+                    <h2>Agregando la información</h2>
+                    <form action="<%=locals.edit ? '/products/' + old.id + '?_method=PATCH' : '/products'%>" method= "post" enctype="multipart/form-data">
+                        <section class="nombre">
+                            <label for="nombre">Nombre del producto: </label>
+                            <input type="text" name ="name" id="nombre" placeholder="Nombre" value="<%= locals.old ? old.name : ''%>">
+                            <% if(locals.errors) { %>
+                                <%errors.forEach(error => { %>
+                                    <%if(error.param == 'name') { %>
+                                        <p class="error-msg"><%=error.msg%></p>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </section>
+        
+                        <section class="descripcion">  
+                            <label for="descripcion">Descripción:</label>
+                            <textarea name ="description" id="descripcion" rows="5" placeholder="Escribe una breve descripción" ><%= locals.old ? old.description : ''%></textarea>
+                            <% if(locals.errors) { %>
+                                <%errors.forEach(error => { %>
+                                    <%if(error.param == 'description') { %>
+                                        <p class="error-msg"><%=error.msg%></p>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </section>
+                        <section class="price-discount">
+                            <section class="precio">
+                                <label for="precio">Precio: $</label>
+                                <input type="number" name ="price" id="precio" step="any" value="<%= locals.old ? old.price : ''%>">
+                            </section>
+                            <section class="descuento">
+                                <label for="descuento">Descuento:</label>
+                                <input type="number" name="discount" id="descuento" step="any" value="<%= locals.old ? old.discount : ''%>"><label>%</label>
+                            </section>
+                            <% if(locals.errors) { %>
+                                <%errors.forEach(error => { %>
+                                    <%if(error.param == 'price' || error.param == 'discount') { %>
+                                        <p class="error-msg"><%=error.msg%></p>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </section>
+        
+        
+                        <section class="categoria">
+                            <label for="categoria">Categoría: </label>
+                            <div class="category-container">
+                                <div class="cat-opcion">
+                                    <input type="radio" name="category" id = "anillos" value="1" <%= locals.old  && old.category ? old.category == 1 ? 'checked' : old.category.name == 'anillos' ? 'checked' : '' : 'checked'%>>
+                                    <label for="anillos">Anillos</label>
+                                </div>
+                                <div class="cat-opcion">
+                                    <input type="radio" name="category" id = "collares" value="3" <%= locals.old  && old.category ? old.category == 3 ? 'checked' : old.category.name == 'collares' ? 'checked' : '' : ''%>> 
+                                    <label for="collares">Collares</label>
+                                </div>
+                                <div class="cat-opcion">
+                                    <input type="radio" name="category" id = "brazaletes" value="2" <%= locals.old  && old.category ? old.category == 2 ? 'checked' : old.category.name == 'brazaletes' ? 'checked' : '' : ''%>>
+                                    <label for="brazaletes"> Brazaletes</label>
+                                </div>
                             </div>
-                            <div class="quant">
-                                <label for="cant-M">M: </label>
-                                <input type="number" name ="quantityM" id="cant-M" value="<%= locals.old ? old.quantityM : ''%>">
+                            <% if(locals.errors) { %>
+                                <%errors.forEach(error => { %>
+                                    <%if(error.param == 'category') { %>
+                                        <p class="error-msg"><%=error.msg%></p>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </section>
+                        <section class="materials">
+                            <label for="materials">Material: </label>
+                            <div class="materials-container">
+                                <div class="mat-opcion">
+                                    <input type="radio" name="material" id = "oro" value="2" <%= locals.old  && old.material ? old.material == 2 ? 'checked' : old.material.name == 'oro' ? 'checked' : '' : 'checked'%>>
+                                    <label for="oro">Oro</label>
+                                </div>
+                                <div class="mat-opcion">
+                                    <input type="radio" name="material" id = "plata" value="3" <%= locals.old  && old.material ? old.material == 3 ? 'checked' : old.material.name == 'plata' ? 'checked' : '' : ''%>> 
+                                    <label for="plata">Plata</label>
+                                </div>
+                                <div class="mat-opcion">
+                                    <input type="radio" name="material" id = "acero" value="1" <%= locals.old  && old.material ? old.material == 1 ? 'checked' : old.material.name == 'acero' ? 'checked' : '' : ''%>> 
+                                    <label for="acero"> Acero</label>
+                                </div>
                             </div>
-                            <div class="quant">
-                                <label for="cant-L">L: </label>
-                                <input type="number" name ="quantityL" id="cant-L" value="<%= locals.old ? old.quantityL : ''%>">
-                            </div>
-                        </div>
-                        <% if(locals.errors) { %>
-                            <%errors.forEach(error => { %>
-                                <%if(error.param == 'quantityS' || error.param == 'quantityM' || error.param == 'quantityL') { %>
-                                    <p class="error-msg"><%=error.msg%></p>
+                            <% if(locals.errors) { %>
+                                <%errors.forEach(error => { %>
+                                    <%if(error.param == 'materials') { %>
+                                        <p class="error-msg"><%=error.msg%></p>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </section>
+        
+                        <section class="tallas">
+                            <label for="">Cantidad:</label>
+                            <% if(locals.edit) { %>
+                            <p>Agrega la cantidad de articulos que desees adicionar al inventario existente</p>
+                            <% } %>
+                                <div class="tallas-text">
+                                    <div class="quant">
+                                        <label for="cant-S"> S: </label>
+                                        <input type="number" name ="quantityS" id="cant-S" value="<%= locals.old ? old.quantityS : ''%>">
+                                    </div>
+                                    <div class="quant">
+                                        <label for="cant-M">M: </label>
+                                        <input type="number" name ="quantityM" id="cant-M" value="<%= locals.old ? old.quantityM : ''%>">
+                                    </div>
+                                    <div class="quant">
+                                        <label for="cant-L">L: </label>
+                                        <input type="number" name ="quantityL" id="cant-L" value="<%= locals.old ? old.quantityL : ''%>">
+                                    </div>
+                                </div>
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'quantityS' || error.param == 'quantityM' || error.param == 'quantityL') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
                                 <% } %>
-                            <% }) %>
-                        <% } %>
-                </section>
-                <section class="agregar-img">
-                    <p><strong>Imágenes:</strong></p>
-                    <div class="imagenes">
-                        <ul>
-                            <li>
-                                <input type="file" name="image1" id="image" placeholder="Subir"><label>Imagen 1</label>
-                            </li>
-                            <li>
-                                <input type="file" name="image2" id="image"><label>Imagen 2</label>
-                            </li>
-                        </ul>
-                        <% if(locals.errors) { %>
-                            <%errors.forEach(error => { %>
-                                <%if(error.param == 'file') { %>
-                                    <p class="error-msg"><%=error.msg%></p>
-                                <% } %>
-                            <% }) %>
-                        <% } %> 
-                    </div>
-
-                </section>                   
-                <section class="botones">
-                    <button><a href="/">Cancelar</a></button>
-                    <button  type="reset">Borrar todo</button>
-                    <button type="submit">Guardar</button>
-                </section>
-            </form>
+                        </section>
+                        <section class="agregar-img">
+                            <p><strong>Imágenes:</strong></p>
+                            <div class="imagenes">
+                                <ul>
+                                    <li>
+                                        <input type="file" name="image1" id="image" placeholder="Subir"><label>Imagen 1</label>
+                                    </li>
+                                    <li>
+                                        <input type="file" name="image2" id="image"><label>Imagen 2</label>
+                                    </li>
+                                </ul>
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'file') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %> 
+                            </div>
+        
+                        </section>                   
+                        <section class="botones">
+                            <button><a href="/">Cancelar</a></button>
+                            <button  type="reset">Borrar todo</button>
+                            <button type="submit">Guardar</button>
+                        </section>
+                    </form>
+                </div>
         </div>
+        
     </main>
 </body>
