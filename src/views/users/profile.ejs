@@ -7,6 +7,18 @@
 <body>
     <%- include('../partials/header') %>
     <h1>Mi perfil</h1>
+
+    <section>
+        <p><%=usu.first_name%></p>
+        <p><%=usu.last_name%></p>
+        <p><%=usu.email%></p>
+    </section>
+
+    <section>
+        <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+            <button type="submit" class="borrar-btn">Borrar</button>
+        </form>
+    </section>
     <%- include('../partials/footer') %>
 </body>
 </html>

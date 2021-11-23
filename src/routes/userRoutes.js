@@ -74,6 +74,9 @@ router.post('/register', fileUpload.single('imagenUsuario'), validateRegister, v
 /*----Ruta para info de perfil de usuario-----*/
 router.get('/:id/profile', logMiddleware, userController.profile);
 
+/*----Rutas para borrar usuario----*/
+router.delete('/:id', userController.delete);
+
 /*----Ruta para cerrar sesion-----*/
 router.put('/logoff', userController.logoff);
 
