@@ -262,13 +262,21 @@ const productController = {
 		
     },
     delete: (req,res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
         //Lógica para borrar producto
-         let id = req.params.id;
-        let finalProducts = products.filter(product => product.id != id);
-        fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ' '));
-        res.redirect('/');
+        // let id = req.params.id;
+        // let finalProducts = products.filter(product => product.id != id);
+        // fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ' '));
+
+        //Borrado de productos con Sequelize
+        let id = req.params.id;
+        db.Product.destroy({
+            where: {id : id}
+        }).then(()=>{
+            res.redirect('/');
+        }).catch(error => console.log(error))
+        
 
     },
     finalizaCompra : (req, res) => {
