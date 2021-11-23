@@ -134,6 +134,9 @@ insert into `users` (first_name, last_name, email, password, isAdmin, image) val
 insert into `users` (first_name, last_name, email, password, isAdmin, image) values ('Bruce', 'Wayne', 
 'brucewayne@batman.com', '$2b$10$SDt8lqxZDVb2yvhJjokCse/MI4df1wk7.NtF24vTJGyjH.bp9bnzW', 0, 'img-bruce-01742.jpg');
 
+insert into `users` (first_name, last_name, email, password, isAdmin) values ('Luis', 'Morales', 
+'luismv@jflbisuteria.com.mx ', '$2b$10$qM7oOTFhmzuyiV9/mJtLG..Vp33cEWAC8Pben/S5bk6Ga.PzX7vHe', 1);
+
 insert into `comments` (id, title, content, user_id, product_id) values (1, 'Excelente producto', 'Me encant? el producto, la calidad es muy buena y el producto lleg? en excelentes condiciones', 
 1, 1);
 

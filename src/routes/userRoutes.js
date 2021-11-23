@@ -77,6 +77,9 @@ router.get('/:id/profile', logMiddleware, userController.profile);
 /*----Rutas para borrar usuario----*/
 router.delete('/:id', userController.delete);
 
+/*----Rutas para editar usuario----*/
+router.get('/edit/:id', userController.editUser);
+
 /*----Ruta para cerrar sesion-----*/
 router.put('/logoff', userController.logoff);
 

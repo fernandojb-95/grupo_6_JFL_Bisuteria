@@ -27,7 +27,7 @@ const userController = {
                 password = bcrypt.hashSync(req.body.password,10);
 
             //Asignamos el nombre del archivo o la imagen por default
-            req.file ? userImage =  req.file.filename : userImage = "default-user";
+            req.file ? userImage =  req.file.filename : userImage = "default-user.png";
 
             //Condicion para diferenciar usuarios o administradores
             let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
@@ -104,6 +104,9 @@ const userController = {
             res.render('./users/profile');
         }
        
+    },
+    editUser: (req,res) => {
+        res.redirect('/');
     },
     delete: (req,res) => {
         //Borrado de usuarios con Sequelize

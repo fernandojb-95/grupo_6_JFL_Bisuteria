@@ -15,8 +15,9 @@
     </section>
 
     <section>
+        <a href="/user/edit/<%=user.id%>"> <button> Editar mi cuenta</button> </a>
         <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-            <button type="submit" class="borrar-btn">Borrar</button>
+            <button type="submit" class="borrar-btn">Borrar mi cuenta</button>
         </form>
     </section>
     <%- include('../partials/footer') %>
