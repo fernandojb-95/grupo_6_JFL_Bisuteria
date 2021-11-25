@@ -78,9 +78,10 @@ router.get('/:id/profile', logMiddleware, userController.profile);
 router.delete('/:id', userController.delete);
 
 /*----Rutas para editar usuario----*/
-router.get('/edit/:id', userController.editUser);
+router.get('/edit/:id', logMiddleware, userController.editUser);
+router.patch('/edit', fileUpload.single('imagenUsuario') ,userController.confirmEdit)
 
 /*----Ruta para cerrar sesion-----*/
-router.put('/logoff', userController.logoff);
+router.put('/logoff', logMiddleware, userController.logoff);
 
 module.exports = router;

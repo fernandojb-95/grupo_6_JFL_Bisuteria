@@ -3,23 +3,29 @@
 <head>
     <%- include('../partials/head') %>
     <title>Mi perfil</title>
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
     <%- include('../partials/header') %>
-    <h1>Mi perfil</h1>
-
-    <section>
-        <p><%=usu.first_name%></p>
-        <p><%=usu.last_name%></p>
-        <p><%=usu.email%></p>
-    </section>
-
-    <section>
-        <a href="/user/edit/<%=user.id%>"> <button> Editar mi cuenta</button> </a>
-        <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-            <button type="submit" class="borrar-btn">Borrar mi cuenta</button>
-        </form>
-    </section>
-    <%- include('../partials/footer') %>
+    <main>
+        <h1>Mi perfil</h1>
+    
+        <section class="info">
+            <h2>Información actual</h2>
+            <div class="info-card">
+                <img src="/img/users/<%=usu.image%>" alt="<%=usu.first_name%>">
+                    <p class="info-element"><strong>Nombre(s):</strong>  <%=usu.first_name%></p>
+                    <p class="info-element"><strong>Apellido(s):</strong> <%=usu.last_name%></p>
+                    <p class="info-element"><strong>Email:</strong> <%=usu.email%></p>
+            </div>
+            <div class="edit">
+                <button><a href="/user/edit/<%=user.id%>">Modificar información</a></button>
+                <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+                    <button type="submit" class="borrar-btn">Borrar mi cuenta</button>
+                </form>
+            </div>
+        </section>        
+    </main>
+    <%- include('../partials/footer') %> 
 </body>
 </html>

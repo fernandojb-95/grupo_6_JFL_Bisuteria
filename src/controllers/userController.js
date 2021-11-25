@@ -95,18 +95,20 @@ const userController = {
     },
     profile: (req,res) => {
         if(req.session.user) {
-            const usu = db.User.findByPk(req.params.id
+            db.User.findByPk(req.params.id
             ).then(usu => {
                 res.render('./users/profile', {usu, user: req.session.user ? req.session.user : undefined});
-            })
-            
-        } else {
-            res.render('./users/profile');
-        }
-       
+            })    
+        }  
     },
     editUser: (req,res) => {
-        res.redirect('/');
+        const id = req.params.id;
+        const user = req.session.user;
+        res.render('./users/userForm', {user})
+    },
+    confirmEdit: (req,res) => {
+        console.log(req.body)
+        res.send('Se hace edición de usuario')
     },
     delete: (req,res) => {
         //Borrado de usuarios con Sequelize

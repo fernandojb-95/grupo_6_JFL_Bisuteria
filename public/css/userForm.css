@@ -1,0 +1,40 @@
+@import url('general.css');
+
+main{
+    background-image: none;
+}
+.input-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+}
+.input-section input{
+    width: 90%;
+}
+.checkitems{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.button {
+    width: 200px;
+    margin: 0 auto;
+    height: 30px;
+}
+
+@media(min-width: 768px){
+    form{
+        width: 70%;
+        margin: 0 auto;
+        max-width: 650px;
+    }
+    .input-section label{
+        width: 100%;
+        text-align: left;
+    }
+    .input-section input{
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+@import url('general.css');
+
+.info-card{
+    text-align: center;
+}
+.info-element{
+    padding: 5px;
+}
+.info-card img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    max-width: 350px;
+}
+.edit{
+    max-width: 500px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.edit button{
+    height: 40px;
+    width: 130px;
+}
+@media(min-width: 768px){
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-height: 350px;
+    }
+    .info-card img{
+        flex-grow: 1
+    }
+    .fields{
+        flex-grow: 1;
+    }
+}

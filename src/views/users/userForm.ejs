@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Editando</title>
+    <link rel="stylesheet" href="/css/userForm.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1>Editando información de usuario</h1>
+        <form class="updating-form" action="/user/edit?_method=PATCH" method="POST" enctype="multipart/form-data">
+            <div class="tec-inputs">
+                <div class="input-section">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="user" class="user-input" value="<%=user.first_name%>">
+                </div>
+                <div class="input-section">
+                    <label for="name">Apelllido: </label>
+                    <input type="text" name="lastname" class="last-name-input" value="<%=user.last_name%>">
+                </div>
+                <div class="input-section">
+                    <label for="name">Email: </label>
+                    <input type="email" name="email" class="email-input" value="<%=user.email%>">
+                </div>
+                <div class="input-section">
+                    <label for="name">Nueva contraseña: </label>
+                    <input type="password" name="password" class="pass-input">
+                </div>
+                <div class="input-section">
+                    <label for="name">Confirma la nueva contraseña:</label>
+                    <input type="password" name="passwordConfirm" class="pass-confirm-input">
+                    <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
+                </div>
+                <div class="input-section">
+                    <label for="imagenUsuario" >Imagen de perfil: </label>
+                    <input type="file" name="imagenUsuario">
+                </div>
+            </div>
+            <div class="checkitems">
+                <div>
+                    <button class="button"><a href="/user/<%=user.id%>/profile">Regresar</a></button>
+                    <button type="submit" name="update" class="button">Aceptar</button>
+                </div>
+            </div> 
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
