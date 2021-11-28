@@ -43,6 +43,7 @@ const userController = {
             .then(user => {
                 res.redirect('/');
             }).catch(error => console.log(error))
+
                 //Creamos el JSON con los datos del nuevo usuario
                 // const newUser ={
                 //     id: users[users.length -1].id + 1,
@@ -107,8 +108,34 @@ const userController = {
         res.render('./users/userForm', {user})
     },
     confirmEdit: (req,res) => {
-        console.log(req.body)
-        res.send('Se hace edición de usuario')
+        let userId = req.params.id;
+            userName = req.body.user,
+            lastNameUser = req.body.lastname,
+            userImage = "",
+            email = req.body.email,
+            password = bcrypt.hashSync(req.body.password,10);
+
+        //Asignamos el nombre del archivo o la imagen por default
+        req.file ? userImage =  req.file.filename : userImage = "default-user.png";
+
+        //Condicion para diferenciar usuarios o administradores
+        let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
+
+        db.User.update({
+            first_name: userName,
+            last_name: lastNameUser,
+            email: email,
+            password: password,
+            isAdmin: isAdmin,
+            image: userImage
+        },{
+            where: {
+                id: userId
+            }
+        }).then( () => {
+            res.redirect('/');
+        })
+        .catch(error => console.log(error))
     },
     delete: (req,res) => {
         //Borrado de usuarios con Sequelize

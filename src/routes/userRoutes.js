@@ -79,7 +79,7 @@ router.delete('/:id', userController.delete);
 
 /*----Rutas para editar usuario----*/
 router.get('/edit/:id', logMiddleware, userController.editUser);
-router.patch('/edit', fileUpload.single('imagenUsuario') ,userController.confirmEdit)
+router.patch('/edit/:id', fileUpload.single('imagenUsuario') ,userController.confirmEdit)
 
 /*----Ruta para cerrar sesion-----*/
 router.put('/logoff', logMiddleware, userController.logoff);
