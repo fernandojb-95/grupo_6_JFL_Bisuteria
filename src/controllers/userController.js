@@ -109,33 +109,50 @@ const userController = {
     },
     confirmEdit: (req,res) => {
         let userId = req.params.id;
-            userName = req.body.user,
-            lastNameUser = req.body.lastname,
-            userImage = "",
-            email = req.body.email,
-            password = bcrypt.hashSync(req.body.password,10);
+        const user = req.session.user;
 
-        //Asignamos el nombre del archivo o la imagen por default
-        req.file ? userImage =  req.file.filename : userImage = "default-user.png";
+        let errorsList = validationResult(req);
+        let errors = errorsList.array()
+        if(errorsList.isEmpty() && !req.fileValidationError){
+            let userName = req.body.user,
+                lastNameUser = req.body.lastname,
+                userImage = "",
+                email = req.body.email,
+                password = bcrypt.hashSync(req.body.password,10);
 
-        //Condicion para diferenciar usuarios o administradores
-        let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
+            //Asignamos el nombre del archivo o la imagen por default
+            req.file ? userImage =  req.file.filename : userImage = "default-user.png";
 
-        db.User.update({
-            first_name: userName,
-            last_name: lastNameUser,
-            email: email,
-            password: password,
-            isAdmin: isAdmin,
-            image: userImage
-        },{
-            where: {
-                id: userId
+            //Condicion para diferenciar usuarios o administradores
+            let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
+
+            db.User.update({
+                first_name: userName,
+                last_name: lastNameUser,
+                email: email,
+                password: password,
+                isAdmin: isAdmin,
+                image: userImage
+            },{
+                where: {
+                    id: userId
+                }
+            }).then( () => {
+                res.redirect('/');
+            })
+            .catch(error => console.log(error))
+        }else{
+
+            if(req.file){
+                const imgPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`)
+                fs.unlink(imgPath, error => {
+                    if (error) console.log(error);
+                })
             }
-        }).then( () => {
-            res.redirect('/');
-        })
-        .catch(error => console.log(error))
+
+            if(req.fileValidationError) errors.push((req.fileValidationError))
+            res.render('./users/userForm',{errors: errors, old:req.body, user});
+        }
     },
     delete: (req,res) => {
         //Borrado de usuarios con Sequelize

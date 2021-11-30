@@ -9,6 +9,17 @@
     <%- include('../partials/header') %>
     <main>
         <h1>Editando información de usuario</h1>
+
+        <section class="register-errors">
+            <%if (locals.errors) { %>
+                <% errors.forEach(error => {%>
+    
+                    <p> <%=error.msg %></p>
+    
+                <% })%>
+            <% }%>
+        </section>
+        
         <form class="updating-form" action="/user/edit/<%=user.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
             <div class="tec-inputs">
                 <div class="input-section">
