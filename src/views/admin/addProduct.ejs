@@ -14,39 +14,36 @@
                 <section class="informacion-actual">
                     <h2>Información actual</h2>
                     <div class="informacion-actual-imgs">
-                        <div>
-                            <img src="/img/<%=old.category.name%>/<%=old.image_1%>" alt="<%=old.name%>">
+                        <div class="actual-pic">
+                            <img src="/img/<%=locals.product ? product.category.name: old.category.name %>/<%=locals.product ? product.image_1 : old.image_1%>" alt="<%=locals.product ? product.name : old.name%>">
                             <p>Imagen 1</p>
                         </div>
         
-                        <div>
-                            <img src="/img/<%=old.category.name%>/<%=old.image_2%>" alt="<%=old.name%>">
+                        <div class="actual-pic">
+                            <img src="/img/<%=locals.product ? product.category.name: old.category.name %>/<%=locals.product ? product.image_2 : old.image_2%>" alt="<%=locals.product ? product.name : old.name%>">
                             <p>Imagen 2</p>
                         </div>
-                        
-                        <!-- <img src="/img/ring-2.jpg" alt="">
-                        <img src="/img/ring-2.jpg" alt=""> -->
                     </div>
         
                     <div class="datos-actual">
                         <p class="titulo">Nombre del producto:</p>
-                        <p><%=old.name%></p>
+                        <p><%= locals.product ? product.name : old.name%></p>
                         <p class="titulo">Descripción:</p>
-                        <p><%=old.description%></p>
+                        <p><%= locals.product ? product.description : old.description%></p>
                         <p class="titulo">Precio: </p>
-                        <p>$<%=old.price%></p>
+                        <p>$<%= locals.product ? product.price : old.price%></p>
                         <p class="titulo">Material: </p>
-                        <p><%=old.material.name.charAt(0).toUpperCase() + old.material.name.slice(1)%></p>
+                        <p><%= locals.product ? product.material.name.charAt(0).toUpperCase() + product.material.name.slice(1) : old.material.name%></p>
                         <p class="titulo">Inventario actual:</p>
-                        <p><strong>S: </strong><%=old.quantity_S%></p>
-                        <p><strong>M: </strong><%=old.quantity_M%></p> 
-                        <p><strong>L: </strong><%=old.quantity_L%></p>                         
+                        <p><strong>S: </strong><%=locals.product ? product.quantity_S : old.quantity_S%></p>
+                        <p><strong>M: </strong><%=locals.product ? product.quantity_M : old.quantity_M%></p> 
+                        <p><strong>L: </strong><%=locals.product ? product.quantity_L : old.quantity_L%></p>                         
                     </div>
                 </section>
                 <% } %>
                 <div class="agregar-product">
                     <h2>Agregando la información</h2>
-                    <form action="<%=locals.edit ? '/products/' + old.id + '?_method=PATCH' : '/products'%>" method= "post" enctype="multipart/form-data">
+                    <form action="/products/<%=locals.edit ? locals.product ? product.id + '?_method=PATCH' : old.id + '?_method=PATCH'  : ''%>" method= "post" enctype="multipart/form-data">
                         <section class="nombre">
                             <label for="nombre">Nombre del producto: </label>
                             <input type="text" name ="name" id="nombre" placeholder="Nombre" value="<%= locals.old ? old.name : ''%>">
@@ -73,11 +70,11 @@
                         <section class="price-discount">
                             <section class="precio">
                                 <label for="precio">Precio: $</label>
-                                <input type="number" name ="price" id="precio" step="any" value="<%= locals.old ? old.price : ''%>">
+                                <input type="number" name ="price" id="precio" step="any" value="<%= locals.old ? old.price : 0%>">
                             </section>
                             <section class="descuento">
                                 <label for="descuento">Descuento:</label>
-                                <input type="number" name="discount" id="descuento" step="any" value="<%= locals.old ? old.discount : ''%>"><label>%</label>
+                                <input type="number" name="discount" id="descuento" step="any" value="<%= locals.old ? old.discount : 0%>"><label>%</label>
                             </section>
                             <% if(locals.errors) { %>
                                 <%errors.forEach(error => { %>
@@ -146,15 +143,15 @@
                                 <div class="tallas-text">
                                     <div class="quant">
                                         <label for="cant-S"> S: </label>
-                                        <input type="number" name ="quantityS" id="cant-S" value="<%= locals.old ? old.quantityS : ''%>">
+                                        <input type="number" name ="quantityS" id="cant-S" value="<%= locals.old ? old.quantityS || 0 : 0%>">
                                     </div>
                                     <div class="quant">
                                         <label for="cant-M">M: </label>
-                                        <input type="number" name ="quantityM" id="cant-M" value="<%= locals.old ? old.quantityM : ''%>">
+                                        <input type="number" name ="quantityM" id="cant-M" value="<%= locals.old ? old.quantityM || 0 : 0%>">
                                     </div>
                                     <div class="quant">
                                         <label for="cant-L">L: </label>
-                                        <input type="number" name ="quantityL" id="cant-L" value="<%= locals.old ? old.quantityL : ''%>">
+                                        <input type="number" name ="quantityL" id="cant-L" value="<%= locals.old ? old.quantityL ||0 : 0%>">
                                     </div>
                                 </div>
                                 <% if(locals.errors) { %>

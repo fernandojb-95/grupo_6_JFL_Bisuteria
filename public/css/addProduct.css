@@ -11,7 +11,7 @@
 }
 .informacion-actual-imgs{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .informacion-actual-imgs img{
@@ -19,12 +19,24 @@
     transition: all 500ms;
 }
 
-.informacion-actual-imgs div{
+.informacion-actual-imgs .actual-pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
+    width: 35%;
 }
-
+.actual-pic img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    flex-grow: 1
+}
+.actual-pic p{
+    margin-top: 10px;
+}
 .informacion-actual-imgs :hover{
     transform: scale(1.05);
 }

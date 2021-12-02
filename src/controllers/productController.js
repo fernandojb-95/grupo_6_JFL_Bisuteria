@@ -4,6 +4,7 @@ const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const { Op } = require("sequelize");
 const { sequelize } = require('../database/models');
+const { IncomingMessage } = require('http');
 
 const productsPath = path.join(__dirname, '../data/products.json');
 
@@ -31,9 +32,6 @@ const productController = {
         res.render('./products/productCart', {user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
-        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // const rings = products.filter(product => product.category == 'anillos')
-        // res.render('./products/anillos', {products: rings, user: req.session.user ? req.session.user : undefined});
         const count = db.Product.count({
             include: ['category'],
             where: {
@@ -59,9 +57,6 @@ const productController = {
         })
     },
     brazaletes : (req, res) => {
-        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // const braceletes = products.filter(product => product.category == 'brazaletes');
-        // res.render('./products/brazaletes', {products: braceletes, user: req.session.user ? req.session.user : undefined });
         const count = db.Product.count({
             include: ['category'],
             where: {
@@ -87,9 +82,6 @@ const productController = {
         })
     },
     collares : (req, res) => {
-        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // const necklaces = products.filter(product => product.category == 'collares');
-        // res.render('./products/collares', {products: necklaces, user: req.session.user ? req.session.user : undefined });
         const count = db.Product.count({
             include: ['category'],
             where: {
@@ -124,6 +116,8 @@ const productController = {
                 errors.push(req.fileValidationError)
             }
         if(errors.length == 0) {
+            const image1 = req.files.find(image => image.fieldname == 'image1')
+            const image2 = req.files.find(image => image.fieldname == 'image2')
             db.Product.create({
                 name: req.body.name,
                 description: req.body.description,
@@ -132,8 +126,8 @@ const productController = {
                 quantity_S: parseInt(req.body.quantityS) || 0,
                 quantity_M: parseInt(req.body.quantityM) || 0,
                 quantity_L: parseInt(req.body.quantityL) || 0,
-                image_1: req.files.length > 0 ? req.files[0].filename : undefined,
-                image_2: req.files.length > 1 ? req.files[1].filename : undefined,
+                image_1: image1 !== undefined ? image1.filename : undefined,
+                image_2: image2 !== undefined ? image2.filename : undefined,
                 category_id: parseInt(req.body.category),
                 material_id: parseInt(req.body.material)
             })
@@ -160,25 +154,21 @@ const productController = {
         }
     },
     edit: (req,res) => {
-        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // const productToEdit = products.find( product => product.id == productID)
         const productID = req.params.id;
         db.Product.findByPk(productID, {
             include: ['category', 'material']
         })
         .then(old => {
-            console.log(old.category.name)
             res.render('./admin/addProduct', {old: old, edit: true, user: req.session.user ? req.session.user : undefined });
         })
         .catch(error => console.log(error))
     },
     update: (req,res) => {
-        // // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // const productID = req.params.id;
-        // let productToEdit = products.find( product => product.id == productID)
-        // let productImages;
         const productId = req.params.id
-        // // Ordenamos la info recibida en el formulario
+        const errorsList = validationResult(req),
+            errors = errorsList.array();
+            if(errors.length == 0){
+// Ordenamos la info recibida en el formulario
         const productName = req.body.name,
                 productDescription = req.body.description,
                 productPrice = parseFloat(req.body.price),
@@ -188,49 +178,8 @@ const productController = {
                 productQuantS = parseInt(req.body.quantityS) || 0,
                 productQuantM = parseInt(req.body.quantityM) || 0,
                 productQuantL = parseInt(req.body.quantityL) || 0;
-        
-        // switch(req.files.length){
-        //     case 0:
-        //         productImages = productToEdit.images;
-        //         break;
-        //     case 1:
-        //         if(req.files[0].fieldname == "image1"){
-        //             productImages = [req.files[0].filename, productToEdit.images[1]];
-        //         } else {
-        //             productImages = [productToEdit.images[0], req.files[0].filename];
-        //         }
-        //         break;
-        //     case 2:
-        //         productImages = [req.files[0].filename, req.files[1].filename];
-        //         break;
-        // }
 
-        // //Lógica para almacenar informacion y editar producto
-        // productToEdit ={
-        //     id: productToEdit.id,
-        //     name: productName,
-        //     description: productDescription,
-        //     price: productPrice,
-        //     discount: productDiscount,
-        //     category: productCategory,
-        //     size: {
-        //         S: productToEdit.size.S + productQuantS,
-        //         M: productToEdit.size.M + productQuantM,
-        //         L: productToEdit.size.L + productQuantL
-        //     },
-        //     images: productImages,
-        //     material: productMaterial
-        // }
-        // const newProducts = products.map( product => {
-        //     if(product.id === productToEdit.id) {
-        //         return product = {...productToEdit}
-        //     } else {
-        //         return product
-        //     }
-        // })
-
-        // //Reescribiendo productos
-        // fs.writeFileSync(productsPath, JSON.stringify(newProducts, null, ' '));
+        //Almacenando valores mediante Sequelize
         const updating = db.Product.update({
             name: req.body.name,
                 description: productDescription,
@@ -259,16 +208,18 @@ const productController = {
             .then( ([product]) => {
                 res.redirect('/products/detail/' + productId);
             }).catch(error => console.log(error))
-		
+            } else{
+                const old = req.body;
+                db.Product.findByPk(productId, {
+                    include: ['material', 'category']
+                })
+                    .then(product => {
+                        res.render('./admin/addProduct', {product: product, errors: errors, old: old, edit: true, user: req.session.user ? req.session.user : undefined})
+                    })
+                    .catch(error => console.log(error))
+            }
     },
     delete: (req,res) => {
-        // const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-
-        //Lógica para borrar producto
-        // let id = req.params.id;
-        // let finalProducts = products.filter(product => product.id != id);
-        // fs.writeFileSync(productsPath, JSON.stringify(finalProducts, null, ' '));
-
         //Borrado de productos con Sequelize
         let id = req.params.id;
         db.Product.destroy({
@@ -283,8 +234,6 @@ const productController = {
         res.render('./products/finalizaCompra', {user: req.session.user ? req.session.user : undefined});
     },
     productos: (req,res) => {
-        // const allProducts = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-        // res.render('./products/products', { products: allProducts, user: req.session.user ? req.session.user : undefined });
         const page = parseInt(req.params.page) || 1;
         const limit = 8;
         const count = db.Product.count()

@@ -22,7 +22,7 @@ const multerDiskStorage = multer.diskStorage({
     },
     filename: (req, file, callback) => {
         let productCategory = req.body.category,
-            productMaterial = req.body.materials;
+            productMaterial = req.body.material;
         const category = db.Category.findByPk(productCategory);
         const material = db.Material.findByPk(productMaterial);
         Promise
@@ -118,7 +118,7 @@ router.post('/', fileUpload.any(), validateRegister, productController.store);
 
 /*----Rutas para edición de producto----*/
 router.get('/:id/edit', logMiddleware, adminMiddleware, productController.edit);
-router.patch('/:id', fileUpload.any(), productController.update);
+router.patch('/:id', fileUpload.any(), validateRegister, productController.update);
 
 /*----Rutas para vista de carrito de compras----*/
 router.get('/productCart', logMiddleware, productController.productCart);

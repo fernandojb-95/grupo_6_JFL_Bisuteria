@@ -106,19 +106,22 @@ a:hover{
 .product{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 100%;
     padding: 5px;
     border-radius: 15px;
     max-width: 380px;
     background-color: var(--light);
 }
 .product-image{
+    display: flex;
     position: relative;
     padding: 5px;
+    flex-grow: 1;
 }
 .product-image .pic{
     width: 100%;
-    margin: 0 auto;
     display: block;
     object-fit: cover;
     object-position: center;
@@ -130,7 +133,6 @@ a:hover{
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
