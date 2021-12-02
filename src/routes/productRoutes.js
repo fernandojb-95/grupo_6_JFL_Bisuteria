@@ -43,41 +43,19 @@ const validateRegister =[
     check('price')
         .notEmpty().withMessage('Debes colocar un precio').isNumeric().withMessage('Debes colocar un formato de precio correcto'),
     check('discount')
-        .custom(( value, { req }) => {
-        if (typeof parseFloat(value) == 'number' || value == '') {
-           return true; 
-        } else {
-            throw new Error('El formato del descuento no es válido');
-        }
-        }),
+        .notEmpty().withMessage('El campo descuento no puede quedar vacío').bail().isNumeric().withMessage('El formato de descuento no es correcto'),
     check('category')
         .notEmpty().withMessage('Debes elegir una categoría').bail().isNumeric().withMessage('El formato no es correcto'),
     check('material')
-        .notEmpty().withMessage('Debes elegir un material').bail().isNumeric().withMessage('El formato no es correcto')
-    // body('quantityS')
-    //     .custom(( value, { req }) => {
-    //     if (typeof parseInt(value) == 'number' || value == '') {
-    //        return true; 
-    //     } else {
-    //         throw new Error('El formato de la cantidad no es válido');
-    //     }
-    //     }),
-    // check('quantityM')
-    //     .custom(( value, { req }) => {
-    //     if (typeof parseInt(value) == 'number' || value == '') {
-    //        return true; 
-    //     } else {
-    //         throw new Error('El formato de la cantidad no es válido');
-    //     }
-    //     }),
-    // check('quantityL')
-    //     .custom(( value, { req }) => {
-    //     if (typeof parseInt(value) == 'number' || value == '') {
-    //        return true; 
-    //     } else {
-    //         throw new Error('El formato de la cantidad no es válido');
-    //     }
-    //     })      
+        .notEmpty().withMessage('Debes elegir un material').bail().isNumeric().withMessage('El formato no es correcto'),
+    check('quantityS')
+        .notEmpty().withMessage('El campo S no puede quedar vacío').bail().isNumeric().withMessage('El formato de talla S no es correcto'),
+    check('quantityM')
+        .notEmpty().withMessage('El campo M no puede quedar vacío').bail().isNumeric().withMessage('El formato de talla M no es correcto'),
+    check('quantityL')
+        .notEmpty().withMessage('El campo L no puede quedar vacío').bail().isNumeric().withMessage('El formato de talla L no es correcto')
+
+
 ]
 //Validación de que el archivo recibido es una imagen
 const fileUpload = multer({

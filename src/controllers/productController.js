@@ -168,6 +168,29 @@ const productController = {
         const errorsList = validationResult(req),
             errors = errorsList.array();
             if(errors.length == 0){
+                console.log(req.files)
+                let image1, image2;
+                let image1Full = req.files.find(image => image.fieldname == 'image1');
+                let image2Full = req.files.find(image => image.fieldname == 'image2');
+                console.log(image1Full, image2Full)
+                if(image1Full !== undefined)  {
+                    image1 = image1Full.filename;
+                }
+                if(image2Full !== undefined)  {
+                    image2 = image2Full.filename;
+                }
+                console.log(image1, image2)
+                db.Product.findByPk(productId)
+                    .then(product => {
+                        if(product.image1 !== 'default-user.png' && image1 === undefined ){
+                            image1 = product.image1
+                        }
+                        if(product.image2 !== 'default-user.png' && image2 === undefined){
+                            image2 = product.image2
+                        }
+                        console.log(image1,image2)
+                    })
+                    .catch(error => console.log(error))
 // Ordenamos la info recibida en el formulario
         const productName = req.body.name,
                 productDescription = req.body.description,
@@ -185,8 +208,8 @@ const productController = {
                 description: productDescription,
                 price: productPrice,
                 discount: productDiscount,
-                image_1: req.files.length > 0 ? req.files[0].filename : undefined,
-                image_2: req.files.length > 1 ? req.files[1].filename : undefined,
+                image_1: image1,
+                image_2: image2,
                 category_id: productCategory,
                 material_id: productMaterial 
         },{
@@ -214,6 +237,14 @@ const productController = {
                     include: ['material', 'category']
                 })
                     .then(product => {
+                        if(req.files) {
+                            req.files.forEach(file => {
+                                const imgPath = path.join(__dirname, `../../public/img/${product.category.name}/${file.filename}`)
+                                fs.unlink(imgPath, error => {
+                                    if (error) console.log(error);
+                                })
+                            })
+                        }
                         res.render('./admin/addProduct', {product: product, errors: errors, old: old, edit: true, user: req.session.user ? req.session.user : undefined})
                     })
                     .catch(error => console.log(error))
@@ -222,13 +253,31 @@ const productController = {
     delete: (req,res) => {
         //Borrado de productos con Sequelize
         let id = req.params.id;
+        db.Product.findByPk(id, {
+            include: ['category', 'material']
+        })
+            .then(product => {
+                const files = [];
+                if(product.image_1 != 'default-image.svg'){
+                   files.push(product.image_1)
+                }
+                if(product.image_2 != 'default-image.svg'){
+                   files.push(product.image_2)
+                }
+                if(files.length > 0){
+                   files.forEach(file => {
+                        const imgPath = path.join(__dirname, `../../public/img/${product.category.name}/${file}`)
+                        fs.unlink(imgPath, error => {
+                            if (error) console.log(error);
+                        })
+                    })
+                }
+            })
         db.Product.destroy({
             where: {id : id}
         }).then(()=>{
             res.redirect('/');
         }).catch(error => console.log(error))
-        
-
     },
     finalizaCompra : (req, res) => {
         res.render('./products/finalizaCompra', {user: req.session.user ? req.session.user : undefined});
