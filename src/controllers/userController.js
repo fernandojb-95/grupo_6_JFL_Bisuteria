@@ -43,22 +43,6 @@ const userController = {
             .then(user => {
                 res.redirect('/');
             }).catch(error => console.log(error))
-
-                //Creamos el JSON con los datos del nuevo usuario
-                // const newUser ={
-                //     id: users[users.length -1].id + 1,
-                //     first_name: userName,
-                //     last_name: lastNameUser,
-                //     email: email,
-                //     password: password,
-                //     category: category,
-                //     image: userImage
-                // }
-
-                // users.push(newUser);
-
-                // //Reescribiendo usuarios
-                // fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
         }
         else{
             if(req.file){
@@ -110,10 +94,16 @@ const userController = {
     confirmEdit: (req,res) => {
         let userId = req.params.id;
         const user = req.session.user;
-
-        let errorsList = validationResult(req);
-        let errors = errorsList.array()
-        if(errorsList.isEmpty() && !req.fileValidationError){
+        let errorsList = validationResult(req).array();
+        console.log(errorsList)
+        if(req.body.password === '' && req.body.passwordConfirm === ''){
+            errorsList = errorsList.filter(error => {
+                if(error.param !== 'password' && error.param !== 'passwordConfirm'){
+                 return error
+                } 
+             })
+        }
+        if(errorsList.length === 0 && !req.fileValidationError){
             let userName = req.body.user,
                 lastNameUser = req.body.lastname,
                 userImage = "",
@@ -126,23 +116,23 @@ const userController = {
             //Condicion para diferenciar usuarios o administradores
             let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
 
-            db.User.update({
-                first_name: userName,
-                last_name: lastNameUser,
-                email: email,
-                password: password,
-                isAdmin: isAdmin,
-                image: userImage
-            },{
-                where: {
-                    id: userId
-                }
-            }).then( () => {
-                res.redirect('/');
-            })
-            .catch(error => console.log(error))
+            // db.User.update({
+            //     first_name: userName,
+            //     last_name: lastNameUser,
+            //     email: email,
+            //     password: password,
+            //     isAdmin: isAdmin,
+            //     image: userImage
+            // },{
+            //     where: {
+            //         id: userId
+            //     }
+            // }).then( () => {
+            //     res.redirect('/');
+            // })
+            // .catch(error => console.log(error))
+            res.redirect('/')
         }else{
-
             if(req.file){
                 const imgPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`)
                 fs.unlink(imgPath, error => {
@@ -151,7 +141,7 @@ const userController = {
             }
 
             if(req.fileValidationError) errors.push((req.fileValidationError))
-            res.render('./users/userForm',{errors: errors, old:req.body, user});
+            res.render('./users/userForm',{errors: errorsList, old:req.body, user});
         }
     },
     delete: (req,res) => {

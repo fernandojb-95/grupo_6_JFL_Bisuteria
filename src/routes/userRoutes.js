@@ -23,7 +23,7 @@ const validateRegister = [
 //Validar que la contraseña y la confirmacion de la contraseña coincidan
  const validatePassword = [ 
      body('passwordConfirm').custom(( value, { req }) => {
-        if (value !== req.body.password) {
+        if (value == '' || value !== req.body.password) {
             throw new Error('Las contraseñas introducidas no coinciden');
     }
     return true;
