@@ -12,28 +12,66 @@
             <section class="register-title">
                 <h1>Regístrate</h1>
                 <p>Llena los siguientes campos para completar tu registro</p>
-            </section>
-            <section class="register-errors">
-                <%if (locals.errors) { %>
-                    <% errors.forEach(error => {%>
-        
-                        <p> <%=error.msg %></p>
-        
-                    <% })%>
-                <% }%>
-            </section>
-           
+            </section>          
             <form class= "register-form" action="/user/register" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
-                    <input type="text" placeholder="Nombre(s)" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
-                    <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">
-                    <input type="email" placeholder="Correo electrónico" name="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
-                    <input type="password" placeholder="Contraseña" name="password" class="pass-input">
-                    <input type="password" placeholder="Confirmar contraseña" name="passwordConfirm" class="pass-confirm-input ">
-                    <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
-
-                    <label for="imagenUsuario" >Imagen de perfil: </label>
-                    <input type="file" name="imagenUsuario">
+                    <section class="input-field">
+                        <input type="text" placeholder="Nombre(s) *" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'user') {%>
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                    </section>
+                    <section class="input-field">
+                        <input type="text" placeholder="Apellido(s) *" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">                    
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'lastname') {%>
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                    </section>
+                    <section class="input-field">
+                        <input type="email" placeholder="Correo electrónico *" name="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'email') {%>
+    
+                                <p class="register-errors"> <%=typeof error.msg === "object" ? error.msg.msg : error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                    </section>
+                    <section class="input-field">
+                        <input type="password" placeholder="Contraseña *" name="password" class="pass-input">
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'password' ) {%>
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                    </section>
+                    <section class="input-field">
+                        <input type="password" placeholder="Confirmar contraseña *" name="passwordConfirm" class="pass-confirm-input ">
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'passwordConfirm') {%>
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                        <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
+                    </section>
+                    <section class="input-field">
+                        <label for="imagenUsuario" >Imagen de perfil: </label>
+                        <input type="file" name="imagenUsuario">
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'imagenUsuario') {%>
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
+                    </section>       
                 </div>
                 <div class="checkitems">
                     <div class="check">

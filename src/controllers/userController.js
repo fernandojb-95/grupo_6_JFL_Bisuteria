@@ -16,8 +16,10 @@ const userController = {
 
         //Logica para validar los campos recibidos
         let errorsList = validationResult(req);
-        let errors = errorsList.array()
-        if(errorsList.isEmpty() && !req.fileValidationError){
+        let errors = errorsList.array();
+        if(req.fileValidationError) 
+            errors.push((req.fileValidationError))
+        if(errors.length === 0 && !req.fileValidationError){
             //Lógica para almacenar usuarios nuevos
             const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
             let userName = req.body.user,
@@ -51,7 +53,6 @@ const userController = {
                     if (error) console.log(error);
                 })
             }
-            if(req.fileValidationError) errors.push((req.fileValidationError))
             res.render('./users/register',{errors: errors, old:req.body});
         }
     },
@@ -63,17 +64,22 @@ const userController = {
                 email: email
             }
         })
-        .then(user => {
-            const comparison = bcrypt.compareSync(password,user.password);
-            if(user === undefined || !comparison){
+        .then(user => {            
+            if(user === null){
                 res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
             }
             else {
-                req.session.user = user;
-                if(req.body.remember != undefined){
-                    res.cookie('remember', user.email, {maxAge: 60000})
+                const comparison = bcrypt.compareSync(password,user.password);
+                if(!comparison){
+                    res.render('./users/login', {msg: 'Tu correo o tu contraseña son incorrectos'})
                 }
-                res.redirect('/');
+                else{
+                    req.session.user = user;
+                    if(req.body.remember != undefined){
+                        res.cookie('remember', user.email, {maxAge: 600000000})
+                    }
+                    res.redirect('/');
+                }
             }
         })
         .catch(error => console.log(error))
@@ -95,7 +101,6 @@ const userController = {
         let userId = req.params.id;
         const user = req.session.user;
         let errorsList = validationResult(req).array();
-        console.log(errorsList)
         if(req.body.password === '' && req.body.passwordConfirm === ''){
             errorsList = errorsList.filter(error => {
                 if(error.param !== 'password' && error.param !== 'passwordConfirm'){
@@ -108,30 +113,33 @@ const userController = {
                 lastNameUser = req.body.lastname,
                 userImage = "",
                 email = req.body.email,
-                password = bcrypt.hashSync(req.body.password,10);
-
+                password = req.body.password != '' ? bcrypt.hashSync(req.body.password,10) : user.password;
             //Asignamos el nombre del archivo o la imagen por default
             req.file ? userImage =  req.file.filename : userImage = "default-user.png";
 
             //Condicion para diferenciar usuarios o administradores
             let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
 
-            // db.User.update({
-            //     first_name: userName,
-            //     last_name: lastNameUser,
-            //     email: email,
-            //     password: password,
-            //     isAdmin: isAdmin,
-            //     image: userImage
-            // },{
-            //     where: {
-            //         id: userId
-            //     }
-            // }).then( () => {
-            //     res.redirect('/');
-            // })
-            // .catch(error => console.log(error))
-            res.redirect('/')
+            db.User.update({
+                first_name: userName,
+                last_name: lastNameUser,
+                email: email,
+                password: password,
+                isAdmin: isAdmin,
+                image: userImage
+            },{
+                where: {
+                    id: userId
+                }
+            }).then( () => {
+                db.User.findByPk(userId)
+                    .then(user => {
+                        req.session.user = user;
+                        res.redirect('/');
+                    })
+                    .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
         }else{
             if(req.file){
                 const imgPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`)

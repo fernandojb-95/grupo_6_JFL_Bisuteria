@@ -10,37 +10,62 @@
     <main>
         <h1>Editando información de usuario</h1>
 
-        <section class="register-errors">
-            <%if (locals.errors) { %>
-                <% errors.forEach(error => {%>
-    
-                    <p> <%=error.msg %></p>
-    
-                <% })%>
-            <% }%>
-        </section>
-        
         <form class="updating-form" action="/user/edit/<%=user.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
             <div class="tec-inputs">
                 <div class="input-section">
                     <label for="name">Nombre:</label>
                     <input type="text" name="user" class="user-input" value="<%=user.first_name%>">
+                    <%if (locals.errors) { %>
+                        <% errors.forEach(error => {%>
+                            <% if(error.param == 'user') { %>
+                            <p class="register-errors"> <%=error.msg %></p>
+                            <% } %>
+                        <%})%>
+                    <% }%>
                 </div>
                 <div class="input-section">
                     <label for="name">Apelllido: </label>
                     <input type="text" name="lastname" class="last-name-input" value="<%=user.last_name%>">
+                    <%if (locals.errors) { %>
+                        <% errors.forEach(error => {%>
+                            <% if(error.param == 'lastname') { %>
+                            <p class="register-errors"> <%=error.msg %></p>
+                            <% } %>
+                        <%})%>
+                    <% }%>
                 </div>
                 <div class="input-section">
                     <label for="name">Email: </label>
                     <input type="email" name="email" class="email-input" value="<%=user.email%>">
+                    <%if (locals.errors) { %>
+                        <% errors.forEach(error => {%>
+                            <% if(error.param == 'email') { %>
+                            <p class="register-errors"> <%=typeof error.msg === "object" ? error.msg.msg : error.msg %></p>
+                            <% } %>
+                        <%})%>
+                    <% }%>
                 </div>
                 <div class="input-section">
                     <label for="name">Nueva contraseña: </label>
                     <input type="password" name="password" class="pass-input">
+                    <%if (locals.errors) { %>
+                        <% errors.forEach(error => {%>
+                            <% if(error.param == 'password') { %>
+                            <p class="register-errors"> <%=error.msg %></p>
+                            <% } %>
+                        <%})%>
+                    <% }%>
                 </div>
                 <div class="input-section">
                     <label for="name">Confirma la nueva contraseña:</label>
                     <input type="password" name="passwordConfirm" class="pass-confirm-input">
+                    <%if (locals.errors) { %>
+                        <% errors.forEach(error => {%>
+                            <% if(error.param == 'passwordConfirm') { %>
+                            <p class="register-errors"> <%=error.msg %></p>
+                            <% } %>
+                        <%})%>
+                    <% }%>
                     <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
                 </div>
                 <div class="input-section">

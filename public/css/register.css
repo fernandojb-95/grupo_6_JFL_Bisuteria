@@ -13,18 +13,18 @@
 .register-title h1{
     font-size: 26px;
 }
-.register-errors {
-    width: 70%;
+.tec-inputs p.register-errors {
+    /* width: 70%;
     margin: 0 auto 20px auto;
-    background-color: #ffaaaa;
+    background-color: #ffaaaa; */
     color: red;
     font-size: 12px;
-    text-align: left;
-    border-radius: 20px;
+     text-align: left;
+    /* border-radius: 20px; */
+    margin-bottom: 5px;
 }
 .register-errors p{
-    padding: 5px;
-    
+    padding: 5px;    
 }
 
 .tec-inputs{
@@ -33,10 +33,17 @@
     align-items: center;
     padding-bottom: 30px;
 }
-.tec-inputs > input {
+.input-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input-field > input {
     width: 70%;
     max-width: 400px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     height: 30px;
     padding-left: 10px;
     border: 1px solid var(--light-border);

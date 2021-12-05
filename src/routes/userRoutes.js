@@ -8,6 +8,7 @@ const logMiddleware = require ('../middlewares/logMiddleware');
 
 //Requerimos multer para traer archivos
 const multer = require('multer');
+const db = require('../database/models');
 
 //Campos a validar en el formulario de registro
 const validateRegister = [
@@ -16,7 +17,26 @@ const validateRegister = [
     body('lastname')
         .isLength({min: 4}).withMessage('Debes colocar un apellido válido'), 
     body('email')
-        .isEmail().withMessage('Debes colocar email válido'),    
+        .isEmail().withMessage('Debes colocar email válido')
+        .custom( async (value, { req }) =>  {
+            const user = await db.User.findOne({
+                where: {
+                    email: value
+                }
+            })
+            if(user != null){
+                if(req.session){
+                    if(req.session.user.id != user.id) {
+                        return Promise.reject('Email already in use')
+                    }
+                } else {
+                return Promise.reject('Email already in use');
+                }
+            }
+        }).withMessage({
+            msg: 'El correo ya se encuentra registrado',
+            errorCode: 1
+        }),    
     body('password')
         .isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido')    
 ];
@@ -50,7 +70,8 @@ const fileUpload = multer({
         const ext = path.extname(file.originalname);
         if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
             req.fileValidationError = {
-                msg: 'Debes subir un archivo de imagen válido'
+                msg: 'Debes subir un archivo de imagen válido',
+                param: 'imagenUsuario'
             }
             return callback(null, false, new Error('goes wrong on the mimetype'));
         } else {
