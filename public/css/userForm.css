@@ -39,7 +39,11 @@ main{
     position: absolute;
     top: 0;
     right: 0;
+    width: 30px;
+    height: 30px;
     display: none;
+    border: none;
+    background-color: transparent;
 }
 .img-preview img{
     height: 200px;
@@ -47,6 +51,23 @@ main{
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+}
+.img-preview button i{
+    font-size: 25px;
+    color: red;
+}
+.img-preview button i:hover{
+    transform: scale(1.2);
+}
+.delete-photo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.input-section .delete-photo input{
+    width: 10%;
 }
 
 @media(min-width: 768px){

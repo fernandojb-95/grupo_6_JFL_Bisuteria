@@ -27,18 +27,17 @@ const validateRegister = [
             if(user != null){
                 if(req.session){
                     if(req.session.user.id != user.id) {
-                        return Promise.reject('Email already in use')
+                        return Promise.reject('El correo ya se encuentra registrado')
                     }
                 } else {
-                return Promise.reject('Email already in use');
+                return Promise.reject('El correo ya se encuentra registrado');
                 }
             }
-        }).withMessage({
-            msg: 'El correo ya se encuentra registrado',
-            errorCode: 1
         }),    
     body('password')
-        .isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido')    
+        .isStrongPassword({minSymbols: 0, minLength: 8}).withMessage('Escribe un formato de contraseña válido'),
+    body('authorized')
+        .exists().withMessage('Este campo debe estar marcado')    
 ];
 //Validar que la contraseña y la confirmacion de la contraseña coincidan
  const validatePassword = [ 

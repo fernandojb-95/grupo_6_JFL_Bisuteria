@@ -158,7 +158,33 @@
 .imagenes label{
     margin-left: 10px;
 }
-
+.img-preview{
+    position: relative;
+}
+.img-preview button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: none;
+    border: none;
+    background-color: transparent;
+}
+.img-preview img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.img-preview button i{
+    font-size: 25px;
+    color: red;
+}
+.img-preview button i:hover{
+    transform: scale(1.2);
+}
 .botones{
     display: flex;
     justify-content: space-evenly;
@@ -168,6 +194,10 @@
     width: 25%;
     max-width: 250px;
     padding: 5px;
+}
+.botones a{
+    display: block;
+    width: 100%;
 }
 .error-msg{
     width: 100%;

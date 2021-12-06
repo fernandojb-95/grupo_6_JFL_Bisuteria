@@ -17,6 +17,7 @@ const userController = {
         //Logica para validar los campos recibidos
         let errorsList = validationResult(req);
         let errors = errorsList.array();
+        console.log(errors)
         if(req.fileValidationError) 
             errors.push((req.fileValidationError))
         if(errors.length === 0 && !req.fileValidationError){
@@ -103,19 +104,32 @@ const userController = {
         let errorsList = validationResult(req).array();
         if(req.body.password === '' && req.body.passwordConfirm === ''){
             errorsList = errorsList.filter(error => {
-                if(error.param !== 'password' && error.param !== 'passwordConfirm'){
+                if(error.param !== 'password' && error.param !== 'passwordConfirm' && error.param != 'authorized'){
                  return error
                 } 
              })
         }
+        if(req.fileValidationError) 
+        errorsList.push((req.fileValidationError))
         if(errorsList.length === 0 && !req.fileValidationError){
             let userName = req.body.user,
                 lastNameUser = req.body.lastname,
                 userImage = "",
                 email = req.body.email,
                 password = req.body.password != '' ? bcrypt.hashSync(req.body.password,10) : user.password;
+            
             //Asignamos el nombre del archivo o la imagen por default
-            req.file ? userImage =  req.file.filename : userImage = "default-user.png";
+            req.file ? userImage =  req.file.filename : userImage = undefined;
+            
+            if(user.image !== 'default-user.png' && req.body.delete){
+                const imgPath = path.join(__dirname, `../../public/img/users/${user.image}`)
+                fs.unlink(imgPath, error => {
+                    if (error) console.log(error);
+                })
+                if(req.body.delete){
+                    userImage = 'default-user.png'
+                }
+            }
 
             //Condicion para diferenciar usuarios o administradores
             let isAdmin = email.search('@jflbisuteria.com.mx') != -1 ? 1 : 0;
@@ -135,7 +149,7 @@ const userController = {
                 db.User.findByPk(userId)
                     .then(user => {
                         req.session.user = user;
-                        res.redirect('/');
+                        res.render( './users/profile', { user, msg: '¡Tu perfil se ha actualizado con éxito!'});
                     })
                     .catch(error => console.log(error))
             })
@@ -147,17 +161,25 @@ const userController = {
                     if (error) console.log(error);
                 })
             }
-
-            if(req.fileValidationError) errors.push((req.fileValidationError))
             res.render('./users/userForm',{errors: errorsList, old:req.body, user});
         }
     },
     delete: (req,res) => {
+
         //Borrado de usuarios con Sequelize
         let id = req.params.id;
+        let user = req.session.user;
+        if(user.image !== 'default-user.png'){
+            const imgPath = path.join(__dirname, `../../public/img/users/${user.image}`)
+            fs.unlink(imgPath, error => {
+                if (error) console.log(error);
+            })
+        }
         db.User.destroy({
             where: {id : id}
         }).then(()=>{
+            req.session.destroy();
+            res.clearCookie('remember');
             res.redirect('/');
         }).catch(error => console.log(error))
     },

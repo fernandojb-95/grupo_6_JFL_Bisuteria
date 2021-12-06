@@ -39,7 +39,7 @@
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'email') {%>
     
-                                <p class="register-errors"> <%=typeof error.msg === "object" ? error.msg.msg : error.msg %></p>
+                                <p class="register-errors"> <%=error.msg %></p>
                             <% }})%>
                         <% }%>
                     </section>
@@ -64,7 +64,7 @@
                     </section>
                     <section class="input-field">
                         <div class="img-preview">
-                            <button id="delete" class="delete">X</button>
+                            <button id="delete" class="delete"><i class="far fa-times-circle"></i></button>
                         </div>
                         <label for="imagenUsuario" >Imagen de perfil: </label>
                         <input type="file" name="imagenUsuario" id="file">
@@ -78,9 +78,16 @@
                 </div>
                 <div class="checkitems">
                     <div class="check">
-                        <input type="checkbox" id="politics" required checked>
+                        <input type="checkbox" name="authorized" id="politics" required checked>
                         <label for="politics">Autorizo la creación de mi cuenta JFL Bisutería con mi dirección de correo electrónico de conformidad con lo descrito en la Política de Privacidad.
                         </label>
+                        <%if (locals.errors) { %>
+                            <% errors.forEach(error => {%>
+                                <% if(error.param == 'authorized') {%>
+    
+                                <p class="register-errors"> <%=error.msg %></p>
+                            <% }})%>
+                        <% }%>
                     </div>
                     <div class="check" >
                         <input type="checkbox" id="news" checked>

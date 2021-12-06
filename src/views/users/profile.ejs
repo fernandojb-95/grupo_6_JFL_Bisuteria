@@ -10,15 +10,16 @@
     <%- include('../partials/header') %>
     <main>
         <h1>Mi perfil</h1>
-    
         <section class="info">
             <h2>Información actual</h2>
 
             <div class="info-card">
-                <img src="/img/users/<%=usu.image%>" alt="<%=usu.first_name%>">
-                    <p class="info-element"><strong>Nombre(s):</strong>  <%=usu.first_name%></p>
-                    <p class="info-element"><strong>Apellido(s):</strong> <%=usu.last_name%></p>
-                    <p class="info-element"><strong>Email:</strong> <%=usu.email%></p>
+                <img src="/img/users/<%=user.image%>" alt="<%=user.first_name%>">
+                <div class="info-card_fields">
+                    <p class="info-element"><strong>Nombre(s):</strong>  <%=user.first_name%></p>
+                    <p class="info-element"><strong>Apellido(s):</strong> <%=user.last_name%></p>
+                    <p class="info-element"><strong>Email:</strong> <%=user.email%></p>
+                </div>
             </div>
 
             <div class="edit">
@@ -40,7 +41,8 @@
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
+        <p><%=locals.msg ? msg : ''%></p>        
     </main>
     <%- include('../partials/footer') %> 
 </body>

@@ -1,5 +1,7 @@
 @import url('general.css');
-
+main > p{
+    text-align: center;
+}
 .info-card{
     text-align: center;
 }
@@ -8,13 +10,16 @@
 }
 .info-card img {
     display: block;
-    width: 50%;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
-    max-width: 350px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .edit{
     max-width: 500px;
-    margin: 10px auto;
+    margin: 25px auto;
     display: flex;
     justify-content: space-around;
     padding-bottom: 10px;
@@ -75,19 +80,28 @@
     cursor: pointer;
 }
 
+.perfil-btn a{
+    display: block;
+    width: 100%;
+}
+.perfil-btn a:hover{
+    transform: scale(1);
+}
+
 @media(min-width: 768px){
     .info-card {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
         max-height: 350px;
     }
     .info-card img{
-        flex-grow: 1
+        margin: 0;
     }
-    .fields{
-        flex-grow: 1;
+    .info-card_fields{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
     .ventanaEmergente{
         width: 30%;

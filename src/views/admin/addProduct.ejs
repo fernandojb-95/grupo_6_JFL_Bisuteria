@@ -167,10 +167,16 @@
                             <div class="imagenes">
                                 <ul>
                                     <li>
-                                        <input type="file" name="image1" id="image" placeholder="Subir"><label>Imagen 1</label>
+                                        <div class="img-preview">
+                                            <button id="delete" class="delete"><i class="far fa-times-circle"></i></button>
+                                        </div>
+                                        <input class="image-file" type="file" name="image1" id="image-file-1" placeholder="Subir"><label>Imagen 1</label>
                                     </li>
                                     <li>
-                                        <input type="file" name="image2" id="image"><label>Imagen 2</label>
+                                        <div class="img-preview">
+                                            <button id="delete" class="delete"><i class="far fa-times-circle"></i></button>
+                                        </div>
+                                        <input class="image-file" type="file" name="image2" id="image-file-2"><label>Imagen 2</label>
                                     </li>
                                 </ul>
                                 <% if(locals.errors) { %>
@@ -193,4 +199,5 @@
         </div>
         
     </main>
+    <script src="/js/addProduct.js"></script>
 </body>
