@@ -90,6 +90,22 @@ main p a{
     color: var(--dark);
     font-weight: bold;
 }
+.img-preview{
+    position: relative;
+}
+.img-preview button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.img-preview img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
 /*-------------------Media querie para tablet---------------------*/
 @media(min-width: 768px){
     .register{

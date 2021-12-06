@@ -69,8 +69,11 @@
                     <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
                 </div>
                 <div class="input-section">
+                    <div class="img-preview">
+                        <button id="delete" class="delete">X</button>
+                    </div>
                     <label for="imagenUsuario" >Imagen de perfil: </label>
-                    <input type="file" name="imagenUsuario">
+                    <input type="file" name="imagenUsuario" id="file">
                 </div>
             </div>
             <div class="checkitems">
@@ -82,5 +85,6 @@
         </form>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/userForm.js"></script>
 </body>
 </html>

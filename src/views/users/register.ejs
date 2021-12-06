@@ -63,8 +63,11 @@
                         <p class="label">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número</p>
                     </section>
                     <section class="input-field">
+                        <div class="img-preview">
+                            <button id="delete" class="delete">X</button>
+                        </div>
                         <label for="imagenUsuario" >Imagen de perfil: </label>
-                        <input type="file" name="imagenUsuario">
+                        <input type="file" name="imagenUsuario" id="file">
                         <%if (locals.errors) { %>
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'imagenUsuario') {%>
@@ -91,5 +94,6 @@
                 <p>Ya tienes una cuenta, <a href="/user/login">Inicia sesión</a></p>
         </div>
     </main>
+    <script src="/js/register.js"></script>
 </body>
 </html>
