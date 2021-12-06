@@ -4,6 +4,7 @@
     <%- include('../partials/head') %>
     <title>Mi perfil</title>
     <link rel="stylesheet" href="/css/profile.css">
+    <script src="/js/profile.js"></script>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -22,9 +23,7 @@
 
             <div class="edit">
                 <button class="perfil-btn"><a href="/user/edit/<%=user.id%>">Modificar información</a></button>
-                <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-                    <button type="submit" class="perfil-btn">Borrar mi cuenta</button>
-                </form>
+                <button class="perfil-btn" id="borrar-cuenta">Borrar mi cuenta</button>
             </div>
 
             <div class="ventana">
@@ -34,8 +33,10 @@
                     </div>
                 
                     <div class="botones-ventana">
-                        <button class="confirmar-btn">Cancelar</button>
-                        <button class="confirmar-btn">Aceptar</button>
+                        <button class="confirmar-btn" id="cancelar">Cancelar</button>
+                        <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+                            <button type="submit" class="confirmar-btn">Aceptar</button>
+                        </form>
                     </div>
                 </div>
             </div>

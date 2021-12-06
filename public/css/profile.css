@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
+    visibility:hidden;
 }
 
 .ventanaEmergente{
@@ -58,6 +58,8 @@
 
 .botones-ventana{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .confirmar-btn{
