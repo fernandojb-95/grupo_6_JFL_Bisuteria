@@ -168,27 +168,39 @@ const productController = {
         const errorsList = validationResult(req),
             errors = errorsList.array();
             if(errors.length == 0){
-                console.log(req.files)
                 let image1, image2;
                 let image1Full = req.files.find(image => image.fieldname == 'image1');
                 let image2Full = req.files.find(image => image.fieldname == 'image2');
-                console.log(image1Full, image2Full)
                 if(image1Full !== undefined)  {
                     image1 = image1Full.filename;
                 }
                 if(image2Full !== undefined)  {
                     image2 = image2Full.filename;
                 }
-                console.log(image1, image2)
-                db.Product.findByPk(productId)
+                db.Product.findByPk(productId, {
+                    include : ['material', 'category']
+                })
                     .then(product => {
-                        if(product.image1 !== 'default-user.png' && image1 === undefined ){
-                            image1 = product.image1
+                        if(product.image_1 !== 'default-user.png' && image1 === undefined ){
+                            image1 = product.image_1
+                        } else{
+                            if(product.image_1 !== 'default-user.png'){
+                                const imgPath = path.join(__dirname, `../../public/img/${product.category.name}/${product.image_1}`)
+                                fs.unlink(imgPath, error => {
+                                    if (error) console.log(error);
+                                })
+                            }
                         }
-                        if(product.image2 !== 'default-user.png' && image2 === undefined){
-                            image2 = product.image2
+                        if(product.image_2 !== 'default-user.png' && image2 === undefined){
+                            image2 = product.image_2
+                        } else{
+                            if(product.image_2 !== 'default-user.png'){
+                                const imgPath = path.join(__dirname, `../../public/img/${product.category.name}/${product.image_2}`)
+                                fs.unlink(imgPath, error => {
+                                    if (error) console.log(error);
+                                })
+                            }
                         }
-                        console.log(image1,image2)
                     })
                     .catch(error => console.log(error))
 // Ordenamos la info recibida en el formulario
@@ -204,7 +216,7 @@ const productController = {
 
         //Almacenando valores mediante Sequelize
         const updating = db.Product.update({
-            name: req.body.name,
+            name: productName,
                 description: productDescription,
                 price: productPrice,
                 discount: productDiscount,
