@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/productDetail.css">
+    <script src="/js/productDetail.js"></script>
     <title>JFL Bisutería</title>
 </head>
 <body>
@@ -39,7 +40,6 @@
                                 <option value="S">S</option>
                                 <option value="M">M</option>
                                 <option value="L">L</option>
-                                <option value="XL">XL</option>
                             </select>
                         </div>
                         <div class="resalta-campo">
@@ -59,14 +59,28 @@
                     <% if(locals.user && user.isAdmin == 1) { %>
                     <section class="user-options">
                         <a href="/products/<%=product.id%>/edit" class="editar"><button class="editar-btn">Editar</button></a>
-                        <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
-                            <button type="submit" class="borrar-btn">Borrar</button>
-                        </form>
+                            <button class="borrar-btn" id="borrar-producto">Borrar</button>
                     </section>
                     <% } %>
                 </div>
             </div>
         </section>
+
+        <section class="ventana">
+            <div class="ventanaEmergente">
+                <div class="texto-ventana">
+                    <p>¿Realmente desea borrar el producto?</p>
+                </div>
+            
+                <div class="botones-ventana">
+                    <button class="confirmar-btn" id="cancelar">Cancelar</button>
+                    <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
+                        <button type="submit" class="confirmar-btn">Aceptar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="comment-section">
             <%if (locals.user) { %>
             <section class="add-comment">
