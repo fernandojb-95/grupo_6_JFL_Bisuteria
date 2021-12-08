@@ -25,7 +25,12 @@ const productController = {
         Promise 
             .all([product, comments])
             .then(([product, comments]) => {
-                 res.render('./products/productDetail', {product: product, comments: comments,user: req.session.user ? req.session.user : undefined });     
+                let newPrice;
+                if(product.discount > 0) {
+    
+                    newPrice = parseFloat(product.price)*(1-(parseFloat(product.discount*0.01))).toFixed(2)
+                }
+                 res.render('./products/productDetail', {product: product, newPrice: newPrice, comments: comments,user: req.session.user ? req.session.user : undefined });     
             })
     },
     productCart : (req, res) => {

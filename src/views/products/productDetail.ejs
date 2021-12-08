@@ -17,7 +17,9 @@
                 <div>
                     <img class="imagen-principal" src="/img/<%=product.category.name%>/<%=product.image_1%>" alt="">
                 </div>
-          
+                <div>
+                    <img class="imagen-sec" src="/img/<%=product.category.name%>/<%=product.image_2%>" alt="">
+                </div>
             </div>
             <!-- </div> -->
             <div class="descripciones">
@@ -31,26 +33,33 @@
                 <div class="datos-compra">
                     <form action="">
                         <div class="resalta-campo">
-                            <p><strong>Precio: </strong> <span>$<%=product.price%></span></p>
-                            <p><strong>Material: </strong> <span><%= product.material.name%></span></p>
-                        </div>
-                        <div class="resalta-campo">
-                            <label for="seleccionTalla">Talla: </label>
-                            <select name="size" id="seleccionTalla">
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                            </select>
-                        </div>
-                        <div class="resalta-campo">
-                            <label  for="cantidad">Cantidad:</label>
-                            <select name="quantity" id="cantidad" class="quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select> 
+                            <div class="field-row">
+                                <p>Precio: </p>
+                                <span class="<%= product.discount > 0 ? 'old-price' : '' %>"> $<%=product.price%></span>
+                                <% if (product.discount > 0) { %>
+                                    <span class="real-price">$ <%=newPrice.toFixed(2)%></span>
+                                <% } %>
+                            </div>
+                            <div class="field-row">
+                                <p>Material: </p> 
+                                <span><%= product.material.name%></span>
+                            </div>
+                            <div class="field-row">
+                                <p for="seleccionTalla">Talla: </p>
+                                <select name="size" id="seleccionTalla">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <div class="field-row quant-container">
+                                <p>Cantidad:</p>
+                                <div class="quant-control">
+                                    <button id="substract"><i class="fas fa-minus-circle"></i></button>
+                                        <input type="number" value="0" id="quantInput">
+                                    <button id="add"><i class="fas fa-plus-circle"></i></button>
+                                </div>
+                            </div>
                         </div>
                         <div class="contenedor-btn">
                             <button type="submit" class="submit btn">Añadir al carrito</button>
@@ -58,7 +67,7 @@
                     </form>
                     <% if(locals.user && user.isAdmin == 1) { %>
                     <section class="user-options">
-                        <a href="/products/<%=product.id%>/edit" class="editar"><button class="editar-btn">Editar</button></a>
+                       <button class="editar-btn"> <a href="/products/<%=product.id%>/edit" class="editar">Editar</a></button>
                             <button class="borrar-btn" id="borrar-producto">Borrar</button>
                     </section>
                     <% } %>

@@ -2,7 +2,7 @@
 
 /* Estilos de visualizacion del producto */
 
-.selector-imagenes{
+/* .selector-imagenes{
     display: flex;
     justify-content: space-around;
     margin: 15px 10px 10px;
@@ -34,7 +34,9 @@
 
 .img-container img{
     width: 100%;
-}
+} */
+
+
  /* Estilos de los detalles del producto */
 
  .nombre-producto{
@@ -53,10 +55,34 @@
 .descripcion-producto > div{
     margin-top: 30px;
 }
- .datos-compra{
+.datos-compra{
      display: flex;
      flex-direction: column;
      justify-content: space-around;
+ }
+.field-row{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.field-row p{
+    width: 100px;
+}
+.field-row > span, select {
+    display: block;
+    margin: 0 auto;
+}
+ .old-price{
+     text-decoration: line-through;
+     position: absolute;
+     left: 30%;
+ }
+ .real-price{
+     color: green;
+     font-weight: bold;
+     font-size: 20px;
  }
 .datos-compra  .resalta-campo span{
     font-weight: normal;
@@ -65,12 +91,6 @@
     font-weight: bold;
     text-transform: capitalize;
     padding: 10px;
-}
-.resalta-campo p{
-    margin-top: 20px;
-}
-.resalta-campo span{
-    padding-left: 20px;
 }
 .resalta-campo label{
     display: inline-block;
@@ -86,6 +106,42 @@
     max-width: 250px;
 }
 
+/*Estilos para cantidades*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.quant-control{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.quant-control input{
+    width: 70px;
+    text-align: center;
+    font-size: 14px;
+}
+.quant-control button{
+    background-color: transparent;
+    border: none;
+}
+.quant-control button:hover{
+    transform: scale(1.2);
+}
+.quant-control i{
+    font-size: 20px;
+    color: var(--dark);
+}
+.quant-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
 /* Escalamiento de imagenes */
 
 .imagen-principal{
@@ -94,6 +150,19 @@
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+}
+.imagen-sec{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    object-position: center;
+    object-fit: cover;
+    margin: 10px auto;
+    opacity: 0.7;
+}
+.imagen-sec:hover{
+    opacity: 1;
 }
 /* Estilos para antes del media querie */
 
@@ -179,6 +248,9 @@
     margin: 10px auto;
     display: block;
     height: 30px;
+}
+.user-options a{
+    color: var(--gold)
 }
 
 .editar-btn, .borrar-btn{
@@ -326,6 +398,9 @@ transform:scale(1);
     }
     .user-options{
         flex-direction: row;
+    }
+    .user-options button{
+        width: 35%;
     }
     .ventanaEmergente{
         width: 30%;

@@ -71,9 +71,6 @@ const verifyString = ( s, input, length, errors) => {
     })
 
     form.addEventListener('submit', (e) => {
-        const errorsDiv = [...document.querySelectorAll('.error-container')]
-        console.log(errorsDiv)
-        e.preventDefault()
         const errors = []
         let errorsContainer;
         const name = e.target.name,
@@ -110,19 +107,22 @@ const verifyString = ( s, input, length, errors) => {
             errors.push(errorMsg)
         }
         console.log(errors)
-
-        errorsContainer = document.createElement('ul');
-        errorsContainer.id = 'errorsList'
-        errorsContainer.classList.add('errors-list')
-        if(document.getElementById('errorsList'))
-            document.getElementById('errorsList').remove()
-        errors.forEach(error => {
-            errorsContainer.innerHTML += `<li class="error-msg">${error.msg}</li>` 
-        })
-        form.insertAdjacentElement('beforebegin',errorsContainer)
-
-        if(errors.length == 0){
-            form.submit();
+        if(errors.length > 0){
+            e.preventDefault();
+            errorsContainer = document.createElement('ul');
+            errorsContainer.id = 'errorsList'
+            errorsContainer.classList.add('errors-list')
+            if(document.getElementById('errorsList'))
+                document.getElementById('errorsList').remove()
+            errors.forEach(error => {
+                errorsContainer.innerHTML += `<li class="error-msg">${error.msg}</li>` 
+            })
+            form.insertAdjacentElement('beforebegin',errorsContainer)
+    
+            if(errors.length == 0){
+                form.submit();
+            }
         }
+
     })
 }
