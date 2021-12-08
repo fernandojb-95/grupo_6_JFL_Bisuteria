@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": 'MyFDSql10',
+    "password": 'luis230296',
     "database": "jfl_database",
     "host": "127.0.0.1",
     "dialect": "mysql"

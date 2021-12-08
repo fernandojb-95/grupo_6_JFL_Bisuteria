@@ -13,10 +13,10 @@
                 <h1>Regístrate</h1>
                 <p>Llena los siguientes campos para completar tu registro</p>
             </section>          
-            <form class= "register-form" action="/user/register" method="POST" enctype="multipart/form-data">
+            <form class= "register-form" id="register-form" action="/user/register" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
                     <section class="input-field">
-                        <input type="text" placeholder="Nombre(s) *" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
+                        <input type="text" placeholder="Nombre(s) *" name="user" id="nombre" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
                         <%if (locals.errors) { %>
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'user') {%>
@@ -25,7 +25,7 @@
                         <% }%>
                     </section>
                     <section class="input-field">
-                        <input type="text" placeholder="Apellido(s) *" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">                    
+                        <input type="text" placeholder="Apellido(s) *" name="lastname" id="apellido" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">                    
                         <%if (locals.errors) { %>
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'lastname') {%>
