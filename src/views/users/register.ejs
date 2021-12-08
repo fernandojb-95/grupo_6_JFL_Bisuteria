@@ -34,7 +34,7 @@
                         <% }%>
                     </section>
                     <section class="input-field">
-                        <input type="email" placeholder="Correo electrónico *" name="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
+                        <input type="email" placeholder="Correo electrónico *" name="email" id="email" class="email-input" value="<%=locals.old && old.email ? old.email : '' %>">
                         <%if (locals.errors) { %>
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'email') {%>
@@ -44,7 +44,7 @@
                         <% }%>
                     </section>
                     <section class="input-field">
-                        <input type="password" placeholder="Contraseña *" name="password" class="pass-input">
+                        <input type="password" placeholder="Contraseña *" name="password" id="contraseña" class="pass-input">
                         <%if (locals.errors) { %>
                             <% errors.forEach(error => {%>
                                 <% if(error.param == 'password' ) {%>

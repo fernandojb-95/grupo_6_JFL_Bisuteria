@@ -16,7 +16,7 @@ const verifyNumber = ( n, input, errors) => {
 }
 const verifyString = ( s, input, length, errors) => {
     const chain = s.value.replace(/ /g, '')
-    if(chain.length === 0 || s.value < length){
+    if(chain.length === 0 || s.value.length< length){
         const errorMsg = {
             msg: `Formato de ${input.id} inválido`,
             name: `${input.name}-error`
@@ -120,5 +120,9 @@ const verifyString = ( s, input, length, errors) => {
             errorsContainer.innerHTML += `<li class="error-msg">${error.msg}</li>` 
         })
         form.insertAdjacentElement('beforebegin',errorsContainer)
+
+        if(errors.length == 0){
+            form.submit();
+        }
     })
 }

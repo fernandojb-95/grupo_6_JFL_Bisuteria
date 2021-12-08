@@ -6,7 +6,7 @@ window.onload = () => {
 
     const verifyString = ( s, input, length, errors) => {
         const chain = s.value.replace(/ /g, '')
-        if(chain.length === 0 || s.value < length){
+        if(chain.length === 0 || s.value.length < length){
             const errorMsg = {
                 msg: `Formato de ${input.id} inválido`,
                 name: `${input.name}-error`
@@ -14,6 +14,17 @@ window.onload = () => {
             errors.push(errorMsg)
         }
     }
+
+    const validateEmail = (email,errors) => {
+        if(!String(email.value).match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
+            {
+                const errorMsg = {
+                    msg: `Formato de ${email.id} inválido`,
+                    name: `${email.name}-error`
+                }
+                errors.push(errorMsg)
+            }
+      };
 
     
     file.addEventListener('change', function(e) {
@@ -45,7 +56,10 @@ window.onload = () => {
     formulario.addEventListener('submit', function (e){
         e.preventDefault();
         const name = e.target.user,
-            lastname = e.target.lastname;
+            lastname = e.target.lastname,
+            email = e.target.email,
+            password = e.target.password
+            ;
 
         const errors = [];
         
@@ -53,6 +67,8 @@ window.onload = () => {
 
         verifyString(name, name, 2, errors);
         verifyString(lastname, lastname, 2, errors);
+        validateEmail(email,errors);
+        verifyString(password, password, 8, errors);
 
         errorsContainer = document.createElement('ul');
         errorsContainer.id = 'errorsList'
@@ -62,7 +78,11 @@ window.onload = () => {
         errors.forEach(error => {
             errorsContainer.innerHTML += `<li class="error-msg">${error.msg}</li>` 
         })
-        formulario.insertAdjacentElement('beforebegin',errorsContainer)
+        formulario.insertAdjacentElement('beforebegin',errorsContainer);
+
+        if(errors.length == 0){
+            formulario.submit();
+        }
 
     })
 }
