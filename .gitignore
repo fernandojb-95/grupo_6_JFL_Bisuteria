@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #database config
-database/config/
+./src/database/config/*
