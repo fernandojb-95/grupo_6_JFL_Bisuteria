@@ -72,3 +72,34 @@ En este sprint nos encargamos de hacer el CRUD de productos y generar los archiv
 
 ## ¿Qué deberíamos dejar de hacer?
 - Aún es posible mejorar en pequeños detalles que den más valor al proyecto, complementando lo visto en las clases y lo solicitado en el sprint.
+
+# Retro Sprint 5
+En este sprint nos encargamos de implementar el registro y login de usuarios, realizando las validaciones respectivas con express-validator y la carga de archivos al servidor mediante multer.
+
+## ¿Qué se hizo bien?
+- Se cumplieron los objetivos planteados para la entrega del sprint.
+
+## ¿Qué se hizo mal?
+- Debido a la diversa carga de actividades de cada integrante no se pudieron realizar algunas tareas de manera conjunta por lo que se generaron algunas dudas.
+
+## ¿Qué deberíamos empezar a hacer o seguir haciendo?
+- Dar espacio en las reuniones para resolver dudas específicas o realizar conjuntamente una actividad para que todos los integrantes vean el proceso de cada uno para la resolución de problemas.
+
+## ¿Qué deberíamos dejar de hacer?
+- El no preguntar o ahondar en temas vistos en clase y no prestar atención a los pequeños detalles para hacer más valioso el producto.
+
+# Retro Sprint 6
+En este sprint nos encargamos de generar los archivos de la base de datos, la estructura, los datos y utilizar Sequelize para poder acceder a nuestra base desde Express; de igual manera, se realizó el CRUD de productos y usuarios mediante Sequelize 
+
+## ¿Qué se hizo bien?
+- Se cumplieron los objetivos planteados para la entrega del sprint.
+- Se corrigieron detalles y dudas de sprints anteriores y se agregaron más funcionalidades.
+
+## ¿Qué se hizo mal?
+- Se tuvieron inconvenientes en el equipo por falta de comunicación y se detuvo un poco el fluj de trabajo durante el desarrollo.
+
+## ¿Qué deberíamos empezar a hacer o seguir haciendo?
+- Sostener reuniones de manera más frecuente para ultimar detalles de funciones previas al comienzo de su implementación o entrega.
+
+## ¿Qué deberíamos dejar de hacer?
+- El no preguntar o ahondar en temas vistos en clase y no prestar atención a los pequeños detalles para hacer más valioso el producto.
