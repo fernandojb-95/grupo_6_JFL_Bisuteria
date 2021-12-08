@@ -206,6 +206,13 @@
     font-size: 12px;
     margin-top: 5px;
 }
+.errors-list{
+    list-style: none;
+    width: 80%;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+}
 @media(min-width: 768px){
     .descuento{
         margin-top: 0;

@@ -43,30 +43,35 @@
                 <% } %>
                 <div class="agregar-product">
                     <h2>Agregando la información</h2>
-                    <form action="/products/<%=locals.edit ? locals.product ? product.id + '?_method=PATCH' : old.id + '?_method=PATCH'  : ''%>" method= "post" enctype="multipart/form-data">
+                    <form action="/products/<%=locals.edit ? locals.product ? product.id + '?_method=PATCH' : old.id + '?_method=PATCH'  : ''%>" method= "post" enctype="multipart/form-data" id="productForm">
                         <section class="nombre">
                             <label for="nombre">Nombre del producto: </label>
                             <input type="text" name ="name" id="nombre" placeholder="Nombre" value="<%= locals.old ? old.name : ''%>">
-                            <% if(locals.errors) { %>
-                                <%errors.forEach(error => { %>
-                                    <%if(error.param == 'name') { %>
-                                        <p class="error-msg"><%=error.msg%></p>
-                                    <% } %>
-                                <% }) %>
-                            <% } %>
+                            <div class="error-container" id="name-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'name') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
                         </section>
         
                         <section class="descripcion">  
                             <label for="descripcion">Descripción:</label>
                             <textarea name ="description" id="descripcion" rows="5" placeholder="Escribe una breve descripción" ><%= locals.old ? old.description : ''%></textarea>
-                            <% if(locals.errors) { %>
-                                <%errors.forEach(error => { %>
-                                    <%if(error.param == 'description') { %>
-                                        <p class="error-msg"><%=error.msg%></p>
-                                    <% } %>
-                                <% }) %>
-                            <% } %>
+                            <div class="error-container" id="description-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'description') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
                         </section>
+
                         <section class="price-discount">
                             <section class="precio">
                                 <label for="precio">Precio: $</label>
@@ -76,16 +81,27 @@
                                 <label for="descuento">Descuento:</label>
                                 <input type="number" name="discount" id="descuento" step="any" value="<%= locals.old ? old.discount : 0%>"><label>%</label>
                             </section>
-                            <% if(locals.errors) { %>
-                                <%errors.forEach(error => { %>
-                                    <%if(error.param == 'price' || error.param == 'discount') { %>
-                                        <p class="error-msg"><%=error.msg%></p>
-                                    <% } %>
-                                <% }) %>
-                            <% } %>
+
+                            <div class="error-container" id="price-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'price') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
+                            <div class="error-container" id="discount-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'discount') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
                         </section>
-        
-        
+
                         <section class="categoria">
                             <label for="categoria">Categoría: </label>
                             <div class="category-container">
@@ -102,14 +118,17 @@
                                     <label for="brazaletes"> Brazaletes</label>
                                 </div>
                             </div>
-                            <% if(locals.errors) { %>
-                                <%errors.forEach(error => { %>
-                                    <%if(error.param == 'category') { %>
-                                        <p class="error-msg"><%=error.msg%></p>
-                                    <% } %>
-                                <% }) %>
-                            <% } %>
+                            <div class="error-container" id="category-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'category') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
                         </section>
+
                         <section class="materials">
                             <label for="materials">Material: </label>
                             <div class="materials-container">
@@ -133,6 +152,15 @@
                                     <% } %>
                                 <% }) %>
                             <% } %>
+                            <div class="error-container" id="material-error">
+                                <% if(locals.errors) { %>
+                                    <%errors.forEach(error => { %>
+                                        <%if(error.param == 'materials') { %>
+                                            <p class="error-msg"><%=error.msg%></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
+                            </div>
                         </section>
         
                         <section class="tallas">
@@ -154,13 +182,15 @@
                                         <input type="number" name ="quantityL" id="cant-L" value="<%= locals.old ? old.quantityL ||0 : 0%>">
                                     </div>
                                 </div>
-                                <% if(locals.errors) { %>
-                                    <%errors.forEach(error => { %>
-                                        <%if(error.param == 'quantityS' || error.param == 'quantityM' || error.param == 'quantityL') { %>
-                                            <p class="error-msg"><%=error.msg%></p>
-                                        <% } %>
-                                    <% }) %>
-                                <% } %>
+                                <div class="error-container" id="quantity-error">
+                                    <% if(locals.errors) { %>
+                                        <%errors.forEach(error => { %>
+                                            <%if(error.param == 'quantityS' || error.param == 'quantityM' || error.param == 'quantityL') { %>
+                                                <p class="error-msg"><%=error.msg%></p>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
+                                </div>
                         </section>
                         <section class="agregar-img">
                             <p><strong>Imágenes:</strong></p>
