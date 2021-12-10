@@ -3,6 +3,14 @@ window.onload = () => {
     const file = document.getElementById("file");
     let deleteButton = document.getElementById("delete");
     let formulario = document.getElementById('register-form');
+    let passwordInput = document.querySelector('#contraseña');
+    let passwordSection = document.querySelector('.pass-section');
+    let passwordEye = document.querySelector('#passEye');
+
+    let passwordConfirmSection = document.querySelector('.pass-confirm-section');
+    let passwordConfirmEye = document.querySelector('#passConfirmEye');
+    let passwordConfirmInput = document.querySelector('#contra-confirm');
+
 
     const verifyString = ( s, input, length, errors) => {
         const chain = s.value.replace(/ /g, '')
@@ -77,10 +85,8 @@ window.onload = () => {
                     preview.innerHTML = '';
                     preview.append(image);
                     preview.append(deleteButton)  
-                    }) 
-                
+                    })                
             }
-
       }) 
       
     deleteButton.addEventListener('click', function (e) {
@@ -90,7 +96,44 @@ window.onload = () => {
             document.getElementById('pre-image').remove();
             deleteButton.style.display = 'none';
         }
-    }) 
+    })
+    
+    //Validacion y mensaje para colocar contraseña correctamente
+    let passValidation;
+    passwordInput.addEventListener('input', (e) => {
+        if(!document.querySelector('#passValidation')){
+            passValidation = document.createElement('p');
+        }
+        if(!String(e.target.value).match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})")){
+            if(!document.querySelector('#passValidation')){
+                passValidation.innerText = 'La contraseña debe contener al menos 8 caracteres y una mayúscula';
+                passValidation.id = 'passValidation'
+                passValidation.classList.add('error-msg', 'error-msg-pass')
+            }
+        } else {
+            if(document.querySelector('#passValidation')){
+                passValidation.innerText = ''
+                document.querySelector('#passValidation').remove()
+            }
+        }
+        passwordSection.insertAdjacentElement('afterend', passValidation)
+    })
+
+    //Botones para hacer visible la contraseña 
+    passwordEye.addEventListener('click', () =>{
+        if(passwordInput.type == 'password')
+            passwordInput.type = 'text'
+        else
+        passwordInput.type = 'password'
+    })
+
+    passwordConfirmEye.addEventListener('click', () =>{
+        if(passwordConfirmInput.type == 'password')
+            passwordConfirmInput.type = 'text'
+        else
+        passwordConfirmInput.type = 'password'
+    })
+
 
     formulario.addEventListener('submit', function (e){
         e.preventDefault();

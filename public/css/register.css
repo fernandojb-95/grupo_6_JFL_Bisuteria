@@ -37,7 +37,7 @@ p.register-errors {
     align-items: center;
     margin-bottom: 10px;
 }
-.input-field > input {
+.input-field > input, .pass-section, .pass-confirm-section {
     width: 70%;
     max-width: 400px;
     margin-bottom: 5px;
@@ -45,6 +45,28 @@ p.register-errors {
     padding-left: 10px;
     border: 1px solid var(--light-border);
     outline: none;
+}
+#passValidation{
+    width: 70%;
+}
+.pass-section, .pass-confirm-section{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 0;
+    position: relative;
+}
+.pass-input, .pass-confirm-input{
+    border: none;
+    padding: 0 0 0 10px;
+    width: 100%;
+    outline: none;
+    height: 100%;
+}
+.pass-section i, .pass-confirm-section i{
+    position: absolute;
+    right: 10px;
+    color: var(--light-border);
 }
 .tec-inputs p.label{
     width: 70%;
