@@ -45,21 +45,42 @@ window.onload = () => {
             errors.push(errorMsg)
         }
       };
+      
     file.addEventListener('change', function(e) {
-        // Creamos el objeto de la clase FileReader
-        let reader = new FileReader();
-        // Leemos el archivo subido y se lo pasamos a nuestro fileReader
-        reader.readAsDataURL(e.target.files[0]);
-        // Le decimos que cuando este listo ejecute el código interno
-        reader.addEventListener('load', function(){
-            let image = document.createElement('img');
-            image.src = reader.result;
-            image.id = 'pre-image';
-            deleteButton.style.display = 'block'
-            preview.innerHTML = '';
-            preview.append(image);
-            preview.append(deleteButton)  
-            }) 
+        let filePath = file.value;
+            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            if(!allowedExtensions.exec(filePath)){
+                if(document.querySelector('#errorImg'))
+                document.querySelector('#errorImg').remove();
+                const imgError = document.querySelector('.addImg')
+                let errorMsg = document.createElement('p')
+                errorMsg.innerText = 'Por favor, carga un archivo con alguna de las siguientes extensiones: .jpeg/.jpg/.png/.gif.'
+                errorMsg.classList.add('error-msg')
+                errorMsg.id = 'errorImg'
+                imgError.insertAdjacentElement('beforeend', errorMsg)
+                file.value = '';
+                preview.innerHTML = '';
+            } else{
+                if(document.querySelector('#errorImg'))
+                document.querySelector('#errorImg').remove();
+
+                    // Creamos el objeto de la clase FileReader
+                    let reader = new FileReader();
+                    // Leemos el archivo subido y se lo pasamos a nuestro fileReader
+                    reader.readAsDataURL(e.target.files[0]);
+                    // Le decimos que cuando este listo ejecute el código interno
+                    reader.addEventListener('load', function(){
+                    let image = document.createElement('img');
+                    image.src = reader.result;
+                    image.id = 'pre-image';
+                    deleteButton.style.display = 'block'
+                    preview.innerHTML = '';
+                    preview.append(image);
+                    preview.append(deleteButton)  
+                    }) 
+                
+            }
+
       }) 
       
     deleteButton.addEventListener('click', function (e) {

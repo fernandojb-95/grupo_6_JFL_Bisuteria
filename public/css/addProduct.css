@@ -144,7 +144,7 @@
 
 /* Estilos de la seccion opciones-imagen */
 .imagenes{
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .imagenes ul{
     list-style: none;
@@ -190,6 +190,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 25px;
+    margin-top: 20px;
 }
 .botones button{
     width: 25%;
@@ -212,6 +213,10 @@
     font-weight: bold;
     text-align: center;
     margin: 10px auto;
+}
+
+#errorImg{
+    text-align: center;
 }
 @media(min-width: 768px){
     .descuento{
