@@ -26,7 +26,25 @@ window.onload = () => {
             }
       };
 
+      const validatePassword = (password,errors) => {
+        if(!String(password.value).match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})")){
+            const errorMsg = {
+                msg: `Formato de ${password.id} inválido`,
+                name: `${password.name}-error`
+            }
+            errors.push(errorMsg)
+        }
+      };
     
+      const matchPassword = (password,passwordConfirm,errors) => {
+        if(password.value!==passwordConfirm.value){
+            const errorMsg = {
+                msg: `Las contraseñas introducidas no coinciden`,
+                name: `${passwordConfirm.name}-error`
+            }
+            errors.push(errorMsg)
+        }
+      };
     file.addEventListener('change', function(e) {
         // Creamos el objeto de la clase FileReader
         let reader = new FileReader();
@@ -58,7 +76,8 @@ window.onload = () => {
         const name = e.target.user,
             lastname = e.target.lastname,
             email = e.target.email,
-            password = e.target.password
+            password = e.target.password,
+            passwordConfirm = e.target.passwordConfirm
             ;
 
         const errors = [];
@@ -68,7 +87,8 @@ window.onload = () => {
         verifyString(name, name, 2, errors);
         verifyString(lastname, lastname, 2, errors);
         validateEmail(email,errors);
-        verifyString(password, password, 8, errors);
+        validatePassword(password,errors);
+        matchPassword(password,passwordConfirm,errors);
 
         errorsContainer = document.createElement('ul');
         errorsContainer.id = 'errorsList'
