@@ -10,6 +10,10 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const productRoutes = require('./src/routes/productRoutes');
 
+//Rutas de API
+const productApiRoutes = require('./src/routes/api/productApiRoutes');
+const userApiRoutes = require('./src/routes/api/userApiRoutes');
+
 //Trayendo middlewares
 const rememberUser = require('./src/middlewares/rememberMiddleware');
 
@@ -53,6 +57,11 @@ app.use('/user', userRoutes);
 
 //Rutas de productos
 app.use('/products', productRoutes);
+
+//Rutas de la API
+app.use('/api/products', productApiRoutes);
+app.use('/api/users', userApiRoutes);
+
 
 //Ruta 404
 // app.use((req,res,next) =>{
