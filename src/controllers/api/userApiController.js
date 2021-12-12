@@ -3,8 +3,48 @@ const db = require('../../database/models');
 
 const userController = {
     list: (req,res) => {
-        res.send('Hola user')
-    }
+        const count = db.User.count({
+            group: ['isAdmin']
+        })
+        const users = db.User.findAll({
+        })
+        Promise
+        .all([count,users])
+        .then(([count,users]) => {
+            const total = users.map( user => {
+                return {
+                    id: user.id,
+                    name: user.first_name,
+                    lastName: user.last_name,
+                    email: user.email,
+                    detail: '/api/users/'+ user.id
+                }
+            })
+            const response = {
+                count: {
+                    count: users.length,
+                    countByCategory: count,
+                    url: '/api/users'
+                },
+                data: total
+            }
+            res.json(response)
+        })
+        .catch( error => console.log(error))
+    },
+    detail: (req,res) => {
+        const id = req.params.id
+        db.User.findByPk(id, {
+            attributes: { exclude: ['password','isAdmin', 'image'] }
+        })
+        .then(user => {
+            const response = {
+                data: user
+            }
+            res.json(response)
+        })
+        .catch(error => console.log(error))
+}
 }
 
 module.exports = userController
