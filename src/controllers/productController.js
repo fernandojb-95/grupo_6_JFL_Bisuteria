@@ -314,6 +314,7 @@ const productController = {
             .then(([count,products]) => {
                 res.render('./products/products', { products: products, count: count, limit: limit, user: req.session.user ? req.session.user : undefined });
             })
+            .catch(error => console.log(error))
     },
     search: (req,res) => {
         
