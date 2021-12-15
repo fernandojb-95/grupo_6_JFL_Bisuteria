@@ -79,6 +79,17 @@ const productController = {
             res.json(response)
         })
         .catch(error => console.log(error))
+    },
+    categories: (req,res) => {
+        db.Category.findAll()
+            .then(data => {
+                const response = {
+                    count: data.length,
+                    title:"Categories",
+                    data: data
+                }
+                res.json(response)
+            })
     }
 }
 
