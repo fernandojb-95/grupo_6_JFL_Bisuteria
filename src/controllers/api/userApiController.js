@@ -21,11 +21,8 @@ const userController = {
                 }
             })
             const response = {
-                count: {
-                    count: users.length,
-                    countByCategory: count,
-                    url: '/api/users'
-                },
+                count: users.length,
+                title: 'Users',
                 data: total
             }
             res.json(response)

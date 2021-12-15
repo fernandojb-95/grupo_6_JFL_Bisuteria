@@ -21,11 +21,9 @@ const productController = {
                     }
                 })
                 const response = {
-                    count: {
-                        count: products.length,
-                        countByCategory: count,
-                        url: '/api/products'
-                    },
+                    count: products.length,
+                    countByCategory: count,
+                    title: 'Products',
                     data: total
                 }
                 res.json(response)
