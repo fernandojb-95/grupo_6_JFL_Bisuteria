@@ -98,6 +98,22 @@
     color: var(--red);
 }
 
+/* Estilos para validaciones */
+
+.error-msg{
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.errors-list{
+    list-style: none;
+    width: 80%;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+}
+
 /*-------------------Media querie para tablet---------------------*/
 @media(min-width: 768px) {
     .login{

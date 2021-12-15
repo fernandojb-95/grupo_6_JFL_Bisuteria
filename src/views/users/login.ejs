@@ -13,7 +13,7 @@
                 <h1>Inicia sesión</h1>
                 <p>Ingresa tu email y tu contraseña</p>
             </section>
-            <form class="login-form" action="/user" method="POST">
+            <form class="login-form" id="login-form" action="/user" method="POST">
                 <% if(locals.msg) { %>
                     <p class="error"><%=msg %></p>
                 <% } %>
@@ -37,5 +37,7 @@
 
         </div>
     </main>
+
+    <script src="/js/login.js"></script>
 </body>
 </html>
