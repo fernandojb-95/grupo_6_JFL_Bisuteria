@@ -12,8 +12,18 @@ main{
     padding: 10px 0;
     text-align: center;
 }
-.input-section input{
+.input-section input, .pass-section{
     width: 90%;
+}
+.pass-section{
+    position: relative;
+    width: 100%;
+}
+.pass-section i{
+    position: absolute;
+    right: 7%;
+    top: 5px;
+    color: var(--light-border);
 }
 .checkitems{
     margin-top: 30px;
@@ -88,5 +98,8 @@ main{
     }
     .checkitems{
         flex-direction: row;
+    }
+    .pass-section i{
+        right: 20px;
     }
 }

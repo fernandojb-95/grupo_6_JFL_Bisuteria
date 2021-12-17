@@ -2,7 +2,14 @@ window.onload = () => {
     let preview = document.querySelector('.img-preview');
     const file = document.getElementById("file");
     let deleteButton = document.getElementById("delete");
-    
+
+    let passwordEye = document.querySelector('#passEye');
+    let passwordConfirmEye = document.querySelector('#passConfirmEye');
+
+    let passwordInput = document.querySelector('#passInput');
+    let passwordConfirmInput = document.querySelector('#passConfirmInput');
+
+
     file.addEventListener('change', function(e) {
         // Creamos el objeto de la clase FileReader
         let reader = new FileReader();
@@ -28,4 +35,19 @@ window.onload = () => {
             deleteButton.style.display = 'none';
         }
     }) 
+
+        //Botones para hacer visible la contraseña 
+        passwordEye.addEventListener('click', () =>{
+            if(passwordInput.type == 'password')
+                passwordInput.type = 'text'
+            else
+            passwordInput.type = 'password'
+        })
+    
+        passwordConfirmEye.addEventListener('click', () =>{
+            if(passwordConfirmInput.type == 'password')
+                passwordConfirmInput.type = 'text'
+            else
+            passwordConfirmInput.type = 'password'
+        })
 }
