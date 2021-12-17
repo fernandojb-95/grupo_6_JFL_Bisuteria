@@ -18,7 +18,10 @@
                     <p class="error"><%=msg %></p>
                 <% } %>
                 <input type="email" name="email" class="email-input" id="login-email" placeholder="Correo electrónico">
-                <input type="password" name="password" class="pass-input" id="login-password" placeholder="Contraseña">
+                <div class="pass-container">
+                    <input type="password" name="password" class="pass-input" id="login-password" placeholder="Contraseña">
+                    <i class="fas fa-eye password-eye" id="passEye"></i>
+                </div>
                 <div class="remember">
                     <input type="checkbox" class="remember-input" id="login-remember" name="remember">
                     <label for="login-remember">Recuérdame</label>

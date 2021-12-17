@@ -1,5 +1,7 @@
 window.onload = () => {
     let formulario = document.getElementById('login-form');
+    let passwordEye = document.getElementById('passEye');
+    let passwordInput = document.getElementById('login-password');
 
     const validateEmail = (email,errors) => {
         if(!String(email.value).match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
@@ -21,6 +23,13 @@ window.onload = () => {
             errors.push(errorMsg)
         }
       };
+
+      passwordEye.addEventListener('click', () =>{
+        if(passwordInput.type == 'password')
+            passwordInput.type = 'text'
+        else
+        passwordInput.type = 'password'
+    })
 
     formulario.addEventListener('submit', function (e){
         e.preventDefault();

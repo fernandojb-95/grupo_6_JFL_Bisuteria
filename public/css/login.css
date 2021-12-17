@@ -17,7 +17,7 @@
     align-items: center;
     padding-bottom: 30px;
 }
-.login-form input{
+.login-form input, .pass-container{
     width: 100%;
     max-width: 350px;
     margin-bottom: 25px;
@@ -25,6 +25,25 @@
     padding-left: 10px;
     border: 1px solid var(--light-border);
     outline: none;
+}
+.pass-container{
+    position: relative;
+    padding-left: 0;
+    border-radius: 5px;
+}
+.pass-container input{
+    outline: none;
+    border: none;
+    padding: 0;
+    height: 100%;
+    padding-left: 10px;
+}
+.pass-container i{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 18px;
+    color: var(--light-border);
 }
 .error{
     margin: 10px auto;
