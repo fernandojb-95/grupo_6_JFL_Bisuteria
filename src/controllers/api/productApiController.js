@@ -9,7 +9,7 @@ const productController = {
         })
         const products = db.Product.findAll({
             include: ['category', 'material'],
-            attributes : {exclude: ['price', 'discount','quantity_S', 'quantity_M', 'quantity_L', 'image_1', 'image_2', 'sold', 'material_id', 'category_id']}
+            attributes : {exclude: ['price', 'discount','quantity_S', 'quantity_M', 'quantity_L', 'sold', 'material_id', 'category_id']}
         })
         Promise
             .all([count,products])
@@ -55,7 +55,7 @@ const productController = {
             include: ['category', 'material'],
             limit : limit,
             offset: offset,
-            attributes : {exclude: ['price', 'discount','quantity_S', 'quantity_M', 'quantity_L', 'image_1', 'image_2', 'sold', 'material_id', 'category_id']}
+            attributes : {exclude: ['price', 'discount','quantity_S', 'quantity_M', 'quantity_L', 'sold', 'material_id', 'category_id']}
         })
         const lastProduct = db.Product.findOne({
             order: [['id', 'DESC']]
@@ -66,7 +66,7 @@ const productController = {
                 const total = products.map( product => {
                     return {
                         ...product.dataValues,
-                        detail: '/api/products/'+ product.id
+                        detail: '/api/products/'+ product.id,
                     }
                 })
                const last = products.find(product => product.id == lastProduct.id)
