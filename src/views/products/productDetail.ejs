@@ -31,7 +31,7 @@
 
                 <!-- Seleccion de tallas y cantidades -->
                 <div class="datos-compra">
-                    <form action="">
+                    <form method="POST" id="addToCart" action="/products/add/<%=product.id%>">
                         <div class="resalta-campo">
                             <div class="field-row">
                                 <p>Precio: </p>
@@ -56,7 +56,7 @@
                                 <p>Cantidad:</p>
                                 <div class="quant-control">
                                     <button id="substract"><i class="fas fa-minus-circle"></i></button>
-                                        <input type="number" value="0" id="quantInput">
+                                        <input type="number" value="1" id="quantInput" name="quantity">
                                     <button id="add"><i class="fas fa-plus-circle"></i></button>
                                 </div>
                             </div>

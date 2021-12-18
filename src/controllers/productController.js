@@ -34,7 +34,7 @@ const productController = {
             })
     },
     productCart : (req, res) => {
-        res.render('./products/productCart', {user: req.session.user ? req.session.user : undefined});
+        res.render('./products/productCart', { products: req.session.products ,user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
         const count = db.Product.count({
@@ -343,6 +343,39 @@ const productController = {
         .then(comment => {
             res.redirect('/products/detail/'+ productId)
         })
+    },
+    add: (req,res) => {
+        const errorsList = validationResult(req).array()
+
+        const id = req.params.id;
+        const quantity = parseInt(req.body.quantity);
+        const size = req.body.size;
+
+        if(errorsList.length == 0){
+            db.Product.findByPk(id,{
+                include: ['material', 'category']
+            })
+                .then(product => {
+                    const newProduct = {
+                        image: `/img/${product.category.name}/${product.image_1}`,
+                        name: product.name,
+                        quantity: quantity,
+                        size: size,
+                        finalPrice: parseFloat(product.price)*(1-(parseFloat(product.discount*0.01))).toFixed(2)
+                    }
+                    if(!req.session.products){
+                        productsCart =[];
+                        productsCart.push(newProduct);
+                        req.session.products = productsCart;
+                    } else {
+                        req.session.products.push(newProduct);
+                    }
+                    res.redirect('/products/productCart');
+                })
+                .catch(error => console.log(error))
+        } else {
+            // res.render('./products/productDetail')
+        }
     }
 }
 

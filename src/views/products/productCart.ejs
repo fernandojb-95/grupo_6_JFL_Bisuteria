@@ -13,93 +13,39 @@
             <h1>Mi carrito</h1>
         </div>
         <section class="carrito-general">
-
-                <div class="cuadro-productos">
-                    <!-- Visualización de productos -->
-                    <div class="visualizacion-productos">
-
-                        <div class="imagen-producto">
-                            <img class= "img" src="/img/Imagen1_carrito.png" alt="imagen-producto">
-                        </div>
-
-                        <div class="resumen">
-                            <p>Producto</p>
-                            <form action="">
-                                <label for="prodcut-cart-size">Talla: </label>
-                                <select name="quantity" id="prodcut-cart-quantity">
-                                    <option value="1">S</option>
-                                    <option value="2">M</option>
-                                    <option value="3">L</option>
-                                </select>
-                            </form>
-                            <div class="cantidad_car">
-                                <p>Cantidad:</p>
-                                <div class="masmenos">
-                                    <button class="btn" id="menos"><i class="fas fa-minus"></i></button>
-                                    <input id="cantidad" type="text" style="text-align: center;" value="1">
-                                    <button class="btn" id="mas"><i class="fas fa-plus"></i></button>
-                                </div>
+            <% if(locals.products) { %>
+                <form action="" class="purchase-form">
+                    <div class="cuadro-productos">
+                        <!-- Visualización de productos -->
+                        <% products.forEach(product => { %>
+                            <%- include('../partials/productOfCart.ejs', {product: product}) %>
+                        <% }) %>
+                    </div>
+    
+                    <div class="cuadro-resumen">
+                        <!-- Precios -->
+                        <div class="precios">
+                            <div class="desglose-indiv">
+                                <p>Subtotal: $$$</p>
+                                <p>Impuesto: $$$</p>
+                                <p>Envío: $$$</p>
+                                <p>Total: $$$</p>
                             </div>
                         </div>
-
-                        <div class="total">
-                            <p>Precio:$$$</p>
-                            <button><img src="/img/Trash.svg"></button>
+    
+                        <!-- Confirmación     -->
+                        <div class="btn-pagar">
+                            <button class="submit" type="submit">Ir a pagos</button>
                         </div>
-                    </div>
-
-                    <!-- Visualización de productos -->
-                    <div class="visualizacion-productos">
-
-                        <div class="imagen-producto">
-                            <img class= "img" src="/img/Imagen2_carrito.png" alt="imagen-producto">
-                        </div>
-
-                        <div class="resumen">
-                            <p>Producto</p>
-                            <form action="">
-                                <label for="prodcut-cart-size">Talla: </label>
-                                <select name="quantity" id="prodcut-cart-quantity">
-                                    <option value="1">S</option>
-                                    <option value="2">M</option>
-                                    <option value="3">L</option>
-                                </select>
-                            </form>
-                            <div class="cantidad_car">
-                                <p>Cantidad:</p>
-                                <div class="masmenos">
-                                    <button class="btn" id="menos"><i class="fas fa-minus"></i></button>
-                                    <input id="cantidad" type="text" style="text-align: center;" value="1">
-                                    <button class="btn" id="mas"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="total">
-                            <p>Precio:$$$</p>
-                            <button><img src="/img/Trash.svg"></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cuadro-resumen">
-                    <!-- Precios -->
-                    <div class="precios">
-                        <div class="desglose-indiv">
-                            <p>Subtotal: $$$</p>
-                            <p>Impuesto: $$$</p>
-                            <p>Envío: $$$</p>
-                            <p>Total: $$$</p>
-                        </div>
-                    </div>
-
-                    <!-- Confirmación     -->
-                    <div class="btn-pagar">
-                        <button class="submit" type="submit">Ir a pagos</button>
-                    </div>
-                </div>  
+                    </div>     
+                </form>
+  
+            <% } else { %>
+                <p>No hay productos en tu carrito</p>
+            <% } %>
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/productCart.js"></script>
 </body>
 </html>

@@ -54,8 +54,11 @@ const validateRegister =[
         .notEmpty().withMessage('El campo M no puede quedar vacío').bail().isNumeric().withMessage('El formato de talla M no es correcto'),
     check('quantityL')
         .notEmpty().withMessage('El campo L no puede quedar vacío').bail().isNumeric().withMessage('El formato de talla L no es correcto')
+]
 
-
+const validateQuantity = [
+    check('quantity')
+        .notEmpty().withMessage('El campo no puede ir vacío').bail().isInt().withMessage('El valor debe ser numérico')
 ]
 //Validación de que el archivo recibido es una imagen
 const fileUpload = multer({
@@ -109,6 +112,9 @@ router.get('/search', productController.search);
 
 /*----Rutas para vista de detalle de producto----*/
 router.get('/detail/:id', productController.productDetail);
+
+/*----Rutas para agregar producto al carrito----*/
+router.post('/add/:id', validateQuantity ,productController.add);
 
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);

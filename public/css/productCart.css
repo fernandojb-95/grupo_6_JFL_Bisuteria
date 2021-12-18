@@ -13,98 +13,109 @@
 .visualizacion-productos{
     background-color: var(--gold);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 30px;
 
 }
 .imagen-producto{
-    width: 25%;
+    width: 100%;
 }
 
 .imagen-producto .img{
-    width: 100%;
-    padding: 5px;
+    width: 65%;
+    display: block;
+    margin: 10px auto;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: center;
 }
-
+.title{
+    width: 90%;
+    margin: 10px auto;
+}
 .resumen{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* padding-top: 15px;
-    padding-bottom: 15px; */
-    width: 35%;
+    align-items: center;
 }
-
-.cantidad_car{
+.resumen p, label, .total p{
+    font-size: 18px;
+    font-weight: bold;
+}
+.cantidad_car, .size-opc{
     display: flex;
+    margin: 10px auto;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    
 }
-.masmenos{
-    padding-left: 10px;
+.size-opc label, .size-opc select{
+    padding: 5px;
 }
-.masmenos #cantidad{
-    width: 20px;
-    align-self: center;
-    background-color: transparent;
-    border: transparent;
+.cantidad_car input{
+    width: 50px;
+    text-align: center;
 }
-.masmenos button{
-    border:none;
-    background-color: transparent;
-    border: var(--dark) solid 2px;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
+.total{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-/* .resumen p{
-    margin: 10px;
-} */
 
 .total p{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-    width: 30%;
-    font-weight: bold;
-    padding-right: 20px;
-    padding-top: 50px;
+    text-align: center;
+    margin: 10px auto;
 }
-
-.total button{
+.quant-control{
     display: flex;
-    flex-direction: column;
-    justify-content:space-around;
     align-items: center;
-    padding-top: 30px;
-    padding-right: 20px;
-    color: var(--dark);
+    width: 150px;
+    justify-content: space-evenly;
+}
+.quant-control button{
     background-color: transparent;
-    border: transparent;
+    border: none;
+}
+.quant-control i{
+    font-size: 18px;
+}
+.cantidad_car p, .quant-control{
+    padding: 5px;
+}
+.total button{
+    background-color: transparent;
+    width: 250px;
+    margin: 10px auto;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
 }
 .total button img{
     width: 20px;
     height: 20px;
 }
-.total button img:hover{
-    width: 25px;
-    height: 25px;
-    transition: .3s;
+.total button:hover{
+    transform: scale(1.2);
 }
 /* Estilos de la seccion de precios */
 
 .precios{
     margin-top: 20px;
-    border-top: solid 1px var(--dark);
     padding-top: 10px;
+    border-top: solid 1px var(--dark);
     display:flex;
     justify-content: flex-end;
-    padding-right: 20%;
 }
 
 .desglose-indiv{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .desglose-indiv p{
@@ -125,21 +136,49 @@
 }
 
 /* Estilos para media querie*/
-@media(min-width: 1025px) {
+@media(min-width: 768px) {
     .carrito-general{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    
     .cuadro-productos{
-        width: 65%;
+        width: 100%;
+    }
+    .visualizacion-productos{
+        flex-direction: row;
+    }
+    .imagen-producto{
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+    .imagen-producto .img{
+        width: 80%;
+    }
+    .final-product-form{
+        display: flex;
+        width: 70%;
+        flex-direction: row;
+    }
+    .cantidad_car, .size-opc{
+        width: 100%;
+    }
+    .cuadro-resumen{
+        width: 100%;
     }
 
+}
+
+@media(min-width: 1025px){
+    
     .cuadro-resumen{
-        width: 30%;
+        width: 25%;
         border-left: solid 1px var(--dark);
         margin-bottom: 30px;
+    }
+    .cuadro-productos{
+        width: 70%;
     }
 
     .precios{
@@ -148,12 +187,6 @@
         justify-content: flex-start;
         padding-left: 15px;
         font-size: 18px;
-
-    }
-
-    .visualizacion-productos{
-        /* height: 150px; */
-        width: 100%;
 
     }
 
