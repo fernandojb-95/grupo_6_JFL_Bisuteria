@@ -113,9 +113,6 @@ router.get('/search', productController.search);
 /*----Rutas para vista de detalle de producto----*/
 router.get('/detail/:id', productController.productDetail);
 
-/*----Rutas para agregar producto al carrito----*/
-router.post('/add/:id', validateQuantity ,productController.add);
-
 /*----Rutas para borrar producto----*/
 router.delete('/:id', productController.delete);
 

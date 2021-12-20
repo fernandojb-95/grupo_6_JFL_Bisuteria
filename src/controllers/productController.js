@@ -34,13 +34,6 @@ const productController = {
             })
     },
     productCart : (req, res) => {
-        // let sum = 0;
-        // if(req.session.products){
-        //     const initialValue = 0;
-        //     sum = req.session.products.reduce(function (total, currentValue) {
-        //         return total + currentValue.finalPrice;
-        //     }, initialValue);
-        // }
         res.render('./products/productCart', { user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
@@ -144,7 +137,6 @@ const productController = {
                 material_id: parseInt(req.body.material)
             })
             .then(product =>{
-                console.log(product);
                 res.redirect('/');
             }).catch(error => console.log(error))
         } else{
@@ -350,42 +342,6 @@ const productController = {
         .then(comment => {
             res.redirect('/products/detail/'+ productId)
         })
-    },
-    add: (req,res) => {
-        const errorsList = validationResult(req).array()
-
-        const id = req.params.id;
-        const quantity = parseInt(req.body.quantity);
-        const size = req.body.size;
-
-        if(errorsList.length == 0){
-            db.Product.findByPk(id,{
-                include: ['material', 'category']
-            })
-                .then(product => {
-                    const newProduct = {
-                        image: `/img/${product.category.name}/${product.image_1}`,
-                        name: product.name,
-                        quantity: quantity,
-                        size: size,
-                        finalPrice: parseFloat(product.price)*(1-(parseFloat(product.discount*0.01))).toFixed(2)
-                    }
-                    if(!req.session.products){
-                        productsCart =[];
-                        newProduct.id = 1;
-                        productsCart.push(newProduct);
-                        req.session.products = productsCart;
-                    } else {
-                        const id = req.session.products[req.session.products.length-1].id + 1;
-                        newProduct.id = id;
-                        req.session.products.push(newProduct);
-                    }
-                    res.redirect('/products/productCart');
-                })
-                .catch(error => console.log(error))
-        } else {
-            // res.render('./products/productDetail')
-        }
     }
 }
 
