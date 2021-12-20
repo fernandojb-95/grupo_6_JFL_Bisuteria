@@ -34,14 +34,14 @@ const productController = {
             })
     },
     productCart : (req, res) => {
-        let sum = 0;
-        if(req.session.products){
-            const initialValue = 0;
-            sum = req.session.products.reduce(function (total, currentValue) {
-                return total + currentValue.finalPrice;
-            }, initialValue);
-        }
-        res.render('./products/productCart', { products: req.session.products, subtotal: sum > 0 ? sum : undefined ,user: req.session.user ? req.session.user : undefined});
+        // let sum = 0;
+        // if(req.session.products){
+        //     const initialValue = 0;
+        //     sum = req.session.products.reduce(function (total, currentValue) {
+        //         return total + currentValue.finalPrice;
+        //     }, initialValue);
+        // }
+        res.render('./products/productCart', { user: req.session.user ? req.session.user : undefined});
     },
     anillos : (req, res) => {
         const count = db.Product.count({

@@ -12,38 +12,32 @@
         <div class="encabezado">
             <h1>Mi carrito</h1>
         </div>
-        <section class="carrito-general">
-            <% if(locals.products) { %>
+        <template id="template">
+            <section class="carrito-general">
                 <form action="" class="purchase-form">
                     <div class="cuadro-productos">
-                        <!-- Visualización de productos -->
-                        <% products.forEach(product => { %>
-                            <%- include('../partials/productOfCart.ejs', {product: product}) %>
-                        <% }) %>
+                        
                     </div>
     
                     <div class="cuadro-resumen">
-                        <!-- Precios -->
+                        
                         <div class="precios">
                             <div class="desglose-indiv">
-                                <p>Subtotal: $ <%=locals.subtotal ? subtotal.toFixed(2) : '' %></p>
+                                <p >Subtotal: $ <span id="subtotalPrice"></span></p>
                                 <p>Impuesto: $ 0.00</p>
                                 <p>Envío: $ 50.00 </p>
-                                <p>Total: $ <%=locals.subtotal ? subtotal+50.00 : '' %></p>
+                                <p >Total: $ <span id="totalPrice"></span></p>
                             </div>
                         </div>
     
-                        <!-- Confirmación     -->
+                        
                         <div class="btn-pagar">
-                            <button class="submit" type="submit">Ir a pagos</button>
+                            <button class="submit" id="submit" type="submit">Ir a pagos</button>
                         </div>
                     </div>     
                 </form>
-  
-            <% } else { %>
-                <p>No hay productos en tu carrito</p>
-            <% } %>
-        </section>
+            </section>  
+        </template>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/productCart.js"></script>

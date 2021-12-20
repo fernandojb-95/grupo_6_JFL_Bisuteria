@@ -101,6 +101,7 @@ const userController = {
     confirmEdit: (req,res) => {
         let userId = req.params.id;
         const user = req.session.user;
+        
         let errorsList = validationResult(req).array();
         if(req.body.password === '' && req.body.passwordConfirm === ''){
             errorsList = errorsList.filter(error => {
@@ -111,6 +112,8 @@ const userController = {
         }
         if(req.fileValidationError) 
         errorsList.push((req.fileValidationError))
+        errorsList = errorsList.filter(error => error.param !== 'authorized')
+        console.log(errorsList);
         if(errorsList.length === 0 && !req.fileValidationError){
             let userName = req.body.user,
                 lastNameUser = req.body.lastname,
