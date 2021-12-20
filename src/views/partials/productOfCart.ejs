@@ -1,31 +1,31 @@
-<div class="visualizacion-productos">
+    <div class="visualizacion-productos">
 
-    <div class="imagen-producto">
-        <img class= "img" src="<%=product.image%>" alt="imagen-producto" />
-    </div>
-    <div  class="final-product-form">
-        <div class="resumen">
-            <h3 class="title"><%=product.name%></h3>
-            <div class="size-opc">
-                <label for="product-cart-size">Talla: </label>
-                <select name="size" class="select-size">
-                    <option value="1" <%=product.size == "S" ? 'selected' : '' %>>S</option>
-                    <option value="2"<%=product.size == "M" ? 'selected' : '' %>>M</option>
-                    <option value="3" <%=product.size == "L" ? 'selected' : '' %>>L</option>
-                </select>
-            </div>
-                <div class="cantidad_car">
-                    <p>Cantidad:</p>
-                    <div class="quant-control">
-                        <button id="substract"><i class="fas fa-minus-circle"></i></button>
-                            <input type="number" value="<%=product.quantity%>" class="quant-input" name="quantity">
-                        <button id="add"><i class="fas fa-plus-circle"></i></button>
-                    </div>
+        <div class="imagen-producto">
+            <img class= "img" src="<%=product.image%>" alt="imagen-producto" />
+        </div>
+        <div  class="final-product-form">
+            <div class="resumen">
+                <h3 class="title"><%=product.name%></h3>
+                <div class="size-opc">
+                    <label for="product-cart-size">Talla: </label>
+                    <select name="size" class="select-size">
+                        <option value="1" <%=product.size == "S" ? 'selected' : '' %>>S</option>
+                        <option value="2"<%=product.size == "M" ? 'selected' : '' %>>M</option>
+                        <option value="3" <%=product.size == "L" ? 'selected' : '' %>>L</option>
+                    </select>
                 </div>
-        </div>
-        <div class="total">
-            <p>Precio:$ <%=(product.finalPrice*product.quantity).toFixed(2)%></p>
-            <button>Borrar artículo <i class="fas fa-trash"></i></button>
+                    <div class="cantidad_car">
+                        <p>Cantidad:</p>
+                        <div class="quant-control">
+                            <button id="substract"><i class="fas fa-minus-circle"></i></button>
+                                <input type="number" value="<%=product.quantity%>" class="quant-input" name="quantity">
+                            <button id="add"><i class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </div>
+            </div>
+            <div class="total">
+                <p>Precio:$ <%=(product.finalPrice*product.quantity).toFixed(2)%></p>
+                <button type="submit">Borrar artículo <i class="fas fa-trash"></i></button>
+            </div>
         </div>
     </div>
-</div>

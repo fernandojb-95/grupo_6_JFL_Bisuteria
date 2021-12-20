@@ -26,10 +26,10 @@
                         <!-- Precios -->
                         <div class="precios">
                             <div class="desglose-indiv">
-                                <p>Subtotal: $$$</p>
-                                <p>Impuesto: $$$</p>
-                                <p>Envío: $$$</p>
-                                <p>Total: $$$</p>
+                                <p>Subtotal: $ <%=locals.subtotal ? subtotal.toFixed(2) : '' %></p>
+                                <p>Impuesto: $ 0.00</p>
+                                <p>Envío: $ 50.00 </p>
+                                <p>Total: $ <%=locals.subtotal ? subtotal+50.00 : '' %></p>
                             </div>
                         </div>
     

@@ -21,9 +21,9 @@ window.onload = () => {
                 quantityInputs[i].value = parseInt(quantityInputs[i].value) + 1;
             })
         })
-        console.log(minusButton)
-        console.log(plusButton)
-        console.log(quantityInputs)
+
+        let prices = [...document.querySelectorAll('.total p')]
+        
     } else{
         console.log('No hay productos')
     }

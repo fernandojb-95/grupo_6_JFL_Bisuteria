@@ -14,7 +14,7 @@
     background-color: var(--gold);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 30px;
 
 }
@@ -70,6 +70,11 @@
     text-align: center;
     margin: 10px auto;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .quant-control{
     display: flex;
     align-items: center;
@@ -100,6 +105,11 @@
 }
 .total button:hover{
     transform: scale(1.2);
+}
+.purchase-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 /* Estilos de la seccion de precios */
 
@@ -139,14 +149,17 @@
 @media(min-width: 768px) {
     .carrito-general{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        flex-direction: row;
         justify-content: space-between;
+        width: 100%;
     }
     .cuadro-productos{
         width: 100%;
     }
     .visualizacion-productos{
         flex-direction: row;
+        justify-content: flex-start;
     }
     .imagen-producto{
         width: 30%;
@@ -158,7 +171,7 @@
     }
     .final-product-form{
         display: flex;
-        width: 70%;
+        width: 60%;
         flex-direction: row;
     }
     .cantidad_car, .size-opc{
@@ -171,7 +184,10 @@
 }
 
 @media(min-width: 1025px){
-    
+    .purchase-form{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
     .cuadro-resumen{
         width: 25%;
         border-left: solid 1px var(--dark);
@@ -180,7 +196,10 @@
     .cuadro-productos{
         width: 70%;
     }
-
+    .final-product-form{
+        width: 80%;
+        justify-content: space-evenly;
+    }
     .precios{
         padding-top: 30px;
         border-top: none;
@@ -189,7 +208,9 @@
         font-size: 18px;
 
     }
-
+    .visualizacion-productos{
+        justify-content: space-between;
+    }
     .resumen{
         /* justify-content: center;
         padding-left: 20px; */
@@ -197,8 +218,8 @@
     }
 
     .total{
-        margin-right: 30px;
         font-size: 18px;
+        width: auto;
     }
 
     .btn-pagar button{
