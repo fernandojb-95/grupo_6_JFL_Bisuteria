@@ -22,8 +22,9 @@ const userController = {
             })
             const response = {
                 count: users.length,
-                title: 'Users',
-                data: total
+                title: 'Usuarios',
+                data: total,
+                icon: 'fa-user-check'
             }
             res.json(response)
         })

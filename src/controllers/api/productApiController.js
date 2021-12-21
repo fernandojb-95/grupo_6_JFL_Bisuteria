@@ -23,8 +23,9 @@ const productController = {
                 const response = {
                     count: products.length,
                     countByCategory: count,
-                    title: 'Products',
-                    data: total
+                    title: 'Productos',
+                    data: total,
+                    icon: 'fa-shopping-bag'
                 }
                 res.json(response)
             })
@@ -85,8 +86,9 @@ const productController = {
             .then(data => {
                 const response = {
                     count: data.length,
-                    title:"Categories",
-                    data: data
+                    title:"Categorías",
+                    data: data,
+                    icon: 'fa-tags'
                 }
                 res.json(response)
             })
