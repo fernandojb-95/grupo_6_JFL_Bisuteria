@@ -128,7 +128,7 @@ window.onload = () => {
         payButton.addEventListener('click', (e) => {
             e.preventDefault();
             sessionStorage.clear();
-            window.location.href = '/';
+            window.location.href = '/products/finalizaCompra';
         })
 
     } else{
