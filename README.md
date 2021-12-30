@@ -49,3 +49,8 @@ Una vez ingresado, se podrá del lado superior derecho un botón de play el cual
 El siguiente link los dirigirá hacia el tablero Trello del proyecto donde se podrá observar el flujo de trabajo y avances en las actividades del proyecto.
 
 [Tablero Trello JFL](http://https://trello.com/b/pX7P5e56/equipo-6-dh "Tablero Trello JFL")
+
+## Link a repositorio para dashboard de React
+El siguiente link los dirigirá hacia el repositorio donde se desarrollo el Dashborad con React.
+
+[Dashboard React](https://github.com/lmoralesv96/JFL_Bisuteria_React)
